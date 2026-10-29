@@ -1,0 +1,36 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/iot-lens/choose-a-lightweight-protocol-for-messaging.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# Choose a lightweight protocol for messaging
+
+IoT devices can use a number of application layer protocols to
+ communicate with each other as well as the cloud. The most
+ common protocol for IoT devices is
+ [MQTT](https://mqtt.org/mqtt-specification/).
+
+MQTT is designed to be a lightweight and power efficient
+ protocol for IoT applications that require low power consumption
+ and low bandwidth usage. It uses a publish-subscribe model,
+ which allows devices to exchange small messages with each other
+ using a minimal amount of network bandwidth.
+
+HTTP, on the other hand, is a more heavyweight protocol that is
+ used for web-based applications. While HTTP is not specifically
+ designed for IoT applications, it is widely used for sending and
+ receiving data over the internet. HTTP uses a request-response
+ model, which requires devices to send larger amounts of data
+ back and forth over the network. This can result in higher power
+ consumption and shorter battery life for IoT devices.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/iot-lens/choose-a-lightweight-protocol-for-messaging.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

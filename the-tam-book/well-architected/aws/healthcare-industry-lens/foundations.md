@@ -1,0 +1,60 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/healthcare-industry-lens/foundations.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# Foundations
+
+**Architect systems for
+ elasticity**
+
+Healthcare applications often have time-based peaks in demand.
+ For example, clinical systems may need to respond to periods
+ of high demand using either time-based or usage-based metrics
+ to define automatic scaling rules. An example of periods of
+ high demand could be daytime business hours or a known event
+ such as open-enrollment for an insurance provider.
+
+Where possible, implement architectures that automatically
+ adapt to changes in demand. Embracing elasticity enables
+ healthcare organizations to *right-size*
+ performance during all hours of the day while minimizing
+ excess cost. General distributed systems recommendations
+ apply. Where possible, leverage AWS services that allow you to
+ scale with demand.
+
+AWS Auto Scaling simplifies how you adapt to demand. In all
+ cases, you should be collecting metrics to inform your scaling
+ actions and detect events that could impact reliability. You
+ may either use default CloudWatch metrics or define custom
+ metrics that track specific aspects of utilization. For
+ example, software as a service (SaaS) applications may monitor
+ demand with custom CloudWatch metrics that capture the number
+ of concurrent active users, or open sessions supported by the
+ application.
+
+Healthcare solutions implemented as distributed systems may
+ use multiple services that can scale elastically. In these
+ cases, implement automatic scaling for all relevant compute
+ and database services, using Amazon EC2 Auto Scaling and Application Auto Scaling for
+ [supported
+ AWS services](https://docs.aws.amazon.com/autoscaling/application/userguide/integrated-services-list.html). You can leverage scaling plans to
+ simplify configuration of scaling rules, and follow auto
+ scaling
+ [best
+ practices](https://docs.aws.amazon.com/autoscaling/plans/userguide/best-practices.html) to maximize reliability.
+
+Other managed services, such as Amazon Data Firehose,
+ allow you to operate at scale without worrying about capacity
+ or managing infrastructure.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/healthcare-industry-lens/foundations.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

@@ -1,0 +1,103 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/financial-services-industry-lens/key-aws-services-rel.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# Key AWS services
+
+- **Resilient architecture**
+**Amazon S3 :** Leverage Amazon S3 object storage
+ and replication to provide durability and resilience of
+ your data on AWS. It is available Regionally (resilient
+ against events that impact an entire Availability Zone)
+ and also supports cross-Regional replication for
+ geographic isolation.**Amazon EC2 Auto Scaling :** Maintain workload
+ availability and automatically add or remove Amazon EC2
+ instances according to conditions you define. You can
+ also use the dynamic and predictive scaling features of
+ Amazon EC2 Auto Scaling to respond to changing demand as
+ well as schedule the right number of Amazon EC2
+ instances based on predicted demand to scale faster.**Amazon Route 53 :** Use the 100% availability of
+ Route 53's data plane to direct traffic based on latency,
+ proximity, and workload health checks to enable a variety
+ of low-latency, fault-tolerant architectures.**AWS Direct Connect :** Connect your data
+ centers to AWS over dedicated, private, and consistent
+ connections using Direct Connect.[Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/): Provision
+ a logically isolated section of AWS where you can launch
+ AWS resources.**Amazon CloudFront :** You can cache your content
+ in CloudFront's edge locations worldwide and reduce the
+ workload on your origin by only fetching content from
+ your origin when needed. You can use CloudFront's native
+ origin failover capability to automatically serve your
+ content from a backup origin when your primary origin is
+ unavailable.**Amazon RDS Multi-AZ or Amazon Aurora :** Use Amazon RDS or Aurora
+ Multi-AZ deployments to provide enhanced availability
+ for production database workloads. Amazon RDS
+ synchronously replicates data from a primary instance to
+ a secondary in a different AZ which runs on a
+ fault-isolated and independent infrastructure. In case
+ of infrastructure failure, Amazon RDS automatically
+ fails over to the standby so that you can resume
+ database operations. These database services can also be
+ configured to asynchronously replicate your data to
+ additional AWS Regions to support multi-Region
+ architectures.**Amazon DynamoDB :** Amazon DynamoDB is a fully
+ managed NoSQL database service that provides fast and
+ predictable performance with seamless scalability.
+ DynamoDB automatically spreads the data and traffic for
+ your tables over a sufficient number of servers to handle
+ your throughput and storage requirements and your
+ data that is stored is automatically replicated across
+ multiple Availability Zones in an AWS Region. DynamoDB
+ also supports
+ [Global Tables](https://aws.amazon.com/dynamodb/global-tables/) to give you the ability to store your data
+ across multiple AWS Regions.**AWS Shield and AWS Shield Advanced :** AWS Shield is a managed service that provides protection
+ against distributed denial of service (DDoS) exploits for
+ workloads running on
+ AWS. AWS Shield Advanced provides additional protections against more
+ sophisticated and larger exploits for your workloads
+ running on Amazon EC2, Elastic Load Balancing (ELB),
+ Amazon CloudFront, AWS Global Accelerator, and Route 53.**AWS Lambda :** AWS Lambda lets you run code
+ without provisioning or managing servers. AWS Lambda is
+ designed to use replication and redundancy to provide
+ high availability for both the service itself and for
+ the Lambda functions it operates. There are no
+ maintenance windows or scheduled downtimes for either.
+- **Monitoring**
+**CloudWatch :**
+ Amazon CloudWatch is the principal monitoring service
+ for AWS Cloud resources and the workloads that you run on
+ AWS.**Amazon VPC Flow Logs : Amazon** VPC Flow Logs is
+ a feature that enables you to capture information about
+ the IP traffic going to and from network interfaces in
+ your VPC. Amazon VPC Flow Logs can be monitored through
+ CloudWatch.
+- **Backup and retention**
+[Amazon Glacier](https://aws.amazon.com/s3/storage-classes/glacier/): Amazon Glacier, is an
+ extremely low-cost storage service optimized for
+ infrequently used data, or cold data.**Amazon EBS snapshots ,** and
+ 
+ 
+ [Amazon RDS snapshots](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html): Snapshots for both
+ Amazon RDS and Amazon EBS allow point-in-time recovery
+ of the data stored in them. They can be configured to run
+ automatically or at a scheduled time.**AWS Backup :** AWS Backup is a centralized
+ backup service that simplifies and provides a
+ cost-effective way for you to back up your workload data
+ across AWS services in the AWS Cloud and on-premises.
+ Storage volumes, databases, and file systems are backed
+ up to a central place where you can configure and audit
+ the AWS resources you are backing up, automate backup
+ scheduling, set retention policies, and monitor
+ recent backup and restore activity.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/financial-services-industry-lens/key-aws-services-rel.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

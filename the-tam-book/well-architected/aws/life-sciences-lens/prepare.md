@@ -1,0 +1,31 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/life-sciences-lens/prepare.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# Prepare
+
+Configuration management (CM) involves the identification, recording, and reporting of
+ components and relationships. Keep items identified as supporting GxP workloads under a state
+ of control, providing an approved baseline for further evolution and allowing safe restoration
+ of a verified baseline in case of problems.
+
+Data quality is paramount for life science projects. Validating data as it is ingested
+ results in quality output and conclusions.
+
+###### Best practices
+
+- [LSOPS05-BP01 Enable a configuration management framework](./lsops05-bp01.html)
+- [LSOPS06-BP01 Validate data quality during ingestion](./lsops06-bp01.html)
+- [LSOPS06-BP02 Implement data pipeline testing](./lsops06-bp02.html)
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/life-sciences-lens/prepare.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

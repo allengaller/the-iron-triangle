@@ -1,0 +1,36 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/end-user-computing-lens/eucperf01-bp02.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# EUCPERF01-BP02 Consider the requirements of your Availability Zones when architecting your AWS EUC services
+
+Within each Region, only select Availability Zones support each AWS EUC service. This
+ is important if you are architecting solutions with extreme performance or security
+ requirements that demand that applications and desktops reside on the same subnet as the
+ user data they need to access.
+
+**Level of risk exposed if this best practice is not
+ established:** Medium
+
+## Implementation guidance
+
+For the WorkSpaces service line, explore the Availability Zone information.
+
+- [Amazon WorkSpaces Availability Zone Support](https://docs.aws.amazon.com/workspaces/latest/adminguide/azs-workspaces.html)
+- [Amazon WorkSpaces Secure Browser](https://docs.aws.amazon.com/workspaces-web/latest/adminguide/availability-zones.html)
+
+For WorkSpaces Applications, selecting a subnet when creating a new fleet automatically checks
+ if the associated Availability Zone can support the requested requirements, which are
+ based on several criteria such as instance type and availability.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/end-user-computing-lens/eucperf01-bp02.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

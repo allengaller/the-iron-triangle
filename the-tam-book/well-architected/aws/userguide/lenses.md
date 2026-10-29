@@ -1,0 +1,38 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# Using lenses in AWS WA Tool
+
+AWS Well-Architected Agent is in preview release and is subject to change.
+
+
+In AWS Well-Architected Tool, you can use lenses to consistently measure your architectures against best
+ practices and identify areas for improvement. The **AWS Well-Architected Framework
+ Lens** is automatically applied when a workload is defined.
+
+A workload can have one or more lenses applied. Each lens has its own set of questions,
+ best practices, notes, and improvement plan.
+
+There are two kinds of lenses that can be applied to your workloads: **Lens Catalog** lenses and **Custom lenses**.
+
+- **Lens Catalog :** Official lenses that are created and maintained by AWS. The Lens Catalog is available to all users and does not require any additional installation to use.
+- **Custom lenses :** User-defined lenses that are not AWS official content. You can [create custom lenses](./lenses-create.html) with your own pillars, questions, best practices, and
+ improvement plans, as well as [share custom lenses](./lenses-sharing.html) with other AWS accounts.
+
+Five lenses can be added at a time to a workload, with a maximum of 20 lenses applied to one workload.
+
+If a lens is removed from a workload, the data associated with the lens is retained. The
+ data is restored if you add the lens back to the workload.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

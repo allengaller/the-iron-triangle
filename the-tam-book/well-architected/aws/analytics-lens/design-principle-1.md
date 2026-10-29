@@ -1,0 +1,42 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/analytics-lens/design-principle-1.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# 1 – Monitor the health of the analytics application workload
+
+**How do you measure the health of your
+ analytics workload?** Data analytics workloads often
+ involve multiple systems and process steps working in
+ coordination. It is imperative that you monitor not only
+ individual components but also the interaction of dependent
+ processes to ensure a healthy data analytics workload.
+
+| **ID** | **Priority** | **Best practice** |
+| --- | --- | --- |
+| ☐ BP 1.1 | Required | Validate the data quality of source systems before transferring data for analytics. |
+| ☐ BP 1.2 | Required | Monitor operational metrics of data processing jobs and the availability of source data. |
+
+For more details, refer to the following information:
+
+- AWS Big Data Blog: [Monitor data pipelines in a serverless data lake](https://aws.amazon.com/blogs/big-data/monitor-data-pipelines-in-a-serverless-data-lake/)
+- AWS Compute Blog:
+ [Monitoring
+ and troubleshooting serverless data analytics
+ applications](https://aws.amazon.com/blogs/compute/monitoring-and-troubleshooting-serverless-data-analytics-applications/)
+- AWS Big Data Blog:
+ [Building
+ a serverless data quality and analysis framework with Deequ
+ and AWS](https://aws.amazon.com/blogs/big-data/building-a-serverless-data-quality-and-analysis-framework-with-deequ-and-aws-glue/)
+[Glue](https://aws.amazon.com/blogs/big-data/building-a-serverless-data-quality-and-analysis-framework-with-deequ-and-aws-glue/)
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/analytics-lens/design-principle-1.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

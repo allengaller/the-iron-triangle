@@ -1,0 +1,58 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/connected-mobility-lens/application-security.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# Application security
+
+**[CMSEC_BP24.1] Consider digitally signing software and firmware with a
+ certificate that can be verified by the vehicle hardware during runtime ensuring that only
+ trusted code can run on the vehicle.**
+
+Code signing and secure boot are essential for ensuring the security and safety of vehicle
+ software. They help you validate authenticity and integrity of the software running in
+ vehicle making sure that it comes from a trusted source and its behavior has not been
+ altered. A secure boot mechanism helps prevent unauthorized code from running on the vehicle
+ hardware by verifying the integrity of the boot loader and operating system. You can
+ leverage [AWS Private Certificate Authority](https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html) (AWS Private CA) that allows you to create private certificate authority (CA)
+ hierarchies, including root, code signing certificates issuing CAs and code signing
+ certificates. If you are leveraging AWS IoT you can also use [AWS Signer](https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html) to sign code that you
+ create for IoT devices supported by Amazon FreeRTOS and AWS IoT device management. Code
+ signing for AWS IoT is integrated with AWS Certificate Manager.
+
+**[CMSEC_BP25.1] Implement a Secure Development Lifecycle (SDLC) for
+ your vehicle software following open standards.**
+
+Start by identifying and creating a list of cybersecurity metrics and requirements that needs to be met to verify your 
+ software security regarding ISO 21434 standard from conception, product development to cybersecurity validation.
+
+Create and document early in the design phase a threat model for your in-vehicle software or
+ system such Head Units (HU) or Telematic Control Units (TCU). You can leverage established
+ frameworks such STRIDE (Spoofing, Tampering, Repudiability, Information Disclosure, Denial
+ of Service, and Elevation of Privilege) or the TARA framework in ISO 21434 for in-vehicle
+ products and services, from identifying assets in the target system, vulnerabilities and
+ attack scenarios and their impact, those most likely to be exploited and risk treatment
+ decision. AWS provides an example [threat modeling workshop](https://catalog.workshops.aws/threatmodel/en-US) and
+ corresponding [blog post](https://aws.amazon.com/blogs/security/how-to-approach-threat-modeling/) to apply some principles when threat modeling a connected vehicle cloud
+ application.
+
+Implement secure coding, development process and architectural design following open
+ standards guidelines such AUTOSAR and ASPICE (examples: input validation, buffer overflow
+ protection, error handling to prevent attacks such as SQL injection and cross-site scripting
+ and hardcoded credentials). Conduct code reviews and security audit of the code to identify
+ security vulnerabilities that may be missed during development. Test and validate the
+ software in simulated and real-world scenarios to check it is safe and reliable.
+
+You can leverage the [KPIT Cloud Native Engineering Workbench](https://aws.amazon.com/blogs/industries/accelerating-sdv-development-with-kpit-cloud-native-engineering-workbench-on-aws/) solution on AWS to help accelerate your
+ software-defined vehicle (SDV) development and testing.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/connected-mobility-lens/application-security.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

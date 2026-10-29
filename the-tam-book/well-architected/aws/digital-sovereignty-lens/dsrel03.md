@@ -1,0 +1,69 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/digital-sovereignty-lens/dsrel03.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# Workload interoperability and portability
+
+A large-scale disruption can force an organization to move a
+ workload to a different jurisdiction with little warning. Design
+ decisions made during initial development determine whether that
+ move is feasible within acceptable timelines or requires extensive
+ rework. Jurisdictional portability depends on three things done in
+ advance: abstracting Region-specific and service-specific
+ dependencies, using open standards and portable data formats, and
+ planning for data export and migration before conditions require it.
+
+This capability covers workload design patterns that enable
+ deployment, migration, and recovery across jurisdictions with
+ minimal rework when conditions change.
+
+## Capability intent
+
+- Workloads abstract Region-specific and service-specific
+ dependencies through configuration rather than hardcoded
+ bindings, so they can be redeployed to a different
+ jurisdiction without code changes.
+- Data is stored in open, portable formats with documented
+ schemas, and export mechanisms are validated before they are
+ needed.
+- Infrastructure is defined as code with parameterized Region
+ and service selections, so deployment to a new jurisdiction is
+ a configuration change rather than a redesign.
+- Integration points use open standards and well-defined APIs so
+ proprietary lock-in does not block jurisdictional movement.
+- Migration timelines are estimated, tested, and documented for
+ critical workloads, so decision-makers know what portability
+ means in practice (hours, days, weeks) for their specific
+ systems.
+
+## Common issues to watch for
+
+- Hardcoded Region identifiers, service endpoints, or account
+ references embedded in application code rather than
+ externalized as configuration. Jurisdictional movement then
+ requires a code change instead of a deployment change.
+- Data stored in proprietary formats without documented export
+ mechanisms. The resulting lock-in often surfaces only when
+ migration is needed under time pressure.
+- Portability claimed on the basis of infrastructure as code
+ without testing an actual redeployment, which misses runtime
+ dependencies and data migration that the code does not
+ capture.
+- Migration timelines estimated but never validated, which gives
+ decision-makers inaccurate information about the feasibility
+ and cost of jurisdictional movement.
+- Open standards adopted for external interfaces but not for
+ internal data storage. Portability then reaches only the API
+ layer while the data layer stays locked in.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/digital-sovereignty-lens/dsrel03.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

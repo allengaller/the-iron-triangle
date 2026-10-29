@@ -1,0 +1,78 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/end-user-computing-lens/workload-architecture.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# Workload architecture
+
+Explore the resilience strategies provided by Amazon WorkSpaces
+ Multi-Region to support operational continuity and minimize
+ service interruptions, especially during events with a low
+ Recovery Time Objective (RTO).
+
+Explore the benefits of configuring redundant networking
+ components for Amazon WorkSpaces and WorkSpaces Applications to enhance
+ resilience and support continuous connectivity. Additionally,
+ create redundancy to allow for authentication and
+ authorization remain operational even if certain components or
+ resources experience disruptions.
+
+Implement data replication and backup strategies, including automated solutions
+ like Amazon WorkSpaces Automated Snapshots, to strengthen resilience and protect data
+ within Amazon WorkSpaces environments.
+
+Use Amazon CloudWatch to maintain resilience for Amazon WorkSpaces and WorkSpaces Applications. Consider automated remediation
+ workflows that can help you minimize downtime and address
+ critical issues.
+
+Promote preparedness and resilience planning in your Amazon WorkSpaces and WorkSpaces Applications environments. Document and understand the steps that are
+ essential to verify readiness for disruptive events or data loss situations.
+
+###### Best practices
+
+- [EUCREL02-BP01 Use multiple regions for your EUC environment to minimize downtime](./eucrel02-bp01.html)
+- [EUCREL03-BP01 Add redundancy to networking connections](./eucrel03-bp01.html)
+- [EUCREL04-BP01 Establish data integrity with replication and backup strategies](./eucrel04-bp01.html)
+- [EUCREL05-BP01 Monitor and automate remediation for Amazon WorkSpaces and WorkSpaces Applications](#eucrel05-bp01.0)
+- [EUCREL06-BP01 Plan for disaster recovery of EUC through testing and procedures](./eucrel06-bp01.html)
+
+## EUCREL05-BP01 Monitor and automate remediation for Amazon WorkSpaces and WorkSpaces Applications
+
+Implement comprehensive monitoring and alerting for Amazon WorkSpaces and AppStream
+ 2.0 environments. Monitor key metrics such as instance health, network connectivity, and
+ user activity using Amazon CloudWatch. Set up automated remediation workflows to respond
+ to critical issues, such as instance failures or resource constraints, and automatically
+ initiate recovery actions to minimize service interruptions.
+
+**Level of risk exposed if this best practice is not
+ established:** High
+
+### Implementation guidance
+
+To strengthen resilience in EUC environments, establish robust
+ monitoring using Amazon CloudWatch to detect anomalies in
+ instance health, network connectivity, and user activity. Set
+ up CloudWatch alarms to proactively identify potential areas
+ of improvement and run automated remediation workflows.
+ Configure these workflows to automatically address critical
+ events, such as instance failures or resource constraints, by
+ initiating recovery actions such as instance restarts or
+ scaling adjustments.
+
+Thoroughly test and validate automated remediation processes
+ to minimize service interruptions and maintain continuous
+ operations. Additionally, regularly review and refine your
+ monitoring and automation strategies to align with evolving
+ workload demands and infrastructure changes, supporting
+ ongoing resilience in your EUC environments.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/end-user-computing-lens/workload-architecture.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

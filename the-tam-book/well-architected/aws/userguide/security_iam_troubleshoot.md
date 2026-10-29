@@ -1,0 +1,52 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/userguide/security_iam_troubleshoot.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# Troubleshooting AWS Well-Architected identity and access
+
+AWS Well-Architected Agent is in preview release and is subject to change.
+
+
+Use the following information to help you diagnose and fix common issues that you might
+ encounter when working with AWS Well-Architected and IAM.
+
+###### Topics
+
+- [I'm not authorized to perform an action in AWS Well-Architected](#security_iam_troubleshoot-no-permissions)
+
+## I'm not authorized to perform an action in AWS Well-Architected
+
+If the AWS Management Console tells you that you're not authorized to perform an action, then you
+ must contact your administrator for assistance. Your administrator is the person that
+ provided you with your sign-in credentials.
+
+The following example error occurs when the
+ `mateojackson` user tries to use the console to perform the
+ `DeleteWorkload` action, but does not have permissions.
+
+```
+User: arn:aws:iam::
+123456789012
+:user/
+mateojackson
+ is not authorized to perform: 
+wellarchitected:DeleteWorkload
+ on resource: 
+11112222333344445555666677778888
+```
+
+For this example, ask your administrator to update your policies to allow you to
+ access the `11112222333344445555666677778888` resource using the
+ `wellarchitected:DeleteWorkload` action.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/userguide/security_iam_troubleshoot.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

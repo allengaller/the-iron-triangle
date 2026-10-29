@@ -1,0 +1,55 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/end-user-computing-lens/alignment-to-demand.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# Alignment to demand
+
+With Amazon WorkSpaces Applications, you can select between Always-On or
+ On-Demand fleet types. Similarly, Amazon WorkSpaces offers two
+ running modes with AlwaysOn and AutoStop.
+
+Selecting an appropriate bundle or instance family involves
+ evaluating your application's compute, memory, storage, and
+ network requirements.
+
+Timeouts are crucial for an AWS EUC deployment, as timeouts
+ enable efficient resource management by disconnecting idle
+ sessions.
+
+For example, consider two scenarios where disconnect timeouts have been configured
+ for an WorkSpaces Applications fleet at six hours and 15 minutes respectively. In the case of the 15 minute
+ timeout, a session will be timed out and the instance terminated within 15 minutes.
+
+In comparison, the six hour timeout will result in an instance
+ running for six hours after the user disconnects before it is
+ terminated, which incurs a larger carbon footprint.
+
+Timeouts optimize costs and the carbon footprint for WorkSpaces Applicationsand WorkSpaces instances by
+ helping to prevent unnecessary resource consumption and associated charges.
+
+Scaling in Amazon WorkSpaces Applications helps create a seamless user
+ experience by providing the necessary resources to handle
+ fluctuating user demands, while also optimizing costs and
+ sustainability by avoiding over-provisioning when demand is
+ low.
+
+###### Best practices
+
+- [EUCSUS01-BP01 Choose the appropriate fleet type](./eucsus01-bp01.title.html)
+- [EUCSUS01-BP02 Choose the appropriate running mode for your Amazon WorkSpaces](./eucsus01-bp02.html)
+- [EUCSUS02-BP01 Select the instance type or bundle to match software requirement and user personas](./eucsus02-bp01.html)
+- [EUCSUS03-BP01 Adapt your WorkSpaces Applications fleet timeout](./eucsus03-bp01.html)
+- [EUCSUS03-BP02 Adapt the AutoStop timeout and idle disconnect timeout for Amazon DCV](./eucsus03-bp02.html)
+- [EUCSUS04-BP01 Implement a scaling methodology in WorkSpaces Applications](./eucsus04-bp01.html)
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/end-user-computing-lens/alignment-to-demand.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

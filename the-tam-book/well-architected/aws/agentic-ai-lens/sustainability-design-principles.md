@@ -1,0 +1,26 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/sustainability-design-principles.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# Design principles
+
+In addition to the lens-level design principles, the sustainability best practices in this lens are represented by at least one of the following principles:
+
+- **Right-size each agent to its capability:** Resource boundaries (timeout, memory, token budget) match the actual work of a single capability rather than the worst-case input across many. For long-running or exploratory agents, declared success criteria, cost ceilings, and termination conditions keep extended execution a bounded investment instead of open-ended drift.
+- **Amortize platform investment across the fleet:** Reusable workflow patterns, shared infrastructure services (connection pools, vector stores, retrieval pipelines, queues), and fleet-wide caching of model calls, tool results, and memory lookups turn what every team would otherwise build, run, and pay for separately into one piece of infrastructure every team uses. The first invocation does the work; subsequent ones reuse it.
+- **Scale cognitive and infrastructure intensity to observed demand:** Match model size, retrieval depth, and memory scope to task complexity at the reasoning layer, and size hosting, network, and storage to the bursty, variable shape of real agent traffic instead of a theoretical maximum at the platform layer. Default-large is the most expensive path against any resource — energy, carbon, water, and silicon included.
+- **Measure environmental footprint as an engineering signal:** Track energy, carbon, and water impact alongside cost and latency, baseline it per agent and per workflow, and route optimization investment to where the data points. Sustainability claims that aren't measured are aspirations, and optimizations that aren't measured are guesses.
+- **Sustain the human capability that automation amplifies:** Maintain the organizational skills, processes, and tacit knowledge behind every automated workflow, and target agent development at work the organization has already mastered rather than processes it hopes to learn through automation. Agents that codify proven work pay back; agents that try to substitute for missing expertise consume resources discovering what could have been documented.
+- **Curate the agent portfolio through living specifications and active retirement:** Keep specifications current as the system of record for each agent's purpose, scope, integration points, and decision logic so institutional knowledge survives staff and tooling changes, and decommission agents that no longer earn their infrastructure, security surface, and operational overhead before the portfolio becomes its own sustainability problem.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/sustainability-design-principles.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

@@ -1,0 +1,38 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/financial-services-industry-lens/fsisus18.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# FSISUS18: How do you define the minimum requirement in response time for customers in order to maximize your green SLA?
+
+## FSISUS18-BP01 Use a green SLA
+
+### Prescriptive guidance
+
+The Institute of Electronics and Electrical Engineers standards body has created a
+ set of recommendations known as the *green SLA* that offsets the
+ responsiveness of system to meet customer requirements against the need to reduce
+ environmental impacts. For more information, see [Providing green SLAs in High
+ Performance Computing clouds](https://ieeexplore.ieee.org/document/6604503).
+
+- Implement green SLAs that balance generative AI response time with
+ environmental impact.
+- Define acceptable generative AI model response times that optimize for
+ sustainability.
+- Use timeout mechanisms on generative AI agent workflows to prevent excessive
+ resource consumption.
+- These considerations integrate the sustainability best practices from the
+ Generative AI Lens with each existing FSI sustainability pillar, verifying that
+ generative AI implementations in financial services maintain both regulatory
+ adherence and environmental responsibility.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/financial-services-industry-lens/fsisus18.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

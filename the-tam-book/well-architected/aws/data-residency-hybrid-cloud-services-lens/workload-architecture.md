@@ -1,0 +1,29 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/data-residency-hybrid-cloud-services-lens/workload-architecture.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# Workload architecture
+
+If a resource failure occurs, healthy resources should continue to
+ serve requests. When you have effective failover strategies, your
+ systems in place can fail over to healthy resources in unimpaired
+ locations. The failover must be implemented in accordance with
+ your data residency requirements across on-premises, edge, and
+ cloud environments.
+
+###### Best practices
+
+- [DRHCREL03-BP01 Use AWS Outposts or Local Zones for scenarios where data must reside within a country or jurisdiction without a local AWS Region](./drhcrel03-bp01.html)
+- [DRHCREL03-BP02 Implement failover mechanisms to maintain highly-available data access and processing across on-premises, edge, and cloud environments](./drhcrel03-bp02.html)
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/data-residency-hybrid-cloud-services-lens/workload-architecture.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

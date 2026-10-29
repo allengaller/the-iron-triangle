@@ -1,0 +1,62 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/agentops04.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# Tool integration and management practices
+
+Agents rely on external tools and services to complete work, and the way those
+ integrations are managed determines whether agent behavior stays consistent as the tool
+ inventory grows. Without a shared registry, standardized protocols, and common fallback
+ behavior, every new tool adds operational burden and every tool failure risks broader
+ agent outages.
+
+## Capability intent
+
+- Agents discover available tools and their capabilities through a single
+ authoritative catalog rather than hardcoded integrations or spoken
+ knowledge.
+- Tools are integrated through standardized protocols such as [Model Context Protocol (MCP)](https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-frameworks/protocol-based-tools-detailed.html) and [Agent-to-Agent (A2A)](https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-frameworks/agent-to-agent-protocols.html), so agents interoperate across providers
+ and across team boundaries.
+- Tool invocations are authenticated, authorized to least privilege, and
+ fully auditable at the service layer rather than per agent.
+- Tool failures are contained and routed through documented fallback chains,
+ so a single degraded dependency doesn't cascade into agent-wide
+ outages.
+- Tool inventory, version distribution, and per-tool reliability are
+ monitored centrally, giving operators the visibility to evolve and retire
+ tools without disrupting dependent agents.
+
+## Common issues to watch for
+
+- Teams build point-to-point tool integrations without a shared registry or
+ protocol, producing duplicate tools and inconsistent documentation that
+ agents can't reliably discover or use across team boundaries.
+- Tools are registered without a documentation standard or a named owner, so
+ agents encounter undocumented parameter schemas and error codes only at
+ runtime.
+- Tool authorization and audit logging are implemented per tool instead of
+ centrally, leaving gaps in which agent invoked which tool and undermining
+ compliance reviews.
+- Retry policies are identical for every tool, so permanently failed or
+ rate-limited dependencies are hammered with aggressive retries while
+ transient issues receive too few.
+- Tools are deprecated or versioned without notifying dependent agents, so
+ runtime failures surface only when the old version disappears.
+
+###### Best practices
+
+- [AGENTOPS04-BP01 Implement tool registry and catalog management](./agentops04-bp01.html)
+- [AGENTOPS04-BP02 Establish standardized tool integration protocols (MCP, A2A)](./agentops04-bp02.html)
+- [AGENTOPS04-BP03 Develop fallback behavior and error handling for tool invocations](./agentops04-bp03.html)
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/agentops04.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

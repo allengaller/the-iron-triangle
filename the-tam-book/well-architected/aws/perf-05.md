@@ -1,0 +1,32 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/framework/perf-05.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# PERF 5. How do your organizational practices and culture contribute to performance efficiency in your workload?
+
+When architecting workloads, there are principles and practices that
+ you can adopt to help you better run efficient high-performing cloud
+ workloads. To adopt a culture that fosters performance efficiency of
+ cloud workloads, consider these key principles and practices:
+
+###### Best practices
+
+- [PERF05-BP01 Establish key performance indicators (KPIs) to measure workload health and performance](./perf_process_culture_establish_key_performance_indicators.html)
+- [PERF05-BP02 Use monitoring solutions to understand the areas where performance is most critical](./perf_process_culture_use_monitoring_solutions.html)
+- [PERF05-BP03 Define a process to improve workload performance](./perf_process_culture_workload_performance.html)
+- [PERF05-BP04 Load test your workload](./perf_process_culture_load_test.html)
+- [PERF05-BP05 Use automation to proactively remediate performance-related issues](./perf_process_culture_automation_remediate_issues.html)
+- [PERF05-BP06 Keep your workload and services up-to-date](./perf_process_culture_keep_workload_and_services_up_to_date.html)
+- [PERF05-BP07 Review metrics at regular intervals](./perf_process_culture_review_metrics.html)
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/framework/perf-05.html（抓取时点 2026-10-25；正文为自动抓取，排版已规整，语义未改写）

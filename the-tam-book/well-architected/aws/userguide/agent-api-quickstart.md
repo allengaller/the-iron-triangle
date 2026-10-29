@@ -1,0 +1,112 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/userguide/agent-api-quickstart.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# API quickstart
+
+AWS Well-Architected Agent is in preview release and is subject to change.
+
+
+You can set up AWS WA Agent entirely through the AWS CLI or SDK instead of the console. This
+ quickstart walks through creating a profile, adding a goal, adding application context, and
+ verifying eligibility.
+
+###### Note
+
+Before using the API, create the execution role and access roles as described in
+ [Step 3: Configure permissions and integrations](./agent-getting-started.html#agent-permissions-integrations) and
+ [Step 6: Create access roles in your workload accounts](./agent-getting-started.html#agent-access-roles). The API does not create IAM
+ roles for you.
+
+## (Optional) API quickstart using the AWS MCP Server
+
+Instead of running the `aws wellarchitected` CLI commands shown in the
+ following steps yourself, you can have an AI agent run the same operations through the AWS
+ MCP Server. The AWS MCP Server is a managed MCP endpoint that can run
+ AWS API calls using your existing IAM credentials.
+
+The AWS WA Agent API operations that the agent invokes through the server are the same ones you
+ run from the CLI, such as `create-agent-profile`, `create-agent-goal`,
+ `create-agent-context`, and `get-agent-profile`. Because the server
+ calls the AWS APIs under your credentials, the same IAM permissions required for the CLI
+ apply, and all calls are logged in CloudTrail.
+
+To set up and connect the server, see [AWS MCP Server](https://docs.aws.amazon.com/agent-toolkit/latest/userguide/mcp-server.html).
+
+## Step 1: Create an agent profile
+
+Create a profile with your execution role, target pillars, and account
+ configuration.
+
+###### To create an agent profile (CLI)
+
+1. Run the following command. Replace the placeholder values with your account IDs, role
+ ARNs, and target Regions.
+NoteYou can choose a common access role name or enter an access role name per account. This is only available in the API version of onboarding, not in the console.
+DEBUG: cli (bash)`aws wellarchitected create-agent-profile \
+ --name "my-production-profile" \
+ --execution-role-arn "arn:aws:iam:: 111122223333 :role/service-role/ExecutionRoleForWellArchitectedAgent" \
+ --pillars COST_OPTIMIZATION SECURITY RESILIENCE PERFORMANCE \
+ --aggregation-configuration '[ { "accountId":" 444455556666 ","accessRoleArn":"arn:aws:iam:: 444455556666 :role/AccessRoleForWellArchitectedAgent","regions":["us-east-1","us-west-2"]}]'`
+2. In the response, note the profile ARN. You will use this value in subsequent
+ commands.
+
+## Step 2: Add an optimization goal
+
+Add a goal to drive recommendation prioritization. Each goal is associated with one or
+ more optimization pillars.
+
+###### To add a goal (CLI)
+
+- Run the following command. Replace the profile ARN with the value from Step 1.
+DEBUG: cli (bash)`aws wellarchitected create-agent-goal \
+ --profile-arn "arn:aws:wellarchitected: us-east-1 : 111122223333 :agent-profile/ my-production-profile " \
+ --title "Reduce EC2 spend by 20% by Q4 through rightsizing and Reserved Instance coverage" \
+ --pillars COST_OPTIMIZATION`
+
+## Step 3: Add application context
+
+Provide application metadata so AWS WA Agent can generate more relevant, personalized
+ recommendations.
+
+###### To add application context (CLI)
+
+- Run the following command. Replace the profile ARN and content fields with your
+ application details.
+DEBUG: cli (bash)`aws wellarchitected create-agent-context \
+ --profile-arn "arn:aws:wellarchitected: us-east-1 : 111122223333 :agent-profile/ my-production-profile " \
+ --title "Payment processing service" \
+ --context-type APPLICATION \
+ --content ' { "applicationOverview":"Real-time payment processing","criticality":"MISSION_CRITICAL","accountIds":[" 444455556666 "],"regions":["us-east-1"]}'`
+
+## Step 4: Verify profile eligibility
+
+Check that your profile is valid and eligible for recommendation generation.
+
+###### To verify eligibility (CLI)
+
+1. Run the following command:
+DEBUG: cli (bash)`aws wellarchitected get-agent-profile \
+ --profile-arn "arn:aws:wellarchitected: us-east-1 : 111122223333 :agent-profile/ my-production-profile " \
+ --query ' { eligible: eligibleForScheduledGeneration, errors: fieldErrors}'`
+2. If `eligibleForScheduledGeneration` is `true`, your profile is
+ properly configured. Scheduled recommendations will begin generating within 48
+ hours.
+3. If `eligibleForScheduledGeneration` is `false`, check the
+ `fieldErrors` map for specific issues. See
+ [Troubleshooting AWS Well-Architected Agent](./agent-troubleshooting.html) for common resolutions.
+
+For the complete API reference, see the [AWS Well-Architected API
+ Reference](https://docs.aws.amazon.com/wellarchitected/latest/APIReference/Welcome.html).
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/userguide/agent-api-quickstart.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

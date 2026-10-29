@@ -1,0 +1,167 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/agentsus02-bp04.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# AGENTSUS02-BP04 Measure and optimize the environmental footprint of agent workloads
+
+Without measurement, sustainability claims are aspirational and
+ optimizations are not tracked against real-world data. Tracking the
+ environmental footprint of agent workloads makes sustainability an
+ engineering metric. Baselines show where effort is worth investing,
+ and trends show whether changes are actually working.
+
+**Desired outcome:**
+
+- You have carbon emissions baselines for agent infrastructure
+ established across a defined observation period.
+- Resource efficiency metrics for each task (tokens per successful
+ completion, compute hours per workflow, and cache hit rates) are
+ tracked alongside business outcomes.
+- Deferrable workloads are scheduled during off-peak periods or
+ routed to Regions with favorable energy profiles.
+- Operational and sustainability metrics are combined in
+ dashboards that inform periodic optimization reviews.
+
+**Common anti-patterns:**
+
+- Claiming sustainability benefits from agent optimizations
+ without establishing baselines, making it impossible to validate
+ whether changes actually reduced impact.
+- Treating every workload as equally time-sensitive, running batch
+ processing and background tasks during peak hours when deferring
+ them would reduce contention and energy consumption.
+- Ignoring regional differences in energy infrastructure when
+ selecting deployment Regions for workloads with flexible latency
+ requirements.
+- Tracking only infrastructure utilization without tying it to
+ business outcomes, so efficiency gains in compute don't connect
+ to value delivered.
+
+**Benefits of establishing this best
+ practice:**
+
+- Measurable baselines make sustainability improvements verifiable
+ instead of aspirational.
+- Optimization effort flows to the workloads with the largest
+ environmental impact, rather than being applied uniformly.
+- Deferrable workloads run when infrastructure is underutilized,
+ improving fleet-wide efficiency without affecting user-facing
+ performance.
+
+**Level of risk exposed if this best practice
+ is not established:** Medium
+
+## Implementation guidance
+
+[AWS Sustainability](https://docs.aws.amazon.com/sustainability/latest/userguide/what-is-sustainability.html) provides carbon emissions tracking with
+ service and Region breakdowns for the infrastructure side, and
+ [Amazon
+ Bedrock AgentCore Observability](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html) adds agent-specific
+ metrics, tokens per successful task, compute hours per workflow,
+ and cache hit rates that tie consumption to business outcomes.
+ Establish baselines across a 30-day observation window so that
+ normal workload variation is included, and track trends monthly
+ afterward so optimization work can be validated against measured
+ change rather than claimed change.
+
+Not every agent workload has the same latency sensitivity.
+ User-facing interactions need low-latency responses. Batch jobs,
+ periodic knowledge base indexing, bulk data enrichment, evaluation
+ runs, and non-interactive research workflows can wait hours or
+ overnight without affecting the user. Shifting deferrable work to
+ off-peak periods reduces resource contention on shared
+ infrastructure and takes advantage of time windows when the
+ broader grid is cleaner.
+ [Amazon
+ Bedrock cross-region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html) extends the same principle
+ across geographies. Batch workloads without tight latency
+ constraints can run in Regions with favorable energy profiles
+ rather than defaulting to the closest one.
+
+Amazon CloudWatch dashboards that combine operational metrics with
+ sustainability indicators make sustainability visible in the same
+ place operators already look. Track resource utilization
+ efficiency, waste metrics (failed or abandoned executions as a
+ percentage of total), and peak compared to off-peak utilization
+ rates. Incorporate these dashboards into periodic optimization
+ reviews so environmental impact is a standing input to engineering
+ priorities rather than an annual afterthought.
+
+### Implementation steps
+
+1. **Enable carbon emissions
+ tracking:** Turn on
+ [AWS Sustainability](https://docs.aws.amazon.com/sustainability/latest/userguide/what-is-sustainability.html) and establish environmental baselines
+ for agent infrastructure across a 30-day observation window.
+2. **Instrument resource efficiency per
+ task:** Configure
+ [Amazon
+ Bedrock AgentCore Observability](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html) to track tokens per
+ successful completion, compute hours per workflow execution,
+ and cache hit rates.
+3. **Schedule deferrable workloads
+ off-peak:** Identify non-interactive workloads and
+ shift them to off-peak windows:
+Batch processingKnowledge base indexingPeriodic AgentCore Evaluations runsBulk data enrichment
+4. **Evaluate Region placement for batch
+ work:** For workloads with flexible latency, use
+ [Amazon
+ Bedrock cross-region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html) to route requests to
+ Regions with favorable energy profiles.
+5. **Build combined dashboards and review
+ on a cadence:** Create Amazon CloudWatch dashboards
+ pairing operational metrics with sustainability indicators
+ (resource utilization efficiency, waste percentage, and peak
+ compared to off-peak utilization), and review them as part
+ of periodic optimization cycles.
+
+## Resources
+
+**Related best practices:**
+
+- [AGENTSUS02-BP01 Optimize
+ context management and memory utilization](agentsus02-bp01.html)
+- [AGENTSUS02-BP03
+ Appropriately scale data, networking, and compute
+ dependencies](agentsus02-bp03.html)
+- [SUS01-BP01
+ Choose Region based on both business requirements and
+ sustainability goals](https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sus_sus_region_a2.html)
+
+**Related documents:**
+
+- [AWS Sustainability User Guide](https://docs.aws.amazon.com/sustainability/latest/userguide/what-is-sustainability.html)
+- [Announcing
+ the AWS Sustainability console](https://aws.amazon.com/blogs/aws/announcing-the-aws-sustainability-console-programmatic-access-configurable-csv-reports-and-scope-1-3-reporting-in-one-place/)
+- [Sustainability
+ Pillar - AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sustainability-pillar.html)
+- [Amazon
+ Bedrock cross-region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html)
+- [Amazon
+ Bedrock AgentCore Observability](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html)
+
+**Related videos:**
+
+- [AWS re:Invent 2024 - Sustainable and cost-efficient generative AI
+ with agentic workflows (AIM333)](https://www.youtube.com/watch?v=tFiDkSG2ess)
+
+**Related services:**
+
+- [AWS Sustainability](https://aws.amazon.com/sustainability/)
+- [Amazon
+ Bedrock AgentCore](https://aws.amazon.com/bedrock/agentcore/)
+- [Amazon
+ Bedrock](https://aws.amazon.com/bedrock/)
+- [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/)
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/agentsus02-bp04.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

@@ -1,0 +1,119 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/userguide/identify-and-understand-risks.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# Identify and understand risks
+
+AWS Well-Architected Agent is in preview release and is subject to change.
+
+
+View identified risks as improvement opportunities.
+
+There are two categories of risks in the context of a WAFR:
+ *high risk issues (HRIs)* and *medium
+ risk issues (MRIs)*.
+
+- **High risk issue (HRI):**
+ Architectural and operational choices that may cause significant
+ negative impact to a business. A high risk best practice is
+ considered a foundational, must-do practice within a pillar.
+ They may impact organizational operations, assets, and
+ individuals. An example of an HRI from the security pillar is
+ not securing your AWS account.
+- **Medium risk issue (MRI):**
+ Choices that may also impact your business negatively, but to a
+ lesser extent than HRIs. A medium risk best practice represents
+ an enabling practice that can substantially improve a workload.
+ An example of MRI on the security pillar is not auditing and
+ rotating credentials periodically.
+
+## Generating a report
+
+The first step to visually identify HRIs and MRIs is to generate a
+ report that shows the risks for each workload you reviewed.
+
+The
+ [AWS Well-Architected Tool (AWS WA Tool) dashboard](https://docs.aws.amazon.com/wellarchitected/latest/userguide/dashboard.html) provides
+ access to your workloads and their associated HRIs and MRIs. You
+ also can include workloads that have been shared with you. Using
+ the dashboard, you can filter the issues by workload, pillar, or
+ by severity (high or medium).
+
+In the dashboard page, you can see the list of HRI and MRIs
+ filtered by pillar or severity. Once an improvement item is
+ selected, it takes you directly to the best practices associated
+ with it from the Well-Architected Framework. From there, you can
+ read about the recommended action needed to take to remediate the
+ issue along with necessary resources.
+
+You can combine all these findings in one report by choosing
+ [Generate
+ report](https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-report.html) from the WA Tool Dashboard.
+
+We recommend sending a recap email to the WAFR attendees along
+ with the report, and summarize the key findings and the suggested
+ improvement plan to prepare them for the next step.
+
+## Managing risks
+
+To effectively manage a risk, it's critical to define the risk and
+ its acceptable level. With risk analysis, explore what the
+ potential problems are and how to know if they are problems.
+
+There are two primary methods to conduct a risk assessment:
+
+- **Quantitative:** Uses weighted
+ objective data to assess the impact of a risk in terms of cost
+ overrun, resource consumption, and schedule delays.
+- **Qualitative:** Uses subjective
+ data not tied to the actual values of the cost or benefits to
+ measure the probability and the overall impact.
+
+In some cases, you may end up using a hybrid approach that merges
+ the best of both approaches to assess the impact of a risk.
+
+When evaluating the level of the risk based on HRI and MRI
+ definitions, consider asking the following questions:
+
+- What is the likelihood of risk resulting in impact?
+- What would be the customer impact?
+- What would be the business impact as a result?
+- Can the risk be removed entirely or only mitigated?
+- Who owns the risk?
+- Who owns the improvement work to remove or mitigate?
+- What's the probability that this outcome happens again? Is it
+ likely to cause the same impact?
+- Can you identify a relationship between the likelihood of an
+ outcome and a pattern of recurrence?
+
+Having key stakeholders or business owners answer these questions
+ will help you create a list of the most important risks to focus
+ on along with the projected time to address them.
+
+## Risk magnitude
+
+You can use following table to help you determine risk magnitude:
+
+| Likehood x impact | Negligible (1) | Minor (2) | Moderate (3) | Major (4) | Critical (5) |
+| --- | --- | --- | --- | --- | --- |
+| Almost certain (5) | 5 | 10 | 15 | 20 | 25 |
+| Likely (4) | 4 | 8 | 12 | 26 | 20 |
+| Possible (3) | 3 | 6 | 9 | 12 | 15 |
+| Unlikely (2) | 2 | 4 | 6 | 8 | 10 |
+| Rare (1) | 1 | 2 | 3 | 4 | 5 |
+
+Work as a group on HRIs and MRIs and the risks they bring to
+ business. Create a list of HRIs that need to be addressed. Rank
+ the risks based on business criticality to establish priority.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/userguide/identify-and-understand-risks.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

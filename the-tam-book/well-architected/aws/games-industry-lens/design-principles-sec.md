@@ -1,0 +1,26 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/games-industry-lens/design-principles-sec.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# Design principles
+
+In addition to the design principles from the security pillar of the Well-Architected
+ Framework whitepaper, the following design principle can strengthen the security of your game
+ workload in the cloud:
+
+- **Monitor and moderate player usage behavior:** Capture and
+ analyze usage data to understand how players interact with your game and social features.
+ By analyzing this data, you can detect and respond to abusive and inappropriate behavior
+ that can degrade the player experience.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/games-industry-lens/design-principles-sec.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

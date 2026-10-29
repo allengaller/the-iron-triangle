@@ -1,0 +1,107 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/end-user-computing-lens/eucops05-bp01.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# EUCOPS05-BP01 Identify monitoring tools to provide the expected levels of insight into operational performance
+
+While existing, familiar tools can be used to monitor an AWS EUC deployment, there
+ are many AWS services, such as automatic Amazon CloudWatch dashboards for Amazon WorkSpaces and Amazon
+ AppStream, AWS CloudTrail for API call monitoring, and Amazon Kinesis for log propagation and
+ centralized log storage.
+
+**Level of risk exposed if this best practice is not
+ established:** High
+
+## Implementation guidance
+
+Implement proactive monitoring of the health of all aspects of an AWS EUC
+ deployment to quickly identify and remediate problems that affect the user population,
+ their productivity, and any impact this may have on the business.
+
+For both Amazon WorkSpaces and Amazon WorkSpaces Applications, it is important to monitor both the
+ service itself in addition to any external service dependencies. Consider the following
+ monitoring tools:
+
+**Amazon WorkSpaces**
+
+Amazon CloudWatch provides an automatic dashboard which gives an overview of overall service
+ health, including:
+
+- Available or unhealthy WorkSpaces
+- Session launch times
+- Connection success and failure
+- Session latency
+- Users connected, disconnected, stopped, or in maintenance
+
+Additional metrics, such as instance specific CPU, memory, and disk performance can
+ also be viewed. Develop custom CloudWatch widgets to fine tune the monitoring of specific groups
+ of WorkSpaces.
+
+[Amazon WorkSpaces Applications](https://docs.aws.amazon.com/appstream2/latest/developerguide/logging-monitoring-alerting.html)
+
+Amazon CloudWatch provides an automatic dashboard which gives an overview of overall service
+ health, including fleet capacity and utilization.
+
+CloudWatch alarms can be configured to send alerts when specific thresholds are met.
+
+Each WorkSpaces and Amazon WorkSpaces Applications instance exposes a network interface in the
+ customers managed VPC which can be addressed by third party monitoring tools for
+ traditional management.
+
+As AppStream instances are ephemeral, logs required for compliance or historical
+ monitoring, such as event logs, can be harvested at user logoff or shutdown using session
+ scripts or in real time using services such as Amazon Kinesis.
+
+**External dependencies**
+
+Monitoring should also be in place for:
+
+- Internet connectivity (user to Amazon WorkSpaces or Amazon WorkSpaces Applications service)
+- Amazon networking
+- Active directory
+- RADIUS (or other MFA provider)
+- Microsoft PKI (If certificate-based authentication is in use)
+- SAML 2.0 Identity Provider (IdP) availability (If SAML 2.0 authentication is in
+ use)
+- Private certificate authority (if certificate-based authentication is in use)
+- User data repositories (like file shares and profile stores)
+- Application web tiers
+- Application database tiers
+- Application licensing servers
+- Web proxies
+- Anti-virus infrastructure
+
+If these services are hosted on Amazon EC2, Amazon CloudWatch can be used to monitor key health
+ metrics and alert when service degradation is detected.
+
+For services still hosted on-premises, Amazon CloudWatch agents can be installed which send
+ key metrics to Amazon CloudWatch.
+
+**Log propagation**
+
+For centralized gathering of log files for troubleshooting and retrospective
+ analysis, Amazon Kinesis agents can be deployed on WorkSpaces or WorkSpaces Applications to deliver real-time
+ propagation of OS and application-level logs to a central location.
+
+For Amazon WorkSpaces Applications, propagating instance log files in real time to a
+ centralized location is essential if you need to store logs for compliance purposes, as
+ AppStream instances are destroyed at the end of each session. For more detail, see [Using the Kinesis Agent to store WorkSpaces Applications Windows event logs](https://aws.amazon.com/blogs/desktop-and-application-streaming/using-kinesis-agent-for-microsoft-windows-to-store-appstream-2-0-windows-event-logs/).
+
+**AWS Health dashboard**
+
+The [AWS Health
+ dashboard](https://health.aws.amazon.com/health/status) provides insight into the health and availability of AWS services
+ running across regions. Individual regional services can be filtered in the web page or
+ added to an RSS feed reader for additional visibility.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/end-user-computing-lens/eucops05-bp01.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

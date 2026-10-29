@@ -1,0 +1,39 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/userguide/milestone-report.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# Generating a milestone report
+
+AWS Well-Architected Agent is in preview release and is subject to change.
+
+
+You can generate a milestone report. The report contains the responses to the workload
+ questions, your notes, and any high and medium risks that were present when the
+ milestone was saved.
+
+A report enables you to share details about the milestone with others who do not have
+ access to the AWS Well-Architected Tool.
+
+###### To generate a milestone report
+
+1. Select the milestone in one of the following ways.
+From the workload details page, choose **Milestones**
+ and choose the milestone.
+From the **Dashboard** page, choose the workload with
+ the milestone that you want to report on. In the
+ **Milestones** section, choose the
+ milestone.
+2. Choose **Generate report** to generate a report.
+The PDF file is generated and you can download or view it.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/userguide/milestone-report.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

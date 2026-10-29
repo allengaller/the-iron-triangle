@@ -1,0 +1,66 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/government-lens/government-lens.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# Government Lens - AWS Well-Architected Framework
+
+Publication date: **January 10, 2024** ([Document history](./document-history.html))
+
+This whitepaper describes the Government Lens for the AWS Well-Architected Framework
+ including general design principles, best practices, government-specific guidance for the
+ pillars of the Framework, and an additional chapter for government service outcomes. The
+ Government Lens is based on other domain lenses, such as the [Financial Services
+ Industry Lens](https://docs.aws.amazon.com/wellarchitected/latest/financial-services-industry-lens/welcome.html). This whitepaper is designed to be used by anyone responsible for, or
+ involved in the design and delivery of government services, including service and product
+ owners, architects, engineers, policy staff, and program managers. A government service might
+ include multiple workloads.
+
+## Introduction
+
+Government customers have a special set of legal, legislative, accountability, and trust
+ requirements. These requirements need to inform architectural and delivery considerations for
+ solutions that support government services. Government policies and services often have a
+ significant impact on society, which creates a strong but understandable culture around
+ responsible risk management. Governments everywhere are prioritizing and investing in high
+ veracity, modern, and omni-channel citizen-centric services that meet the special requirements
+ of government. To improve agility in a rapidly changing world, they also are creating reusable
+ and modular architectures.
+
+The Government Lens helps people understand the special context and requirements of
+ government and how to best deliver meaningful outcomes on AWS. This lens drives
+ architectural qualities that layer government-specific best practices for progressive
+ enhancement as a service design assurance function. For example, government customers can use
+ the new service outcomes chapter as an indicator of readiness for government service launches,
+ and to inform AWS Enterprise Support event management.
+
+The Government Lens should be applied as an expansion to the AWS Well-Architected
+ Framework. The output of both the [AWS Well-Architected
+ Framework review process](https://docs.aws.amazon.com/wellarchitected/latest/framework/the-review-process.html) and this Government Lens is a report containing applicable
+ best practices and if they are in use at the time of review. Government customers can use
+ these outputs to improve the impact and outcomes of their services, and to engage with their
+ own governance mechanisms in a meaningful way.
+
+It is important to note that every government operates in a unique cultural and historical
+ context, which means different expectations, needs, mandates and even a different perspective
+ about the role of government in that society. Anyone responsible for delivering services in
+ government must make sure to learn and understand the special context of that government
+ customer to apply what is appropriate from this Lens. The Government Lens is informed by
+ frameworks from the AWS global experience working with government customers.
+
+## Lens availability
+
+The Government Lens is available as an AWS-official lens in the [Lens Catalog](https://docs.aws.amazon.com/wellarchitected/latest/userguide/lens-catalog.html) of the [AWS Well-Architected Tool](https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html).
+
+To get started, follow the steps in [Adding a lens to a workload](https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-add.html) and select the **Government Lens**.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/government-lens/government-lens.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

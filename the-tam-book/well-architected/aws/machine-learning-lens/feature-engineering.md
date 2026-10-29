@@ -1,0 +1,59 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/feature-engineering.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# Feature engineering
+
+Every unique attribute of the data is considered a
+ *feature* (also known as an
+ *attribute*). For example, when designing a
+ solution for predicting customer churn, the data used typically
+ includes features such as customer location, age, income level, and
+ recent purchases.
+
+![Chart showing the main components of feature engineering.](/images/wellarchitected/latest/machine-learning-lens/images/feature-engineering-main-components.png)
+
+*Figure 10: Feature engineering main components*
+
+Feature engineering is a process to select and transform variables
+ when creating a predictive model using machine learning or
+ statistical modeling. Feature engineering typically includes feature
+ creation, feature transformation, feature extraction, and feature
+ selection as listed in Figure 10. With deep learning, feature
+ engineering is automated as part of the algorithm learning.
+
+- *Feature creation* refers to the creation of
+ new features from existing data to assist with better
+ predictions. Examples of feature creation include
+ one-hot-encoding, binning, splitting, and calculated features.
+- *Feature transformation and imputation*
+ include steps for replacing missing features or features that
+ are not valid. Some techniques include forming Cartesian
+ products of features, non-linear transformations (such as
+ binning numeric variables into categories), and creating
+ domain-specific features.
+- *Feature extraction* involves reducing the
+ amount of data to be processed using dimensionality reduction
+ techniques. These techniques include Principal Components
+ Analysis (PCA), Independent Component Analysis (ICA), and Linear
+ Discriminant Analysis (LDA). This reduces the amount of memory
+ and computing power required, while still accurately maintaining
+ original data characteristics.
+- *Feature selection* is the process of
+ selecting a subset of extracted features. This is the subset
+ that is relevant and contributes to minimizing the error rate of
+ a trained model. Feature importance score and correlation matrix
+ can be factors in selecting the most relevant features for model
+ training.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/feature-engineering.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

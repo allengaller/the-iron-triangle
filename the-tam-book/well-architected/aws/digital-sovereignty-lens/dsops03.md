@@ -1,0 +1,67 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/digital-sovereignty-lens/dsops03.html -->
+<!-- captured: 2026-10-26 -->
+<!-- vendor: aws -->
+
+# Continuous auditability
+
+Audits from multiple regulatory authorities require different
+ evidence, timelines, and scoping criteria. Preparing for each audit
+ manually is slow, error-prone, and doesn't scale across
+ jurisdictions. Organizations that automate evidence collection and
+ maintain continuous audit readiness can respond to regulatory
+ requests within required timeframes without diverting operational
+ teams from their primary responsibilities.
+
+This capability covers identifying audit requirements across
+ jurisdictions, automating evidence collection from existing
+ controls, and generating compliance reports scoped by jurisdiction
+ and regulatory framework.
+
+## Capability intent
+
+- Audit requirements from each regulatory authority with
+ jurisdiction over the workload are identified, documented, and
+ mapped to the evidence each requires.
+- Evidence is collected automatically from controls, logs, and
+ configuration data, rather than assembled manually before each
+ audit.
+- Compliance reports can be generated on demand, scoped by
+ jurisdiction and regulatory framework, reducing audit
+ preparation time from weeks to hours.
+- Evidence storage meets data residency requirements, so audit
+ artifacts themselves don't violate the sovereignty controls
+ they are intended to demonstrate.
+- Audit readiness is continuous, not a periodic activity that
+ creates compliance gaps between assessment cycles.
+
+## Common issues to watch for
+
+- Evidence collection that depends on point-in-time snapshots
+ rather than continuous data, which produces artifacts that may
+ not reflect current compliance status at the time of the
+ audit.
+- Centralized evidence repositories that aggregate data across
+ jurisdictions without access controls, which violates data
+ residency requirements for the audit evidence itself.
+- Automated evidence collection that covers infrastructure
+ controls but not application-level compliance (data handling,
+ consent management, and retention enforcement), which leaves
+ gaps that require manual supplementation.
+- Audit scoping that groups all jurisdictions together, which
+ forces auditors to filter irrelevant evidence and increases
+ the likelihood of scope disputes.
+- Evidence retention policies that don't match regulatory
+ requirements, either deleting evidence before the required
+ retention period or keeping it beyond what is permitted.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/digital-sovereignty-lens/dsops03.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

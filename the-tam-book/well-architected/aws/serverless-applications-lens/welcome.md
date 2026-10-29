@@ -1,0 +1,59 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/welcome.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# Serverless Applications Lens - AWS Well-Architected Framework
+
+Publication date: **July 14, 2022** ([Document revisions](./document-revisions.html))
+
+This document describes the Serverless Applications Lens for
+ the [AWS
+ Well-Architected Framework](https://aws.amazon.com/well-architected). The document covers common
+ serverless applications scenarios and identifies key elements to
+ ensure that your workloads are architected according to best
+ practices.
+
+## Introduction
+
+The [AWS Well-Architected Framework](https://aws.amazon.com/well-architected) helps you understand the pros and
+ cons of decisions you make while building systems on AWS. By using
+ the Framework, you will learn architectural best practices for
+ designing and operating reliable, secure, efficient, and
+ cost-effective systems in the cloud. It provides a way for you to
+ consistently measure your architectures against best practices and
+ identify areas for improvement. We believe that having
+ well-architected systems greatly increases the likelihood of
+ business success.
+
+In this Lens we focus on how to design, deploy, and architect your serverless application
+ workloads in the AWS Cloud. For brevity, we have only covered details from the
+ Well-Architected Framework that are specific to serverless workloads. You should still
+ consider best practices and questions that have not been included in this document when
+ designing your architecture. We recommend that you read the [AWS Well-Architected
+ Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html) whitepaper.
+
+This document is intended for those in technology roles, such as Chief Technology
+ Officers (CTOs), architects, developers, and operations team members. After reading this
+ document, you will understand AWS best practices and strategies to use when designing
+ architectures for serverless applications.
+
+## Custom lens availability
+
+Custom lenses extend the best practice guidance provided by AWS Well-Architected Tool. AWS WA Tool allows you to
+ create your own [custom lenses](https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-custom.html), or to use
+ lenses created by others that have been shared with you.
+
+To determine if a custom lens is available for the lens described in this whitepaper,
+ reach out to your Technical Account Manager (TAM), Solutions Architect (SA), or Support.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/welcome.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

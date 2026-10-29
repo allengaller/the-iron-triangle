@@ -1,0 +1,38 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/cost-and-performance-optimization.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# Lambda cost and performance optimization
+
+With Lambda, there are no servers to manage, it scales automatically, and you only pay
+ for what you use. However, choosing the right memory size settings for a Lambda function is
+ still an important task. [AWS Compute Optimizer](https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is-compute-optimizer.html) supports Lambda functions and
+ uses machine-learning to provide memory size recommendations for Lambda functions.
+
+This allows you to reduce costs and increase performance for your Lambda-based
+ serverless workloads.
+
+These recommendations are available through the Compute Optimizer console, [AWS CLI](https://aws.amazon.com/cli/), [AWS SDK](https://aws.amazon.com/tools/), and the Lambda
+ console. Compute Optimizer continuously monitors Lambda functions, using historical performance metrics to
+ improve recommendations over time.
+
+In addition, consider configuring new and existing functions to run on ARM or Graviton
+ processors. If your functions or dependencies do not require a given processor architecture
+ (x86, ARM), you might benefit in cost and performance by switching your functions
+ architecture. We always recommend load testing as results might vary for each use case,
+ dependency, and runtime. For example, you could create two [versions](https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html) of your function: one
+ for x86 and one for ARM. With the [Alias](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html) feature, you could
+ distribute a percentage of your traffic to a different processor architecture, and use CloudWatch
+ Metrics to measure duration and latency efficiency.
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/cost-and-performance-optimization.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）

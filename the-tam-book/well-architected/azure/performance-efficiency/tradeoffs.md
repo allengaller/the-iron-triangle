@@ -1,0 +1,148 @@
+<!-- source: https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/tradeoffs -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: azure -->
+
+# Performance Efficiency tradeoffs
+
+Note
+
+
+
+
+A workload that meets its performance targets without overprovisioning is efficient. The goal of performance efficiency is to have just enough supply to handle demand at all times. Key strategies for performance efficiency include proper use of code optimizations, design patterns, capacity planning, and scaling. Clear performance targets and testing underpin this pillar.
+
+When you negotiate performance targets and design a workload for performance efficiency, consider how decisions based on the [Performance Efficiency design principles](principles) and the recommendations in the [Design review checklist for Performance Efficiency](checklist) might influence the goals and optimizations of other pillars. Some performance efficiency decisions benefit one pillar but constitute tradeoffs for another. This article describes example tradeoffs that a workload team might encounter when designing workload architecture and operations for performance efficiency.
+
+## Performance Efficiency tradeoffs with Reliability
+
+> **Tradeoff: Reduced replication and increased density.** A cornerstone of reliability is ensuring resilience by using replication and limiting the blast radius of malfunctions.
+
+- A workload that achieves efficiency by delaying scaling until the last responsible moment closely meets demand but is vulnerable to unforeseen node failures and scaling delays.
+- Consolidating workload resources can use excess capacity and improve efficiency. However, it increases the blast radius of a malfunction in the co-located component or application platform.
+- Scaling in or scaling down to minimize surplus capacity can leave a workload underprovisioned during usage spikes, which leads to service disruptions due to insufficient supply.
+
+> **Tradeoff: Increased complexity.** Reliability prioritizes simplicity.
+
+- Using autoscaling to balance workload supply against demand introduces variability in the workload's topology and adds a component that must work correctly for the system to be reliable. Autoscaling leads to triggering more application lifecycle events, like starting and stopping.
+- Data partitioning and sharding help avoid performance issues in large or frequently accessed datasets, but they increase complexity because (eventual) consistency must be maintained across additional resources.
+- Denormalizing data for optimized access patterns can improve performance, but it introduces complexity because multiple representations of data need to be kept synchronized.
+- Performance-centric cloud design patterns sometimes necessitate the introduction of additional components. The use of these components increases the surface area of the workload. The components then must themselves be made reliable to keep the whole workload reliable. Examples include:
+A message bus for load leveling, which introduces a critical, stateful component.
+A load balancer for autoscaled replicas, which requires reliable operation and the enlistment of replicas.
+Offloading data to caches, which requires reliable cache invalidation approaches.
+
+> **Tradeoff: Testing and observation on active environments.** Avoiding the unnecessary use of production systems is a self-preservation and risk avoidance approach for reliability.
+
+- Performance testing in active environments, like the use of synthetic transactions, carries the risk of causing malfunctions due to the test actions or configurations.
+- Workloads should be instrumented with an application performance monitoring (APM) system that enables teams to learn from active environments. The APM tooling is installed and configured in application code or in the hosting environment. Improper use, exceeding limitations, or misconfiguration of the tool can compromise its functionality and maintenance, potentially undermining reliability.
+
+## Performance Efficiency tradeoffs with Security
+
+> **Tradeoff: Reduction of security controls.** Security controls are established across multiple layers, sometimes redundantly, to provide defense in depth.
+
+One performance optimization strategy is to remove or bypass components or processes that delay a flow when their processing time isn't justified. This strategy can compromise security and requires a thorough risk analysis. Consider the following examples:
+
+- Removing encryption in transit or at rest to improve transfer speeds exposes the data to potential integrity or confidentiality breaches.
+- Removing or reducing security scanning or inspecting tools to reduce processing times can compromise the confidentiality, integrity, or availability that those tools protect.
+- Decreasing the frequency of security patching to limit the performance impact can leave a workload more vulnerable to emerging threats.
+- Removing firewall rules from network flows to improve network latency can allow undesirable communication.
+- Minimizing data validation or content safety checks for quicker data processing might compromise data integrity, especially if inputs are malicious.
+- Using less entropy in encryption or hashing algorithms, for example, on the initialization vector (IV), is more efficient but makes the encryption easier to crack.
+
+> **Tradeoff: Increased workload surface area.** Security prioritizes a reduced and contained surface area to minimize attack vectors and reduce the management of security controls.
+
+Performance-centric cloud design patterns sometimes necessitate the introduction of additional components. These components increase the surface area of the workload. The new components must be secured, possibly in ways that aren't already used in the system, and they often increase the compliance scope. Consider these commonly added components:
+
+- A message bus for load leveling
+- A load balancer for autoscaled replicas
+- Offloading data to caches, application delivery networks, or content delivery networks
+- Offloading processing to background jobs or even client compute
+
+> **Tradeoff: Removing segmentation.** The Security pillar prioritizes strong segmentation to enable fine-grained security controls and reduce blast radius.
+
+Sharing resources through increased density is an approach for improving efficiency. Examples include multitenancy scenarios or combining disparate applications in an architecture on a common application platform. The increased density can lead to the following security concerns:
+
+- Increased risk of unauthorized lateral movement from one tenant to another.
+- A shared workload identity that violates the principle of least privilege and obscures individual audit trails in access logs.
+- Perimeter security controls, for example network rules, that are reduced to cover all co-located components, giving individual components more access than necessary.
+- A compromise of the application platform host or an individual component due to a larger blast radius. This increase is caused by easier access to co-located components.
+- Co-locating disparate components leading to more components in scope for compliance because of their shared host.
+
+> **Tradeoff: Stale security state.** The Security pillar requires authorization, content, and trust decisions to reflect the current state of the system.
+
+Caching and edge distribution improve performance by serving responses from a copy rather than revalidating them. The longer a copy's time to live and the weaker its invalidation controls, the more likely it is to reflect a security state that no longer holds. Precomputed results carry a similar risk, but unlike caches they typically have no built-in TTL or invalidation mechanism and remain stale until the next computation trigger fires.
+
+- Cached authentication tokens, authorization decisions, or session data can permit access after a user is disabled, a role is revoked, a token is rotated, claims or permissions have changed, or conditional access policies were updated. The window between revocation and cache expiry is a window of unauthorized access.
+- Content delivered from a CDN, API gateway cache, or browser cache can continue to serve data that has been retracted or reclassified at the origin. Data modified for legal reasons can also persist in cached responses after it's been patched at the source. This persistence can violate data-handling, retention, or privacy requirements.
+
+## Performance Efficiency tradeoffs with Cost Optimization
+
+> **Tradeoff: Too much supply for demand.** Both Cost Optimization and Performance Efficiency prioritize having just enough supply to serve demand.
+
+- Overprovisioning is a risk when teams try to mitigate performance issues in a workload. Some common causes of overprovisioning include:
+Initial capacity planning was misjudged because the team focused only on peak load estimates, neglecting strategies for peak smoothing in the workload design.
+Scaling a resource up or out during a troubleshooting step of an incident response.
+- Autoscaling can be misconfigured. Some examples of misconfigured autoscaling include:
+Scaling up with minimal changes in demand or an extended cooldown period can incur more cost than demand requires.
+Using autoscaling without a set upper limit can lead to uncontrolled growth due to system malfunctions or abuse and exceed the expected workload requirements.
+- Expanding into multiple regions can enhance performance by bringing workloads closer to the user and can avoid temporary resource capacity constraints. However, that topology also adds complexity and resource duplication.
+
+> **Tradeoff: More components.** One cost optimization technique is to consolidate with a smaller number of resources by increasing density, removing duplication, and co-locating functionality.
+
+- Performance-centric cloud design patterns sometimes necessitate the introduction of extra components. These extra components usually lead to an overall cost increase for the workload. For example, you might include a message bus for load leveling or offload tasks to an application or content delivery network for improved response times.
+- Resource segmentation allows different parts of a workload to have distinct performance characteristics, enabling independent tuning for each segment. However, it can increase the total ownership costs because it requires multiple optimized segments rather than a single, generalized component.
+
+> **Tradeoff: Increased investment on items that aren't aligned with functional requirements.** One approach to cost optimization is evaluating the value provided by any solution that's deployed.
+
+- Premium services and SKUs can help a workload meet performance targets. These services usually cost more and can provide extra features. They might be underutilized if many of the premium features aren't used specifically for meeting performance targets.
+- A performant workload requires telemetry data for observability that must be transferred and stored. An increase in the performance telemetry being collected can increase the cost of telemetry data transfer and storage.
+- Performance testing activities add costs that aren't associated with the value of the production system. Examples of performance testing costs include:
+Instantiating environments that are dedicated to performance-centric tests.
+Using specialized performance tooling.
+Spending time to run the tests.
+- Training team members for specialized performance optimization tasks or paying for performance tuning services adds to the cost of a workload.
+
+## Performance Efficiency tradeoffs with Operational Excellence
+
+> **Tradeoff: Reduced observability.** Observability is necessary to provide a workload with meaningful alerting and help ensure successful incident response.
+
+- Reducing log and metric volume to spend less processing time on telemetry collection reduces overall observability. Examples include:
+Fewer data points for building meaningful alerts.
+Coverage gaps in incident response activities.
+Limited observability in security-sensitive or compliance-sensitive interactions and boundaries.
+- Performance design patterns often add complexity by introducing components into critical flows. The workload monitoring strategy must include those components. When a flow spans multiple components or application boundaries, performance must be correlated across all of them.
+
+> **Tradeoff: Increased complexity in operations.** A complex environment has more complex interactions and a higher likelihood of a negative impact from routine, ad hoc, and emergency operations.
+
+- Improving performance efficiency by increasing density elevates the risk in operational tasks. An error in a single process can have a large blast radius.
+- As performance design patterns are implemented, they influence operational procedures like backups, key rotations, and recovery strategies. For example, data partitioning and sharding can complicate routine tasks when teams try to ensure that those tasks don't affect data consistency.
+
+> **Tradeoff: Culture stress.** Operational Excellence is rooted in a culture of blamelessness, respect, and continuous improvement.
+
+- Conducting root cause analysis of performance issues identifies deficiencies in processes or implementations that require correction. The team should consider the exercise a learning opportunity. If team members are blamed for issues, morale can be affected.
+- Routine and ad hoc processes can affect workload performance. It's often considered preferable to perform these activities during off-peak hours. However, off-peak hours can be inconvenient or outside of regular hours for the team members who are responsible for or skilled in these tasks.
+
+## Related links
+
+Explore the tradeoffs for the other pillars:
+
+- [Reliability tradeoffs](../reliability/tradeoffs)
+- [Security tradeoffs](../security/tradeoffs)
+- [Cost Optimization tradeoffs](../cost-optimization/tradeoffs)
+- [Operational Excellence tradeoffs](../operational-excellence/tradeoffs)
+
+## Feedback
+
+Was this page helpful?
+
+Need help with this topic?
+
+Want to try using Ask Learn to clarify or guide you through this topic?
+
+## Additional resources
+
+- Last updated on 2026-04-28
+
+---
+
+> 原页面：https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/tradeoffs（抓取时点 2026-10-25；正文为自动抓取，排版已规整，语义未改写）

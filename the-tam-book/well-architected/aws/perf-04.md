@@ -1,0 +1,29 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/framework/perf-04.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# PERF 4. How do you select and configure networking resources in your workload?
+
+The optimal networking solution for a workload varies based on latency, throughput requirements, jitter, and bandwidth. Physical constraints, such as user or on-premises resources, determine location options. These constraints can be offset with edge locations or resource placement.
+
+###### Best practices
+
+- [PERF04-BP01 Understand how networking impacts performance](./perf_networking_understand_how_networking_impacts_performance.html)
+- [PERF04-BP02 Evaluate available networking features](./perf_networking_evaluate_networking_features.html)
+- [PERF04-BP03 Choose appropriate dedicated connectivity or VPN for your workload](./perf_networking_choose_appropriate_dedicated_connectivity_or_vpn.html)
+- [PERF04-BP04 Use load balancing to distribute traffic across multiple resources](./perf_networking_load_balancing_distribute_traffic.html)
+- [PERF04-BP05 Choose network protocols to improve performance](./perf_networking_choose_network_protocols_improve_performance.html)
+- [PERF04-BP06 Choose your workload's location based on network requirements](./perf_networking_choose_workload_location_network_requirements.html)
+- [PERF04-BP07 Optimize network configuration based on metrics](./perf_networking_optimize_network_configuration_based_on_metrics.html)
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/framework/perf-04.html（抓取时点 2026-10-25；正文为自动抓取，排版已规整，语义未改写）

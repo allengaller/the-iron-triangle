@@ -1,0 +1,348 @@
+<!-- source: https://docs.aws.amazon.com/wellarchitected/latest/userguide/agent-getting-started.html -->
+<!-- captured: 2026-10-25 -->
+<!-- vendor: aws -->
+
+# Getting started with AWS Well-Architected Agent
+
+AWS Well-Architected Agent is in preview release and is subject to change.
+
+
+To use AWS Well-Architected Agent, you create an agent profile that defines the scope of your infrastructure
+ analysis. Creating an agent profile is the onboarding step. You need a profile before you can
+ view recommendations, conduct architecture reviews, or use any other AWS WA Agent feature.
+
+###### Tip
+
+Baseline recommendations from AWS Trusted Advisor are available without creating a profile. To
+ receive personalized, goal-aligned recommendations with cross-pillar trade-off analysis,
+ complete the following setup steps.
+
+The setup process uses two AWS services:
+
+- **AWS Well-Architected** (Well-Architected console): Create your agent
+ profile, configure accounts, pillars, goals, and application context.
+- **IAM**: Create access roles in your workload accounts
+ and update trust policies to establish cross-account access.
+
+This page describes the console-based setup. To set up AWS WA Agent using the AWS CLI instead,
+ see [API quickstart](./agent-api-quickstart.html).
+
+Once a profile is created and properly configured, AWS WA Agent begins generating scheduled
+ recommendations within 24 hours. For more information on scheduled recommendations and
+ recommendation types, see [Recommendations](./agent-rec-management.html).
+
+## Prerequisites
+
+- You have an active AWS Support plan at the Business+ tier or higher (Business+,
+ Enterprise On-Ramp, Enterprise Support, or Unified Operations). Developer and Business
+ tier customers do not have access to AWS WA Agent. For tier-specific entitlements, see [AWS Well-Architected Agent Quotas and limits](./agent-quotas.html).
+- **(Optional)** You have enabled AWS Cost Explorer in your account
+ for accurate cost data. There are two separate features to check to fully enable Cost Explorer for
+ AWS WA Agent:
+Enable the main AWS Cost Explorer service.In **Cost Management Preferences** in the Cost Explorer sidebar, under
+ **Granular data**, select the **Resource-level data at
+ daily granularity** checkbox.
+NoteWithout Cost Explorer enabled, AWS WA Agent estimates costs from public AWS pricing.
+- You have the IAM permissions required to create a AWS WA Agent profile, including
+ permissions to create IAM roles (`iam:CreateRole`,
+ `iam:AttachRolePolicy`, `iam:PassRole`) and AWS WA Agent actions
+ (`wellarchitected:CreateAgentProfile`). For more information about the AWS WA Agent
+ access model, see [AWS Well-Architected Agent access model](./security-iam-agent.html).
+- If your account is a member (linked) account in AWS Organizations, confirm that any
+ service control policies (SCPs) attached to your account or its parent organizational
+ units (OUs) allow both the AWS WA Agent actions in the `wellarchitected:*` namespace
+ and the actions in the [WellArchitectedAgentResourceScanning](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/WellArchitectedAgentResourceScanning.html) managed policy. The access
+ roles use this policy to scan resources in your workload accounts. SCPs are
+ organization-level guardrails that can block access even when your IAM permissions allow
+ it. An SCP must allow these actions at every level between your account and the
+ organization root.
+If the SCP does not allow the `wellarchitected:*` actions, you cannot create
+ an agent profile or use the agent from the account. If the SCP does not allow the
+ resource-scanning actions, you can create a profile, but AWS WA Agent cannot view your
+ resources, and recommendation generation returns empty applications.
+If you cannot edit SCPs, contact your organization's management-account administrator.
+ For more information, see [Service control
+ policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html).
+- You have identified the AWS account IDs that you want AWS WA Agent to analyze (maximum 100
+ accounts).
+- You have defined your business goals and selected the optimization pillars you want to
+ focus on.
+
+###### Important
+
+AWS WA Agent requires an active AWS Support plan at Business+ or higher in every account within
+ the monitoring boundary, not only the account that owns the profile. If a monitored account
+ has only a Basic or Developer plan, AWS WA Agent cannot call AWS Trusted Advisor APIs for that account.
+ As a result, AWS WA Agent limits that account's recommendations to Application-level recommendations
+ (beta). This often affects customers who do not use AWS Organizations, or who subscribe to Business+
+ without auto-enrollment, so their other accounts do not receive the plan automatically.
+
+## Step 1: Create an agent profile
+
+Create an agent profile from the AWS WA Agent console. During profile creation, you choose how to
+ add the accounts that AWS WA Agent monitors. This choice determines how the required IAM roles are
+ created:
+
+- If you choose **The current account**, AWS WA Agent monitors only the
+ account you are signed in to, and the console automatically creates both the execution role
+ and the access role in that account. You don't need to create any roles manually.
+- If you choose **Manually add accounts to monitor**, you enter the
+ account IDs yourself. For more information about creating or selecting an execution role,
+ see [Step 3: Configure permissions and integrations](#agent-permissions-integrations). For more information about manually
+ creating an access role in each workload account, see [Step 6: Create access roles in your workload accounts](#agent-access-roles).
+
+###### To create an agent profile
+
+1. Open the AWS Management Console and navigate to AWS Well-Architected.
+2. Open the AWS WA Agent console.
+3. Choose **Agent profiles** in the left-hand navigation.
+4. In the top right corner, choose **Add profile**.
+5. Enter a profile name between 3 and 128 characters. Use only letters, numbers, hyphens
+ (-), and underscores (_). For example, `product-backend-team`.
+6. Enter a description for the profile.
+7. Under **Select accounts & regions**, select AWS Regions to
+ monitor and analyze.
+8. Under **How do you want to add accounts?**, select one of the
+ following options:
+**The current account** – AWS WA Agent monitors only the account you
+ are signed in to and creates the required roles automatically. You don't need to
+ create any roles manually.**Manually add accounts to monitor** – Add the accounts
+ yourself. Complete the following steps:
+Under **Accounts to monitor**, enter account IDs separated by
+ commas (up to 100 accounts).Under **Common access role name**, enter the access role name
+ to use across all accounts in the profile. The recommended name is
+ `AccessRoleForWellArchitectedAgent`.
+NoteWhether you create your own access role name or use the recommended one, you
+ must use that exact same access role name across all accounts in the profile.
+ This only applies to the console onboarding experience.
+
+## Step 2: Add goals and optimization pillars
+
+During profile creation, configure the following in **Optimization
+ pillars**:
+
+- **Optimization pillar:** Select at least one pillar for
+ AWS WA Agent to analyze: Cost optimization, Security, Resilience, or Performance.
+- **Goal statement:** Enter at least one plain-text goal
+ statement. Each profile requires a minimum of one goal for AWS WA Agent to generate prioritized
+ recommendations. Goals are editable at any time after creation. For guidance on writing
+ effective goals, see [Goals and personalization in AWS Well-Architected Agent](./agent-goals.html).
+
+## Step 3: Configure permissions and integrations
+
+What you configure under **Permissions and Integrations** depends on the
+ option you selected for **How do you want to add accounts?** in [Step 1: Create an agent profile](#agent-create-profile).
+
+If you chose **The current account**, this section shows **No
+ action needed**. The console automatically creates the execution role and the
+ access role in this account, so you don't need to create any roles manually. Both roles are
+ read-only and can't modify your resources.
+
+The following table describes each role.
+
+| Role name | What it does |
+| --- | --- |
+| `ExecutionRoleForWellArchitectedAgent` | Orchestrates resource discovery. Assumes the access role to read resources. |
+| `AccessRoleForWellArchitectedAgent` | Grants read-only access to the resources in this account. |
+
+If you chose **Manually add accounts to monitor**, you select an existing
+ execution role or create a new one. The execution role is an IAM role in your profile
+ account that AWS WA Agent assumes to orchestrate resource discovery. The execution role chains to the
+ access roles in your workload accounts. When you choose **Create new role**,
+ the console creates the IAM execution role for you automatically, applying the required trust
+ policy and permissions policy. You don't need to navigate to the IAM console
+ separately.
+
+###### To create a new execution role
+
+1. Choose **Create new role**.
+2. The console pre-populates the **Role name** field with
+ `ExecutionRoleForWellArchitectedAgent`. We recommend using this default
+ name.
+3. (Optional) To review the trust policy and permissions policy the console will apply,
+ choose **View trust policy**.
+4. Choose **Create role**.
+
+Choose whether to enable **Termination protection**. This setting applies
+ regardless of how you added accounts. Enabling it is recommended to prevent accidental
+ profile deletion from the console, API, or CLI. To delete a profile, you must first disable
+ **Termination protection**.
+
+If you do not want to enable AWS Cost Explorer, choose **Get started** to finish
+ creating your profile. After the profile is created, complete the remaining setup. To enable
+ cross-account discovery, you must create access roles in your workload accounts, as described
+ in [Step 6: Create access roles in your workload accounts](#agent-access-roles).
+
+If you want to enable Cost Explorer, go to [(Optional) Step 4: Enable AWS Cost Explorer](#agent-cost-explorer) before finishing profile creation.
+
+## (Optional) Step 4: Enable AWS Cost Explorer
+
+###### Note
+
+Enabling AWS Cost Explorer is an optional step to enhance the specificity of cost data. Cost Explorer is
+ enabled at the AWS account level, not per AWS WA Agent profile. If you enable Cost Explorer in your
+ organization's management account, all member accounts are also granted access.
+
+After you enable Cost Explorer, it cannot be disabled, though the optional granular data
+ preferences (resource-level data) can be changed at any time.
+
+To use real-time, accurate cost data and resources from your accounts, you can enable
+ AWS Cost Explorer.
+
+With Cost Explorer and hourly and [resource-level data at daily
+ granularity](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-resource-daily.html) both enabled, AWS WA Agent can provide recommendations and optimizations with
+ your exact cost data.
+
+Without Cost Explorer enabled, AWS WA Agent estimates costs based on public AWS pricing.
+
+There is no charge for using the Cost Explorer console. Charges apply for Cost Explorer API requests and for
+ the resource-level granular data preferences. Resource-level cost attribution in AWS WA Agent
+ recommendations requires the granular data preferences. To estimate these charges, see [AWS Cost Explorer
+ pricing](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/pricing/).
+
+To get started with Cost Explorer in your AWS WA Agent profile, choose **Open Cost Explorer**,
+ then configure Cost Explorer for your AWS account. For more detail, see [Getting started with
+ Cost Explorer](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-getting-started.html).
+
+After enabling Cost Explorer, it can take up to 24 hours for the data to be available to AWS WA Agent,
+ and resource-level data at daily granularity can take up to 48 hours to propogate.
+
+## Step 5: Add application context
+
+After your profile is created, add application context to help AWS WA Agent generate more
+ relevant recommendations. Application context provides details about your workloads that AWS WA Agent
+ cannot discover automatically.
+
+###### Important
+
+At least one application context is required per profile for AWS WA Agent to generate scheduled
+ recommendations. Without application context, your profile is flagged as invalid and
+ scheduled recommendation generation does not run.
+
+###### To add application context to a profile
+
+1. In the left-hand navigation, choose **Agent profiles**.
+2. In the profile you already created, choose **Profile Details**.
+3. Select the **Application context** tab.
+4. Choose **Add application context**.
+5. Enter details on your application context, including Application name, overview,
+ accounts in the application, AWS Regions, and tags. For a full overview of adding or
+ updating application context, see [Updating application context](./agent-update-app-context.html).
+6. After filling in your application context, choose **Add
+ application**.
+
+## Step 6: Create access roles in your workload accounts
+
+After you create your profile, create an IAM access role in each AWS account that you
+ selected to monitor. Access roles allow AWS WA Agent to discover and analyze resources in those
+ accounts.
+
+###### Important
+
+This procedure applies only if you chose **Manually add accounts to
+ monitor** in [Step 1: Create an agent profile](#agent-create-profile). If you chose **The current
+ account**, the console already created both the execution role and the access role
+ automatically during profile creation, and you can skip this step.
+
+When profile creation finishes, the create-profile page shows an **Action
+ required** prompt indicating that the selected accounts still need an access role.
+ Creating these roles is a separate task that you perform manually in the IAM console. The
+ console does not create the roles for you, and it does not open the IAM console
+ automatically. AWS WA Agent does not monitor or analyze an account until that account's access role
+ exists.
+
+The role name must match the **Common access role name** that you entered
+ during profile creation. The recommended name is
+ `AccessRoleForWellArchitectedAgent`.
+
+The execution role's permissions policy
+ grants `sts:AssumeRole` on the access roles, and each access role's trust policy
+ allows the execution role to assume it. Use the same role name in every workload
+ account.
+
+Use the following trust policy template for your access roles.
+ `ProfileOwningAccountId` is the account where you created the agent
+ profile. `ExecutionRoleName` is the name of the execution role in the
+ agent profile. By default, this is usually `ExecutionRoleForWellArchitectedAgent`.
+
+```
+{
+
+  "Version": "2012-10-17",
+  "Statement": [
+    
+{
+
+      "Effect": "Allow",
+      "Principal": 
+{
+
+        "AWS": "arn:aws:iam::
+ProfileOwningAccountId
+:role/service-role/
+ExecutionRoleName
+"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+```
+
+###### Important
+
+The execution role ARN format depends on how the role was created:
+
+- If you used the **Create new role** button in [Step 3: Configure permissions and integrations](#agent-permissions-integrations), the console places the role under
+ the `service-role/` path:
+ `arn:aws:iam:: 111122223333 :role/service-role/ExecutionRoleForWellArchitectedAgent`
+- If you created the execution role manually in IAM beforehand and selected it
+ during profile creation, use the ARN without the `service-role/` prefix:
+ `arn:aws:iam:: 111122223333 :role/ExecutionRoleForWellArchitectedAgent`
+
+###### To create an access role
+
+1. Open the IAM console in the workload account.
+2. In the left-hand navigation, choose **Roles**, then choose
+ **Create role**.
+3. For **Trusted entity type**, choose **Custom trust
+ policy**.
+4. Paste the trust policy shown in the preceding template, and substitute the required information.
+5. Choose **Next**. On the **Add permissions** page,
+ search for and attach the [WellArchitectedAgentResourceScanning managed policy](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/WellArchitectedAgentResourceScanning.html). This grants
+ read-only access to resource metadata and configuration.
+6. Choose **Next**. Enter the role name (it must match the
+ **Common access role name** from profile creation - we recommend
+ `AccessRoleForWellArchitectedAgent`) and choose **Create
+ role**. Use the same name in every workload account.
+
+###### Note
+
+If you already created access roles with a broader trust policy, edit each role's
+ **Trust relationships** tab to use the trust policy shown in the
+ preceding template.
+
+Repeat this procedure in each workload account you want AWS WA Agent to analyze. For more
+ information about the AWS WA Agent access model and role chain, see [AWS Well-Architected Agent access model](./security-iam-agent.html).
+
+## Next steps
+
+After you complete your profile setup, you can:
+
+- View your personalized recommendations in the AWS WA Agent dashboard ([Recommendations](./agent-rec-management.html)). Scheduled
+ recommendations typically become available within 24 hours of completing profile
+ setup.
+- Conduct an architecture review by uploading your IaC files ([Conducting architecture reviews](./agent-architecture-reviews.html)).
+- Manage your profile settings at any time ([Agent profiles](./agent-manage-profiles.html)).
+
+Thanks for letting us know we're doing a good job!
+
+If you've got a moment, please tell us what we did right so we can do more of it.
+
+Thanks for letting us know this page needs work. We're sorry we let you down.
+
+If you've got a moment, please tell us how we can make the documentation better.
+
+---
+
+> 原页面：https://docs.aws.amazon.com/wellarchitected/latest/userguide/agent-getting-started.html（抓取时点 2026-10-26；正文为自动抓取，排版已规整，语义未改写）
