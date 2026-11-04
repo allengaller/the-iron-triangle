@@ -1,7 +1,7 @@
 <!-- Diátaxis: Explanation -->
 # 第 28 章　TAM 的职业发展
 
-> 度量篇的最后一章，从“事”回到“人”。前两章给了标尺：[第 26 章](ch26-measurement-system.md)度量、[第 27 章](ch27-maturity-model.md)成熟度。本章回答职业框架问题：TAM 这个人怎么选、怎么养、往哪走。团队怎么搭、怎么考核、怎么不散，见[第 28+ 章](ch28-career-team-building-howto.md)。[附录 J](appx-j-enablement-training-standard.md) 管培训标准。[附录 G](appx-g-tam-work-evaluation-standard.md) 管评估。[附录 N](appx-n-tam-onsite-certification.md)/[附录 O](appx-o-tam-onsite-promotion-standard.md) 管驻场认证与晋升。本章是它们的上游：职业框架与团队设计原则。
+> 度量篇的最后一章，从“事”回到“人”。前两章给了标尺：[第 26 章](ch26-measurement-system.md)度量、[第 27 章](ch27-maturity-model.md)成熟度。本章回答职业框架问题：TAM 这个人怎么选、怎么养、往哪走。团队怎么搭、怎么考核、怎么不散，见[第 28+ 章](ch28-career-team-building-howto.md)。[附录 J](appx-j-enablement-training-standard.md) 管培训标准。[附录 G](appx-g-tam-work-evaluation-standard.md) 管评估。[附录 N](appx-n-tam-onsite-certification.md)/[附录 O](appx-o-tam-onsite-promotion-standard.md) 管驻场认证与晋升。个人全周期的生存与发展打法见[附录 AD](appx-ad-career-lifecycle-guide.md)。本章是它们的上游：职业框架与团队设计原则。
 
 ## 28.1 岗位的特殊性与设计含义
 

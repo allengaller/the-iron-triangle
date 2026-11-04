@@ -22,7 +22,7 @@
 | ch06 | ch06-business-insight.md | Explanation | 四层能力+业务语境机制+L1.2分级+归因边界 |
 | ch06+ | ch06-practical.md | How-to | 业务地图+业务日历+价值翻译+目标挂靠 |
 | ch07 | ch07-relationship-management.md | Explanation | 信任账户机制+三链三层网络+L1.3分级+合规边界 |
-| ch07+ | ch07-practical.md | How-to | 关键人地图+信任账户+高层对话+冲突处理 |
+| ch07+ | ch07-practical.md | How-to | 关键人地图+信任账户+高层对话+冲突处理+拒绝边界 |
 | ch08 | ch08-service-governance.md | Explanation | 治理四性+三层契约+六类对象+L1.4分级 |
 | ch08+ | ch08-practical.md | How-to | 服务计划+SLA 契约+变更治理+例会体系+质量度量 |
 | ch09 | ch09-risk-compliance.md | How-to | 登记册+三线扫描+审计配合+数据安全（含前置/验收/排查） |
@@ -116,20 +116,21 @@
 | appx-aa | appx-aa-tam-reporting-standard.md | Reference | 报告体系标准（双轨四级报告 + AI 时代呈现） |
 | appx-ab | appx-ab-subtam-domain-collaboration.md | Reference | 子 TAM 五域分工与协作最佳实践 |
 | appx-ac | appx-ac-sre-cre-engineering-depth.md | How-to | 错误预算+On-Call 体系+Toil 治理+演练与复盘深度 |
+| appx-ad | appx-ad-career-lifecycle-guide.md | How-to | 职场全周期：CL1–CL6 六阶段+四账户体检+四大生存主题+职业红线 |
 
 ---
 
 ## 类型统计
 
-统计口径：**每个文件只计一次**，按首行 `<!-- Diátaxis: ... -->` 标注归类；标注含”+”的计入”混合类型”行，不再重复计入单一类型行。合计 78 = 正文 36 个文件（ch01–ch28、ch05+–ch08+、ch22+、ch24+、ch26+ 与 ch28+）＋附录 42 个（主件 28：A–W、Y、Z、AA、AB、AC；落地件 14：B+、Y+、I+–U+、V+）。
+统计口径：**每个文件只计一次**，按首行 `<!-- Diátaxis: ... -->` 标注归类；标注含”+”的计入”混合类型”行，不再重复计入单一类型行。合计 79 = 正文 36 个文件（ch01–ch28、ch05+–ch08+、ch22+、ch24+、ch26+ 与 ch28+）＋附录 43 个（主件 29：A–W、Y、Z、AA–AD；落地件 14：B+、Y+、I+–U+、V+）。
 
 | 类型 | 章节数 | 占比 | 章节清单 |
 |------|--------|------|----------|
-| Explanation | 13 | 17% | ch01、ch03–ch04、ch05–ch08、ch16、ch20、ch23–ch25、ch28 |
-| How-to | 35 | 45% | ch05+–ch08+、ch09–ch14、ch15、ch17–ch19、ch21–ch22、ch24+、ch26+、ch28+、appx-b+、appx-e、appx-i+–o+、appx-r+–u+、appx-v+、appx-y+、appx-ac |
-| Reference | 28 | 36% | ch02、ch26–ch27、appx-a、appx-b、appx-c、appx-d、appx-f、appx-g、appx-h、appx-i–appx-o、appx-p、appx-q、appx-r–appx-v、appx-w、appx-z、appx-aa、appx-ab |
+| Explanation | 13 | 16% | ch01、ch03–ch04、ch05–ch08、ch16、ch20、ch23–ch25、ch28 |
+| How-to | 36 | 46% | ch05+–ch08+、ch09–ch14、ch15、ch17–ch19、ch21–ch22、ch24+、ch26+、ch28+、appx-b+、appx-e、appx-i+–o+、appx-r+–u+、appx-v+、appx-y+、appx-ac、appx-ad |
+| Reference | 28 | 35% | ch02、ch26–ch27、appx-a、appx-b、appx-c、appx-d、appx-f、appx-g、appx-h、appx-i–appx-o、appx-p、appx-q、appx-r–appx-v、appx-w、appx-z、appx-aa、appx-ab |
 | Tutorial | 2 | 3% | ch22+、appx-y |
-| **合计** | **78** | **100%** | 正文 36 ＋ 附录 42 |
+| **合计** | **79** | **100%** | 正文 36 ＋ 附录 43 |
 
 ## 待拆分清单（混合类型 → 单类型）
 

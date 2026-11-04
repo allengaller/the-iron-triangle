@@ -45,7 +45,7 @@
 - **第 7 章　关系经营 [Explanation]**
   关键人地图（决策链/影响链/防线）、信任账户模型、高层对话（CIO/CTO/总工）、冲突与期望值管理。样章已完成：`manuscript/ch07-relationship-management.md`。
 - **第 7+ 章　关系经营实战 [How-to]**
-  画关键人地图、管信任账户、做高层对话、处理冲突与期望值。已完成：`manuscript/ch07-practical.md`。
+  画关键人地图、管信任账户、做高层对话、处理冲突与期望值、带边界地拒绝。已完成：`manuscript/ch07-practical.md`。
 - **第 8 章　服务治理 [Explanation]**
   服务计划（Service Plan）、SLA/OLA/XLA、变更与发布治理、配置与资产可视、例会体系、服务质量度量（附录 P/Q 五/六维度框架与模板 15 记分卡）。样章已完成：`manuscript/ch08-service-governance.md`。
 - **第 8+ 章　服务治理实战 [How-to]**
@@ -188,3 +188,4 @@
 - **附录 AA**　TAM 报告体系标准（拟定稿）：主 TAM 与团队成员的双轨四级报告（RP1–RP4 / RP5–RP8）、八个决策槽与必填结构、双轨衔接的反二传手三规则、四判据与五种病、AI 时代的方法与呈现（一数三面、异常优先、请求区块、活页 diff、结构化抬头）、30/60/90 落地路径与四条红线。已完成：`manuscript/appx-aa-tam-reporting-standard.md`（配套模板 20/21；字母取双字母 AA，X/Y/Z 均已占用）。
 - **附录 AB**　标杆项目 TAM 团队分域分工与协作最佳实践（拟定稿）：机房／IaaS／PaaS／SaaS／AI-Infra 五域责任地图、十个共管面与面主机制、三档编制与“1 + N”值班、四字段域间工单、跨域变更三问、故障三权分立（事实／判断／流程）、域手册五件套、五个协作指标与四条红线。已完成：`manuscript/appx-ab-subtam-domain-collaboration.md`（配套模板 22；字母取双字母 AB，与“A/B 测试”不是同一记号）。
 - **附录 AC**　SRE/CRE 工程纵深（How-to）：错误预算政策（SLI/SLO、烧率告警、耗尽冻结）、On-Call 体系（主备双岗、认证上岗、书面交接）、Toil 治理（五特征、台账、削减路径）、不透题演练与流程级复盘；SLO 与 SLA 别混、金融级增量（监管窗口策略、预算非免责牌）。已完成：`manuscript/appx-ac-sre-cre-engineering-depth.md`（口径同源第 26 章与附录 C.3/I/K/R/S；适用岗位别名映射见导读）。
+- **附录 AD**　TAM 职场全生命周期生存与发展指南：CL1–CL6 六阶段打法（入行/生存/成长/瓶颈/跃迁/长青，按证据判定不按年龄）、职业资本四账户年度体检、四大生存主题（向上管理/办公室政治工程化解法/倦怠与健康管理/裁员与跳槽纪律）、五条职业红线。已完成：`manuscript/appx-ad-career-lifecycle-guide.md`（How-to；与第 25/27/28 章分工：讲个人全周期的生存动作与发展动作；BTE/SA 角色同样适用，见 AD.0）。
