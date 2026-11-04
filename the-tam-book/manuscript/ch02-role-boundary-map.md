@@ -34,6 +34,10 @@
 
 本章覆盖六个最易混淆的相邻岗位。BTE 的商务边界在[附录 V](appx-v-tam-bte-sa-triangle.md)展开。研发与产品的需求接口见[第 13 章](ch13-internal-collaboration.md)。伙伴和总集成分包关系见[第 14 章](ch14-partner-ecosystem.md)。
 
+客户安全与合规团队也不列入六对边界。这类团队对监管规则与内部制度的符合性负责。TAM 对风险信号的识别、透明化与上报负责。TAM 不作合规判定，也不替客户接受风险。该边界的完整口径见[第 9 章](ch09-risk-compliance.md)（9.1.3 节）。金融客户决策中的合规角色见[第 16 章](ch16-financial-industry.md)（16.3.1 节）。AI 场景的数据与问责边界见[第 24 章](ch24-ai-risk-governance.md)。
+
+甲方其余岗位不在本章展开。这包括业务 Owner、客户架构师、采购与监管接口人。本书是厂商侧 TAM 的接口地图。甲方岗位的职责应由客户自身定义，本书不赋予其权威口径。需要读甲方决策链时，见[第 16 章](ch16-financial-industry.md)（16.3.1 节）的科技—业务—风险合规三角；需要读客户业务语境时，见[第 6 章](ch06-business-insight.md)。
+
 本章的 CSM 口径属于本书约定。不同组织可能合并 CSM 与 TAM。也有组织把 CSAM、PFE 或服务经理纳入同类职责。title 不改变责任坐标的读法。兼任场景见 2.7。
 
 主 TAM（Lead TAM）与成员 TAM 不是相邻岗位，而是同一岗位序列的两级：主 TAM 对一个客户或一摊客户组合负总责并带队，成员对分派客户执行。两级之间的授权、报告与回传属于团队内部治理，见[附录 AA](appx-aa-tam-reporting-standard.md)（RP1–RP8 的决策槽与回传义务）。本章不把它列为第七对边界，以免把"上下级"误读成"跨职能分界"。团队内部的专业域分工（机房／IaaS／PaaS／SaaS／AI-Infra）与共管面机制见[附录 AB](appx-ab-subtam-domain-collaboration.md)。
@@ -255,6 +259,8 @@ RACI 字母必须与场景口径一起读取。以下定义限定了每行的 A�
 | 项目与产品导入 | PM、TAM 与客户运维的责任出口 | [附录 L](appx-l-project-onboarding-standard.md)、[附录 M](appx-m-product-introduction-standard.md) |
 | 危机与复盘 | 升级经理、支持和 TAM 的场景分工 | [第 12 章](ch12-escalation-crisis.md)、[附录 R](appx-r-problem-retrospective-standard.md) |
 | 内部协同 | 支持、研发和销售接口 | [第 13 章](ch13-internal-collaboration.md) |
+| 风险与合规接口 | TAM 的风险上报责任与合规判定的分界 | [第 9 章](ch09-risk-compliance.md)、[第 16 章](ch16-financial-industry.md)、[第 24 章](ch24-ai-risk-governance.md) |
+| 甲方视角 | 本章不展开；甲方决策链与客户业务语境的读法 | [第 16 章](ch16-financial-industry.md)、[第 6 章](ch06-business-insight.md) |
 | 商业化协同 | 技术信号与金额责任的分界 | [第 15 章](ch15-commercial-synergy.md) |
 | 人员评估 | 责任边界对应的评价口径 | [附录 G](appx-g-tam-work-evaluation-standard.md) |
 | 团队内部接口 | 主 TAM 与成员 TAM 的授权、报告与回传 | [附录 AA](appx-aa-tam-reporting-standard.md)、[模板 20](../templates/20-lead-tam-reporting-set.md)、[模板 21](../templates/21-team-member-reporting-set.md) |

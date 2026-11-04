@@ -1,11 +1,21 @@
 <!-- Diátaxis: Reference -->
 # 附录 F　2026 年主要云厂商通告汇编
 
-> 本附录收录 2026 年内主要云厂商发布或生效的产品通告（退市、下线、版本生命周期、重大价格与计费调整），供 TAM 做版本生命周期管理（第 5 章）与变更治理（流程 P12）时对照。
+> 本附录收录 2026 年内主要云厂商发布或生效的产品通告。类型含退市、下线、版本生命周期、重大价格与计费调整。供 TAM 做版本生命周期管理（第 5 章）与变更治理（流程 P12）时对照。
 >
-> **时效性声明：本附录数据采集时点为 2026 年 10 月 23 日，状态栏以该时点为准。** 云厂商通告随时新增与修订，正式决策前必须回到来源链接复核原文；本附录随版本迭代刷新，欢迎按附录 E 的共建方式提交增补。**发布闸门：本书每次正式发布前，本附录必须刷新数据时点；若未刷新，须在本声明处加注"数据时点未刷新，以最新通告为准"。**
+> **时效性声明：本附录数据采集时点为 2026 年 10 月 23 日。状态栏以复核时点为准。** 云厂商通告随时新增与修订。正式决策前必须回到来源链接复核原文。本附录随版本迭代刷新。欢迎按附录 E 的共建方式提交增补。**发布闸门：本书每次正式发布前，本附录必须刷新数据时点。若未刷新，须加注“数据时点未刷新，以最新通告为准”。** 2026-11-02 全量复核：既有条目日期与状态按新时点重算，未发现失实。抽查四条与官方或权威来源一致。新增两条，采集日期 2026-11-02。临近节点见 F.0。
 >
-> 通告状态分级：**已生效**（截止日已过）／**过渡中**（已公告，部分节点已过）／**未到期**（仅公告，节点在未来）。
+> 通告状态分三级。**已生效**：截止日已过。**过渡中**：已公告，部分节点已过。**未到期**：仅公告，节点在未来。
+
+## F.0 临近节点速览（2026-11-02 视角）
+
+| 日期 | 节点 | 影响 |
+| --- | --- | --- |
+| 2026-11-06 | 华为云 openPangu-2.0 双模型停售 | 新用户不可购，已购可用 |
+| 2026-11-09 | 腾讯元器平台停服 | 智能体迁移 ADP 的最后窗口 |
+| 2026-11-10 | Azure Functions 进程内模型停止支持；.NET 8/9 支持终止 | 需迁独立工作模型 |
+| 2026-11-16 | 华为云 AI 使能服务价格调整生效 | 新购续费按新价 |
+| 2026-11-30 | 阿里云虚拟数字人停新购；华为云 openPangu 启动下线 | 迁移立项倒计时 |
 
 ## F.1 国际厂商
 
@@ -25,9 +35,10 @@
 | 2026 年 9 月 30 日集中退役：Functions v3（Linux Consumption 停止运行）、Service Bus SBMP 协议停用、Azure Virtual Desktop (classic)、Azure API for FHIR、Application Insights URL ping 测试、Container insights 的 ContainerLog 表 | 2026-09-30 | 已生效 | [Technspire 盘点](https://technspire.com/en/blog/azure-30-september-retirements-what-stops-working)、[Microsoft 生命周期页](https://learn.microsoft.com/en-us/lifecycle/end-of-support/end-of-support-2026) |
 | AI 服务退役：Anomaly Detector、Metrics Advisor、Personalizer | 2026-10-01 | 已生效 | 同上 |
 | Azure Functions 进程内模型（In-process）停止支持 | 2026-11-10 | 未到期 | [Microsoft 生命周期页](https://learn.microsoft.com/en-us/lifecycle/end-of-support/end-of-support-2026) |
+| .NET 运行时支持终止：.NET 8 LTS 与 .NET 9 STS 同日到期。Functions 独立工作模型受影响 | 2026-11-10 | 未到期 | [Microsoft 生命周期页](https://learn.microsoft.com/zh-cn/lifecycle/end-of-support/end-of-support-2026)、[Functions 版本页](https://docs.azure.cn/zh-CN/azure-functions/functions-versions) |
 | VM 规格退役：NVv3/NVv4 系列 2026-09-30 退役；NP 系列公告 2026-04-02、2027-05-31 退役；Dv3/Dsv3/Ev3/Esv3 系列 2029-11-15 退役 | 分批 | 部分已生效 | [Azure VM 生命周期页](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/retirements-and-capacity-restrictions) |
 | Azure VMware Solution AV36P/AV52 节点退役 | 2029-06-30（RI 购买窗口 2026/2028 分批关闭） | 未到期 | [Francesco Molfese 汇总](https://francescomolfese.it/en/2026/03/azure-iaas-and-azure-local-announcements-and-updates-2026-weeks-11-12/) |
-| Azure WAF 托管规则集支持策略调整：DRS 2.2 GA 后仅支持最近三个版本，旧规则集进入最后一年支持期 | 旧规则集支持期至 2027-02-26 | 过渡中 | 同上 |
+| Azure WAF 托管规则集支持策略调整。DRS 2.2 GA 后仅支持最近三个版本。旧规则集进入最后一年支持期 | 旧规则集支持期至 2027-02-26 | 过渡中 | 同上 |
 
 ### Google Cloud
 
@@ -72,15 +83,16 @@
 | ModelArts Studio Agent 开发模块下线（西南-贵阳一），迁移至智能体平台 Versatile | 2026-02-15 | 已生效 | [华为云公告](https://www.huaweicloud.com/notice/2025/20260114164756418.html) |
 | MaaS 平台模型下架：Qwen3-Coder-480B-A35B-Instruct、Kimi-K2 | 2026-05-15 | 已生效 | [金十数据](https://flash.jin10.com/detail/20260424180241979800) |
 | MaaS 平台 DeepSeek-V4-Pro 下线 | 中国站（贵阳一）2026-09-22 停售、2026-09-30 下线；国际站（中国-香港）2026-10-08 下线 | 已生效 | [All Agent 百科核验记录](https://www.allagent.wiki/agents/huaweicloud-maas/) |
-| AI 使能服务优化与提升服务价格调整（中国站，新购续费均按新价） | 2026-11-16 生效 | 未到期 | [钛媒体数智周报](https://www.tmtpost.com/8171854.html) |
+| AI 使能服务优化与提升服务价格调整。中国站，新购续费均按新价 | 2026-11-16 生效 | 未到期 | [钛媒体数智周报](https://www.tmtpost.com/8171854.html) |
+| MaaS 平台 openPangu-2.0-Flash、openPangu-2.0-Pro 退市（公告 2026-11-02） | 2026-11-06 停售；2026-11-30 启动下线 | 过渡中 | [观点网转述华为云通知](http://www.guandian.cn/article/20261102/621578.html) |
 
 ## F.3 TAM 落地要求：通告不是新闻，是工单原料
 
-1. **跟踪机制**：客户涉及的每家云厂商，通告入口（公告列表、生命周期页、邮件订阅）登记进客户技术档案（B.3.3）；每周风险扫描（P9）时过一遍新通告。
+1. **跟踪机制**：客户涉及的每家云厂商都建通告入口。公告列表、生命周期页、邮件订阅登记进客户技术档案（B.3.3）；每周风险扫描（P9）时过一遍新通告。
 2. **三问过滤**：每条通告问三句——客户在用的服务/版本/Region 是否命中？关键日期距离现在还有多久？替代方案是否验证过？三问有一问答不上来，登记进风险登记册。
-3. **节点进日历**：EOM/EOSS/EOMS 三个节点全部进变更与重保日历（P12/P5），停服节点前 90 天自动触发迁移立项评估；**TAM 的职责是让客户永远不需要在截止日前一周才知道 deadline**。
-4. **2026 年的两个结构性信号**：一是大模型版本轮换周期缩到以月计（各厂均在 6–9 月集中下线旧模型），模型选型必须预留迁移通道；二是 C 端/轻量 AI 产品批量退市（数字人、智能体平台），向客户推荐产品选型时把"厂商战略存续性"列为正式评估项。
+3. **节点进日历**：EOM/EOSS/EOMS 三个节点全部进变更与重保日历（P12/P5）。停服节点前 90 天自动触发迁移立项评估；**TAM 的职责是让客户永远不需要在截止日前一周才知道 deadline**。
+4. **2026 年有两个结构性信号**。一是大模型版本轮换周期缩到以月计。各厂均在 6–9 月集中下线旧模型。模型选型必须预留迁移通道；二是 C 端与轻量 AI 产品批量退市。数字人、智能体平台都在内。向客户推荐选型时，把“厂商战略存续性”列为正式评估项。
 
 ---
 
-> 增补规则：新增通告按"厂商 → 表格行"追加，必须附官方来源链接与采集日期；上一年度汇编随版本归档，不删除、只封存。
+> 增补规则：新增通告按“厂商 → 表格行”追加。必须附官方来源链接与采集日期；上一年度汇编随版本归档，不删除、只封存。

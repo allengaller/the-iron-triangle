@@ -5,8 +5,12 @@ import os, re, glob
 ROOT = os.path.dirname(os.path.abspath(__file__))
 MS = os.path.join(ROOT, "manuscript")
 
-appx = {re.match(r"appx-([a-z]+)-", os.path.basename(f)).group(1).upper(): f
-        for f in glob.glob(os.path.join(MS, "appx-*.md"))}
+_appx_all = {}
+for f in glob.glob(os.path.join(MS, "appx-*.md")):
+    _appx_all.setdefault(re.match(r"appx-([a-z]+)-", os.path.basename(f)).group(1).upper(), []).append(f)
+# 落地件（*-howto.md）不承载 X.y 条文节号；节号索引一律取主件
+appx = {L: (sorted([f for f in fs if not f.endswith("-howto.md")]) or sorted(fs))[0]
+        for L, fs in _appx_all.items()}
 
 def section_set(path, letter):
     secs = set()
