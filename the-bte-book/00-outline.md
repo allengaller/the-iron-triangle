@@ -205,7 +205,7 @@
 | 重叠审计 | `00-overlap-audit-2026-11-03.md` | 与 SA/TAM 的句级重复率 |
 | 发布清单 | `00-release-checklist.md` | 内容、跨书、语言、时效、发布物检查 |
 | 发布说明 | `RELEASE-v1.0.md` | v1.0 内容、格式、限制与反馈 |
-| 变更记录 | `CHANGELOG.md` | v0.1 → v1.0 变更 |
+| 变更记录 | `CHANGELOG.md` | v0.1 → v1.0.1 变更 |
 | 构建 | `build/README.md` | HTML、EPUB、封面生成 |
 | 结语 | `00-epilogue.md` | 三本书一条承诺链 |
 

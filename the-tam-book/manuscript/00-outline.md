@@ -143,6 +143,7 @@
 20. 主 TAM 报告四件套（日/周/季/年）。已完成：`templates/20-lead-tam-reporting-set.md`（配套附录 AA 的 RP1–RP4；第 22/26/28 章）。
 21. 团队成员报告四件套（日/周/季/年）。已完成：`templates/21-team-member-reporting-set.md`（配套附录 AA 的 RP5–RP8；附录 G/O、模板 12）。
 22. 子 TAM 域分工与共管面矩阵。已完成：`templates/22-subtam-domain-collaboration-matrix.md`（配套附录 AB 的五域、十面共管面、四字段工单与交接包）。
+23. 个人年度职业体检表。已完成：`templates/23-career-annual-checkup.md`（配套附录 AD：CL 阶段判定、四账户盘点、五红灯自查与处置计划；与模板 12 互补——能力 vs 职业资本）。
 
 ## 附录
 

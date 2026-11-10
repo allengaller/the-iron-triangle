@@ -51,7 +51,7 @@ BTE（技术销售，Business Technology Executive）的岗位方法书。核心
 | 实测 | [00-template-test-kit.md](00-template-test-kit.md) | BTE-01 任务、观察表、访谈、评分 |
 | 审计 | [00-overlap-audit-2026-11-03.md](00-overlap-audit-2026-11-03.md) | 跨书重叠审计：与 SA 最高 4.9%（第 2 章除外） |
 | 发布 | [00-release-checklist.md](00-release-checklist.md) · [RELEASE-v1.0.md](RELEASE-v1.0.md) | 发布检查表、v1.0 发布说明 |
-| 版本 | [CHANGELOG.md](CHANGELOG.md) | v0.1 → v1.0 变更记录 |
+| 版本 | [CHANGELOG.md](CHANGELOG.md) | v0.1 → v1.0.1 变更记录 |
 | 类型 | [DIATAXIS-MAP.md](manuscript/DIATAXIS-MAP.md) | 43 个文件：Explanation 14 / Reference 9 / How-to 19 / Tutorial 1 |
 
 ## 决策门

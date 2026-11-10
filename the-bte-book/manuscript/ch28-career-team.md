@@ -1,7 +1,7 @@
 <!-- Diátaxis: Explanation -->
 # 第 28 章　BTE 的职业发展与团队
 
-> BTE 的成长慢，因为判断力靠项目练；BTE 的出口宽，因为能力可迁移。本章讲岗位三特征、技能矩阵、招聘画像、90 天培养、绩效设计与出口生态。
+> BTE 的成长慢，因为判断力靠项目练；BTE 的出口宽，因为能力可迁移。本章讲岗位三特征、技能矩阵、招聘画像、90 天培养、绩效设计与出口生态。个人职业周期六级（CL1–CL6）与倦怠分层处置见[《The TAM Book》附录 AD](../../the-tam-book/manuscript/appx-ad-career-lifecycle-guide.md)。BTE 角色同样适用。
 
 ## 28.1 岗位三特征
 
