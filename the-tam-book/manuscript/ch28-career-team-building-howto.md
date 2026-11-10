@@ -85,7 +85,7 @@
 ### 操作步骤
 
 1. 客户分配按 M 级别授权（[第 27 章](ch27-maturity-model.md) 27.5）。AA 级/金融核心客户须 M3 以上加[附录 N](appx-n-tam-onsite-certification.md) 驻场认证。
-2. 控制客户组合复杂度。三个重点客户加长尾若干是可持续结构。五个重点客户是职业倦怠（burnout）配方。
+2. 控制客户组合复杂度。三个重点客户加长尾若干是可持续结构。五个重点客户是职业倦怠（burnout）配方。队员出现倦怠时的分层处置见[附录 AD](appx-ad-career-lifecycle-guide.md)（AD.9 主题三）。
 3. 梯队保持正态分布。M2–M3 为主力。
 4. 每个客户指定知情的第二接口人（与[附录 I](appx-i-on-duty-standard.md) 主备双岗同源）。
 5. 驻场组长排班权不接受客户单方支配（[附录 S](appx-s-overtime-compoff-standard.md) 已有约定）。远程团队按[附录 P](appx-p-tam-service-quality-standard-public-cloud.md)/[附录 Q](appx-q-tam-service-quality-standard-dedicated-cloud.md) 质量框架度量。

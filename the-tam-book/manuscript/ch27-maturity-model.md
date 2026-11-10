@@ -1,11 +1,11 @@
 <!-- Diátaxis: Reference -->
 # 第 27 章　TAM 成熟度模型
 
-> [第 26 章](ch26-measurement-system.md)解决了“怎么量”，本章解决“量完怎么读”。成熟度模型是全书的通用标尺。[附录 G](appx-g-tam-work-evaluation-standard.md) 的评估等级（S–D）锚定在本章的个人五级（M1–M5）上。[附录 N](appx-n-tam-onsite-certification.md) 的驻场认证（C1–C3）同样锚定。[附录 O](appx-o-tam-onsite-promotion-standard.md) 的晋升通道、[附录 J](appx-j-enablement-training-standard.md) 的培训分级（T1–T3）也一样。[模板 12](../templates/12-tam-self-assessment.md) 的自检得分率也锚定这里。本章定义标尺本身，别处只映射、不另立。
+> [第 26 章](ch26-measurement-system.md)解决了“怎么量”，本章解决“量完怎么读”。成熟度模型是全书的通用标尺。[附录 G](appx-g-tam-work-evaluation-standard.md) 的评估等级（S–D）锚定在本章的个人五级（M1–M5）上。[附录 N](appx-n-tam-onsite-certification.md) 的驻场认证（C1–C3）同样锚定。[附录 O](appx-o-tam-onsite-promotion-standard.md) 的晋升通道、[附录 J](appx-j-enablement-training-standard.md) 的培训分级（T1–T3）也一样。[模板 12](../templates/12-tam-self-assessment.md) 的自检得分率也锚定这里。[附录 AD](appx-ad-career-lifecycle-guide.md) 的职业周期六级（CL1–CL6）同样对齐本章 M 级。本章定义标尺本身，别处只映射、不另立。
 
 ## 27.1 定位与三原则
 
-没有成熟度模型的团队，谈论人的成长只用两个词：“行”和“不行”。这导致三个系统性问题。晋升靠年头和感觉。能者多劳到职业倦怠（burnout）。培训一刀切。
+没有成熟度模型的团队，谈论人的成长只用两个词：“行”和“不行”。这导致三个系统性问题。晋升靠年头和感觉。能者多劳到职业倦怠（burnout，分层处置见[附录 AD](appx-ad-career-lifecycle-guide.md)）。培训一刀切。
 
 成熟度模型的价值不是给人贴标签，而是提供一套**共同语言**。让团队能具体讨论“他还差什么”。客户分配、排班授权、培训投入由此有据可依。
 
