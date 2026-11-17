@@ -1,9 +1,9 @@
 <!-- Diátaxis: Tutorial -->
 # 附录 Y　六维能力训练教程
 
-> 本附录带你走完六维能力的训练流程。适用对象：TAM 新人、想晋级的 TAM、负责带教的团队负责人。前置：已读[第 5 章](ch05-technical-depth.md)–[第 10 章](ch10-project-change.md)的 Explanation，理解“是什么、为什么”。每项训练的操作动作清单与验收表见[附录 Y+](appx-y-training-howto.md)。走法：按 Y.1–Y.7 顺序推进。每项训练先做再验，验收过再进下一项。
+> 本附录带你走完六维能力的训练流程。适用对象：TAM 新人、想晋级的 TAM、负责带教的团队负责人。前置：已读[第 5 章](ch05-technical-depth.md)–[第 16 章](ch16-project-change-practical.md)的 Explanation，理解“是什么、为什么”。每项训练的操作动作清单与验收表见[附录 Y+](appx-y-training-howto.md)。走法：按 Y.1–Y.7 顺序推进。每项训练先做再验，验收过再进下一项。
 
-## Y.1 技术纵深训练（对应[第 5 章](ch05-technical-depth.md)、[第 5+ 章](ch05-practical.md)）
+## Y.1 技术纵深训练（对应[第 5 章](ch05-technical-depth.md)、[第 6 章](ch06-technical-depth-practical.md)）
 
 ### 训练目标
 
@@ -12,7 +12,7 @@
 ### 前置条件
 
 - 已读[第 5 章](ch05-technical-depth.md)，理解 T 型结构与常见误区；
-- 已读[第 5+ 章](ch05-practical.md)，掌握操作步骤；
+- 已读[第 6 章](ch06-technical-depth-practical.md)，掌握操作步骤；
 - 有一个真实或模拟客户场景。
 
 ### 训练流程
@@ -31,7 +31,7 @@
 2. 第 2 次记录并复述。对比自己与架构师的结论差异。
 3. 第 3 次主讲一个维度。请架构师补位并给反馈。
 
-预期结果：复述与架构师结论一致度 > 80%。客户认可主讲维度有价值。
+预期结果：复述与架构师结论一致度 > 80%〔建议值〕。客户认可主讲维度有价值。
 
 **训练三：建立故障模式库（持续）**
 
@@ -45,7 +45,7 @@
 1. 找一个真实场景，估算容量或可用性。
 2. 记录假设，与实测数据对照校准。
 
-预期结果：估算偏差 < 30%。2 分钟内给出量级。
+预期结果：估算偏差 < 30%〔建议值〕。2 分钟内给出量级。
 
 **训练五：一页纸评审输出（每次评审后）**
 
@@ -62,7 +62,7 @@
 - 估算追求精确，不做校准。
 - 一页纸写成技术报告，不写“不办的代价”。
 
-## Y.2 业务洞察训练（对应[第 6 章](ch06-business-insight.md)、[第 6+ 章](ch06-practical.md)）
+## Y.2 业务洞察训练（对应[第 7 章](ch07-business-insight.md)、[第 8 章](ch08-business-insight-practical.md)）
 
 ### 训练目标
 
@@ -70,8 +70,8 @@
 
 ### 前置条件
 
-- 已读[第 6 章](ch06-business-insight.md)，理解三个层次与常见误区；
-- 已读[第 6+ 章](ch06-practical.md)，掌握操作步骤；
+- 已读[第 7 章](ch07-business-insight.md)，理解三个层次与常见误区；
+- 已读[第 8 章](ch08-business-insight-practical.md)，掌握操作步骤；
 - 有一个真实或模拟客户。
 
 ### 训练流程
@@ -105,7 +105,7 @@
 - 财务影响没有出处，变成拍脑袋。
 - 目标挂靠牵强，客户不认可。
 
-## Y.3 关系经营训练（对应[第 7 章](ch07-relationship-management.md)、[第 7+ 章](ch07-practical.md)）
+## Y.3 关系经营训练（对应[第 9 章](ch09-relationship-management.md)、[第 10 章](ch10-relationship-management-practical.md)）
 
 ### 训练目标
 
@@ -113,8 +113,8 @@
 
 ### 前置条件
 
-- 已读[第 7 章](ch07-relationship-management.md)，理解信任账户模型与常见误区；
-- 已读[第 7+ 章](ch07-practical.md)，掌握操作步骤；
+- 已读[第 9 章](ch09-relationship-management.md)，理解信任账户模型与常见误区；
+- 已读[第 10 章](ch10-relationship-management-practical.md)，掌握操作步骤；
 - 有一个真实或模拟客户。
 
 ### 训练流程
@@ -146,7 +146,7 @@
 - 台账只记存款，不记取款。
 - 汇报技术细节过多，高层听不进去。
 
-## Y.4 服务治理训练（对应[第 8 章](ch08-service-governance.md)、[第 8+ 章](ch08-practical.md)）
+## Y.4 服务治理训练（对应[第 11 章](ch11-service-governance.md)、[第 12 章](ch12-service-governance-practical.md)）
 
 ### 训练目标
 
@@ -154,8 +154,8 @@
 
 ### 前置条件
 
-- 已读[第 8 章](ch08-service-governance.md)，理解三层契约与常见误区；
-- 已读[第 8+ 章](ch08-practical.md)，掌握操作步骤；
+- 已读[第 11 章](ch11-service-governance.md)，理解三层契约与常见误区；
+- 已读[第 12 章](ch12-service-governance-practical.md)，掌握操作步骤；
 - 有一个真实或模拟客户。
 
 ### 训练流程
@@ -187,9 +187,9 @@
 
 - 目标写成“做好服务工作”式空话。
 - 范围无界，出事全是你的。
-- 承诺 99.99% 却只规划单机房。口径不前置。
+- 承诺四个九却只规划单机房。口径不前置。
 
-## Y.5 风险与合规训练（对应[第 9 章](ch09-risk-compliance.md)）
+## Y.5 风险与合规训练（对应[第 14 章](ch14-risk-compliance-practical.md)）
 
 ### 训练目标
 
@@ -197,7 +197,7 @@
 
 ### 前置条件
 
-- 已读[第 9 章](ch09-risk-compliance.md)，理解风险与合规的区别；
+- 已读[第 14 章](ch14-risk-compliance-practical.md)，理解风险与合规的区别；
 - 有一个真实或模拟客户。
 
 ### 训练流程
@@ -231,7 +231,7 @@
 - Owner 写“双方共同关注”，等于没人负责。
 - 只扫技术不扫组织。审计前突击补材料。
 
-## Y.6 项目与变革管理训练（对应[第 10 章](ch10-project-change.md)）
+## Y.6 项目与变革管理训练（对应[第 16 章](ch16-project-change-practical.md)）
 
 ### 训练目标
 
@@ -239,7 +239,7 @@
 
 ### 前置条件
 
-- 已读[第 10 章](ch10-project-change.md)，理解 TAM 在大项目中的位置；
+- 已读[第 16 章](ch16-project-change-practical.md)，理解 TAM 在大项目中的位置；
 - 有一个真实或模拟项目。
 
 ### 训练流程

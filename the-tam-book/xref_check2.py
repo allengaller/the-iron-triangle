@@ -24,21 +24,19 @@ def section_set(path, letter):
 
 appx_secs = {L: section_set(f, L) for L, f in appx.items()}
 
-# 章节内节号索引。同一章可能拆多文件（ch05-technical-depth / ch05-practical）；
-# 实战篇节号形如 5+.1，与理论篇的 5.1 是两套编号，不能互相顶替。
+# 章节内节号索引。改号后每章一个文件，节号形如 13.5，无 plus 变体。
 ch_files = {}
 for f in glob.glob(os.path.join(MS, "ch*.md")):
     n = int(re.match(r"ch(\d+)-", os.path.basename(f)).group(1))
     ch_files.setdefault(n, []).append(f)
 
-ch_secs, ch_plus = {}, {}
+ch_secs = {}
 for n, fs in ch_files.items():
-    plain, plus = set(), set()
+    secs = set()
     for f in fs:
         text = open(f, encoding="utf-8").read()
-        plain |= set(re.findall(rf"(?m)^#+\s*{n}\.(\d+(?:\.\d+)?)", text))
-        plus |= set(re.findall(rf"(?m)^#+\s*{n}\+\.(\d+(?:\.\d+)?)", text))
-    ch_secs[n], ch_plus[n] = plain, plus
+        secs |= set(re.findall(rf"(?m)^#+\s*{n}\.(\d+(?:\.\d+)?)", text))
+    ch_secs[n] = secs
 
 issues = []
 files = sorted(glob.glob(os.path.join(MS, "*.md")) + glob.glob(os.path.join(ROOT, "templates", "*.md")))
@@ -64,11 +62,10 @@ for path in files:
                 s = mm.group(1)
                 if s not in appx_secs[own_letter] and s.split(".")[0] not in appx_secs[own_letter]:
                     issues.append((base, i, mm.group(0), f"本附录无节 {s}"))
-        # 章内节引用（实战篇节号形如 5+.1 节）
+        # 章内节引用（形如 13.5 节）。旧 N+.M 形态已随改号清零：若残留 N+.M 节
+        # 引用，下面的普通规则不会匹配它，故单独拦截报错。
         for mm in re.finditer(r"(?<![\d.])(\d{1,2})\+\.(\d{1,2})\s*节", line):
-            n, s = int(mm.group(1)), mm.group(2)
-            if n in ch_plus and s not in ch_plus[n]:
-                issues.append((base, i, mm.group(0), f"ch{n:02d} 无 {n}+.{s} 节"))
+            issues.append((base, i, mm.group(0), "旧 N+.M 节号形态残留（应已改号）"))
         for mm in re.finditer(r"(?<![\d.+])(\d{1,2})\.(\d{1,2})\s*节", line):
             n, s = int(mm.group(1)), mm.group(2)
             if n in ch_secs and s not in ch_secs[n]:

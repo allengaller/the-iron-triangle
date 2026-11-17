@@ -9,18 +9,18 @@
 
 | 编号 | 流程 | 所属域 | 一句话目的 | 对应章节 | 对应模板 |
 | --- | --- | --- | --- | --- | --- |
-| P1 | 服务规划（Service Planning） | 日常运营 | 把一年的服务动作落成可承诺的计划 | [第 8 章](ch08-service-governance.md) | 模板 01 |
-| P2 | Onboarding 90 天 | 接入期 | 新客户或新系统 90 天内进入稳态 | [第 11 章](ch11-customer-lifecycle.md) | 模板 02 |
+| P1 | 服务规划（Service Planning） | 日常运营 | 把一年的服务动作落成可承诺的计划 | [第 11 章](ch11-service-governance.md) | 模板 01 |
+| P2 | Onboarding 90 天 | 接入期 | 新客户或新系统 90 天内进入稳态 | [第 17 章](ch17-customer-lifecycle.md) | 模板 02 |
 | P3 | 架构评审 | 变更上线 | 上线或变更前形成独立技术判断 | [第 5 章](ch05-technical-depth.md) | 模板 03 |
-| P4 | 上线闸门（Go/No-Go） | 变更上线 | 上线决策有据可依、有人担责 | [第 10 章](ch10-project-change.md) | 模板 04 |
-| P5 | 重大保障（重保） | 变更上线 | 确定性窗口内兑现零重大事故 | [第 18 章](ch18-major-assurance.md) | 模板 05 |
-| P6 | 事件管理与升级（Escalation） | 事件危机 | 分钟级响应、有序升级、不失控 | [第 12 章](ch12-escalation-crisis.md)、[第 19 章](ch19-financial-incident.md) | 模板 06 |
-| P7 | RCA 与事后复盘 | 事件危机 | 根因闭环，把事故变成资产 | [第 19 章](ch19-financial-incident.md) | 模板 07 |
-| P8 | QBR/EBR 价值汇报 | 价值续约 | 把技术价值翻译成业务语言 | [第 15 章](ch15-commercial-synergy.md) | 模板 08 |
-| P9 | 风险管理 | 日常运营 | 风险在爆发前进入登记册 | [第 9 章](ch09-risk-compliance.md) | 模板 09 |
-| P10 | 续约与增购协同 | 价值续约 | 技术信号驱动续约预测与增购识别 | [第 15 章](ch15-commercial-synergy.md) | 模板 10 |
-| P11 | 需求与产品反馈回路 | 内部协同 | 客户声音有组织地进入产品路线 | [第 13 章](ch13-internal-collaboration.md) | — |
-| P12 | 变更与发布治理 | 日常运营 | 变更可预期、可回退、可追溯 | [第 8 章](ch08-service-governance.md)、[第 17 章](ch17-financial-availability.md) | 模板 04（复用） |
+| P4 | 上线闸门（Go/No-Go） | 变更上线 | 上线决策有据可依、有人担责 | [第 16 章](ch16-project-change-practical.md) | 模板 04 |
+| P5 | 重大保障（重保） | 变更上线 | 确定性窗口内兑现零重大事故 | [第 24 章](ch24-major-assurance.md) | 模板 05 |
+| P6 | 事件管理与升级（Escalation） | 事件危机 | 分钟级响应、有序升级、不失控 | [第 18 章](ch18-escalation-crisis.md)、[第 25 章](ch25-financial-incident.md) | 模板 06 |
+| P7 | RCA 与事后复盘 | 事件危机 | 根因闭环，把事故变成资产 | [第 25 章](ch25-financial-incident.md) | 模板 07 |
+| P8 | QBR/EBR 价值汇报 | 价值续约 | 把技术价值翻译成业务语言 | [第 21 章](ch21-commercial-synergy.md) | 模板 08 |
+| P9 | 风险管理 | 日常运营 | 风险在爆发前进入登记册 | [第 14 章](ch14-risk-compliance-practical.md) | 模板 09 |
+| P10 | 续约与增购协同 | 价值续约 | 技术信号驱动续约预测与增购识别 | [第 21 章](ch21-commercial-synergy.md) | 模板 10 |
+| P11 | 需求与产品反馈回路 | 内部协同 | 客户声音有组织地进入产品路线 | [第 19 章](ch19-internal-collaboration.md) | — |
+| P12 | 变更与发布治理 | 日常运营 | 变更可预期、可回退、可追溯 | [第 11 章](ch11-service-governance.md)、[第 23 章](ch23-financial-availability.md) | 模板 04（复用） |
 
 **使用原则：流程是底线，不是天花板。** 十二项是金融级场景的完整集。中小客户可以裁剪投入强度。P4、P6、P7 三项不可省略。它们对应“不可逆损失”场景。
 
@@ -176,12 +176,12 @@
 
 - AI 产出（纪要、报告初稿、RCA 草稿）必须人工复核后发出。署名责任在人；
 - 客户数据不进公网模型。用客户环境内或企业级隔离的模型服务；
-- 提示词遵守数据分级边界。金融场景另见[第 24 章](ch24-ai-risk-governance.md)；
+- 提示词遵守数据分级边界。金融场景另见[第 31 章](ch31-ai-risk-governance.md)；
 - AI 参与的分析如实标注。不伪装成纯人工成果。
 
 ### B.3.8 度量与报告规范
 
-- 健康分、NPS/CSAT、SLA 达成、MTTR/MTBF 口径全书统一，见[第 26 章](ch26-measurement-system.md)；
+- 健康分、NPS/CSAT、SLA 达成、MTTR/MTBF 口径全书统一，见[第 34 章](ch34-measurement-system.md)；
 - 对外报告口径一致。同一指标不允许两个数字；
 - 警惕指标异化。指标改进服务，不粉饰服务。
 
@@ -213,9 +213,9 @@
 
 ## B.4 流程成熟度分级
 
-十二项流程按五级渐进。与服务模式阶梯、成熟度模型呼应（[第 23 章](ch23-service-model-evolution.md)、[第 27 章](ch27-maturity-model.md)）。
+十二项流程按五级渐进。与服务模式阶梯、成熟度模型呼应（[第 30 章](ch30-service-model-evolution.md)、[第 36 章](ch36-maturity-model.md)）。
 
-> 注：B.4 的 L1–L5 是流程成熟度。与[附录 G](appx-g-tam-work-evaluation-standard.md) 的 L1–L3 评估层、[第 27 章](ch27-maturity-model.md) 的 M1–M5 个人成熟度无关。
+> 注：B.4 的 L1–L5 是流程成熟度。与[附录 G](appx-g-tam-work-evaluation-standard.md) 的 L1–L3 评估层、[第 36 章](ch36-maturity-model.md) 的 M1–M5 个人成熟度无关。
 
 | 级别 | 名称 | 流程特征 | 标志性表现 |
 | --- | --- | --- | --- |

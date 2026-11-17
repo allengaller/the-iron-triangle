@@ -32,11 +32,11 @@
 
 ### 2.1.2 本章的适用边界
 
-本章覆盖六个最易混淆的相邻岗位。BTE 的商务边界在[附录 V](appx-v-tam-bte-sa-triangle.md)展开。研发与产品的需求接口见[第 13 章](ch13-internal-collaboration.md)。伙伴和总集成分包关系见[第 14 章](ch14-partner-ecosystem.md)。
+本章覆盖六个最易混淆的相邻岗位。BTE 的商务边界在[附录 V](appx-v-tam-bte-sa-triangle.md)展开。研发与产品的需求接口见[第 19 章](ch19-internal-collaboration.md)。伙伴和总集成分包关系见[第 20 章](ch20-partner-ecosystem.md)。
 
-客户安全与合规团队也不列入六对边界。这类团队对监管规则与内部制度的符合性负责。TAM 对风险信号的识别、透明化与上报负责。TAM 不作合规判定，也不替客户接受风险。该边界的完整口径见[第 9 章](ch09-risk-compliance.md)（9.1.3 节）。金融客户决策中的合规角色见[第 16 章](ch16-financial-industry.md)（16.3.1 节）。AI 场景的数据与问责边界见[第 24 章](ch24-ai-risk-governance.md)。
+客户安全与合规团队也不列入六对边界。这类团队对监管规则与内部制度的符合性负责。TAM 对风险信号的识别、透明化与上报负责。TAM 不作合规判定，也不替客户接受风险。该边界的完整口径见[第 14 章](ch14-risk-compliance-practical.md)（14.1.3 节）。金融客户决策中的合规角色见[第 22 章](ch22-financial-industry.md)（22.3.1 节）。AI 场景的数据与问责边界见[第 31 章](ch31-ai-risk-governance.md)。
 
-甲方其余岗位不在本章展开。这包括业务 Owner、客户架构师、采购与监管接口人。本书是厂商侧 TAM 的接口地图。甲方岗位的职责应由客户自身定义，本书不赋予其权威口径。需要读甲方决策链时，见[第 16 章](ch16-financial-industry.md)（16.3.1 节）的科技—业务—风险合规三角；需要读客户业务语境时，见[第 6 章](ch06-business-insight.md)。
+甲方其余岗位不在本章展开。这包括业务 Owner、客户架构师、采购与监管接口人。本书是厂商侧 TAM 的接口地图。甲方岗位的职责应由客户自身定义，本书不赋予其权威口径。需要读甲方决策链时，见[第 22 章](ch22-financial-industry.md)（22.3.1 节）的科技—业务—风险合规三角；需要读客户业务语境时，见[第 7 章](ch07-business-insight.md)。
 
 本章的 CSM 口径属于本书约定。不同组织可能合并 CSM 与 TAM。也有组织把 CSAM、PFE 或服务经理纳入同类职责。title 不改变责任坐标的读法。兼任场景见 2.7。
 
@@ -83,7 +83,7 @@ PM 的责任对象是项目。项目具有范围、进度、成本、质量和�
 | 退出条件 | 项目验收与遗留项安排完成 | 无项目式终点，持续服务或正式移交 |
 | 越界表现 | 上线即撤场，不留稳态出口 | 代管项目任务，失去账户全景 |
 
-项目侧闸门见[附录 L](appx-l-project-onboarding-standard.md)。上线决策见[第 10 章](ch10-project-change.md)和[模板 04](../templates/04-go-nogo-gate-checklist.md)。
+项目侧闸门见[附录 L](appx-l-project-onboarding-standard.md)。上线决策见[第 16 章](ch16-project-change-practical.md)和[模板 04](../templates/04-go-nogo-gate-checklist.md)。
 
 ### 2.2.3 TAM 与 CSM
 
@@ -98,7 +98,7 @@ CSM 的责任对象是产品采纳和业务价值实现。TAM 的责任对象是
 | 商业接口 | 价值实现与续约协同 | 技术信号与价值证据供应 |
 | 越界表现 | 把技术故障归为培训不足 | 把用量提升全归为技术任务 |
 
-采纳深度见[第 11 章](ch11-customer-lifecycle.md)。商业信号边界见[第 15 章](ch15-commercial-synergy.md)。
+采纳深度见[第 17 章](ch17-customer-lifecycle.md)。商业信号边界见[第 21 章](ch21-commercial-synergy.md)。
 
 ### 2.2.4 TAM 与支持工程师
 
@@ -113,7 +113,7 @@ TAM 不以接管工单证明重视客户。支持工程师也不以关闭工单�
 | 完成标志 | 按工单规则解决并确认关闭 | 客户风险已揭示，治理事项已有归属 |
 | 越界表现 | 只回单点状态，不传根因 | 绕过队列抢单，破坏支持责任链 |
 
-工单接口见[第 13 章](ch13-internal-collaboration.md)和[附录 U](appx-u-ticket-management-standard.md)。重复故障的复盘入口见[附录 R](appx-r-problem-retrospective-standard.md)。
+工单接口见[第 19 章](ch19-internal-collaboration.md)和[附录 U](appx-u-ticket-management-standard.md)。重复故障的复盘入口见[附录 R](appx-r-problem-retrospective-standard.md)。
 
 ### 2.2.5 TAM 与客户 SRE／运维
 
@@ -143,7 +143,7 @@ TAM 不以接管工单证明重视客户。支持工程师也不以关闭工单�
 | 事件后责任 | 危机流程关闭与内部交接 | 复盘交付与信任重建 |
 | 越界表现 | 只按通用流程处理客户差异 | 绕过指挥官直接调度全部资源 |
 
-作战室角色与沟通纪律见[第 12 章](ch12-escalation-crisis.md)。金融事件的响应时钟见[第 19 章](ch19-financial-incident.md)。
+作战室角色与沟通纪律见[第 18 章](ch18-escalation-crisis.md)。金融事件的响应时钟见[第 25 章](ch25-financial-incident.md)。
 
 ## 2.3 RACI 的读法与约束
 
@@ -203,7 +203,7 @@ RACI 字母必须与场景口径一起读取。以下定义限定了每行的 A�
 | 售前 → 交付／运营 | BTE／SA → TAM | 方案基线、承诺清单、风险清单 | 移交三件套齐备并完成签收 | [模板 19](../templates/19-commitment-handover-kit.md) |
 | 项目交付 → 稳态运营 | PM → TAM 与服务团队 | 验收记录、遗留项、服务输入 | S4 稳态验收及遗留安排完成 | [附录 L](appx-l-project-onboarding-standard.md) |
 | 产品导入 → 客户自运行 | 厂商团队 → 客户运维 | 技术资产、操作能力、联合值守记录 | 独立运营准入通过 | [附录 M](appx-m-product-introduction-standard.md) |
-| 运营信号 → 商务与方案 | TAM → BTE／SA | 事实、证据、建议、时间敏感度 | 信号移交记录与接收反馈 | [第 15 章](ch15-commercial-synergy.md) |
+| 运营信号 → 商务与方案 | TAM → BTE／SA | 事实、证据、建议、时间敏感度 | 信号移交记录与接收反馈 | [第 21 章](ch21-commercial-synergy.md) |
 | 危机处置 → 事后治理 | 作战室 → TAM 与问题管理 | 时间线、处置记录、未决风险 | RCA 与复盘改进项有归属 | [附录 R](appx-r-problem-retrospective-standard.md) |
 
 移交三件套是本书的固定术语。它指方案基线、承诺清单和风险清单。客户档案可以作为服务输入。它不能替代三项中的任何一项。风险清单至少保留未决条件、Owner 和复审时点。具体字段以[模板 19](../templates/19-commitment-handover-kit.md)为准。
@@ -257,11 +257,11 @@ RACI 字母必须与场景口径一起读取。以下定义限定了每行的 A�
 | --- | --- | --- |
 | 铁三角协同 | SA 与 TAM 的方案／运行边界 | [附录 V](appx-v-tam-bte-sa-triangle.md)、[模板 19](../templates/19-commitment-handover-kit.md) |
 | 项目与产品导入 | PM、TAM 与客户运维的责任出口 | [附录 L](appx-l-project-onboarding-standard.md)、[附录 M](appx-m-product-introduction-standard.md) |
-| 危机与复盘 | 升级经理、支持和 TAM 的场景分工 | [第 12 章](ch12-escalation-crisis.md)、[附录 R](appx-r-problem-retrospective-standard.md) |
-| 内部协同 | 支持、研发和销售接口 | [第 13 章](ch13-internal-collaboration.md) |
-| 风险与合规接口 | TAM 的风险上报责任与合规判定的分界 | [第 9 章](ch09-risk-compliance.md)、[第 16 章](ch16-financial-industry.md)、[第 24 章](ch24-ai-risk-governance.md) |
-| 甲方视角 | 本章不展开；甲方决策链与客户业务语境的读法 | [第 16 章](ch16-financial-industry.md)、[第 6 章](ch06-business-insight.md) |
-| 商业化协同 | 技术信号与金额责任的分界 | [第 15 章](ch15-commercial-synergy.md) |
+| 危机与复盘 | 升级经理、支持和 TAM 的场景分工 | [第 18 章](ch18-escalation-crisis.md)、[附录 R](appx-r-problem-retrospective-standard.md) |
+| 内部协同 | 支持、研发和销售接口 | [第 19 章](ch19-internal-collaboration.md) |
+| 风险与合规接口 | TAM 的风险上报责任与合规判定的分界 | [第 14 章](ch14-risk-compliance-practical.md)、[第 22 章](ch22-financial-industry.md)、[第 31 章](ch31-ai-risk-governance.md) |
+| 甲方视角 | 本章不展开；甲方决策链与客户业务语境的读法 | [第 22 章](ch22-financial-industry.md)、[第 7 章](ch07-business-insight.md) |
+| 商业化协同 | 技术信号与金额责任的分界 | [第 21 章](ch21-commercial-synergy.md) |
 | 人员评估 | 责任边界对应的评价口径 | [附录 G](appx-g-tam-work-evaluation-standard.md) |
 | 团队内部接口 | 主 TAM 与成员 TAM 的授权、报告与回传 | [附录 AA](appx-aa-tam-reporting-standard.md)、[模板 20](../templates/20-lead-tam-reporting-set.md)、[模板 21](../templates/21-team-member-reporting-set.md) |
 | 专业域分工 | 子 TAM 五域边界、共管面与协作动作 | [附录 AB](appx-ab-subtam-domain-collaboration.md)、[模板 22](../templates/22-subtam-domain-collaboration-matrix.md) |

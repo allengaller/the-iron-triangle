@@ -19,49 +19,49 @@
 
 | 本书落点 | 汇聚的框架概念 |
 | --- | --- |
-| 事件与复盘（第 19 章、附录 R） | ITIL Incident/Problem、IT4IT Detect to Correct、SRE Postmortem |
-| 变更治理（第 8、10 章、附录 T） | ITIL Change Enablement、IT4IT Requirement to Deploy |
-| 度量口径（第 26 章） | ITIL Service Level Management、SRE SLI/SLO、FinOps 用量可见性 |
-| 容量与成本（第 5、15、21 章） | SRE 容量规划、FinOps 成本优化 |
+| 事件与复盘（第 25 章、附录 R） | ITIL Incident/Problem、IT4IT Detect to Correct、SRE Postmortem |
+| 变更治理（第 11、16 章、附录 T） | ITIL Change Enablement、IT4IT Requirement to Deploy |
+| 度量口径（第 34 章） | ITIL Service Level Management、SRE SLI/SLO、FinOps 用量可见性 |
+| 容量与成本（第 5、21、27 章） | SRE 容量规划、FinOps 成本优化 |
 | 架构评审（第 5 章、模板 03） | Well-Architected 支柱与问询、SRE 容量规划 |
 | 平台与取数（附录 H） | IT4IT 工具链、等保安全管理中心 |
-| 连续性（第 17、18 章） | ITIL Service Continuity、等保安全区域边界 |
+| 连续性（第 23、24 章） | ITIL Service Continuity、等保安全区域边界 |
 
 ## C.1 ITIL 4
 
 | ITIL 4 概念 | 本书落点 | 本书的增量 |
 | --- | --- | --- |
-| Incident Management | 第 12、19 章，附录 K、U | P1–P4 分级、分钟级响应时钟、监管上报口径 |
+| Incident Management | 第 18、25 章，附录 K、U | P1–P4 分级、分钟级响应时钟、监管上报口径 |
 | Problem Management | 附录 R、模板 07/16 | 三级复盘与六条强制触发；复发即升级 |
-| Change Enablement | 第 8、10 章，附录 T | CH1–CH4 分级、冻结窗口纪律、双人复核 |
-| Service Level Management | 第 8 章 8.3，第 26 章，模板 01 | SLA/OLA/XLA 三层契约、口径前置三问 |
-| Service Continuity | 第 17、18 章 | 重保五阶段、容灾演练组织 |
-| Continual Improvement | 第 26 章，附录 G/R | 改进项“验证有效才算闭环”、指标防异化 |
-| Service Catalog / CMDB | 第 8 章 8.5，附录 H | 四张台账、系统取数纪律 |
-| Monitoring & Event Management | 第 23 章，附录 I | 告警降噪红线、低频高危永不静默 |
+| Change Enablement | 第 11、16 章，附录 T | CH1–CH4 分级、冻结窗口纪律、双人复核 |
+| Service Level Management | 第 11 章 11.3，第 34 章，模板 01 | SLA/OLA/XLA 三层契约、口径前置三问 |
+| Service Continuity | 第 23、24 章 | 重保五阶段、容灾演练组织 |
+| Continual Improvement | 第 34 章，附录 G/R | 改进项“验证有效才算闭环”、指标防异化 |
+| Service Catalog / CMDB | 第 11 章 11.5，附录 H | 四张台账、系统取数纪律 |
+| Monitoring & Event Management | 第 30 章，附录 I | 告警降噪红线、低频高危永不静默 |
 | Service Request Management | 附录 U | 工单四分类与首响时限 |
-| Knowledge Management | 第 22 章、附录 Y | 知识库保鲜纪律、故障模式库训练 |
-| 指导原则（聚焦价值等） | 第 3、15 章 | 价值实现报告（VBR）作为价值证据链 |
+| Knowledge Management | 第 28 章、附录 Y | 知识库保鲜纪律、故障模式库训练 |
+| 指导原则（聚焦价值等） | 第 3、21 章 | 价值实现报告（VBR）作为价值证据链 |
 
 ## C.2 IT4IT
 
 | IT4IT 价值流 | 本书落点 | 说明 |
 | --- | --- | --- |
-| Strategy to Portfolio | 第 8 章服务计划、附录 B 流程 P1 | 单客户粒度而非组织粒度 |
-| Requirement to Deploy | 第 10、13 章，模板 04 | 需求五要素、上线闸门 |
+| Strategy to Portfolio | 第 11 章服务计划、附录 B 流程 P1 | 单客户粒度而非组织粒度 |
+| Requirement to Deploy | 第 16、19 章，模板 04 | 需求五要素、上线闸门 |
 | Request to Fulfill | 附录 U 工单管理 | TK-F/Q/R/C 四分类 |
-| Detect to Correct | 第 19、23 章，附录 K/R | 事件→复盘→风险册闭环链 |
+| Detect to Correct | 第 25、30 章，附录 K/R | 事件→复盘→风险册闭环链 |
 
-IT4IT 的工具链视角对应本书[附录 H](appx-h-tool-platform-acceptance-standard.md) 的平台验收要求。数据在工具间流动。“取数只认系统”纪律见[第 26 章](ch26-measurement-system.md)。
+IT4IT 的工具链视角对应本书[附录 H](appx-h-tool-platform-acceptance-standard.md) 的平台验收要求。数据在工具间流动。“取数只认系统”纪律见[第 34 章](ch34-measurement-system.md)。
 
 ## C.3 SRE
 
 | SRE 概念 | 本书落点 | 本书的增量 |
 | --- | --- | --- |
-| SLI/SLO/Error Budget | 第 26 章，第 8 章 8.3 | 金融场景叠加监管口径；SLO 违约的客户沟通动作（模板 06） |
-| Toil（琐事）削减 | 第 22、25 章 | AI 杠杆替代信息搬运与例行巡检 |
-| Blameless Postmortem | 附录 R，模板 07 | 对事不对人三纪律；金融级“问责到流程不只到人”（第 19 章） |
-| 监控与告警（四大黄金信号） | 第 23 章 | 告警降噪红线、AIOps 接入三前提 |
+| SLI/SLO/Error Budget | 第 34 章，第 11 章 11.3 | 金融场景叠加监管口径；SLO 违约的客户沟通动作（模板 06） |
+| Toil（琐事）削减 | 第 28、33 章 | AI 杠杆替代信息搬运与例行巡检 |
+| Blameless Postmortem | 附录 R，模板 07 | 对事不对人三纪律；金融级“问责到流程不只到人”（第 25 章） |
+| 监控与告警（四大黄金信号） | 第 30 章 | 告警降噪红线、AIOps 接入三前提 |
 | 容量规划 | 第 5 章 | 水位管理与业务日历基线 |
 | On-Call 与应急演练（Wheel of Misfortune） | 附录 K、I | 三级演练与合格判定、不透题红线；值班纪律 |
 
@@ -71,23 +71,23 @@ IT4IT 的工具链视角对应本书[附录 H](appx-h-tool-platform-acceptance-s
 
 | FinOps 概念 | 本书落点 | 说明 |
 | --- | --- | --- |
-| Inform / Optimize / Operate 三阶段 | 第 15、26 章 | 用量三判读（趋势/结构/水位）先行 |
-| 用量可见性与分摊 | 第 15 章用量健康度、第 26 章 | 数据源同附录 H 取数纪律 |
-| 成本优化 | 第 15 章 | “先优化成本再谈扩容”纪律 |
-| 云账单异常 | 第 9 章风险扫描、附录 P D3 | 账单突变作为主动服务信号 |
-| AI/推理成本治理 | 第 21 章 | GPU 容量与排队、推理成本专项 |
+| Inform / Optimize / Operate 三阶段 | 第 21、34 章 | 用量三判读（趋势/结构/水位）先行 |
+| 用量可见性与分摊 | 第 21 章用量健康度、第 34 章 | 数据源同附录 H 取数纪律 |
+| 成本优化 | 第 21 章 | “先优化成本再谈扩容”纪律 |
+| 云账单异常 | 第 14 章风险扫描、附录 P D3 | 账单突变作为主动服务信号 |
+| AI/推理成本治理 | 第 27 章 | GPU 容量与排队、推理成本专项 |
 
 ## C.5 等保 2.0（GB/T 22239）
 
 | 等保 2.0 要求域 | 本书落点 | 说明 |
 | --- | --- | --- |
-| 安全计算环境（身份鉴别、审计） | 附录 Q 合规与审计支持维度、第 9 章数据安全 | 专有云六维中的 D6 |
-| 安全区域边界与通信网络 | 第 17 章架构护航 | 容灾与单元化设计评审 |
-| 安全管理中心 | 第 23 章 AIOps、附录 H | 监控平台验收项 |
+| 安全计算环境（身份鉴别、审计） | 附录 Q 合规与审计支持维度、第 14 章数据安全 | 专有云六维中的 D6 |
+| 安全区域边界与通信网络 | 第 23 章架构护航 | 容灾与单元化设计评审 |
+| 安全管理中心 | 第 30 章 AIOps、附录 H | 监控平台验收项 |
 | 管理体系（制度/人员/建设/运维） | 附录 B 九项运营规范、附录 I/S | 值班、疲劳管理与自检纪律 |
-| 数据分级分类（配套 GB/T 43697 等） | 第 9、16 章 | 数据安全三铁律、金融行业特殊性 |
+| 数据分级分类（配套 GB/T 43697 等） | 第 14、22 章 | 数据安全三铁律、金融行业特殊性 |
 
-监管侧的事件上报时限与口径不来自等保本身。它们来自各行业监管规定。本书在[第 16 章](ch16-financial-industry.md)、[第 19 章](ch19-financial-incident.md)按金融行业给出。其他行业读者须替换成本行业监管口径。[附录 F](appx-f-cloud-vendor-notices-2026.md) 收录年度云厂商通告，不含监管条文。
+监管侧的事件上报时限与口径不来自等保本身。它们来自各行业监管规定。本书在[第 22 章](ch22-financial-industry.md)、[第 25 章](ch25-financial-incident.md)按金融行业给出。其他行业读者须替换成本行业监管口径。[附录 F](appx-f-cloud-vendor-notices-2026.md) 收录年度云厂商通告，不含监管条文。
 
 ## C.6 Well-Architected（WA）
 
@@ -96,10 +96,10 @@ IT4IT 的工具链视角对应本书[附录 H](appx-h-tool-platform-acceptance-s
 | Well-Architected 概念 | 本书落点 | 说明 |
 | --- | --- | --- |
 | 支柱与设计原则（六厂商对照） | 第 5 章，附录 Z Z.2 | 岗位化增量：支柱落到评审动作与证据 |
-| 架构评审问询（Review Questions） | 第 5+ 章 5+.1，模板 03 | 8 域 40 问的评审动作库；AI 工作负载专项 |
-| Lens／Perspective（行业与场景视角） | 第 21、24 章，附录 Z Z.3.2 | AI 族 Lens 驱动 AI 专项评审 |
+| 架构评审问询（Review Questions） | 第 6 章 6.1，模板 03 | 8 域 40 问的评审动作库；AI 工作负载专项 |
+| Lens／Perspective（行业与场景视角） | 第 27、31 章，附录 Z Z.3.2 | AI 族 Lens 驱动 AI 专项评审 |
 | 能力域对齐（Capability Mapping） | 附录 Z Z.4 | 六厂商能力域对齐矩阵 |
-| 卓越运营支柱（Operational Excellence） | 第 23 章，附录 I/K | 服务模式跃迁与值班、应急纪律 |
+| 卓越运营支柱（Operational Excellence） | 第 30 章，附录 I/K | 服务模式跃迁与值班、应急纪律 |
 
 ## C.7 版本与共建
 
@@ -119,4 +119,4 @@ IT4IT 的工具链视角对应本书[附录 H](appx-h-tool-platform-acceptance-s
 - 框架给组织骨架，本书给岗位血肉。动作、时限、红线以本书为唯一事实源；
 - 多框架同落点时按汇聚速查表使用，合并与取舍以本书为准；
 - SRE 概念映射前先过岗位边界（[第 2 章](ch02-role-boundary-map.md)）。“运营自己的系统”与“帮客户运营”是两个语境；
-- 金融级读者注意。SLO、复盘、上报等概念须叠加监管口径后使用。口径见[第 16 章](ch16-financial-industry.md)、[第 19 章](ch19-financial-incident.md)。
+- 金融级读者注意。SLO、复盘、上报等概念须叠加监管口径后使用。口径见[第 22 章](ch22-financial-industry.md)、[第 25 章](ch25-financial-incident.md)。

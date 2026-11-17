@@ -14,7 +14,7 @@
 | 计算机信息系统安全保护条例（2011 修订） | [reg-computer-info-system-protection](reg-computer-info-system-protection.md) | 中国政府网/国务院公报 | 现行 |
 | 商业银行信息科技风险管理指引（银监发〔2009〕19 号） | [reg-commercial-bank-it-risk-2009-19](reg-commercial-bank-it-risk-2009-19.md) | 上海市发改委网站转载 | 现行 |
 | 银行业金融机构重要信息系统投产及变更管理办法（银监办发〔2009〕83 号） | [reg-important-system-go-live-2009-83](reg-important-system-go-live-2009-83.md) | 华律网公开转载 | 现行 |
-| 商业银行数据中心监管指引（银监办发〔2010〕114 号） | [reg-commercial-bank-data-center-2010-114](reg-commercial-bank-data-center-2010-114.md) | 公开全文未程序化获取，文件内附渠道 | 现行（待补全文） |
+| 商业银行数据中心监管指引（银监办发〔2010〕114 号） | [reg-commercial-bank-data-center-2010-114](reg-commercial-bank-data-center-2010-114.md) | 法信 / 华律网（三级来源双源比对） | 现行（2026-11-10 补录 55 条，待官方复核） |
 | 银行业金融机构信息科技外包风险监管指引（银监发〔2013〕5 号） | [reg-it-outsourcing-risk-2013-5](reg-it-outsourcing-risk-2013-5.md) | 公开全文未程序化获取，文件内附渠道 | **已废止**（141 号第四十六条） |
 | 银行保险机构信息科技外包风险监管办法（银保监办发〔2021〕141 号） | [reg-bank-insurance-it-outsourcing-2021-141](reg-bank-insurance-it-outsourcing-2021-141.md) | 中国政府网 | 现行 |
 | 银行保险机构数据安全管理办法（金规〔2024〕24 号） | [reg-bank-insurance-data-security-2024](reg-bank-insurance-data-security-2024.md) | 金融监管总局官网（API 原文） | 现行（废止 2022 年 118 号办法） |
@@ -37,4 +37,4 @@ JR/T 0265-2023、JR/T 0361-2026、JR/T 0044-2008、JR/T 0071.1–.6—2020、JR/
 
 1. 每年随附录 W 复核一次；重点：GB/T 20988-2025 与 GB/T 33136-2024 的实施日期、JR/T 新标准发布；
 2. 全文文件只修正来源错误，不静默改动原文；新版发布后新增文件而非覆盖；
-3. 补全文渠道：114 号（法律图书馆/百度百科词条有全文，反爬）、163 号（人民银行文告 PDF）、2013-5 号（已废止，北大法宝）——欢迎人工补齐后替换占位文件。
+3. 补全文渠道：163 号（人民银行文告 PDF）、2013-5 号（已废止，北大法宝）——欢迎人工补齐后替换占位文件；114 号已于 2026-11-10 按三级来源双源补录（待官方复核）。

@@ -59,8 +59,8 @@ for path in files:
         # 2. 第 X 章
         for m in re.finditer(r"第\s*(\d{1,2})\s*章", line):
             n = int(m.group(1))
-            if not (1 <= n <= 28):
-                report(path, i, "章节", m.group(0), f"章号 {n} 超出 1–28")
+            if not (1 <= n <= 38):
+                report(path, i, "章节", m.group(0), f"章号 {n} 超出 1–38")
             elif n not in ch_files:
                 report(path, i, "章节", m.group(0), f"ch{n:02d} 文件不存在")
         # 3. 附录 X（字母；X 为预留字母，见 HANDOFF 待裁定）

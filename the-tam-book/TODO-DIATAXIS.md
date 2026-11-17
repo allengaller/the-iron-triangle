@@ -1,6 +1,6 @@
 # Diátaxis 重构 TODO 清单
 
-> **2026-10-31 状态核销：本清单已全部完成或并入现行流程，仅作历史存档。** 核销对照：P0-2 类型标注 ✅（全部首行标注 + DIATAXIS-MAP 建成）；P1-1/P2-1 内涵篇拆分与训练教程 ✅（ch05+–ch08+ 实战篇 + appx-y/y+ 训练教程）；P1-2 分级标准归拢 ✅（并入附录 G L1–L3 与第 27 章 M1–M5，未另立附录 X）；P1-3 ch02 ✅（Reference 单类型）；P1-4 appx-b ✅（2026-10-31 拆出 appx-b+）；P2-2 清单分类 ✅（全书核查，ch25 已修正）；P2-3 模板格式 ✅（全书核查，仅 DIATAXIS-MAP 一处已修正）；P3-1 术语规范 ✅（同义异名零漂移，首现展开逐章交付核过）；P3-2 P 前缀语境 ✅（2026-10-25 核销，裁定不改名）；P3-3 DIATAXIS-MAP ✅。**遗留候选（未排期）**：ch05+–ch08+ 与 appx-c/e 篇幅偏薄待扩；appx-i–o、appx-r–v 十二个附录混合类型按现状保留；发布闸门（ch24 监管节、附录 F/D 时效内容）正式发布前须刷新数据时点。
+> **2026-10-31 状态核销：本清单已全部完成或并入现行流程，仅作历史存档。** 核销对照：P0-2 类型标注 ✅（全部首行标注 + DIATAXIS-MAP 建成）；P1-1/P2-1 内涵篇拆分与训练教程 ✅（ch06–ch12 实战篇 + appx-y/y+ 训练教程）；P1-2 分级标准归拢 ✅（并入附录 G L1–L3 与第 36 章 M1–M5，未另立附录 X）；P1-3 ch02 ✅（Reference 单类型）；P1-4 appx-b ✅（2026-10-31 拆出 appx-b+）；P2-2 清单分类 ✅（全书核查，ch33 已修正）；P2-3 模板格式 ✅（全书核查，仅 DIATAXIS-MAP 一处已修正）；P3-1 术语规范 ✅（同义异名零漂移，首现展开逐章交付核过）；P3-2 P 前缀语境 ✅（2026-10-25 核销，裁定不改名）；P3-3 DIATAXIS-MAP ✅。**遗留候选（未排期）**：ch06–ch12 与 appx-c/e 篇幅偏薄待扩；appx-i–o、appx-r–v 十二个附录混合类型按现状保留；发布闸门（ch31 监管节、附录 F/D 时效内容）正式发布前须刷新数据时点。
 >
 > 以下为原始清单（内容已过时，保留存档）。
 >
@@ -39,11 +39,11 @@
 | ch03 | Explanation | Explanation | 无 | P3 |
 | ch04 | Explanation | Explanation | 无 | P3 |
 | ch05 | 四类型混合 | Explanation + How-to（拆分） | 分级标准+训练方法混入 | P0 |
-| ch06 | 四类型混合 | Explanation + How-to（拆分） | 同上 | P1 |
 | ch07 | 四类型混合 | Explanation + How-to（拆分） | 同上 | P1 |
-| ch08 | How-to + Reference | How-to（分级标准拆出） | 分级标准+五维框架混入 | P1 |
-| ch09 | How-to + Reference | How-to（分级标准拆出） | 分级标准混入 | P1 |
-| ch10 | How-to | How-to | 仅分级标准需拆出 | P2 |
+| ch09 | 四类型混合 | Explanation + How-to（拆分） | 同上 | P1 |
+| ch11 | How-to + Reference | How-to（分级标准拆出） | 分级标准+五维框架混入 | P1 |
+| ch14 | How-to + Reference | How-to（分级标准拆出） | 分级标准混入 | P1 |
+| ch16 | How-to | How-to | 仅分级标准需拆出 | P2 |
 | ch11-ch15 | 待评估 | — | — | P2 |
 | ch16-ch28 | 待评估 | — | — | P2 |
 | appx-a | Reference | Reference | 无 | P3 |
@@ -54,7 +54,7 @@
 ## P1 — 结构拆分（影响阅读体验）
 
 ### [ ] P1-1 — 按 Diátaxis 拆分"内涵篇"统一结构（ch05-ch10）
-- **涉及文件**：`manuscript/ch05.md` ~ `manuscript/ch10.md`
+- **涉及文件**：`manuscript/ch05.md` ~ `manuscript/ch16.md`
 - **问题描述**：当前统一结构「能力定义 → 核心技能 → 分级标准 → 训练方法 → 自检清单」强制混合了 Explanation / How-to / Reference / Tutorial 四种类型
 - **拆分方案**：
   ```
@@ -63,7 +63,7 @@
   拆分为：
   ├── 第 5 章　技术纵深（Explanation）
   │     └─ 能力定义 + 核心概念 + 常见误区
-  ├── 第 5+ 章　技术纵深实战（How-to）← 新增
+  ├── 第 6 章　技术纵深实战（How-to）← 新增
   │     └─ 架构评审 + 容量规划 + 可用性评审 + 版本管理
   └── 附录 X：技术纵深分级标准（Reference）← 新增或合并至 appx-g
   
@@ -75,14 +75,14 @@
   - 原章节增加「拆分说明」注释，指向新位置
 
 ### [ ] P1-2 — 将"分级标准"从各章提取合并为独立 Reference
-- **涉及文件**：`manuscript/ch05.md` ~ `manuscript/ch10.md` + `manuscript/appx-g.md`
+- **涉及文件**：`manuscript/ch05.md` ~ `manuscript/ch16.md` + `manuscript/appx-g.md`
 - **具体动作**：
   - [ ] 提取 ch05 L1-L5 分级标准 → 合并至 appx-g 或新建 `appx-standards.md`
-  - [ ] 提取 ch06 L1-L5 分级标准 → 同上
   - [ ] 提取 ch07 L1-L5 分级标准 → 同上
-  - [ ] 提取 ch08 L1-L5 分级标准 → 同上
   - [ ] 提取 ch09 L1-L5 分级标准 → 同上
-  - [ ] 提取 ch10 L1-L5 分级标准 → 同上
+  - [ ] 提取 ch11 L1-L5 分级标准 → 同上
+  - [ ] 提取 ch14 L1-L5 分级标准 → 同上
+  - [ ] 提取 ch16 L1-L5 分级标准 → 同上
 - **验收标准**：
   - 分级标准在独立附录中完整呈现
   - 原章节只保留"如何判定自己处于哪一级"的 How-to 描述
@@ -93,7 +93,7 @@
 - **问题**：六对边界对照表（Reference）与归属判断三问（How-to）混合
 - **方案**：
   - Reference 部分（2.1-2.3）：保留在 ch02
-  - How-to 部分（2.4-2.5）：迁移至 ch13（内部协同）或新增"接缝处理指南"
+  - How-to 部分（2.4-2.5）：迁移至 ch19（内部协同）或新增"接缝处理指南"
 - **验收标准**：ch02 只保留"是什么"（Reference），不保留"怎么做"（How-to）
 
 ### [ ] P1-4 — appx-b 运营规范与流程速查分离
@@ -103,7 +103,7 @@
   - Reference 部分（B.1 流程地图）：保留在 appx-b
   - How-to 部分（B.2 逐项速查的"关键步骤"、B.3 运营规范）：
     - B.2"关键步骤"提取为"重保立项操作指南"等独立 How-to
-    - B.3 运营规范提取为独立 `HOW-TO.md` 或合并至 ch08
+    - B.3 运营规范提取为独立 `HOW-TO.md` 或合并至 ch11
 - **验收标准**：appx-b 只保留流程定义、触发条件、交付物等 Reference 信息
 
 ---
@@ -111,7 +111,7 @@
 ## P2 — 内容重组（提升可用性）
 
 ### [ ] P2-1 — 将训练方法提取为 Tutorial 独立内容
-- **涉及文件**：`manuscript/ch05.md` ~ `manuscript/ch10.md`
+- **涉及文件**：`manuscript/ch05.md` ~ `manuscript/ch16.md`
 - **问题描述**：训练方法（影子评审、back-of-envelope、一页纸报告等）是宝贵的 Tutorial 素材，但散落在各章中
 - **方案**：
   - 新增「附录 Y：六维能力训练教程」
@@ -127,7 +127,7 @@
   - 每篇 Tutorial 读者能按步骤完成并获得可见成果
 
 ### [ ] P2-2 — 自检清单分类：学习效果 vs 执行检查
-- **涉及文件**：`manuscript/ch01.md` ~ `manuscript/ch28.md`
+- **涉及文件**：`manuscript/ch01.md` ~ `manuscript/ch37.md`
 - **当前问题**：所有自检清单都是同一格式，未区分类型
 - **分类方案**：
 
