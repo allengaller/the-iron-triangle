@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+  <!-- 六维能力雷达示例：L1–L5 五层网格，示例画像为 L3 水平 -->
+  <rect width="800" height="520" fill="#ffffff"/>
+
+  <!-- 五层网格（半径 34/68/102/136/170，中心 400,260） -->
+  <g fill="none" stroke="#e3e3e3" stroke-width="1">
+    <polygon points="400,226 370.5,243 370.5,277 400,294 429.5,277 429.5,243"/>
+    <polygon points="400,192 341.1,226 341.1,294 400,328 458.9,294 458.9,226"/>
+    <polygon points="400,158 311.5,209 311.5,311 400,362 488.5,311 488.5,209"/>
+    <polygon points="400,124 282,192 282,328 400,396 518,328 518,192"/>
+    <polygon points="400,90 252.8,175 252.8,345 400,430 547.2,345 547.2,175" stroke="#c9c9c9"/>
+  </g>
+
+  <!-- 六条轴线 -->
+  <g stroke="#c9c9c9" stroke-width="1">
+    <line x1="400" y1="260" x2="400" y2="90"/>
+    <line x1="400" y1="260" x2="547.2" y2="175"/>
+    <line x1="400" y1="260" x2="547.2" y2="345"/>
+    <line x1="400" y1="260" x2="400" y2="430"/>
+    <line x1="400" y1="260" x2="252.8" y2="345"/>
+    <line x1="400" y1="260" x2="252.8" y2="175"/>
+  </g>
+
+  <!-- 示例画像：L3 水平（0.4 / 0.6 / 0.8 / 0.6 / 0.4 / 0.6） -->
+  <polygon points="400,192 488.3,209 458.9,294 400,362 282.2,328 311.7,209"
+           fill="#c8442c" fill-opacity="0.14" stroke="#c8442c" stroke-width="2"/>
+  <g fill="#c8442c">
+    <circle cx="400" cy="192" r="4"/>
+    <circle cx="488.3" cy="209" r="4"/>
+    <circle cx="458.9" cy="294" r="4"/>
+    <circle cx="400" cy="362" r="4"/>
+    <circle cx="282.2" cy="328" r="4"/>
+    <circle cx="311.7" cy="209" r="4"/>
+  </g>
+
+  <!-- 维度标签 -->
+  <g fill="#1a1a1a" font-size="17" font-weight="600">
+    <text x="400" y="58" text-anchor="middle">技术纵深</text>
+    <text x="577" y="152" text-anchor="start">业务洞察</text>
+    <text x="577" y="372" text-anchor="start">关系经营</text>
+    <text x="400" y="488" text-anchor="middle">服务治理</text>
+    <text x="223" y="372" text-anchor="end">风险合规</text>
+    <text x="223" y="152" text-anchor="end">项目变革</text>
+  </g>
+
+  <!-- 级别刻度（沿正上轴） -->
+  <g fill="#8a8a8a" font-size="12">
+    <text x="410" y="231">L1</text>
+    <text x="410" y="197">L2</text>
+    <text x="410" y="163">L3</text>
+    <text x="410" y="129">L4</text>
+    <text x="410" y="95">L5</text>
+  </g>
+
+  <!-- 图例 -->
+  <g font-size="13" fill="#5a5a5a">
+    <rect x="596" y="446" width="14" height="14" fill="#c8442c" fill-opacity="0.14" stroke="#c8442c" stroke-width="2"/>
+    <text x="618" y="458">示例画像：L3 水平〔示例值〕</text>
+  </g>
+</svg>
