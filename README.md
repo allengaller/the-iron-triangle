@@ -45,14 +45,13 @@ AI 时代技术客户经理（Technical Account Manager，TAM）的开源方法�
 
 ```
 gtm/                        Go-to-Market 落地页（自包含 HTML）
-standards/                  标准与法规主库（<!-- META:standards_root_count -->50<!-- /META:standards_root_count --> 份 + 索引 + 采集脚本）
+standards/                  标准与法规主库（<!-- META:standards_root_count -->51<!-- /META:standards_root_count --> 份 + 索引 + 采集脚本）
 standards-verification-report-2026-10-25.md   标准库校验报告
 the-sa-book/                SA 书（姊妹项目，全书成稿）
 the-bte-book/               BTE 书（姊妹项目，初稿）
 the-tam-book/
 ├── manuscript/             章节、附录与前置页（<!-- META:manuscript_count -->73<!-- /META:manuscript_count --> 个文件）
 ├── templates/              <!-- META:templates_count -->23<!-- /META:templates_count --> 份可复用模板
-├── standards/              标准与法规全文镜像库（<!-- META:standards_mirror_count -->48<!-- /META:standards_mirror_count --> 份 + 索引）
 ├── well-architected/       六厂商 WA 公开文档归档（<!-- META:wa_pages -->5,741<!-- /META:wa_pages --> 份）
 ├── scripts/                内容门禁、同构审计、元数据生成等工具
 ├── AGENTS.md               写作与协作约定

@@ -25,6 +25,7 @@ DIATAXIS-MAP。文件一增删，四处各漂各的。读者第一眼看到的�
 - 中文字数：`[\\u4e00-\\u9fff]` 匹配数，含标点外的全部汉字。
 - 分型文件：首行 400 字符内带 `<!-- Diátaxis: X -->` 的文件。
 - 附录：文件名以 `appx-` 开头者为附录（2026-11-17 起落地件已并入主件，无独立落地件）。
+- 标准库：仓库根 `standards/` 为唯一主库（2026-11-17 双库合并，镜像已删）。
 - 前置页：文件名以 `00-` 或 `99-` 开头者，不计入章节与分型统计。
 """
 
@@ -38,8 +39,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 MS = ROOT / "manuscript"
 TEMPLATES = ROOT / "templates"
-STD_ROOT = ROOT.parent / "standards"
-STD_MIRROR = ROOT / "standards"
+STD_ROOT = ROOT.parent / "standards"  # 2026-11-17 双库合并：根 standards/ 为唯一主库
 
 CJK = re.compile(r"[\u4e00-\u9fff]")
 DIATAXIS = re.compile(r"<!--\s*Diátaxis:\s*(Explanation|How-to|Reference|Tutorial)\b")
@@ -138,7 +138,6 @@ def scan() -> dict:
         "type_mixed": 0,
         "templates": count_md(TEMPLATES),
         "standards_root": count_md(STD_ROOT),
-        "standards_mirror": count_md(STD_MIRROR),
         "wa_pages": wa,
     }
 
@@ -179,7 +178,6 @@ def render(key: str, f: dict) -> str:
         "front_count": str(f["files_front"]),
         "templates_count": str(f["templates"]),
         "standards_root_count": str(f["standards_root"]),
-        "standards_mirror_count": str(f["standards_mirror"]),
         "zh_total": f"{f['zh_total']:,}",
         "wa_pages": f"{f['wa_pages']:,}",
     }
@@ -206,8 +204,9 @@ def rewrite(text: str, f: dict) -> tuple[str, list[str]]:
 TARGETS = [
     ROOT.parent / "README.md",
     ROOT / "manuscript" / "00-reading-guide.md",
+    ROOT / "manuscript" / "00-front-matter.md",  # 版权页 3 处 span，曾漏登导致静默陈旧
     ROOT / "manuscript" / "DIATAXIS-MAP.md",
-    ROOT / "gtm" / "index.html",
+    ROOT.parent / "gtm" / "index.html",          # gtm 在仓库根，原 ROOT/gtm 路径不存在致静默跳过
 ]
 
 

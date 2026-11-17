@@ -9,7 +9,7 @@
 | 书名 | The TAM Book of AI Era｜AI 时代的 TAM 白皮书 |
 | 版本 | v0.3（全书成稿，待试读） |
 | 更新 | 2026-11-17 |
-| 规模 | 正文 <!-- META:chapter_count -->36<!-- /META:chapter_count --> 个文件、附录 <!-- META:appendix_count -->43<!-- /META:appendix_count --> 个、模板 <!-- META:templates_count -->23<!-- /META:templates_count --> 份 |
+| 规模 | 正文 <!-- META:chapter_count -->38<!-- /META:chapter_count --> 个文件、附录 <!-- META:appendix_count -->29<!-- /META:appendix_count --> 个、模板 <!-- META:templates_count -->23<!-- /META:templates_count --> 份 |
 | 状态 | 内容完整，未经外部评审与企业试点 |
 | 许可 | CC BY-NC-SA 4.0 |
 
