@@ -1,7 +1,7 @@
 <!-- Diátaxis: Tutorial -->
 # 第 22+ 章　SA Copilot 搭建教程
 
-> 本教程带你搭一个最小可用的售前 Copilot。走完九步，你会得到三样。四个场景的提示词模板。一条抽检机制、一套降级规则。边界先读[第 22 章](ch22-ai-for-sa.md)。对标[《The TAM Book》第 22+ 章](../../the-tam-book/manuscript/ch22-tam-copilot-tutorial.md)的共建模式。
+> 本教程带你搭一个最小可用的售前 Copilot。走完九步，你会得到三样。四个场景的提示词模板。一条抽检机制、一套降级规则。边界先读[第 22 章](ch22-ai-for-sa.md)。对标[《The TAM Book》第 29 章](../../the-tam-book/manuscript/ch29-tam-copilot-tutorial.md)的共建模式。
 
 **前置**：企业批准的 AI 工具账号；脱敏样例材料；每周可投入 2 小时维护。
 

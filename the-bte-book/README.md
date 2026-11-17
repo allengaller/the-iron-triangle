@@ -70,7 +70,7 @@ BTE（技术销售，Business Technology Executive）的岗位方法书。核心
 
 - 铁三角机制：[TAM 附录 V](../the-tam-book/manuscript/appx-v-tam-bte-sa-triangle.md)
 - 承诺清单与移交三件套：[模板 19](../the-tam-book/templates/19-commitment-handover-kit.md)
-- 指标口径：[TAM 第 26 章](../the-tam-book/manuscript/ch26-measurement-system.md)
+- 指标口径：[TAM 第 34 章](../the-tam-book/manuscript/ch34-measurement-system.md)
 - 售前流程：[SA 第 11–17 章](../the-sa-book/manuscript/ch11-lead-qualification.md)
 
 ## 写作约定

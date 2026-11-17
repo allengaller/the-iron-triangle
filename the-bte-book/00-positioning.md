@@ -103,9 +103,9 @@ AI 杠杆作用于三个因子，但不替代判断与责任。
 | --- | --- | --- |
 | 铁三角角色、RACI、四接缝、红线 | [TAM 附录 V](../the-tam-book/manuscript/appx-v-tam-bte-sa-triangle.md) | 引用不重定义 |
 | 承诺清单与移交三件套 | [模板 19](../the-tam-book/templates/19-commitment-handover-kit.md) | 三书共用 |
-| 指标口径 | [TAM 第 26 章](../the-tam-book/manuscript/ch26-measurement-system.md) | 一处定义，三书引用 |
+| 指标口径 | [TAM 第 34 章](../the-tam-book/manuscript/ch34-measurement-system.md) | 一处定义，三书引用 |
 | 售前流程、POC、投标 | [SA 第 11–17 章](../the-sa-book/manuscript/ch11-lead-qualification.md) | BTE 书只写决策视角 |
-| 金融行业、案例体例、脱敏 | [TAM 第 16 章](../the-tam-book/manuscript/ch16-financial-industry.md)、[第 20 章](../the-tam-book/manuscript/ch20-case-studies.md)、[附录 E](../the-tam-book/manuscript/appx-e-contribution-guide.md) | 引用 |
+| 金融行业、案例体例、脱敏 | [TAM 第 22 章](../the-tam-book/manuscript/ch22-financial-industry.md)、[第 26 章](../the-tam-book/manuscript/ch26-case-studies.md)、[附录 E](../the-tam-book/manuscript/appx-e-contribution-guide.md) | 引用 |
 | 术语、方法论、标准库 | [TAM 附录 A](../the-tam-book/manuscript/appx-a-glossary.md)、[C](../the-tam-book/manuscript/appx-c-methodology-mapping.md)、[W](../the-tam-book/manuscript/appx-w-financial-ops-standards.md) | 共享 |
 
 ---
@@ -120,7 +120,7 @@ AI 杠杆作用于三个因子，但不替代判断与责任。
 
 1. 每个流程章只写 BTE 的决策、证据与交接，不写 SA 的架构设计与 POC 执行细节。
 2. 需要 SA 细节时给链接，指向 SA 书对应章节。
-3. 定义冲突时，以定义方为准。铁三角机制以 TAM 附录 V 为准，指标口径以 TAM 第 26 章为准。
+3. 定义冲突时，以定义方为准。铁三角机制以 TAM 附录 V 为准，指标口径以 TAM 第 34 章为准。
 4. 每章完成后做重叠审计。除第 2 章边界章外，与 SA 书、TAM 书的重复段落超过 15%，退回改写。第 2 章只做索引与决策权增量，不重复论证。
 
 ---

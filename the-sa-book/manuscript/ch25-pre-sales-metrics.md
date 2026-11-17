@@ -1,7 +1,7 @@
 <!-- Diátaxis: Reference -->
 # 第 25 章　售前度量体系
 
-> 本章是售前指标的口径汇编。赢单率之外还有五个健康指标。口径纪律引[《The TAM Book》第 26 章](../../the-tam-book/manuscript/ch26-measurement-system.md)三元规则。口径先于数值、取数只认系统、每指标配防异化。防异化机制同引该书 26.8，不重定义。
+> 本章是售前指标的口径汇编。赢单率之外还有五个健康指标。口径纪律引[《The TAM Book》第 34 章](../../the-tam-book/manuscript/ch34-measurement-system.md)三元规则。口径先于数值、取数只认系统、每指标配防异化。防异化机制同引该书 34.8，不重定义。
 
 ## 25.1 指标族总览
 
@@ -31,11 +31,11 @@
 | POC 转化率 | POC 目标放水 | 成功标准事前签认（第 15 章） |
 | 偏差率 | 承诺少写少错 | 与赢单率配对看 |
 
-配对制衡、抽查审计、趋势锚点、指标退休四机制引[《The TAM Book》26.8](../../the-tam-book/manuscript/ch26-measurement-system.md)。
+配对制衡、抽查审计、趋势锚点、指标退休四机制引[《The TAM Book》34.8](../../the-tam-book/manuscript/ch34-measurement-system.md)。
 
 ## 25.4 交叉引用
 
-- 指标定义冲突时，以本章为准；执行动作见[《The TAM Book》第 26+ 章](../../the-tam-book/manuscript/ch26-measurement-system-howto.md)；
+- 指标定义冲突时，以本章为准；执行动作见[《The TAM Book》第 35 章](../../the-tam-book/manuscript/ch35-measurement-system-howto.md)；
 - 成熟度评定取数见[第 26 章](ch26-sa-maturity-model.md)。
 
 ---

@@ -1,14 +1,14 @@
 <!-- Diátaxis: How-to -->
 # 第 9 章　承诺工程
 
-> 售前的承诺不是话术。它是签单后交付的合同基线。说出去的每句话，都会变成别人的工作量。本章给四个动作：承诺边界四问、SLA/SLO 设计。承诺清单与移交三件套、承诺偏差率回溯。口径与[《The TAM Book》第 26 章](../../the-tam-book/manuscript/ch26-measurement-system.md)同源。移交工具共用[模板 19](../../the-tam-book/templates/19-commitment-handover-kit.md)。
+> 售前的承诺不是话术。它是签单后交付的合同基线。说出去的每句话，都会变成别人的工作量。本章给四个动作：承诺边界四问、SLA/SLO 设计。承诺清单与移交三件套、承诺偏差率回溯。口径与[《The TAM Book》第 34 章](../../the-tam-book/manuscript/ch34-measurement-system.md)同源。移交工具共用[模板 19](../../the-tam-book/templates/19-commitment-handover-kit.md)。
 
 ## 9.1 前置条件与目标
 
 | 前置条件 | 检查内容 | 缺项处理 |
 | --- | --- | --- |
 | 方案基线 | 方案已过内部三关评审 | 先补评审 |
-| 口径表 | SLA 口径引自 TAM 书第 26 章 | 先对口径 |
+| 口径表 | SLA 口径引自 TAM 书第 34 章 | 先对口径 |
 | 履约接口 | 交付与 TAM 侧已知悉方案 | 先开交接预沟通 |
 | 模板 | [模板 19](../../the-tam-book/templates/19-commitment-handover-kit.md) 可用 | 先补模板 |
 
@@ -25,7 +25,7 @@
 
 每条承诺过四问。有一问答不上，先不承诺。
 
-1. **依据何在？** 技术可达性过没有。可用性数学、容量估算、架构评审缺一不可。信封背面估算见[第 5+ 章](../../the-tam-book/manuscript/ch05-practical.md)；
+1. **依据何在？** 技术可达性过没有。可用性数学、容量估算、架构评审缺一不可。信封背面估算见[第 6 章](../../the-tam-book/manuscript/ch06-technical-depth-practical.md)；
 2. **代价几何？** 履约成本进 TCO（总拥有成本，Total Cost of Ownership）了吗。承诺 99.99% 却只规划单机房。数字上就不成立；
 3. **载体在哪？** 承诺写在合同、方案书、标书应答还是口头。只有书面且入承诺清单的才算承诺。口头“尽量”一律折算为明确日期或明确拒绝；
 4. **谁来接？** 签单后谁履约。交付与 TAM 接得住吗。可运营性评审没过的承诺，等于给别人挖坑。
@@ -44,7 +44,7 @@
 
 ### 口径纪律
 
-SLA（服务等级协议，Service Level Agreement）与 SLO（服务等级目标，Service Level Objective）别混。SLA 是合同承诺，SLO 是工程目标。对照表见[《The TAM Book》附录 AC](../../the-tam-book/manuscript/appx-ac-sre-cre-engineering-depth.md)。分子分母、取数与仲裁口径统一引[第 26 章](../../the-tam-book/manuscript/ch26-measurement-system.md)。本书不重定义。
+SLA（服务等级协议，Service Level Agreement）与 SLO（服务等级目标，Service Level Objective）别混。SLA 是合同承诺，SLO 是工程目标。对照表见[《The TAM Book》附录 AC](../../the-tam-book/manuscript/appx-ac-sre-cre-engineering-depth.md)。分子分母、取数与仲裁口径统一引[第 34 章](../../the-tam-book/manuscript/ch34-measurement-system.md)。本书不重定义。
 
 ### 操作步骤
 
@@ -58,7 +58,7 @@ SLA（服务等级协议，Service Level Agreement）与 SLO（服务等级目�
 ### 金融级增量
 
 - 监管刚性窗口（决算、报送）的豁免策略事前写明；
-- 事件上报时限按监管口径叠加。对标[《The TAM Book》第 19 章](../../the-tam-book/manuscript/ch19-financial-incident.md)。
+- 事件上报时限按监管口径叠加。对标[《The TAM Book》第 25 章](../../the-tam-book/manuscript/ch25-financial-incident.md)。
 
 ### 预期结果
 

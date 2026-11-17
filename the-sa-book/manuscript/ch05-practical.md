@@ -9,7 +9,7 @@
 | --- | --- | --- |
 | 需求已知 | 场景、规模、约束白纸黑字 | 先补需求调研 |
 | 技术栈面 | 候选产品面已列全 | 先建技术雷达 |
-| 标尺 | 六维评审口径可用 | 引 TAM 书第 5+ 章 |
+| 标尺 | 六维评审口径可用 | 引 TAM 书第 6 章 |
 | 模板 | 权衡记录模板可用 | 先建模板 |
 
 完成标志有三项：选型有对照、估算有量级、权衡有留痕。
@@ -25,7 +25,7 @@
 ### 操作步骤
 
 1. 列候选：厂商参考架构加自研惯用架构。候选不少于两案。
-2. 六维初筛：可用性、扩展性、安全、可运维、成本、合规。口径引[《The TAM Book》第 5+ 章](../../the-tam-book/manuscript/ch05-practical.md)。
+2. 六维初筛：可用性、扩展性、安全、可运维、成本、合规。口径引[《The TAM Book》第 6 章](../../the-tam-book/manuscript/ch06-technical-depth-practical.md)。
 3. 跨厂商统一标尺。对照表见[《The TAM Book》附录 Z](../../the-tam-book/manuscript/appx-z-well-architected-framework.md)。
 4. 差异点逐条进权衡记录（5+.4）。
 

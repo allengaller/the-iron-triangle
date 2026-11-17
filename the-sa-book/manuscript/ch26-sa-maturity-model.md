@@ -1,7 +1,7 @@
 <!-- Diátaxis: Reference -->
 # 第 26 章　SA 成熟度模型
 
-> 本章定义 SA 的成熟度标尺 S1–S5。对标[《The TAM Book》第 27 章](../../the-tam-book/manuscript/ch27-maturity-model.md)的 M1–M5 模式：按证据判定、可升可降、映射表唯一。本章是 SA 侧标尺的唯一事实源，别处只映射。
+> 本章定义 SA 的成熟度标尺 S1–S5。对标[《The TAM Book》第 36 章](../../the-tam-book/manuscript/ch36-maturity-model.md)的 M1–M5 模式：按证据判定、可升可降、映射表唯一。本章是 SA 侧标尺的唯一事实源，别处只映射。
 
 ## 26.1 五级定义
 
@@ -35,7 +35,7 @@
 | 体系 | 映射 | 出处 |
 | --- | --- | --- |
 | 售前度量 | S 级评定取数：赢单质量、偏差率、移交合格率 | [第 25 章](ch25-pre-sales-metrics.md) |
-| TAM 成熟度 | S3 约对应 M3，S4 约对应 M4（判定口径各归各书） | TAM 书第 27 章 |
+| TAM 成熟度 | S3 约对应 M3，S4 约对应 M4（判定口径各归各书） | TAM 书第 36 章 |
 | SA 能力六维 | S3 要求六维无短板（对标 TAM M3 规则） | 本章 26.2 |
 
 ## 26.5 使用纪律

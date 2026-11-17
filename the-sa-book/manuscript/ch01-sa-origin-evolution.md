@@ -37,7 +37,7 @@ AI 进场后，岗位动作重写过半：
 
 留下的四样有个共性。它们含不可编纂的信息与后果承诺。前者进不了数据库，后者进不了算法。
 
-**具名人制度不变**：AI 产出的方案，签字的永远是 SA。“AI 起草的”不是免责理由。这与[《The TAM Book》第 24 章](../../the-tam-book/manuscript/ch24-ai-risk-governance.md)的问责逻辑同源。
+**具名人制度不变**：AI 产出的方案，签字的永远是 SA。“AI 起草的”不是免责理由。这与[《The TAM Book》第 31 章](../../the-tam-book/manuscript/ch31-ai-risk-governance.md)的问责逻辑同源。
 
 ## 1.4 常见误区
 

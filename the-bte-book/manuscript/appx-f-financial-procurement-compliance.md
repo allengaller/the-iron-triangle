@@ -1,7 +1,7 @@
 <!-- Diátaxis: Reference -->
 # 附录 F　金融采购与合规速查
 
-> 本附录是 BTE 在金融客户处的采购与合规速查表，不构成法律意见。具体规则以官方最新发布为准。监管与标准口径引[《The TAM Book》附录 W](../../the-tam-book/manuscript/appx-w-financial-ops-standards.md)与[第 24 章](../../the-tam-book/manuscript/ch24-ai-risk-governance.md)。
+> 本附录是 BTE 在金融客户处的采购与合规速查表，不构成法律意见。具体规则以官方最新发布为准。监管与标准口径引[《The TAM Book》附录 W](../../the-tam-book/manuscript/appx-w-financial-ops-standards.md)与[第 31 章](../../the-tam-book/manuscript/ch31-ai-risk-governance.md)。
 
 > 时效说明：本附录关键法规名称与状态已联网复核，时点 2026-11-03；具体条文以官方最新发布为准。发布前须刷新。
 

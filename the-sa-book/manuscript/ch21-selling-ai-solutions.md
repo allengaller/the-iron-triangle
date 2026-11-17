@@ -1,7 +1,7 @@
 <!-- Diátaxis: How-to -->
 # 第 21 章　AI 方案怎么卖
 
-> AI 变革篇开篇。客户要买 AI，SA 要把 AI 卖对。三个动作：模型与算力选型、推理成本测算、合规红线进 AI 方案。技术与治理深度引[《The TAM Book》第 21 章](../../the-tam-book/manuscript/ch21-ai-workload-assurance.md)与[第 24 章](../../the-tam-book/manuscript/ch24-ai-risk-governance.md)，本章管售前视角。
+> AI 变革篇开篇。客户要买 AI，SA 要把 AI 卖对。三个动作：模型与算力选型、推理成本测算、合规红线进 AI 方案。技术与治理深度引[《The TAM Book》第 27 章](../../the-tam-book/manuscript/ch27-ai-workload-assurance.md)与[第 31 章](../../the-tam-book/manuscript/ch31-ai-risk-governance.md)，本章管售前视角。
 
 ## 21.1 前置条件与目标
 
@@ -9,7 +9,7 @@
 | --- | --- | --- |
 | 需求基线 | AI 场景与验收标准已签认 | 回第 12 章 |
 | 技术栈 | 模型与算力候选已列 | 补技术雷达 |
-| 合规清单 | AI 红线已列 | 引 TAM 第 24 章 |
+| 合规清单 | AI 红线已列 | 引 TAM 第 31 章 |
 
 完成标志有三项：选型有对照、成本有测算、红线进方案。
 
@@ -26,7 +26,7 @@
 1. 从场景倒推模型档位。对话、生成、判别的要求不同。
 2. 模型两案对照：自建权重加推理服务，或托管服务。差异进权衡记录。
 3. 算力按峰值推理量估算（信封背面，第 5+ 章）。GPU（Graphics Processing Unit）配额与排队风险入方案。
-4. 版本轮换风险事前写明。模型迭代快。锁定版本还是跟随版本，客户要知情。版本轮换口径引[《The TAM Book》第 24 章](../../the-tam-book/manuscript/ch24-ai-risk-governance.md)。
+4. 版本轮换风险事前写明。模型迭代快。锁定版本还是跟随版本，客户要知情。版本轮换口径引[《The TAM Book》第 31 章](../../the-tam-book/manuscript/ch31-ai-risk-governance.md)。
 
 ### 预期结果
 
@@ -68,7 +68,7 @@
 | 内容标识 | 合成内容标注与留痕 |
 | 数据边界 | 提示词与检索内容分级 |
 
-红线口径统一引[《The TAM Book》第 24 章](../../the-tam-book/manuscript/ch24-ai-risk-governance.md)。AI 方案的承诺一律过四问（[第 9 章](ch09-commitment-engineering.md)）。
+红线口径统一引[《The TAM Book》第 31 章](../../the-tam-book/manuscript/ch31-ai-risk-governance.md)。AI 方案的承诺一律过四问（[第 9 章](ch09-commitment-engineering.md)）。
 
 ### 预期结果
 

@@ -3,7 +3,7 @@
 
 > 金融客户不是“多走几个流程”，是“每个流程都能否决你”。BTE 要懂采购节奏、准入规则与决策链，否则技术再好也进不了门。本章讲四个特征、七个阶段、六类角色与五类否决点。
 
-> 时效说明：本章描述实践中的常见流程，不构成法律意见。本章未逐条核对法规；关键法规名称与状态见[附录 F](appx-f-financial-procurement-compliance.md)（2026-11-03 复核）。具体规则以官方最新发布为准。行业与监管背景见[《The TAM Book》第 16 章](../../the-tam-book/manuscript/ch16-financial-industry.md)与[附录 W](../../the-tam-book/manuscript/appx-w-financial-ops-standards.md)。
+> 时效说明：本章描述实践中的常见流程，不构成法律意见。本章未逐条核对法规；关键法规名称与状态见[附录 F](appx-f-financial-procurement-compliance.md)（2026-11-03 复核）。具体规则以官方最新发布为准。行业与监管背景见[《The TAM Book》第 22 章](../../the-tam-book/manuscript/ch22-financial-industry.md)与[附录 W](../../the-tam-book/manuscript/appx-w-financial-ops-standards.md)。
 
 ## 19.1 金融采购的四个特征
 

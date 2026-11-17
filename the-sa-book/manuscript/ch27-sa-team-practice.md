@@ -1,7 +1,7 @@
 <!-- Diátaxis: How-to -->
 # 第 27+ 章　SA 团队建设动作
 
-> 本章是[第 27 章](ch27-career-team.md)的 How-to 配套。四个动作：梯队盘点、分工配置、复盘喂回、沉淀入库。标尺用[第 26 章](ch26-sa-maturity-model.md) S1–S5。对标[《The TAM Book》第 28+ 章](../../the-tam-book/manuscript/ch28-career-team-building-howto.md)的团队建设模式。
+> 本章是[第 27 章](ch27-career-team.md)的 How-to 配套。四个动作：梯队盘点、分工配置、复盘喂回、沉淀入库。标尺用[第 26 章](ch26-sa-maturity-model.md) S1–S5。对标[《The TAM Book》第 38 章](../../the-tam-book/manuscript/ch38-career-team-building-howto.md)的团队建设模式。
 
 ## 27+.1 前置条件与目标
 

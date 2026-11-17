@@ -1,7 +1,7 @@
 <!-- Diátaxis: Reference -->
 # 第 26 章　BTE 度量体系
 
-> 本章是 BTE 指标口径的基准。只定义 BTE 增量指标；SLA、健康分、事件效率等交付侧口径引[《The TAM Book》第 26 章](../../the-tam-book/manuscript/ch26-measurement-system.md)，不重定义。
+> 本章是 BTE 指标口径的基准。只定义 BTE 增量指标；SLA、健康分、事件效率等交付侧口径引[《The TAM Book》第 34 章](../../the-tam-book/manuscript/ch34-measurement-system.md)，不重定义。
 
 ## 26.1 度量原则
 

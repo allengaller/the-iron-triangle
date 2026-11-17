@@ -45,7 +45,7 @@
 ### 操作步骤
 
 1. 逐条过承诺清单。每条四要素（内容、依据、代价、接单人）当场确认。
-2. 异议当场处理。口径歧义回第 26 章口径（[《The TAM Book》第 26 章](../../the-tam-book/manuscript/ch26-measurement-system.md)），承诺歧义回四问。
+2. 异议当场处理。口径歧义回第 34 章口径（[《The TAM Book》第 34 章](../../the-tam-book/manuscript/ch34-measurement-system.md)），承诺歧义回四问。
 3. 风险清单逐条确认 Owner。假设条件当面讲清。
 4. 签认归档。纪要双方签认后即移交合格。
 5. 遗留项入跟踪台账。责任到人、时间到日。

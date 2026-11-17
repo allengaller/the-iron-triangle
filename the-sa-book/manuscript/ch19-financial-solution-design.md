@@ -23,7 +23,7 @@
 
 ### 操作步骤
 
-1. 档位从业务定。交易类、渠道类、管理类的档位不同（可用性数学见[《The TAM Book》第 5+ 章](../../the-tam-book/manuscript/ch05-practical.md)）。
+1. 档位从业务定。交易类、渠道类、管理类的档位不同（可用性数学见[《The TAM Book》第 6 章](../../the-tam-book/manuscript/ch06-technical-depth-practical.md)）。
 2. 容灾形态对照业务连续性要求。两地三中心、双活、单元化的成本差一个量级。
 3. RTO/RPO 与业务恢复目标对齐。写进方案，不写“视情况”。
 4. 取舍入权衡记录。翻盘条件写明。
@@ -48,7 +48,7 @@
 | 个人信息禁入训练 | 训练数据白名单 | AI 章节 |
 | 留痕可审计 | 日志与推理路径留存 | 合规章节 |
 
-红线口径引[《The TAM Book》第 24 章](../../the-tam-book/manuscript/ch24-ai-risk-governance.md)。本章只做映射，不重定义。
+红线口径引[《The TAM Book》第 31 章](../../the-tam-book/manuscript/ch31-ai-risk-governance.md)。本章只做映射，不重定义。
 
 ### 操作步骤
 

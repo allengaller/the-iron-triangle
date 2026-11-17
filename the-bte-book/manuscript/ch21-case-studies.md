@@ -1,7 +1,7 @@
 <!-- Diátaxis: Explanation -->
 # 第 21 章　案例解剖（虚构化案例集）
 
-> 本章四个案例全部虚构，用于演示判断与取舍，不对应任何真实客户。每个案例按五段展开：背景、冲突、BTE 动作、结果、复盘。读案例不读“成功”，读“当时还能怎么选”。案例体例与脱敏规定见[《The TAM Book》第 20 章](../../the-tam-book/manuscript/ch20-case-studies.md)与[附录 E](../../the-tam-book/manuscript/appx-e-contribution-guide.md)。
+> 本章四个案例全部虚构，用于演示判断与取舍，不对应任何真实客户。每个案例按五段展开：背景、冲突、BTE 动作、结果、复盘。读案例不读“成功”，读“当时还能怎么选”。案例体例与脱敏规定见[《The TAM Book》第 26 章](../../the-tam-book/manuscript/ch26-case-studies.md)与[附录 E](../../the-tam-book/manuscript/appx-e-contribution-guide.md)。
 
 ## 21.1 案例读法
 

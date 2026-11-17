@@ -1,7 +1,7 @@
 <!-- Diátaxis: Explanation -->
 # 第 24 章　AI 时代的承诺与信任
 
-> AI 能生成方案，不能承担承诺。客户签的是合同，不是模型输出。本章讲三个新问题、一条责任链、四层证据、两类边界与信任修复。风险治理口径见[《The TAM Book》第 24 章](../../the-tam-book/manuscript/ch24-ai-risk-governance.md)。
+> AI 能生成方案，不能承担承诺。客户签的是合同，不是模型输出。本章讲三个新问题、一条责任链、四层证据、两类边界与信任修复。风险治理口径见[《The TAM Book》第 31 章](../../the-tam-book/manuscript/ch31-ai-risk-governance.md)。
 
 ## 24.1 三个新问题
 

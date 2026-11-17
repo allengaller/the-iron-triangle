@@ -21,8 +21,8 @@
 | # | 能力维 | 一句话 | 对标 |
 | --- | --- | --- | --- |
 | 1 | 机会判断 | 值不值得跟，赢了能不能交付 | TAM 第 5 章判断力的商机镜像 |
-| 2 | 客户与决策链洞察 | 谁拍板、谁否决、预算何时有 | TAM 第 7 章关系经营的商机侧 |
-| 3 | 价值工程 | 把技术能力翻译成客户愿意付费的价值 | TAM 第 6 章业务洞察的商机侧 |
+| 2 | 客户与决策链洞察 | 谁拍板、谁否决、预算何时有 | TAM 第 9 章关系经营的商机侧 |
+| 3 | 价值工程 | 把技术能力翻译成客户愿意付费的价值 | TAM 第 7 章业务洞察的商机侧 |
 | 4 | 技术可信与证明设计 | 用证据而不是形容词让客户相信 | SA 第 5、7 章的能力前置 |
 | 5 | 商业结构设计 | 定价、打包、合同、风险分配 | 新增维度，BTE 独有 |
 | 6 | 谈判与关系推进 | 在采购流程中守住底线并推进决策 | SA 第 8、10 章的商务侧 |
@@ -35,11 +35,11 @@
 | --- | --- | --- |
 | 铁三角角色、RACI、四接缝、红线 | [TAM 附录 V](../the-tam-book/manuscript/appx-v-tam-bte-sa-triangle.md) | 引用不重定义 |
 | 承诺清单与移交三件套 | [模板 19](../the-tam-book/templates/19-commitment-handover-kit.md) | 三书共用 |
-| 指标口径（SLA、健康分、事件效率） | [TAM 第 26 章](../the-tam-book/manuscript/ch26-measurement-system.md)、[附录 AC](../the-tam-book/manuscript/appx-ac-sre-cre-engineering-depth.md) | 一处定义，三书引用 |
-| 客户生命周期、续约扩容 | [TAM 第 11 章](../the-tam-book/manuscript/ch11-customer-lifecycle.md) | BTE 书取续约与增购段 |
+| 指标口径（SLA、健康分、事件效率） | [TAM 第 34 章](../the-tam-book/manuscript/ch34-measurement-system.md)、[附录 AC](../the-tam-book/manuscript/appx-ac-sre-cre-engineering-depth.md) | 一处定义，三书引用 |
+| 客户生命周期、续约扩容 | [TAM 第 17 章](../the-tam-book/manuscript/ch17-customer-lifecycle.md) | BTE 书取续约与增购段 |
 | 售前流程、POC、投标 | [SA 第 11–17 章](../the-sa-book/manuscript/ch11-lead-qualification.md)、[SA 模板 01–05](../the-sa-book/templates/) | BTE 书只写决策视角 |
-| 金融行业、案例体例、脱敏 | [TAM 第 16 章](../the-tam-book/manuscript/ch16-financial-industry.md)、[第 20 章](../the-tam-book/manuscript/ch20-case-studies.md)、[附录 E](../the-tam-book/manuscript/appx-e-contribution-guide.md) | 引用 |
-| AI 工作负载与风险 | [TAM 第 21 章](../the-tam-book/manuscript/ch21-ai-workload-assurance.md)、[第 24 章](../the-tam-book/manuscript/ch24-ai-risk-governance.md) | BTE 书取商业侧 |
+| 金融行业、案例体例、脱敏 | [TAM 第 22 章](../the-tam-book/manuscript/ch22-financial-industry.md)、[第 26 章](../the-tam-book/manuscript/ch26-case-studies.md)、[附录 E](../the-tam-book/manuscript/appx-e-contribution-guide.md) | 引用 |
+| AI 工作负载与风险 | [TAM 第 27 章](../the-tam-book/manuscript/ch27-ai-workload-assurance.md)、[第 31 章](../the-tam-book/manuscript/ch31-ai-risk-governance.md) | BTE 书取商业侧 |
 | 方法论映射 | [TAM 附录 C](../the-tam-book/manuscript/appx-c-methodology-mapping.md) | 同一映射体系 |
 | 标准法规库、WA 库 | [TAM 附录 W](../the-tam-book/manuscript/appx-w-financial-ops-standards.md)、[附录 Z](../the-tam-book/manuscript/appx-z-well-architected-framework.md)、`standards/` | 同仓共享 |
 | 写作与审计标准 | `AGENTS.md`、`allen-writes`、`scripts/` | 同一审计口径 |
@@ -143,7 +143,7 @@
 ## 第五部分　AI 变革篇
 
 - **第 22 章　卖 AI 方案 [How-to]（已完成）**
-  AI 方案的价值假设、GPU/Token 成本、消费计费、模型风险、合规红线、证明设计；技术细节引 TAM 第 21、24 章。
+  AI 方案的价值假设、GPU/Token 成本、消费计费、模型风险、合规红线、证明设计；技术细节引 TAM 第 27、31 章。
 - **第 23 章　AI 武装 BTE [How-to]（已完成）**
   客户研究、会议纪要、价值案例、建议书初稿、竞争情报、CRM 卫生；三边界（数据、人审、判断）。
 - **第 23+ 章　BTE Copilot 搭建教程 [Tutorial]（已完成）**

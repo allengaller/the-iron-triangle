@@ -3,7 +3,7 @@
 > `python3 scripts/similarity_audit.py --report`（可复跑，勿手改）
 > 口径见 `QUALITY-GATE.md`。
 
-样本 83 个文件｜比较 3403 对｜骨架完全相同 84 对｜同构簇 5 个
+样本 71 个文件｜比较 2485 对｜骨架完全相同 5 对｜同构簇 3 个
 
 ## 一、同构簇：骨架完全相同
 
@@ -11,11 +11,9 @@
 
 | 文件数 | 字数区间 | 文本重合中位 | 判定 | 成员 |
 |---|---|---|---|---|
-| 13 | 1360–1744（跨度 22%） | 0.04 | 批量填充 | b-tam-process-system-howto、i-on-duty-standard-howto、j-enablement-training-howto、k-incident-emergency-howto、l-project-onboarding-howto、m-product-introduction-howto、n-tam-onsite-certification-howto、o-tam-onsite-promotion-howto、r-problem-retrospective-howto、s-overtime-compoff-howto、t-online-change-howto、u-ticket-management-howto、v-tam-bte-sa-triangle-howto |
-| 3 | 4542–5048（跨度 10%） | 0.00 | 统一体例 | ch09-risk-compliance、ch12-escalation-crisis、ch13-internal-collaboration |
-| 2 | 2532–3092（跨度 18%） | 0.18 | 复刻 | p-tam-service-quality-standard-public-cloud、q-tam-service-quality-standard-dedicated-cloud |
-| 2 | 3766–3835（跨度 2%） | 0.00 | 统一体例 | ch17-financial-availability、ch19-financial-incident |
-| 2 | 2306–3790（跨度 39%） | 0.02 | 统一体例 | ch24-ai-risk-governance-howto、ch26-measurement-system-howto |
+| 3 | 4032–6066（跨度 34%） | 0.00 | 统一体例 | ch05-technical-depth、ch13-risk-compliance、ch15-project-change |
+| 2 | 2776–3340（跨度 17%） | 0.18 | 复刻 | p-tam-service-quality-standard-public-cloud、q-tam-service-quality-standard-dedicated-cloud |
+| 2 | 4865–5036（跨度 3%） | 0.00 | 统一体例 | ch18-escalation-crisis、ch19-internal-collaboration |
 
 ## 二、文本重合 ≥ 0.12 的文件对（非同构簇）
 

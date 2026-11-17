@@ -1,14 +1,14 @@
 <!-- Diátaxis: Explanation -->
 # 第 18 章　金融售前特殊性
 
-> 金融级实战篇开篇。金融客户的售前和通用客户有四处不同。监管语境、信创约束、采购机制、行业分野。对标[《The TAM Book》第 16 章](../../the-tam-book/manuscript/ch16-financial-industry.md)的行业分析，视角换成签单前。实操见[第 19 章](ch19-financial-solution-design.md)。
+> 金融级实战篇开篇。金融客户的售前和通用客户有四处不同。监管语境、信创约束、采购机制、行业分野。对标[《The TAM Book》第 22 章](../../the-tam-book/manuscript/ch22-financial-industry.md)的行业分析，视角换成签单前。实操见[第 19 章](ch19-financial-solution-design.md)。
 
 ## 18.1 监管语境：方案要过合规的秤
 
 金融客户买方案，先过合规的秤。三个售前含义：
 
 1. **方案要写得出合规路径**：等保、数据分级、监管报送不是附件。它们是方案章节；
-2. **红线进方案**：数据不出域、个人信息禁入训练等红线写进设计。不写进免责声明。红线口径引[《The TAM Book》第 24 章](../../the-tam-book/manuscript/ch24-ai-risk-governance.md)；
+2. **红线进方案**：数据不出域、个人信息禁入训练等红线写进设计。不写进免责声明。红线口径引[《The TAM Book》第 31 章](../../the-tam-book/manuscript/ch31-ai-risk-governance.md)；
 3. **证据要留**：监管检查能拿得出手的材料清单，方案阶段就列。
 
 因果链：合规路径清晰 → 客户内部评审通过快 → 售前周期缩短。合规不是阻力，是筛选器。

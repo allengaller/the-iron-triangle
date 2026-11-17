@@ -19,7 +19,7 @@
 
 ## 事实源与引用纪律
 
-- 一处定义，两书引用。铁三角机制（TAM 附录 V）、指标口径（TAM 第 26 章）。需求五要素（TAM 附录 C）、脱敏规定（TAM 附录 E）；职业周期与倦怠分层处置（TAM 附录 AD）；
+- 一处定义，两书引用。铁三角机制（TAM 附录 V）、指标口径（TAM 第 34 章）。需求五要素（TAM 附录 C）、脱敏规定（TAM 附录 E）；职业周期与倦怠分层处置（TAM 附录 AD）；
 - 本册唯一事实源：SA 成熟度映射表（第 26 章）、承诺工程（第 9 章）；
 - Diátaxis 分型维护：Explanation 12 / Reference 3 / How-to 17 / Tutorial 1。类型总览见 `manuscript/DIATAXIS-MAP.md`。
 

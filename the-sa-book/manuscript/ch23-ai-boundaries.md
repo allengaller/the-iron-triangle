@@ -11,7 +11,7 @@ AI 产出的方案、报价、应答，签字的永远是 SA。三个理由：
 2. **判断来源**：承诺背后是权衡。权衡含不可编纂的信息（第 4 章）；
 3. **信任载体**：客户信的是人，不是工具。
 
-“AI 起草的”在客户、合同、监管面前都不是免责理由。同源[《The TAM Book》第 24 章](../../the-tam-book/manuscript/ch24-ai-risk-governance.md)问责逻辑。
+“AI 起草的”在客户、合同、监管面前都不是免责理由。同源[《The TAM Book》第 31 章](../../the-tam-book/manuscript/ch31-ai-risk-governance.md)问责逻辑。
 
 ## 23.2 怎么审：承诺类产出的加严流程
 

@@ -79,7 +79,7 @@ R 执行，A 负责，C 咨询，I 知会。
 | 承诺管理 | 48 小时内登记；口头承诺也登记；组织 TAM 一票关注；签约时随合同留痕 | 先承诺后补；口头承诺不入账 | 附录 V.5.1、[模板 19](../../the-tam-book/templates/19-commitment-handover-kit.md) |
 | 方案评审 | 提供客户约束与商业约束；不绕过可运营性评审；带条件通过进风险清单 | 为赢单压配置；绕过评审 | 附录 V.5.2、[SA 第 7 章](../../the-sa-book/manuscript/ch07-solution-engineering.md) |
 | 移交仪式 | 发起移交会；移交三件套齐备；30 天伴随期；商务关系不断 | 一封邮件三个附件；移交即失联 | 附录 V.5.3、[模板 19](../../the-tam-book/templates/19-commitment-handover-kit.md) |
-| 信号回流 | 接收 TAM 信号；5 个工作日内书面化；决定商务动作；跟踪闭环；不压信号 | 口头听说；压信号；只收不复 | 附录 V.5.4、[TAM 第 15 章](../../the-tam-book/manuscript/ch15-commercial-synergy.md) |
+| 信号回流 | 接收 TAM 信号；5 个工作日内书面化；决定商务动作；跟踪闭环；不压信号 | 口头听说；压信号；只收不复 | 附录 V.5.4、[TAM 第 21 章](../../the-tam-book/manuscript/ch21-commercial-synergy.md) |
 
 ### 2.5.1 承诺管理
 
@@ -122,7 +122,7 @@ TAM 是三角的传感器。BTE 是信号的商务处置人。
 ## 2.7 引用与冲突裁定
 
 - 机制口径冲突时，以[《The TAM Book》附录 V](../../the-tam-book/manuscript/appx-v-tam-bte-sa-triangle.md)为准；
-- 指标口径冲突时，以[《The TAM Book》第 26 章](../../the-tam-book/manuscript/ch26-measurement-system.md)为准；
+- 指标口径冲突时，以[《The TAM Book》第 34 章](../../the-tam-book/manuscript/ch34-measurement-system.md)为准；
 - 售前流程细节冲突时，以[《The SA Book》第 11–17 章](../../the-sa-book/manuscript/ch11-lead-qualification.md)为准；
 - 本书只写 BTE 的决策、证据与交接；
 - 本书各章的接缝动作均锚定本章编号。

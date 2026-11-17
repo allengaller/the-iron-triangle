@@ -1,7 +1,7 @@
 <!-- Diátaxis: How-to -->
 # 第 10 章　呈现与讲标
 
-> 讲标是方案的临门一脚。呈现不是表演，是把判断讲到客户敢拍板。本章四个动作：讲标四原则、六十秒口头版。Demo 与 PPT 叙事分工、答疑攻防。讲标全程用[模板 SA-05](../templates/sa-05-pitch-checklist.md)过检查表。对标[《The TAM Book》高层对话四原则](../../the-tam-book/manuscript/ch07-practical.md)，场景换成售前。
+> 讲标是方案的临门一脚。呈现不是表演，是把判断讲到客户敢拍板。本章四个动作：讲标四原则、六十秒口头版。Demo 与 PPT 叙事分工、答疑攻防。讲标全程用[模板 SA-05](../templates/sa-05-pitch-checklist.md)过检查表。对标[《The TAM Book》高层对话四原则](../../the-tam-book/manuscript/ch10-relationship-management-practical.md)，场景换成售前。
 
 ## 10.1 前置条件与目标
 

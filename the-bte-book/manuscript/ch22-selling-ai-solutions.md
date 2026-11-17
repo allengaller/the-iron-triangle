@@ -1,7 +1,7 @@
 <!-- Diátaxis: How-to -->
 # 第 22 章　卖 AI 方案
 
-> AI 方案不是“加个模型”。它带来新的价值假设、成本结构、证明方式与风险边界。本章给六个动作：定价值、算成本、设计证明、管风险、设结构、过评审。技术侧细节见[《The TAM Book》第 21 章](../../the-tam-book/manuscript/ch21-ai-workload-assurance.md)与[第 24 章](../../the-tam-book/manuscript/ch24-ai-risk-governance.md)。
+> AI 方案不是“加个模型”。它带来新的价值假设、成本结构、证明方式与风险边界。本章给六个动作：定价值、算成本、设计证明、管风险、设结构、过评审。技术侧细节见[《The TAM Book》第 27 章](../../the-tam-book/manuscript/ch27-ai-workload-assurance.md)与[第 31 章](../../the-tam-book/manuscript/ch31-ai-risk-governance.md)。
 
 ## 22.1 前置条件与目标
 

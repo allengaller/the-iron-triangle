@@ -1,7 +1,7 @@
 <!-- Diátaxis: Explanation -->
 # 第 27 章　职业发展与团队
 
-> 度量与成长篇收束章。从“事”回到“人”：SA 往哪走，SA 团队怎么搭。团队建设动作见[第 27+ 章](ch27-sa-team-practice.md)。对标[《The TAM Book》第 28 章](../../the-tam-book/manuscript/ch28-career-team-building.md)的结构。个人职业周期六级（CL1–CL6）与倦怠分层处置见[《The TAM Book》附录 AD](../../the-tam-book/manuscript/appx-ad-career-lifecycle-guide.md)。SA 角色同样适用。
+> 度量与成长篇收束章。从“事”回到“人”：SA 往哪走，SA 团队怎么搭。团队建设动作见[第 27+ 章](ch27-sa-team-practice.md)。对标[《The TAM Book》第 37 章](../../the-tam-book/manuscript/ch37-career-team-building.md)的结构。个人职业周期六级（CL1–CL6）与倦怠分层处置见[《The TAM Book》附录 AD](../../the-tam-book/manuscript/appx-ad-career-lifecycle-guide.md)。SA 角色同样适用。
 
 ## 27.1 岗位的三个特征
 

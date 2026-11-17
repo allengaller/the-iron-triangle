@@ -1,7 +1,7 @@
 <!-- Diátaxis: Explanation -->
 # 第 24 章　SA 的不可替代性
 
-> AI 变革篇收束章。回答那个所有人真正关心的问题：**AI 会干掉售前架构师吗？** 答案先说：岗位不会消失，内涵会重写。公式在[第 4 章](ch04-ai-era-redefined.md)：判断力 × AI 杠杆 × 信任资产。对标[《The TAM Book》第 25 章](../../the-tam-book/manuscript/ch25-tam-irreplaceability.md)的结构。
+> AI 变革篇收束章。回答那个所有人真正关心的问题：**AI 会干掉售前架构师吗？** 答案先说：岗位不会消失，内涵会重写。公式在[第 4 章](ch04-ai-era-redefined.md)：判断力 × AI 杠杆 × 信任资产。对标[《The TAM Book》第 33 章](../../the-tam-book/manuscript/ch33-tam-irreplaceability.md)的结构。
 
 ## 24.1 AI 吃掉什么
 

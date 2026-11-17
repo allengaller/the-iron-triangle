@@ -1,7 +1,7 @@
 <!-- Diátaxis: How-to -->
 # 第 22 章　AI 武装售前
 
-> 上一章讲卖 AI，本章讲用 AI。杠杆场景五个：标书应答、测算表、方案初稿、竞争情报、讲标演练。三条边界先于技巧（对标[《The TAM Book》第 22 章](../../the-tam-book/manuscript/ch22-ai-for-tam.md)）。搭建教程见[第 22+ 章](ch22-sa-copilot-tutorial.md)。
+> 上一章讲卖 AI，本章讲用 AI。杠杆场景五个：标书应答、测算表、方案初稿、竞争情报、讲标演练。三条边界先于技巧（对标[《The TAM Book》第 28 章](../../the-tam-book/manuscript/ch28-ai-for-tam.md)）。搭建教程见[第 22+ 章](ch22-sa-copilot-tutorial.md)。
 
 ## 22.1 三条边界
 
