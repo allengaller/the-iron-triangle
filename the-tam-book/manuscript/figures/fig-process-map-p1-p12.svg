@@ -1,0 +1,98 @@
+<!-- 图名：附录 B 流程地图 P1–P12——按所属域分三行的节点链与衔接箭头 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+  <rect width="800" height="440" fill="#ffffff"/>
+
+  <!-- 第一行：日常运营域 -->
+  <text x="187" y="58" fill="#8a8a8a" font-size="12">日常运营</text>
+  <g fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5">
+    <rect x="187" y="70" width="130" height="56" rx="6"/>
+    <rect x="335" y="70" width="130" height="56" rx="6"/>
+    <rect x="483" y="70" width="130" height="56" rx="6"/>
+  </g>
+  <g text-anchor="middle">
+    <g fill="#1a1a1a" font-size="17" font-weight="600">
+      <text x="252" y="104">P1 服务规划</text>
+      <text x="400" y="104">P9 风险管理</text>
+      <text x="548" y="104">P12 变更治理</text>
+    </g>
+  </g>
+  <g stroke="#c9c9c9" stroke-width="1.5">
+    <line x1="317" y1="98" x2="329" y2="98"/>
+    <line x1="465" y1="98" x2="477" y2="98"/>
+  </g>
+  <g fill="#c9c9c9">
+    <polygon points="335,98 327,94 327,102"/>
+    <polygon points="483,98 475,94 475,102"/>
+  </g>
+
+  <!-- 第二行：接入期 → 变更上线域 -->
+  <text x="113" y="173" fill="#8a8a8a" font-size="12">接入期 → 变更上线</text>
+  <g fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5">
+    <rect x="113" y="185" width="130" height="56" rx="6"/>
+    <rect x="261" y="185" width="130" height="56" rx="6"/>
+    <rect x="409" y="185" width="130" height="56" rx="6"/>
+    <rect x="557" y="185" width="130" height="56" rx="6"/>
+  </g>
+  <g text-anchor="middle">
+    <g fill="#1a1a1a" font-size="17" font-weight="600">
+      <text x="178" y="219">P2 90 天接入</text>
+      <text x="326" y="219">P3 架构评审</text>
+      <text x="474" y="219">P4 上线闸门</text>
+      <text x="622" y="219">P5 重大保障</text>
+    </g>
+  </g>
+  <g stroke="#c9c9c9" stroke-width="1.5">
+    <line x1="243" y1="213" x2="255" y2="213"/>
+    <line x1="391" y1="213" x2="403" y2="213"/>
+    <line x1="539" y1="213" x2="551" y2="213"/>
+  </g>
+  <g fill="#c9c9c9">
+    <polygon points="261,213 253,209 253,217"/>
+    <polygon points="409,213 401,209 401,217"/>
+    <polygon points="557,213 549,209 549,217"/>
+  </g>
+
+  <!-- 第三行：事件危机 → 价值续约 → 内部协同域 -->
+  <text x="39" y="288" fill="#8a8a8a" font-size="12">事件危机 → 价值续约 → 内部协同</text>
+  <g fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5">
+    <rect x="39" y="300" width="130" height="56" rx="6"/>
+    <rect x="187" y="300" width="130" height="56" rx="6"/>
+    <rect x="335" y="300" width="130" height="56" rx="6"/>
+    <rect x="483" y="300" width="130" height="56" rx="6"/>
+    <rect x="631" y="300" width="130" height="56" rx="6"/>
+  </g>
+  <g text-anchor="middle">
+    <g fill="#1a1a1a" font-size="17" font-weight="600">
+      <text x="104" y="334">P6 事件升级</text>
+      <text x="252" y="334">P7 RCA 复盘</text>
+      <text x="400" y="334">P8 价值汇报</text>
+      <text x="548" y="334">P10 续约增购</text>
+      <text x="696" y="334">P11 需求反馈</text>
+    </g>
+  </g>
+  <g stroke="#c9c9c9" stroke-width="1.5">
+    <line x1="169" y1="328" x2="181" y2="328"/>
+    <line x1="317" y1="328" x2="329" y2="328"/>
+    <line x1="465" y1="328" x2="477" y2="328"/>
+    <line x1="613" y1="328" x2="625" y2="328"/>
+  </g>
+  <g fill="#c9c9c9">
+    <polygon points="187,328 179,324 179,332"/>
+    <polygon points="335,328 327,324 327,332"/>
+    <polygon points="483,328 475,324 475,332"/>
+    <polygon points="631,328 623,324 623,332"/>
+  </g>
+
+  <!-- 跨域衔接：重大变更接 P4/P5 -->
+  <path d="M 548,126 C 548,155 474,150 474,179" fill="none" stroke="#c9c9c9" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <polygon points="474,183 469,173 479,173" fill="#c9c9c9"/>
+  <text x="560" y="152" fill="#8a8a8a" font-size="12">重大变更接 P4/P5</text>
+
+  <!-- 跨行衔接：P5 后事件走 P6 -->
+  <path d="M 622,241 L 622,266 L 104,266 L 104,294" fill="none" stroke="#c9c9c9" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <polygon points="104,298 99,288 109,288" fill="#c9c9c9"/>
+  <text x="360" y="259" fill="#8a8a8a" font-size="12" text-anchor="middle">重保窗口内事件接 P6</text>
+
+  <!-- 底部注记 -->
+  <text x="400" y="412" text-anchor="middle" fill="#5a5a5a" font-size="13">使用原则：流程是底线不是天花板——P4、P6、P7 三项不可省略〔标准〕</text>
+</svg>

@@ -1,0 +1,95 @@
+<!-- 图名：金融级事件分钟级响应与监管上报双泳道——内部响应与上报倒排的各自时限 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+  <rect width="800" height="470" fill="#ffffff"/>
+
+  <!-- 泳道一：内部响应 -->
+  <rect x="30" y="40" width="740" height="180" rx="6" fill="#ffffff" stroke="#e3e3e3" stroke-width="1.5"/>
+  <text x="46" y="66" fill="#1a1a1a" font-size="17" font-weight="600">内部响应</text>
+
+  <g stroke-width="1.5">
+    <rect x="140" y="96" width="124" height="66" rx="6" fill="#ffffff" stroke="#c9c9c9"/>
+    <rect x="264" y="96" width="124" height="66" rx="6" fill="#ffffff" stroke="#c9c9c9"/>
+    <rect x="388" y="96" width="124" height="66" rx="6" fill="#ffffff" stroke="#c9c9c9"/>
+    <rect x="512" y="96" width="124" height="66" rx="6" fill="#ffffff" stroke="#c9c9c9"/>
+    <rect x="636" y="96" width="124" height="66" rx="6" fill="#c8442c" fill-opacity="0.14" stroke="#c8442c"/>
+  </g>
+  <g text-anchor="middle">
+    <g fill="#1a1a1a" font-size="13" font-weight="600">
+      <text x="202" y="124">0–1 分钟</text>
+      <text x="326" y="124">1–5 分钟</text>
+      <text x="450" y="124">5–10 分钟</text>
+      <text x="574" y="124">10–15 分钟</text>
+      <text x="698" y="124">15 分钟内</text>
+    </g>
+    <g fill="#1a1a1a" font-size="13">
+      <text x="202" y="148">告警双通道触达</text>
+      <text x="326" y="148">值班确认介入</text>
+      <text x="450" y="148">完成定级初判</text>
+      <text x="574" y="148">作战室就绪</text>
+      <text x="698" y="148">发出首次客户通报</text>
+    </g>
+  </g>
+
+  <!-- 内部响应时间刻度 -->
+  <line x1="140" y1="178" x2="766" y2="178" stroke="#c9c9c9" stroke-width="2"/>
+  <polygon points="772,178 762,173 762,183" fill="#c9c9c9"/>
+  <g stroke="#c9c9c9" stroke-width="1.5">
+    <line x1="140" y1="178" x2="140" y2="190"/>
+    <line x1="264" y1="178" x2="264" y2="190"/>
+    <line x1="388" y1="178" x2="388" y2="190"/>
+    <line x1="512" y1="178" x2="512" y2="190"/>
+    <line x1="636" y1="178" x2="636" y2="190"/>
+  </g>
+  <g fill="#8a8a8a" font-size="12" text-anchor="middle">
+    <text x="140" y="207">0</text>
+    <text x="264" y="207">1</text>
+    <text x="388" y="207">5</text>
+    <text x="512" y="207">10</text>
+    <text x="636" y="207">15 分钟</text>
+  </g>
+
+  <!-- 泳道二：监管／客户上报 -->
+  <rect x="30" y="240" width="740" height="180" rx="6" fill="#ffffff" stroke="#e3e3e3" stroke-width="1.5"/>
+  <text x="46" y="266" fill="#1a1a1a" font-size="17" font-weight="600">监管／客户上报</text>
+
+  <g stroke-width="1.5">
+    <rect x="140" y="296" width="124" height="66" rx="6" fill="#ffffff" stroke="#c9c9c9"/>
+    <rect x="264" y="296" width="124" height="66" rx="6" fill="#ffffff" stroke="#c9c9c9"/>
+    <rect x="388" y="296" width="124" height="66" rx="6" fill="#c8442c" fill-opacity="0.14" stroke="#c8442c"/>
+    <rect x="512" y="296" width="124" height="66" rx="6" fill="#ffffff" stroke="#c9c9c9"/>
+    <rect x="636" y="296" width="124" height="66" rx="6" fill="#ffffff" stroke="#c9c9c9"/>
+  </g>
+  <g text-anchor="middle">
+    <g fill="#1a1a1a" font-size="13" font-weight="600">
+      <text x="202" y="324">立即</text>
+      <text x="326" y="324">倒排</text>
+      <text x="450" y="324">4–6 小时内</text>
+      <text x="574" y="324">客户内部审核</text>
+      <text x="698" y="324">报送完成</text>
+    </g>
+    <g fill="#1a1a1a" font-size="13">
+      <text x="202" y="348">指定厂商材料负责人</text>
+      <text x="326" y="348">确定厂商交付时点</text>
+      <text x="450" y="348">厂商初稿送达</text>
+      <text x="574" y="348">留人答复追问并修订</text>
+      <text x="698" y="348">归档版本与接收人</text>
+    </g>
+  </g>
+
+  <!-- 上报时间刻度 -->
+  <line x1="140" y1="378" x2="766" y2="378" stroke="#c9c9c9" stroke-width="2"/>
+  <polygon points="772,378 762,373 762,383" fill="#c9c9c9"/>
+  <g stroke="#c9c9c9" stroke-width="1.5">
+    <line x1="140" y1="378" x2="140" y2="390"/>
+    <line x1="388" y1="378" x2="388" y2="390"/>
+    <line x1="636" y1="378" x2="636" y2="390"/>
+  </g>
+  <g fill="#8a8a8a" font-size="12" text-anchor="middle">
+    <text x="140" y="407">T0</text>
+    <text x="388" y="407">4–6 小时</text>
+    <text x="636" y="407">24 小时</text>
+  </g>
+
+  <!-- 底部注记 -->
+  <text x="400" y="452" text-anchor="middle" fill="#5a5a5a" font-size="13">厂商材料、客户通报与监管报告使用同一套已确认事实，按客户报送时限倒排交付〔标准〕</text>
+</svg>

@@ -17,6 +17,8 @@
 
 按度量对象分四族，各自回答一个问题：
 
+![四族指标因果关系：健康族领先、质量与效率族同步、感知与价值族滞后，箭头示领先滞后传导方向](figures/fig-four-family-causality.svg)
+
 | 族 | 回答的问题 | 核心指标 | 主要消费方 |
 | --- | --- | --- | --- |
 | 客户健康族 | 这个客户整体好不好 | 客户健康分（Customer Health Score）（34.3）、用量健康度（[第 21 章](ch21-commercial-synergy.md)） | TAM 自管、服务经理 |
@@ -29,6 +31,8 @@
 ## 34.3 客户健康分口径
 
 客户健康分（[模板 10](../templates/10-customer-health-scorecard.md)）是 TAM 最重要的自管指标。它也是[第 17 章](ch17-customer-lifecycle.md)生命周期运营和[第 21 章](ch21-commercial-synergy.md)续约预测的输入。
+
+![客户健康分下钻树：根节点为客户健康分，中层为五维构成，底层为核心指标叶子，连线粗细示意权重](figures/fig-health-score-drilldown.svg)
 
 **构成（建议权重，按业务校准）**：
 

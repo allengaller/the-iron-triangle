@@ -1,0 +1,96 @@
+<!-- 图名：TAM Copilot 教程九步流水——3×3 蛇形链的九个步骤框与衔接箭头 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+  <rect width="800" height="440" fill="#ffffff"/>
+
+  <!-- 图题 -->
+  <text x="400" y="44" text-anchor="middle" fill="#1a1a1a" font-size="17" font-weight="600">TAM Copilot 教程：九步流水</text>
+
+  <!-- 第一行：1 → 2 → 3 -->
+  <g fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5">
+    <rect x="60" y="76" width="180" height="80" rx="6"/>
+    <rect x="310" y="76" width="180" height="80" rx="6"/>
+    <rect x="560" y="76" width="180" height="80" rx="6"/>
+  </g>
+
+  <!-- 第二行（右→左）：4 → 5 → 6 -->
+  <g fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5">
+    <rect x="560" y="190" width="180" height="80" rx="6"/>
+    <rect x="310" y="190" width="180" height="80" rx="6"/>
+    <rect x="60" y="190" width="180" height="80" rx="6"/>
+  </g>
+
+  <!-- 第三行：7 → 8 → 9 -->
+  <g fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5">
+    <rect x="60" y="304" width="180" height="80" rx="6"/>
+    <rect x="310" y="304" width="180" height="80" rx="6"/>
+    <rect x="560" y="304" width="180" height="80" rx="6"/>
+  </g>
+
+  <!-- 编号徽标 -->
+  <g fill="#c8442c" fill-opacity="0.14" stroke="#c8442c" stroke-width="1.5">
+    <circle cx="90" cy="116" r="15"/>
+    <circle cx="340" cy="116" r="15"/>
+    <circle cx="590" cy="116" r="15"/>
+    <circle cx="590" cy="230" r="15"/>
+    <circle cx="340" cy="230" r="15"/>
+    <circle cx="90" cy="230" r="15"/>
+    <circle cx="90" cy="344" r="15"/>
+    <circle cx="340" cy="344" r="15"/>
+    <circle cx="590" cy="344" r="15"/>
+  </g>
+  <g fill="#c8442c" font-size="14" font-weight="600" text-anchor="middle">
+    <text x="90" y="121">1</text>
+    <text x="340" y="121">2</text>
+    <text x="590" y="121">3</text>
+    <text x="590" y="235">4</text>
+    <text x="340" y="235">5</text>
+    <text x="90" y="235">6</text>
+    <text x="90" y="349">7</text>
+    <text x="340" y="349">8</text>
+    <text x="590" y="349">9</text>
+  </g>
+
+  <!-- 步骤简名 -->
+  <g fill="#1a1a1a" font-size="17" font-weight="600" text-anchor="middle">
+    <text x="170" y="122">定义场景</text>
+    <text x="420" y="122">组织知识库</text>
+    <text x="670" y="122">配置知识问答</text>
+    <text x="670" y="236">工单摘要模板</text>
+    <text x="420" y="236">纪要结构化</text>
+    <text x="170" y="236">周报草稿流程</text>
+    <text x="170" y="350">提示词版本库</text>
+    <text x="420" y="350">月度抽检降级</text>
+    <text x="670" y="350">上线检查</text>
+  </g>
+
+  <!-- 行内衔接箭头 -->
+  <g stroke="#c9c9c9" stroke-width="1.5">
+    <line x1="246" y1="116" x2="304" y2="116"/>
+    <line x1="496" y1="116" x2="554" y2="116"/>
+    <line x1="554" y1="230" x2="496" y2="230"/>
+    <line x1="304" y1="230" x2="246" y2="230"/>
+    <line x1="246" y1="344" x2="304" y2="344"/>
+    <line x1="496" y1="344" x2="554" y2="344"/>
+  </g>
+  <g fill="#c9c9c9">
+    <polygon points="310,116 302,112 302,120"/>
+    <polygon points="560,116 552,112 552,120"/>
+    <polygon points="490,230 498,226 498,234"/>
+    <polygon points="240,230 248,226 248,234"/>
+    <polygon points="310,344 302,340 302,348"/>
+    <polygon points="560,344 552,340 552,348"/>
+  </g>
+
+  <!-- 换行衔接箭头 -->
+  <g stroke="#c9c9c9" stroke-width="1.5">
+    <line x1="650" y1="162" x2="650" y2="184"/>
+    <line x1="150" y1="276" x2="150" y2="298"/>
+  </g>
+  <g fill="#c9c9c9">
+    <polygon points="650,190 646,182 654,182"/>
+    <polygon points="150,304 146,296 154,296"/>
+  </g>
+
+  <!-- 底部注记 -->
+  <text x="400" y="416" text-anchor="middle" fill="#5a5a5a" font-size="13">第 0 步准备沙箱和样例数据为前置；第 9 步上线检查通过后才接入真实数据〔标准〕</text>
+</svg>

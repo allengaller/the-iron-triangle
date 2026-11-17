@@ -1,0 +1,92 @@
+<!-- 图名：客户健康分下钻树——五维权重与底层指标（第 34 章 34.3／34.11） -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+  <rect width="800" height="540" fill="#ffffff"/>
+
+  <text x="30" y="32" fill="#1a1a1a" font-size="14" font-weight="600">客户健康分下钻：五维加权 → 底层指标</text>
+
+  <!-- 根节点 -->
+  <rect x="30" y="242" width="150" height="56" rx="6" fill="#c8442c" fill-opacity="0.14" stroke="#c8442c" stroke-width="1.5"/>
+  <text x="105" y="266" fill="#1a1a1a" font-size="16" font-weight="600" text-anchor="middle">客户健康分</text>
+  <text x="105" y="288" fill="#5a5a5a" font-size="11" text-anchor="middle">定档：绿／黄／红</text>
+
+  <!-- 根 → 维度连线（粗细示意权重） -->
+  <g stroke="#c9c9c9" fill="none">
+    <line x1="180" y1="270" x2="250" y2="98" stroke-width="3"/>
+    <line x1="180" y1="270" x2="250" y2="188" stroke-width="3"/>
+    <line x1="180" y1="270" x2="250" y2="278" stroke-width="2"/>
+    <line x1="180" y1="270" x2="250" y2="368" stroke-width="1.5"/>
+    <line x1="180" y1="270" x2="250" y2="443" stroke-width="1"/>
+  </g>
+
+  <!-- 维度节点（含权重） -->
+  <g fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5">
+    <rect x="250" y="76" width="155" height="44" rx="6"/>
+    <rect x="250" y="166" width="155" height="44" rx="6"/>
+    <rect x="250" y="256" width="155" height="44" rx="6"/>
+    <rect x="250" y="346" width="155" height="44" rx="6"/>
+    <rect x="250" y="421" width="155" height="44" rx="6"/>
+  </g>
+  <g fill="#1a1a1a" font-size="14" font-weight="600" text-anchor="middle">
+    <text x="327" y="103">技术健康 30%</text>
+    <text x="327" y="193">服务消费 25%</text>
+    <text x="327" y="283">服务交互 20%</text>
+    <text x="327" y="373">关系信号 15%</text>
+    <text x="327" y="448">商业价值 10%</text>
+  </g>
+
+  <!-- 维度 → 指标连线 -->
+  <g stroke="#e3e3e3" stroke-width="1">
+    <line x1="405" y1="98" x2="540" y2="68"/>
+    <line x1="405" y1="98" x2="540" y2="98"/>
+    <line x1="405" y1="98" x2="540" y2="128"/>
+    <line x1="405" y1="188" x2="540" y2="158"/>
+    <line x1="405" y1="188" x2="540" y2="188"/>
+    <line x1="405" y1="188" x2="540" y2="218"/>
+    <line x1="405" y1="278" x2="540" y2="248"/>
+    <line x1="405" y1="278" x2="540" y2="278"/>
+    <line x1="405" y1="278" x2="540" y2="308"/>
+    <line x1="405" y1="368" x2="540" y2="338"/>
+    <line x1="405" y1="368" x2="540" y2="368"/>
+    <line x1="405" y1="368" x2="540" y2="398"/>
+    <line x1="405" y1="443" x2="540" y2="428"/>
+    <line x1="405" y1="443" x2="540" y2="458"/>
+  </g>
+
+  <!-- 指标叶子 -->
+  <g fill="#ffffff" stroke="#e3e3e3" stroke-width="1.5">
+    <rect x="540" y="55" width="200" height="26" rx="6"/>
+    <rect x="540" y="85" width="200" height="26" rx="6"/>
+    <rect x="540" y="115" width="200" height="26" rx="6"/>
+    <rect x="540" y="145" width="200" height="26" rx="6"/>
+    <rect x="540" y="175" width="200" height="26" rx="6"/>
+    <rect x="540" y="205" width="200" height="26" rx="6"/>
+    <rect x="540" y="235" width="200" height="26" rx="6"/>
+    <rect x="540" y="265" width="200" height="26" rx="6"/>
+    <rect x="540" y="295" width="200" height="26" rx="6"/>
+    <rect x="540" y="325" width="200" height="26" rx="6"/>
+    <rect x="540" y="355" width="200" height="26" rx="6"/>
+    <rect x="540" y="385" width="200" height="26" rx="6"/>
+    <rect x="540" y="415" width="200" height="26" rx="6"/>
+    <rect x="540" y="445" width="200" height="26" rx="6"/>
+  </g>
+  <g fill="#1a1a1a" font-size="12">
+    <text x="554" y="73">监控告警趋势</text>
+    <text x="554" y="103">未闭环风险数</text>
+    <text x="554" y="133">版本合规状态</text>
+    <text x="554" y="163">用量趋势</text>
+    <text x="554" y="193">功能采纳度</text>
+    <text x="554" y="223">工单量趋势</text>
+    <text x="554" y="253">例会出席率</text>
+    <text x="554" y="283">行动项闭环率</text>
+    <text x="554" y="313">升级频次</text>
+    <text x="554" y="343">关键人覆盖度</text>
+    <text x="554" y="373">高层互动频次</text>
+    <text x="554" y="403">NPS 最近值</text>
+    <text x="554" y="433">续约窗口距离</text>
+    <text x="554" y="463">扩容信号</text>
+  </g>
+
+  <!-- 图注 -->
+  <text x="30" y="504" fill="#5a5a5a" font-size="12">连线粗细示意权重：30%／25%／20%／15%／10%〔建议值〕，合计 100%（R3 加权求和）。</text>
+  <text x="30" y="526" fill="#8a8a8a" font-size="12">R2：维度得分＝Σ指标分÷该维指标数÷2×100；R6 定档：绿 ≥ 80、黄 60–79、红 ＜ 60〔建议值〕。</text>
+</svg>

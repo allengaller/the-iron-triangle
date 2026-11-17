@@ -1,0 +1,52 @@
+<!-- 图名：四族指标因果图——健康领先、质量与效率同步、感知与价值滞后（第 34 章 34.2） -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+  <rect width="800" height="480" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arw" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#5a5a5a"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="28" fill="#1a1a1a" font-size="14" font-weight="600">四族指标的先后关系</text>
+
+  <!-- 因果连线：领先 → 同步 → 滞后 -->
+  <g stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arw)">
+    <line x1="242" y1="222" x2="291" y2="120"/>
+    <line x1="242" y1="258" x2="291" y2="360"/>
+    <line x1="507" y1="120" x2="556" y2="222"/>
+    <line x1="507" y1="360" x2="556" y2="258"/>
+  </g>
+
+  <!-- 客户健康族（领先） -->
+  <rect x="30" y="175" width="210" height="130" rx="6" fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5"/>
+  <text x="44" y="205" fill="#1a1a1a" font-size="15" font-weight="600">客户健康族</text>
+  <text x="44" y="229" fill="#5a5a5a" font-size="11" font-weight="600">领先指标 · 预测未来</text>
+  <text x="44" y="255" fill="#1a1a1a" font-size="12">这个客户整体好不好</text>
+  <text x="44" y="281" fill="#8a8a8a" font-size="11">客户健康分、用量健康度</text>
+
+  <!-- 服务质量族（同步） -->
+  <rect x="295" y="45" width="210" height="130" rx="6" fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5"/>
+  <text x="309" y="75" fill="#1a1a1a" font-size="15" font-weight="600">服务质量族</text>
+  <text x="309" y="99" fill="#5a5a5a" font-size="11" font-weight="600">同步指标 · 正在发生</text>
+  <text x="309" y="125" fill="#1a1a1a" font-size="12">服务交付达不达标</text>
+  <text x="309" y="151" fill="#8a8a8a" font-size="11">附录 P/Q 五／六维度各项指标</text>
+
+  <!-- 事件效率族（同步） -->
+  <rect x="295" y="305" width="210" height="130" rx="6" fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5"/>
+  <text x="309" y="335" fill="#1a1a1a" font-size="15" font-weight="600">事件效率族</text>
+  <text x="309" y="359" fill="#5a5a5a" font-size="11" font-weight="600">同步指标 · 正在发生</text>
+  <text x="309" y="385" fill="#1a1a1a" font-size="12">出事应对快不快、稳不稳</text>
+  <text x="309" y="409" fill="#8a8a8a" font-size="11">MTTR、MTBF、响应达标率</text>
+  <text x="309" y="425" fill="#8a8a8a" font-size="11">复发率</text>
+
+  <!-- 感知与价值族（滞后） -->
+  <rect x="560" y="175" width="210" height="130" rx="6" fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5"/>
+  <text x="574" y="205" fill="#1a1a1a" font-size="15" font-weight="600">感知与价值族</text>
+  <text x="574" y="229" fill="#5a5a5a" font-size="11" font-weight="600">滞后指标 · 结果确认</text>
+  <text x="574" y="255" fill="#1a1a1a" font-size="12">客户感觉好不好、值不值</text>
+  <text x="574" y="279" fill="#8a8a8a" font-size="11">CSAT／CES（34.6）</text>
+  <text x="574" y="295" fill="#8a8a8a" font-size="11">价值实现度量（VBR）</text>
+
+  <text x="30" y="464" fill="#5a5a5a" font-size="12">健康族领先（预测未来）、质量族与效率族同步（正在发生）、感知与价值族滞后（结果确认）；只看滞后指标的管理是后视镜开车。</text>
+</svg>

@@ -1,0 +1,55 @@
+<!-- 图名：TAM-BTE-SA 铁三角全周期协同——三顶点主责、三边接缝与中心共背指标（附录 V） -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 510" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+  <rect width="800" height="510" fill="#ffffff"/>
+
+  <!-- 三角形三条边 -->
+  <g stroke="#c9c9c9" stroke-width="2" fill="none">
+    <line x1="400" y1="130" x2="180" y2="390"/>
+    <line x1="180" y1="390" x2="620" y2="390"/>
+    <line x1="620" y1="390" x2="400" y2="130"/>
+  </g>
+
+  <!-- 顶点圆框：TAM / SA / BTE -->
+  <g fill="#ffffff" stroke="#c9c9c9" stroke-width="2">
+    <circle cx="400" cy="130" r="60"/>
+    <circle cx="180" cy="390" r="60"/>
+    <circle cx="620" cy="390" r="60"/>
+  </g>
+  <g text-anchor="middle" fill="#1a1a1a">
+    <text x="400" y="126" font-size="17" font-weight="600">TAM</text>
+    <text x="400" y="150" font-size="11">让画变成日常</text>
+    <text x="180" y="386" font-size="17" font-weight="600">SA</text>
+    <text x="180" y="410" font-size="11">把图画对</text>
+    <text x="620" y="386" font-size="17" font-weight="600">BTE</text>
+    <text x="620" y="410" font-size="11">把门打开</text>
+  </g>
+
+  <!-- 顶点主责标注（附录 V.4.1） -->
+  <g text-anchor="middle">
+    <text x="400" y="44" fill="#1a1a1a" font-size="13" font-weight="600">客户技术成功的操盘手</text>
+    <text x="400" y="64" fill="#5a5a5a" font-size="11">交付后技术成功 · 承诺兑现 · 风险兜底</text>
+    <text x="180" y="474" fill="#1a1a1a" font-size="13" font-weight="600">方案的设计师</text>
+    <text x="180" y="494" fill="#5a5a5a" font-size="11">架构正确性 · 技术选型 · PoC 验证</text>
+    <text x="620" y="474" fill="#1a1a1a" font-size="13" font-weight="600">商机的操盘手</text>
+    <text x="620" y="494" fill="#5a5a5a" font-size="11">赢单 · 续约金额 · 承诺商务合理性</text>
+  </g>
+
+  <!-- 三边接缝标注 -->
+  <g text-anchor="middle">
+    <text x="200" y="245" fill="#1a1a1a" font-size="13" font-weight="600">方案评审互锁</text>
+    <text x="200" y="266" fill="#5a5a5a" font-size="11">可运营性有一票关注</text>
+    <text x="612" y="245" fill="#1a1a1a" font-size="13" font-weight="600">信号回流与商机孵化</text>
+    <text x="612" y="266" fill="#5a5a5a" font-size="11">TAM 是三角的传感器</text>
+    <text x="400" y="428" fill="#1a1a1a" font-size="13" font-weight="600">承诺登记与红线审查</text>
+    <text x="400" y="450" fill="#5a5a5a" font-size="11">承诺清单随合同走</text>
+  </g>
+
+  <!-- 中心：共背与联合度量 -->
+  <rect x="310" y="250" width="180" height="90" rx="6" fill="#c8442c" fill-opacity="0.14" stroke="#c8442c" stroke-width="1.5"/>
+  <g text-anchor="middle">
+    <text x="400" y="276" fill="#1a1a1a" font-size="14" font-weight="600">共背 ＋ 联合度量</text>
+    <text x="400" y="298" fill="#5a5a5a" font-size="11">客户健康分 · 续约结果</text>
+    <text x="400" y="316" fill="#5a5a5a" font-size="11">NPS / CSAT（三人同权重）</text>
+    <text x="400" y="334" fill="#c8442c" font-size="11">任一转红即联合改进</text>
+  </g>
+</svg>

@@ -1,0 +1,82 @@
+<!-- 图名：子 TAM 五域责任地图——五条泳道与关键共管面贯通（附录 AB.5／AB.6） -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+  <rect width="800" height="520" fill="#ffffff"/>
+
+  <!-- 关键共管面竖线标签 -->
+  <g fill="#5a5a5a" font-size="11" text-anchor="middle">
+    <text x="240" y="42">电力与散热</text>
+    <text x="360" y="42">网络分段与带宽</text>
+    <text x="480" y="42">数据与备份</text>
+    <text x="600" y="42">变更窗口与冻结</text>
+  </g>
+
+  <!-- 五条泳道 -->
+  <g fill="#ffffff" stroke="#e3e3e3" stroke-width="1.5">
+    <rect x="20" y="60" width="640" height="66" rx="6"/>
+    <rect x="20" y="140" width="640" height="66" rx="6"/>
+    <rect x="20" y="220" width="640" height="66" rx="6"/>
+    <rect x="20" y="300" width="640" height="66" rx="6"/>
+    <rect x="20" y="380" width="640" height="66" rx="6"/>
+  </g>
+
+  <!-- 泳道名与一句话职责 -->
+  <g fill="#1a1a1a" font-size="15" font-weight="600">
+    <text x="36" y="90">机房与基础设施</text>
+    <text x="36" y="170">IaaS</text>
+    <text x="36" y="250">PaaS</text>
+    <text x="36" y="330">SaaS</text>
+    <text x="36" y="410">AI-Infra</text>
+  </g>
+  <g fill="#8a8a8a" font-size="11">
+    <text x="36" y="110">让物理设施不成为上限</text>
+    <text x="36" y="190">让资源池稳定且可预期</text>
+    <text x="36" y="270">让平台层版本可控、性能可见</text>
+    <text x="36" y="350">让租户用得对、集得通</text>
+    <text x="36" y="430">让算力可调度、可计量、可保障</text>
+  </g>
+
+  <!-- 每泳道右端面主标记 -->
+  <g fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5">
+    <rect x="680" y="78" width="76" height="30" rx="6"/>
+    <rect x="680" y="158" width="76" height="30" rx="6"/>
+    <rect x="680" y="238" width="76" height="30" rx="6"/>
+    <rect x="680" y="318" width="76" height="30" rx="6"/>
+    <rect x="680" y="398" width="76" height="30" rx="6"/>
+  </g>
+  <g fill="#5a5a5a" font-size="12" font-weight="600" text-anchor="middle">
+    <text x="718" y="98">面主</text>
+    <text x="718" y="178">面主</text>
+    <text x="718" y="258">面主</text>
+    <text x="718" y="338">面主</text>
+    <text x="718" y="418">面主</text>
+  </g>
+
+  <!-- 关键共管面贯通竖线 -->
+  <g stroke="#c8442c" stroke-width="2">
+    <line x1="240" y1="52" x2="240" y2="446"/>
+    <line x1="360" y1="52" x2="360" y2="446"/>
+    <line x1="480" y1="52" x2="480" y2="446"/>
+    <line x1="600" y1="52" x2="600" y2="446"/>
+  </g>
+  <g fill="#c8442c">
+    <circle cx="240" cy="93" r="4"/>
+    <circle cx="240" cy="413" r="4"/>
+    <circle cx="360" cy="93" r="4"/>
+    <circle cx="360" cy="173" r="4"/>
+    <circle cx="360" cy="253" r="4"/>
+    <circle cx="360" cy="413" r="4"/>
+    <circle cx="480" cy="173" r="4"/>
+    <circle cx="480" cy="253" r="4"/>
+    <circle cx="480" cy="333" r="4"/>
+    <circle cx="480" cy="413" r="4"/>
+    <circle cx="600" cy="93" r="4"/>
+    <circle cx="600" cy="173" r="4"/>
+    <circle cx="600" cy="253" r="4"/>
+    <circle cx="600" cy="333" r="4"/>
+    <circle cx="600" cy="413" r="4"/>
+  </g>
+
+  <!-- 图注 -->
+  <text x="20" y="478" fill="#5a5a5a" font-size="12">竖线＝关键共管面，圆点＝参与域；每个面须有唯一面主与双方 SLA，无面主即管理缺口。</text>
+  <text x="20" y="500" fill="#8a8a8a" font-size="12">面主可以是任一域的域主，但不得由主 TAM 兼任；一人可兼域，域不可合并取消。</text>
+</svg>

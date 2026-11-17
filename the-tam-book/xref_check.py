@@ -53,6 +53,15 @@ for path in files:
                 continue
             if not os.path.exists(os.path.join(ROOT, m.group(1))):
                 report(path, i, "路径", m.group(1), "目标文件不存在")
+        # 1b. 配图：![](target) 目标文件须存在，alt 须非空（配图约定见 AGENTS.md）
+        for m in re.finditer(r"!\[([^\]]*)\]\(([^)]+)\)", line):
+            alt, target = m.group(1).strip(), m.group(2).strip()
+            if not alt:
+                report(path, i, "配图", target, "alt 文本为空")
+            if target.startswith(("http://", "https://")):
+                continue
+            if not os.path.exists(os.path.join(os.path.dirname(path), target)):
+                report(path, i, "配图", target, "图片文件不存在")
         if is_handoff:
             # HANDOFF 是历史日志：章节/附录/模板/节号字样为记录性文字，不作活引用校验
             continue

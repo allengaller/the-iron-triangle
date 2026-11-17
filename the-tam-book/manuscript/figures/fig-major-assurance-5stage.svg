@@ -1,0 +1,57 @@
+<!-- 图名：重大保障五阶段——立项、体检、预案、值守、复盘的箭头框与关键交付物 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+  <rect width="800" height="380" fill="#ffffff"/>
+
+  <!-- 图题 -->
+  <text x="400" y="58" text-anchor="middle" fill="#1a1a1a" font-size="17" font-weight="600">重大保障五阶段（T-30 → T+7）</text>
+
+  <!-- 五个箭头框 -->
+  <g fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5">
+    <polygon points="30,84 164,84 180,126 164,168 30,168"/>
+    <polygon points="172,84 306,84 322,126 306,168 172,168 188,126"/>
+    <polygon points="314,84 448,84 464,126 448,168 314,168 330,126"/>
+    <polygon points="456,84 590,84 606,126 590,168 456,168 472,126"/>
+    <polygon points="598,84 732,84 748,126 732,168 598,168 614,126"/>
+  </g>
+
+  <!-- 阶段名与时间窗 -->
+  <g text-anchor="middle">
+    <g fill="#1a1a1a" font-size="17" font-weight="600">
+      <text x="113" y="120">立项</text>
+      <text x="255" y="120">体检</text>
+      <text x="397" y="120">预案与演练</text>
+      <text x="539" y="120">值守</text>
+      <text x="681" y="120">复盘</text>
+    </g>
+    <g fill="#5a5a5a" font-size="12">
+      <text x="113" y="146">T-30 至 T-21</text>
+      <text x="255" y="146">T-21 至 T-7</text>
+      <text x="397" y="146">T-14 至 T-3</text>
+      <text x="539" y="146">T-1 至窗口关闭</text>
+      <text x="681" y="146">T+1 至 T+7</text>
+    </g>
+  </g>
+
+  <!-- 关键交付物 -->
+  <g text-anchor="middle" fill="#5a5a5a" font-size="12">
+    <text x="113" y="202">重保立项书会签</text>
+    <text x="113" y="224">指挥部与成功标准</text>
+    <text x="255" y="202">体检报告</text>
+    <text x="255" y="224">容量与依赖图</text>
+    <text x="397" y="202">应急预案三件套</text>
+    <text x="397" y="224">回退实测计时</text>
+    <text x="539" y="202">值守时间线</text>
+    <text x="539" y="224">固定节奏通报</text>
+    <text x="681" y="202">重保结果报告</text>
+    <text x="681" y="224">改进项入登记册</text>
+  </g>
+
+  <!-- 交付物小标 -->
+  <text x="400" y="184" text-anchor="middle" fill="#8a8a8a" font-size="12">各阶段关键交付物</text>
+
+  <!-- 底部注记 -->
+  <g text-anchor="middle" fill="#5a5a5a" font-size="13">
+    <text x="400" y="322">T-30 立项、T-7 前完成预案、T+7 完成复盘〔标准〕</text>
+    <text x="400" y="348">级别 L1–L4 可裁剪强度，体检与预案只能简化、不能省略〔标准〕</text>
+  </g>
+</svg>

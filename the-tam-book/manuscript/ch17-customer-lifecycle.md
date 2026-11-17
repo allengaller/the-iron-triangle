@@ -69,6 +69,8 @@
 
 骨架按[模板 02](../templates/02-onboarding-90d-checklist.md)的 S1–S4 推进。出口闸门不过，不进入下一段。细则与验收锚点见[附录 L](appx-l-project-onboarding-standard.md)。里程碑按 30/60/90 自检。
 
+![Onboarding 90 天节奏轴：30 天家底摸清、60 天机制转起来、90 天首个价值点落地，对应 S1–S4 闸门与三问验收](figures/fig-onboarding-90d-flow.svg)
+
 | 里程碑 | 该拿下的状态 | 对应闸门动作 |
 | --- | --- | --- |
 | 第 30 天 | 家底摸清，拓扑与关键人有图 | S1 材料签收与 S2 现场诊断 |

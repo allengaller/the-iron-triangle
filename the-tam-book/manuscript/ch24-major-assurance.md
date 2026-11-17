@@ -234,6 +234,8 @@ TAM 的正式角色通常是厂商接口人。实际职责有三个。
 
 AI 让确定性准备更充分。重保的不确定性处置，仍然依赖人的判断与担当。
 
+![重保五阶段流程：立项、体检、预案与演练、值守、复盘按 T-30 至 T+7 时间轴串联，各阶段框下挂关键交付物](figures/fig-major-assurance-5stage.svg)
+
 ## 24.9 重保 Checklist（模板 05 同源）
 
 > 本节与[模板 05](../templates/05-major-assurance-checklist.md)同源。模板含负责人、证据列、值守手册和结果报告骨架。改动须双向同步。对应[附录 B](appx-b-tam-process-system.md)的流程 P5。

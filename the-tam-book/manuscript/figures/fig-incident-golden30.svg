@@ -1,0 +1,83 @@
+<!-- 图名：故障 P1 黄金 30 分钟时序——0→30 分钟时间轴上的五个动作块 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+  <rect width="800" height="400" fill="#ffffff"/>
+
+  <!-- 图题 -->
+  <g text-anchor="middle">
+    <text x="400" y="46" fill="#1a1a1a" font-size="17" font-weight="600">故障 P1 黄金 30 分钟</text>
+    <text x="400" y="70" fill="#5a5a5a" font-size="13">动作序列按附录 K K.5 执行，时间线从第 0 分钟开始记录</text>
+  </g>
+
+  <!-- 动作块（0–5 与 5–10 为关键动作，强调色） -->
+  <g stroke-width="1.5">
+    <rect x="62" y="110" width="109" height="90" rx="6" fill="#c8442c" fill-opacity="0.14" stroke="#c8442c"/>
+    <rect x="175" y="110" width="110" height="90" rx="6" fill="#c8442c" fill-opacity="0.14" stroke="#c8442c"/>
+    <rect x="289" y="110" width="109" height="90" rx="6" fill="#ffffff" stroke="#c9c9c9"/>
+    <rect x="402" y="110" width="109" height="90" rx="6" fill="#ffffff" stroke="#c9c9c9"/>
+    <rect x="515" y="110" width="223" height="90" rx="6" fill="#ffffff" stroke="#c9c9c9"/>
+  </g>
+
+  <!-- 块内文字 -->
+  <g text-anchor="middle">
+    <g fill="#1a1a1a" font-size="14" font-weight="600">
+      <text x="116" y="136">0–5 分钟</text>
+      <text x="230" y="136">5–10 分钟</text>
+      <text x="343" y="136">10–15 分钟</text>
+      <text x="456" y="136">15–20 分钟</text>
+      <text x="626" y="136">20–30 分钟</text>
+    </g>
+    <g fill="#1a1a1a" font-size="14">
+      <text x="116" y="160">确认与定级</text>
+      <text x="116" y="178">拉响作战室</text>
+      <text x="230" y="166">发出首次通报</text>
+      <text x="343" y="160">召集处置方</text>
+      <text x="343" y="178">明确角色</text>
+      <text x="456" y="160">提供止损决策</text>
+      <text x="456" y="178">所需事实</text>
+      <text x="626" y="160">向管理层发出</text>
+      <text x="626" y="178">正式通报</text>
+    </g>
+    <g fill="#5a5a5a" font-size="12">
+      <text x="116" y="194">定级记录</text>
+      <text x="230" y="194">首次通报</text>
+      <text x="343" y="194">角色确认</text>
+      <text x="456" y="194">影响与预案说明</text>
+      <text x="626" y="194">结构化通报</text>
+    </g>
+  </g>
+
+  <!-- 分段引导线 -->
+  <g stroke="#e3e3e3" stroke-width="1" stroke-dasharray="4 4">
+    <line x1="173" y1="200" x2="173" y2="280"/>
+    <line x1="287" y1="200" x2="287" y2="280"/>
+    <line x1="400" y1="200" x2="400" y2="280"/>
+    <line x1="513" y1="200" x2="513" y2="280"/>
+  </g>
+
+  <!-- 时间轴 -->
+  <line x1="60" y1="280" x2="746" y2="280" stroke="#c9c9c9" stroke-width="2"/>
+  <polygon points="752,280 742,275 742,285" fill="#c9c9c9"/>
+  <g stroke="#c9c9c9" stroke-width="1.5">
+    <line x1="60" y1="280" x2="60" y2="292"/>
+    <line x1="173" y1="280" x2="173" y2="292"/>
+    <line x1="287" y1="280" x2="287" y2="292"/>
+    <line x1="400" y1="280" x2="400" y2="292"/>
+    <line x1="513" y1="280" x2="513" y2="292"/>
+    <line x1="740" y1="280" x2="740" y2="292"/>
+  </g>
+  <g fill="#8a8a8a" font-size="12" text-anchor="middle">
+    <text x="60" y="308">0</text>
+    <text x="173" y="308">5</text>
+    <text x="287" y="308">10</text>
+    <text x="400" y="308">15</text>
+    <text x="513" y="308">20</text>
+    <text x="740" y="308">30</text>
+    <text x="772" y="308">分钟</text>
+  </g>
+
+  <!-- 底部注记 -->
+  <g text-anchor="middle" fill="#5a5a5a" font-size="13">
+    <text x="400" y="344">首次通报不等待结论；每期通报含事实、动作、预期与下次更新时间</text>
+    <text x="400" y="370">故障 P1 进展通报间隔不超过 30 分钟〔标准〕，无进展也要按期更新</text>
+  </g>
+</svg>

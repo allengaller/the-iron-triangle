@@ -1,0 +1,101 @@
+<!-- 图名：项目六阶段闸门流程——阶段框下挂 Go/No-Go 闸门与回退弧线 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+  <rect width="800" height="380" fill="#ffffff"/>
+
+  <!-- 六个阶段框（来源：第 16 章 16.2.1 六阶段矛盾与检查点） -->
+  <g fill="#ffffff" stroke="#c9c9c9" stroke-width="1.5">
+    <rect x="24" y="56" width="112" height="46" rx="6"/>
+    <rect x="152" y="56" width="112" height="46" rx="6"/>
+    <rect x="280" y="56" width="112" height="46" rx="6"/>
+    <rect x="408" y="56" width="112" height="46" rx="6"/>
+    <rect x="536" y="56" width="112" height="46" rx="6"/>
+    <rect x="664" y="56" width="112" height="46" rx="6"/>
+  </g>
+
+  <!-- 阶段名与主要矛盾 -->
+  <g text-anchor="middle">
+    <g fill="#1a1a1a" font-size="17" font-weight="600">
+      <text x="80" y="76">立项</text>
+      <text x="208" y="76">设计</text>
+      <text x="336" y="76">开发</text>
+      <text x="464" y="76">测试</text>
+      <text x="592" y="76">上线</text>
+      <text x="720" y="76">稳定化</text>
+    </g>
+    <g fill="#5a5a5a" font-size="12">
+      <text x="80" y="94">范围与标准</text>
+      <text x="208" y="94">架构不可逆</text>
+      <text x="336" y="94">质量债积累</text>
+      <text x="464" y="94">测试模型真实性</text>
+      <text x="592" y="94">冒进与恐慌</text>
+      <text x="720" y="94">松懈与移交</text>
+    </g>
+  </g>
+
+  <!-- 阶段间衔接箭头 -->
+  <g stroke="#c9c9c9" stroke-width="1.5">
+    <line x1="136" y1="79" x2="147" y2="79"/>
+    <line x1="264" y1="79" x2="275" y2="79"/>
+    <line x1="392" y1="79" x2="403" y2="79"/>
+    <line x1="520" y1="79" x2="531" y2="79"/>
+    <line x1="648" y1="79" x2="659" y2="79"/>
+  </g>
+  <g fill="#c9c9c9">
+    <polygon points="152,79 144,75 144,83"/>
+    <polygon points="280,79 272,75 272,83"/>
+    <polygon points="408,79 400,75 400,83"/>
+    <polygon points="536,79 528,75 528,83"/>
+    <polygon points="664,79 656,75 656,83"/>
+  </g>
+
+  <!-- 闸门：竖线 + 菱形（Go/No-Go 判定点） -->
+  <g stroke="#c9c9c9" stroke-width="1.5">
+    <line x1="80" y1="102" x2="80" y2="133"/>
+    <line x1="208" y1="102" x2="208" y2="133"/>
+    <line x1="336" y1="102" x2="336" y2="133"/>
+    <line x1="464" y1="102" x2="464" y2="133"/>
+    <line x1="592" y1="102" x2="592" y2="133"/>
+    <line x1="720" y1="102" x2="720" y2="133"/>
+  </g>
+  <g fill="#c8442c" fill-opacity="0.14" stroke="#c8442c" stroke-width="1.5">
+    <polygon points="80,133 112,150 80,167 48,150"/>
+    <polygon points="208,133 240,150 208,167 176,150"/>
+    <polygon points="336,133 368,150 336,167 304,150"/>
+    <polygon points="464,133 496,150 464,167 432,150"/>
+    <polygon points="592,133 624,150 592,167 560,150"/>
+    <polygon points="720,133 752,150 720,167 688,150"/>
+  </g>
+  <g fill="#c8442c" font-size="13" text-anchor="middle">
+    <text x="80" y="155">Go/No-Go</text>
+    <text x="208" y="155">Go/No-Go</text>
+    <text x="336" y="155">Go/No-Go</text>
+    <text x="464" y="155">Go/No-Go</text>
+    <text x="592" y="155">Go/No-Go</text>
+    <text x="720" y="155">Go/No-Go</text>
+  </g>
+
+  <!-- 回退弧线：从闸门回退到上一阶段 -->
+  <g fill="none" stroke="#c9c9c9" stroke-width="1.5">
+    <path d="M 208,167 C 208,225 80,225 80,116"/>
+    <path d="M 336,167 C 336,241 208,241 208,116"/>
+    <path d="M 464,167 C 464,257 336,257 336,116"/>
+    <path d="M 592,167 C 592,273 464,273 464,116"/>
+    <path d="M 720,167 C 720,289 592,289 592,116"/>
+  </g>
+  <g fill="#c9c9c9">
+    <polygon points="80,106 75,116 85,116"/>
+    <polygon points="208,106 203,116 213,116"/>
+    <polygon points="336,106 331,116 341,116"/>
+    <polygon points="464,106 459,116 469,116"/>
+    <polygon points="592,106 587,116 597,116"/>
+  </g>
+  <g fill="#8a8a8a" font-size="12">
+    <text x="144" y="232" text-anchor="middle">No-Go 回退</text>
+  </g>
+
+  <!-- 底部注记 -->
+  <g text-anchor="middle" fill="#5a5a5a" font-size="13">
+    <text x="400" y="326">带条件 Go 逾期未闭环，按模板规则自动转 No-Go，并回退上一阶段复核</text>
+    <text x="400" y="352">闸门三结论：Go／带条件 Go／No-Go——判据量化、决策人明确、结论留痕〔标准〕</text>
+  </g>
+</svg>
