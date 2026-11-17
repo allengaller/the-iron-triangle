@@ -48,7 +48,7 @@ gtm/                        Go-to-Market 落地页（自包含 HTML）
 standards/                  标准与法规主库（<!-- META:standards_root_count -->50<!-- /META:standards_root_count --> 份 + 索引 + 采集脚本）
 standards-verification-report-2026-10-25.md   标准库校验报告
 the-sa-book/                SA 书（姊妹项目，全书成稿）
-the-bte-book/               BTE 书（姊妹项目，初稿完成）
+the-bte-book/               BTE 书（姊妹项目，初稿）
 the-tam-book/
 ├── manuscript/             章节、附录与前置页（<!-- META:manuscript_count -->73<!-- /META:manuscript_count --> 个文件）
 ├── templates/              <!-- META:templates_count -->23<!-- /META:templates_count --> 份可复用模板
@@ -71,7 +71,17 @@ the-tam-book/
 
 ## 姊妹项目
 
-《The SA Book of AI Era｜AI 时代的售前架构师白皮书》全书成稿——售前解决方案架构师的岗位方法书。与本书拼完铁三角两翼（SA 管签单前，TAM 管签单后），共用一套事实源体系。七部分 33 文件 + 模板五件齐备，见 [the-sa-book/](the-sa-book/)。
+**完成状态口径**（三书统一，2026-11-17 起）：**草稿**（结构未齐，边写边改）→ **初稿**（全书文件齐备，形式门禁通过）→ **成稿**（内容完成，内部质化审计通过——内容门禁、同构与重叠审计、跨书一致性——待外部试读与数据时点刷新）→ **定稿**（试读/决策门通过、发布检查表全过、时点刷新，v1.0 内容稳定可引用）。
+
+三书状态（2026-11-17）：
+
+| 书 | 状态 | 依据 |
+| --- | --- | --- |
+| The TAM Book v0.3 | **成稿** | 六命令门禁全绿、同构簇 3、跨书 122 链接零断链；warn 44 项为内容厚度台账不阻断；待试读 |
+| The SA Book | **成稿** | 33 文件 + 模板五件；与 TAM 句级重叠审计 0.5%（`the-sa-book/00-overlap-audit-2026-11-17.md`）；待试读 |
+| The BTE Book | **初稿** | 构建完成（HTML/EPUB/PDF）；决策门待试读，见其 `00-release-checklist.md` |
+
+《The SA Book of AI Era｜AI 时代的售前架构师白皮书》——售前解决方案架构师的岗位方法书。与本书拼完铁三角两翼（SA 管签单前，TAM 管签单后），共用一套事实源体系。七部分 33 文件 + 模板五件齐备，见 [the-sa-book/](the-sa-book/)。
 
 《The BTE Book of AI Era｜AI 时代的技术销售白皮书》全书初稿完成——技术销售的岗位方法书，补完铁三角第三角（BTE 管商机与商业结构）。七部分 36 个正文文件 + 7 个附录 + 模板十件齐备，另附阅读指南、重叠审计与发布清单；决策门待试读。见 [the-bte-book/](the-bte-book/)。
 

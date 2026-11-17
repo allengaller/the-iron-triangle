@@ -57,7 +57,7 @@ SLA（服务等级协议，Service Level Agreement）与 SLO（服务等级目�
 
 ### 金融级增量
 
-- 监管刚性窗口（决算、报送）的豁免策略事前写明；
+- 监管刚性窗口（决算、报送）的例外适用条件事前写进条款；
 - 事件上报时限按监管口径叠加。对标[《The TAM Book》第 25 章](../../the-tam-book/manuscript/ch25-financial-incident.md)。
 
 ### 预期结果
