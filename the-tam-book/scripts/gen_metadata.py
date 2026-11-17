@@ -24,7 +24,7 @@ DIATAXIS-MAP。文件一增删，四处各漂各的。读者第一眼看到的�
 
 - 中文字数：`[\\u4e00-\\u9fff]` 匹配数，含标点外的全部汉字。
 - 分型文件：首行 400 字符内带 `<!-- Diátaxis: X -->` 的文件。
-- 附录主件 / 落地件：文件名以 `-howto.md` 结尾者为落地件，其余为主件。
+- 附录：文件名以 `appx-` 开头者为附录（2026-11-17 起落地件已并入主件，无独立落地件）。
 - 前置页：文件名以 `00-` 或 `99-` 开头者，不计入章节与分型统计。
 """
 
@@ -84,11 +84,10 @@ def compress(names: list[str], sep: str = "") -> str:
     return "、".join(out)
 
 
-def parse_badge(name: str) -> tuple[str, bool]:
-    """appx-ad-career-lifecycle-guide.md -> ('AD', False)；-howto.md 结尾 -> True。"""
+def parse_badge(name: str) -> str:
+    """appx-ad-career-lifecycle-guide.md -> 'AD'。"""
     body = name[len("appx-"):-len(".md")]
-    letter = body.split("-")[0].upper()
-    return letter, body.endswith("-howto")
+    return body.split("-")[0].upper()
 
 
 def scan() -> dict:
@@ -105,12 +104,8 @@ def scan() -> dict:
         if m:
             types[m.group(1)] += 1
 
-    main, landing = [], []
-    for p in appx:
-        letter, is_landing = parse_badge(p.name)
-        (landing if is_landing else main).append(letter)
-    main.sort(key=lambda x: LETTER_ORDER.get(x, 9999))
-    landing.sort(key=lambda x: LETTER_ORDER.get(x, 9999))
+    main = sorted((parse_badge(p.name) for p in appx),
+                  key=lambda x: LETTER_ORDER.get(x, 9999))
 
     # 草案件：标题带“（拟定稿）”的附录。附录 C 是映射表、W 是外部标准汇编，标题不含拟定稿。
     drafts = [p for p in appx if _is_draft(p)]
@@ -134,9 +129,7 @@ def scan() -> dict:
         "files_appendix": len(appx),
         "files_front": len(front),
         "appendix_main": len(main),
-        "appendix_landing": len(landing),
         "appendix_main_list": compress(main, ""),
-        "appendix_landing_list": compress(landing, "+"),
         "diataxis_typed": typed,
         "type_explanation": types["Explanation"],
         "type_howto": types["How-to"],
@@ -177,9 +170,7 @@ def render(key: str, f: dict) -> str:
             f"混合 {f['type_mixed']}"
         ),
         "appendix": (
-            f"{f['files_appendix']} 个，主件 {f['appendix_main']}（"
-            f"{f['appendix_main_list']}）、落地件 {f['appendix_landing']}（"
-            f"{f['appendix_landing_list']}）"
+            f"{f['files_appendix']} 个（{f['appendix_main_list']}）"
         ),
         "appendix_count": str(f["files_appendix"]),
         "draft_count": str(f["draft_count"]),
@@ -316,16 +307,13 @@ def build_index(f: dict) -> str:
         "",
         "## 三、附录索引",
         "",
-        f"{f['files_appendix']} 个附录，按字母排列。主件 {f['appendix_main']} 个给条文与汇编，"
-        f"落地件 {f['appendix_landing']} 个给执行动作。",
+        f"{f['files_appendix']} 个附录，按字母排列，条文与执行动作用同一节号。",
         "",
         "| 字母 | 标题 | 类型 | 文件 |",
         "| --- | --- | --- | --- |",
     ]
     for _, title, dtype, fname in appendices:
-        letter = parse_badge(fname)[0]
-        suffix = "+" if parse_badge(fname)[1] else ""
-        out.append(f"| {letter}{suffix} | {title} | {dtype} | [`{fname}`]({fname}) |")
+        out.append(f"| {parse_badge(fname)} | {title} | {dtype} | [`{fname}`]({fname}) |")
 
     out += [
         "",

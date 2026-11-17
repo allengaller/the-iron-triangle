@@ -87,12 +87,11 @@
 
 ## 三、附录索引
 
-43 个附录，按字母排列。主件 29 个给条文与汇编，落地件 14 个给执行动作。
+29 个附录，按字母排列，条文与执行动作用同一节号。
 
 | 字母 | 标题 | 类型 | 文件 |
 | --- | --- | --- | --- |
 | A | 术语表（中英对照） | Reference | [`appx-a-glossary.md`](appx-a-glossary.md) |
-| B+ | 流程落地动作 | How-to | [`appx-b-tam-process-system-howto.md`](appx-b-tam-process-system-howto.md) |
 | B | TAM 体系流程与规范 | Reference | [`appx-b-tam-process-system.md`](appx-b-tam-process-system.md) |
 | C | 方法论与标准映射 | Reference | [`appx-c-methodology-mapping.md`](appx-c-methodology-mapping.md) |
 | D | 延伸阅读与参考资料 | Reference | [`appx-d-further-reading.md`](appx-d-further-reading.md) |
@@ -100,34 +99,21 @@
 | F | 2026 年主要云厂商通告汇编 | Reference | [`appx-f-cloud-vendor-notices-2026.md`](appx-f-cloud-vendor-notices-2026.md) |
 | G | TAM 工作评估标准（拟定稿） | Reference | [`appx-g-tam-work-evaluation-standard.md`](appx-g-tam-work-evaluation-standard.md) |
 | H | TAM 工具与平台验收标准（拟定稿） | Reference | [`appx-h-tool-platform-acceptance-standard.md`](appx-h-tool-platform-acceptance-standard.md) |
-| I+ | 值班落地执行 | How-to | [`appx-i-on-duty-standard-howto.md`](appx-i-on-duty-standard-howto.md) |
 | I | TAM 值班标准（拟定稿） | Reference | [`appx-i-on-duty-standard.md`](appx-i-on-duty-standard.md) |
-| J+ | 培训落地执行 | How-to | [`appx-j-enablement-training-howto.md`](appx-j-enablement-training-howto.md) |
 | J | TAM 赋能与实操培训标准（拟定稿） | Reference | [`appx-j-enablement-training-standard.md`](appx-j-enablement-training-standard.md) |
 | K | TAM 故障应急与演练标准（拟定稿） | Reference | [`appx-k-incident-emergency-drill-standard.md`](appx-k-incident-emergency-drill-standard.md) |
-| K+ | 应急与演练落地执行 | How-to | [`appx-k-incident-emergency-howto.md`](appx-k-incident-emergency-howto.md) |
-| L+ | 项目导入落地执行 | How-to | [`appx-l-project-onboarding-howto.md`](appx-l-project-onboarding-howto.md) |
 | L | TAM 项目导入标准（拟定稿） | Reference | [`appx-l-project-onboarding-standard.md`](appx-l-project-onboarding-standard.md) |
-| M+ | 产品导入落地执行 | How-to | [`appx-m-product-introduction-howto.md`](appx-m-product-introduction-howto.md) |
 | M | TAM 产品导入标准（拟定稿） | Reference | [`appx-m-product-introduction-standard.md`](appx-m-product-introduction-standard.md) |
-| N+ | 驻场认证落地执行 | How-to | [`appx-n-tam-onsite-certification-howto.md`](appx-n-tam-onsite-certification-howto.md) |
 | N | TAM 驻场能力认证标准（拟定稿） | Reference | [`appx-n-tam-onsite-certification.md`](appx-n-tam-onsite-certification.md) |
-| O+ | 晋升评审落地执行 | How-to | [`appx-o-tam-onsite-promotion-howto.md`](appx-o-tam-onsite-promotion-howto.md) |
 | O | TAM 驻场能力晋升标准（拟定稿） | Reference | [`appx-o-tam-onsite-promotion-standard.md`](appx-o-tam-onsite-promotion-standard.md) |
 | P | TAM 服务质量标准（公共云版）（拟定稿） | Reference | [`appx-p-tam-service-quality-standard-public-cloud.md`](appx-p-tam-service-quality-standard-public-cloud.md) |
 | Q | TAM 服务质量标准（专有云版）（拟定稿） | Reference | [`appx-q-tam-service-quality-standard-dedicated-cloud.md`](appx-q-tam-service-quality-standard-dedicated-cloud.md) |
-| R+ | 复盘落地执行 | How-to | [`appx-r-problem-retrospective-howto.md`](appx-r-problem-retrospective-howto.md) |
 | R | TAM 问题复盘标准（拟定稿） | Reference | [`appx-r-problem-retrospective-standard.md`](appx-r-problem-retrospective-standard.md) |
-| S+ | 加班调休落地执行 | How-to | [`appx-s-overtime-compoff-howto.md`](appx-s-overtime-compoff-howto.md) |
 | S | TAM 加班与调休管理标准（拟定稿） | Reference | [`appx-s-overtime-compoff-standard.md`](appx-s-overtime-compoff-standard.md) |
-| T+ | 变更落地执行 | How-to | [`appx-t-online-change-howto.md`](appx-t-online-change-howto.md) |
 | T | TAM 线上变更标准（拟定稿） | Reference | [`appx-t-online-change-standard.md`](appx-t-online-change-standard.md) |
-| U+ | 工单落地执行 | How-to | [`appx-u-ticket-management-howto.md`](appx-u-ticket-management-howto.md) |
 | U | TAM 工单管理标准（拟定稿） | Reference | [`appx-u-ticket-management-standard.md`](appx-u-ticket-management-standard.md) |
-| V+ | 铁三角协同落地执行 | How-to | [`appx-v-tam-bte-sa-triangle-howto.md`](appx-v-tam-bte-sa-triangle-howto.md) |
 | V | TAM-BTE-SA 铁三角协同最佳实践 | Reference | [`appx-v-tam-bte-sa-triangle.md`](appx-v-tam-bte-sa-triangle.md) |
 | W | 中国金融行业运维相关标准与监管要求汇编 | Reference | [`appx-w-financial-ops-standards.md`](appx-w-financial-ops-standards.md) |
-| Y+ | 训练操作动作清单 | How-to | [`appx-y-training-howto.md`](appx-y-training-howto.md) |
 | Y | 六维能力训练教程 | Tutorial | [`appx-y-training-tutorial.md`](appx-y-training-tutorial.md) |
 | Z | Well-Architected 架构框架全量汇编 | Reference | [`appx-z-well-architected-framework.md`](appx-z-well-architected-framework.md) |
 | AA | TAM 报告体系标准（拟定稿） | Reference | [`appx-aa-tam-reporting-standard.md`](appx-aa-tam-reporting-standard.md) |

@@ -33,7 +33,7 @@
 
 ## 第二部分　内涵篇：TAM 核心能力模型
 
-> 内涵六维：技术纵深、业务洞察、关系经营、服务治理、风险合规、项目变革。每维两章：主章（Explanation）讲能力定义、机制与误区；实战章（How-to）给操作步骤、验收与排查，章号紧随主章。配套训练见附录 Y/Y+。
+> 内涵六维：技术纵深、业务洞察、关系经营、服务治理、风险合规、项目变革。每维两章：主章（Explanation）讲能力定义、机制与误区；实战章（How-to）给操作步骤、验收与排查，章号紧随主章。配套训练见附录 Y。
 
 - **第 5 章　技术纵深 [Explanation]**
   架构评审、性能与容量规划、可用性设计评审、技术雷达与版本生命周期管理。样章已完成：`manuscript/ch05-technical-depth.md`。
@@ -154,7 +154,6 @@
 
 - **附录 A**　术语表（中英对照）：全书术语唯一事实源，分八组（岗位组织/服务流程/等级度量/生命周期商业化/风险合规金融级/人员组织/AI 时代/编号前缀速查），A.8 消解 P 前缀四义。已完成：`manuscript/appx-a-glossary.md`（v0.1，随书滚动补充；2026-10-25 经并发覆盖后以此版为准，详见 HANDOFF 撞车记录）。
 - **附录 B**　TAM 体系流程与规范：十二项核心流程速查（P1–P12）与九项运营规范汇编（含驻场组内自检任务标准）、流程成熟度分级。样章已完成：`manuscript/appx-b-tam-process-system.md`（Reference：流程地图与规范条文）。
-- **附录 B+**　流程落地动作：底线/骨架/价值层三段建设、九项规范执行、自检运转与成熟度升级。样章已完成：`manuscript/appx-b-tam-process-system-howto.md`（How-to）。
 - **附录 C**　方法论与标准映射：ITIL 4 / IT4IT / SRE / FinOps / 等保 2.0 / Well-Architected 六种方法论与本书章节的对应（WA 映射见 C.6，六厂商全量对照见附录 Z）。已完成：`manuscript/appx-c-methodology-mapping.md`（迁移索引工具，非标准拟定稿；SRE 映射前须过第 2 章岗位边界）。
 - **附录 D**　延伸阅读与参考资料：真实可获取文献按五组对应章节 + 内部资料索引 + 维护规则（监管类年度复核）。已完成：`manuscript/appx-d-further-reading.md`。
 - **附录 E**　开源贡献指南：如何提交勘误、案例与模板。已完成：`manuscript/appx-e-contribution-guide.md`（三类贡献流程、维护纪律唯一事实源对照表、拒绝清单）。
@@ -162,34 +161,21 @@
 - **附录 G**　TAM 工作评估标准（拟定稿）：三层指标（L1 能力/L2 过程/L3 结果）、S–D 五级、四条否决红线。已完成：`manuscript/appx-g-tam-work-evaluation-standard.md`。
 - **附录 H**　TAM 工具与平台验收标准（拟定稿）：六类平台【必须】/【建议】验收项、三阶段验收流程、否决条款。已完成：`manuscript/appx-h-tool-platform-acceptance-standard.md`。
 - **附录 I**　TAM 值班标准（拟定稿）：三档值班模式（M1/M2/M3）、排班与疲劳管理、P1–P4 响应与升级时限、行为红线与度量。已完成：`manuscript/appx-i-on-duty-standard.md`。
-- **附录 I+**　值班落地执行（How-to）：模式落地、排班执行、交接三件事、日志与度量执行、红线处置。已完成：`manuscript/appx-i-on-duty-standard-howto.md`（条文见附录 I，I.x 编号零改动）。
 - **附录 J**　TAM 赋能与实操培训标准（拟定稿）：T1/T2/T3 三级培训体系、实操占比 ≥ 50%、三段式认证、认证与客户分配挂钩。已完成：`manuscript/appx-j-enablement-training-standard.md`。
-- **附录 J+**　培训落地执行（How-to）：排课、带教、三段认证执行、度量五指标、案例入库。已完成：`manuscript/appx-j-enablement-training-howto.md`（条文见附录 J，J.x 编号零改动）。
 - **附录 K**　TAM 故障应急与演练标准（拟定稿）：P1 黄金 30 分钟动作序列、作战室接口、三级演练与合格判定、事后闭环与红线。已完成：`manuscript/appx-k-incident-emergency-drill-standard.md`。
-- **附录 K+**　应急与演练落地执行（How-to）：预案动作卡、演练组织、评估执行、事后闭环、红线处置。已完成：`manuscript/appx-k-incident-emergency-howto.md`（条文见附录 K，K.x 编号零改动）。
 - **附录 L**　TAM 项目导入标准（拟定稿）：导入四阶段闸门（S1–S4）、各阶段交付物、七项量化验收锚点、二手项目与金融级专项要求。已完成：`manuscript/appx-l-project-onboarding-standard.md`。
-- **附录 L+**　项目导入落地执行（How-to）：交接、诊断、机制落地、验收、特殊场景处置。已完成：`manuscript/appx-l-project-onboarding-howto.md`（条文见附录 L，L.x 编号零改动）。
 - **附录 M**　TAM 产品导入标准（拟定稿）：产品能力导入五阶段（PL1–PL5）与技术转移（分层转移、认证为准、独立运营准入验收、AI 产品专项）。已完成：`manuscript/appx-m-product-introduction-standard.md`。
-- **附录 M+**　产品导入落地执行（How-to）：推进、转移、认证、准入、AI 专项执行。已完成：`manuscript/appx-m-product-introduction-howto.md`（条文见附录 M，M.x 编号零改动）。
 - **附录 N**　TAM 驻场能力认证标准：C1–C3 三级认证（维度权重、五种考核方式、合格线与一票否决项、认证与年审流程）。样章已完成：`manuscript/appx-n-tam-onsite-certification.md`。
-- **附录 N+**　驻场认证落地执行（How-to）：组织、考核、颁证、年审、红线处置。已完成：`manuscript/appx-n-tam-onsite-certification-howto.md`（条文见附录 N，N.x 编号零改动）。
 - **附录 O**　TAM 驻场能力晋升标准（拟定稿）：C3 后专家/现场管理双通道、四块晋升证据（经验/能力/客户/组织贡献）、评审流程与 6 个月观察期、破格与降级机制。已完成：`manuscript/appx-o-tam-onsite-promotion-standard.md`。
-- **附录 O+**　晋升评审落地执行（How-to）：组织、核验、答辩表决、观察期、破格降级。已完成：`manuscript/appx-o-tam-onsite-promotion-howto.md`（条文见附录 O，O.x 编号零改动）。
 - **附录 P**　TAM 服务质量标准·公共云版（拟定稿）：五维度质量框架（响应与事件/主动服务/变更与通告/服务节奏/结果与感知）、SLA 监测与 Credit 协助、厂商通告触达义务、四条质量红线。已完成：`manuscript/appx-p-tam-service-quality-standard-public-cloud.md`。
 - **附录 Q**　TAM 服务质量标准·专有云版（拟定稿）：六维度质量框架（含平台运行质量、合规与审计支持两个专有云特有维度）、责任共担边界、版本合规率与冻结窗口纪律、驻场衔接。已完成：`manuscript/appx-q-tam-service-quality-standard-dedicated-cloud.md`。
 - **附录 R**　TAM 问题复盘标准（拟定稿）：三级复盘与六条强制触发、四阶段流程（RT1–RT4）、技术/管理/客情三类复盘要点、闭环度量与红线。已完成：`manuscript/appx-r-problem-retrospective-standard.md`。
-- **附录 R+**　复盘落地执行（How-to）：组织定级、事实包、复盘会、报告成文、闭环。已完成：`manuscript/appx-r-problem-retrospective-howto.md`（条文见附录 R，R.x 编号零改动）。
 - **附录 S**　TAM 加班与调休管理标准（拟定稿）：OT1/OT2/OT3 三分类认定、审批与 36 小时管控上限、调休分级折算与刚性兑现、疲劳红线与度量。已完成：`manuscript/appx-s-overtime-compoff-standard.md`。
-- **附录 S+**　加班调休落地执行（How-to）：认定补录、审批管控、调休兑现、疲劳执行、度量触发。已完成：`manuscript/appx-s-overtime-compoff-howto.md`（条文见附录 S，S.x 编号零改动）。
 - **附录 T**　TAM 线上变更标准（拟定稿）：CH1–CH4 变更分级与五条通用原则，分公共云版（通告触达、影响分析、确认/延期、值守回访）与专有云版（三板斧评审、分级签批、双人复核、窗口与冻结纪律、监管留痕）两个执行版本。已完成：`manuscript/appx-t-online-change-standard.md`。
-- **附录 T+**　变更落地执行（How-to）：受理与定级、评审与签批、窗口实施与值守、验证与回退、关闭归档与紧急变更。已完成：`manuscript/appx-t-online-change-howto.md`（条文见附录 T，T.x 编号零改动）。
 - **附录 U**　TAM 工单管理标准（拟定稿）：四分类 TK-F/Q/R/C 与 P1–P4 分级复用、时限与静默规则、记录七要素、关闭与重开规则、≥10% 抽检四维评分、四条红线。已完成：`manuscript/appx-u-ticket-management-standard.md`。
-- **附录 U+**　工单落地执行（How-to）：受理与定级、记录与更新、升级与协同、关闭与重开、抽检与度量。已完成：`manuscript/appx-u-ticket-management-howto.md`（条文见附录 U，U.x 编号零改动）。
 - **附录 V**　TAM-BTE-SA 铁三角协同最佳实践：三角角色分工与全周期 RACI、四个接缝打法（承诺管理 / 方案评审可运营性一票 / 移交三件套 + 伴随期 / 信号回流三类分道）、例行协同机制、共背+分背联合度量、四条红线、AI 时代的三角变化。已完成：`manuscript/appx-v-tam-bte-sa-triangle.md`。
-- **附录 V+**　铁三角协同落地执行（How-to）：机制组建与启动、承诺清单运转、方案评审互锁、移交仪式执行、信号回流与联合度量。已完成：`manuscript/appx-v-tam-bte-sa-triangle-howto.md`（条文见附录 V，V.x 编号零改动）。
 - **附录 W**　中国金融行业运维相关标准与监管要求汇编：法律与行政法规、GB/GB/T 国标（等保 2.0、运维服务、数据中心、容灾）、JR/T 金融行业标准（JR/T 0265、JR/T 0361-2026 智能运维等）、三监管条线规章（银监发〔2009〕19 号/银监办发〔2010〕114 号/证监会信息技术管理办法等）四层汇编；含"国七条"辨伪（查无此文件，最接近者为 GB/T 20988 灾难恢复七级）。数据时点 2026-10-25，年度复核。已完成：`manuscript/appx-w-financial-ops-standards.md`。
 - **附录 Y**　六维能力训练教程：技术纵深、业务洞察、关系经营、服务治理、风险与合规、项目与变革六维逐维训练，Y.1–Y.7 训练流程（目标、前置、走法、预期结果、常见错误），末节为六维联合评审综合演练与完成判定。已完成：`manuscript/appx-y-training-tutorial.md`（Tutorial）。
-- **附录 Y+**　训练操作动作清单：每项训练的操作卡（动作清单、模板字段、量化判据、验收标准），含训练节奏、执行故障排查与检查清单。已完成：`manuscript/appx-y-training-howto.md`（How-to）。
 - **附录 Z**　Well-Architected 架构框架全量汇编：AWS／Azure／Google Cloud／阿里云／腾讯云／华为云六家的支柱与设计原则逐条对照（含能力域对齐矩阵）、Lens／Perspective／Workload 全量索引、8 域 40 问评审动作库、10 个公开案例与参考架构；记录 Google 官网"六支柱／五支柱"口径不一、AWS Lens 30 份、阿里云 AI Lens 等时点事实。附与第 5 章、模板 03、附录 C/W 的分工与维护规则。数据时点 2026-10-25，季度复核。已完成：`manuscript/appx-z-well-architected-framework.md`；官方原文归档于 `well-architected/`（六厂商 5741 份，含 AWS 30 份 Lens 全量，见 Z.9.2）。
 - **附录 AA**　TAM 报告体系标准（拟定稿）：主 TAM 与团队成员的双轨四级报告（RP1–RP4 / RP5–RP8）、八个决策槽与必填结构、双轨衔接的反二传手三规则、四判据与五种病、AI 时代的方法与呈现（一数三面、异常优先、请求区块、活页 diff、结构化抬头）、30/60/90 落地路径与四条红线。已完成：`manuscript/appx-aa-tam-reporting-standard.md`（配套模板 20/21；字母取双字母 AA，X/Y/Z 均已占用）。
 - **附录 AB**　标杆项目 TAM 团队分域分工与协作最佳实践（拟定稿）：机房／IaaS／PaaS／SaaS／AI-Infra 五域责任地图、十个共管面与面主机制、三档编制与“1 + N”值班、四字段域间工单、跨域变更三问、故障三权分立（事实／判断／流程）、域手册五件套、五个协作指标与四条红线。已完成：`manuscript/appx-ab-subtam-domain-collaboration.md`（配套模板 22；字母取双字母 AB，与“A/B 测试”不是同一记号）。

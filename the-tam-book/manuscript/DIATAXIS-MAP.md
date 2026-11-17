@@ -80,7 +80,6 @@
 |------|--------|------|------|
 | appx-a | appx-a-glossary.md | Reference | 术语表（全书唯一事实源） |
 | appx-b | appx-b-tam-process-system.md | Reference | 流程地图 P1–P12+规范条文 B.3.1–B.3.9+成熟度分级 |
-| appx-b+ | appx-b-tam-process-system-howto.md | How-to | 底线/骨架/价值层建设+规范执行+自检运转+成熟度升级 |
 | appx-c | appx-c-methodology-mapping.md | Reference | 方法论映射 |
 | appx-d | appx-d-further-reading.md | Reference | 延伸阅读 |
 | appx-e | appx-e-contribution-guide.md | How-to | 开源贡献指南 |
@@ -88,34 +87,21 @@
 | appx-g | appx-g-tam-work-evaluation-standard.md | Reference | 工作评估标准 |
 | appx-h | appx-h-tool-platform-acceptance-standard.md | Reference | 工具平台验收标准 |
 | appx-i | appx-i-on-duty-standard.md | Reference | 值班标准条文：三档模式+排班规则+时限表+红线+度量 |
-| appx-i+ | appx-i-on-duty-standard-howto.md | How-to | 值班落地执行：模式落地+排班+交接+日志度量+红线处置 |
 | appx-j | appx-j-enablement-training-standard.md | Reference | 培训标准条文：T1–T3 分级+课程实操要求+三段认证+度量 |
-| appx-j+ | appx-j-enablement-training-howto.md | How-to | 培训落地执行：排课+带教+认证执行+度量+案例入库 |
 | appx-k | appx-k-incident-emergency-drill-standard.md | Reference | 应急演练条文：黄金 30 分钟+三级演练+五项评分+红线 |
-| appx-k+ | appx-k-incident-emergency-howto.md | How-to | 应急演练落地：预案动作卡+演练组织+评估执行+闭环+红线处置 |
 | appx-l | appx-l-project-onboarding-standard.md | Reference | 项目导入条文：四阶段闸门+交付物+验收七项+特殊场景 |
-| appx-l+ | appx-l-project-onboarding-howto.md | How-to | 项目导入落地：交接+诊断+机制+验收+特殊场景处置 |
 | appx-m | appx-m-product-introduction-standard.md | Reference | 产品导入条文：五阶段+四层转移+独立运营准入+AI 专项 |
-| appx-m+ | appx-m-product-introduction-howto.md | How-to | 产品导入落地：推进+转移+认证+准入+AI 专项执行 |
 | appx-n | appx-n-tam-onsite-certification.md | Reference | 驻场认证条文：C1–C3+维度权重+考核合格线+红线 |
-| appx-n+ | appx-n-tam-onsite-certification-howto.md | How-to | 驻场认证落地：组织+考核+颁证+年审+红线处置 |
 | appx-o | appx-o-tam-onsite-promotion-standard.md | Reference | 驻场晋升条文：双通道+四块门槛+评审流程+破格降级 |
-| appx-o+ | appx-o-tam-onsite-promotion-howto.md | How-to | 晋升评审落地：组织+核验+答辩表决+观察期+破格降级 |
 | appx-p | appx-p-tam-service-quality-standard-public-cloud.md | Reference | 服务质量标准·公共云 |
 | appx-q | appx-q-tam-service-quality-standard-dedicated-cloud.md | Reference | 服务质量标准·专有云 |
 | appx-r | appx-r-problem-retrospective-standard.md | Reference | 问题复盘条文：三级复盘+强制触发+RT1–RT4+三类要点+闭环红线 |
-| appx-r+ | appx-r-problem-retrospective-howto.md | How-to | 复盘落地执行：组织定级+事实包+复盘会+报告成文+闭环 |
 | appx-s | appx-s-overtime-compoff-standard.md | Reference | 加班调休条文：OT1–OT3+审批上限+调休折算+疲劳红线 |
-| appx-s+ | appx-s-overtime-compoff-howto.md | How-to | 加班调休落地：认定补录+审批管控+调休兑现+疲劳执行+度量 |
 | appx-t | appx-t-online-change-standard.md | Reference | 线上变更条文：CH1–CH4 分级+公共云/专有云两版+三板斧+窗口纪律 |
-| appx-t+ | appx-t-online-change-howto.md | How-to | 变更落地执行：受理定级+评审签批+窗口实施+验证回退+关闭归档 |
 | appx-u | appx-u-ticket-management-standard.md | Reference | 工单管理条文：TK 四分类+时限静默+七要素+关闭重开+抽检 |
-| appx-u+ | appx-u-ticket-management-howto.md | How-to | 工单落地执行：受理定级+记录更新+升级协同+关闭重开+抽检度量 |
 | appx-v | appx-v-tam-bte-sa-triangle.md | Reference | 铁三角条文：角色分工 RACI+四接缝打法+例行机制+联合度量+红线 |
-| appx-v+ | appx-v-tam-bte-sa-triangle-howto.md | How-to | 铁三角落地：机制组建+承诺运转+评审互锁+移交仪式+信号回流 |
 | appx-w | appx-w-financial-ops-standards.md | Reference | 标准监管汇编 |
 | appx-y | appx-y-training-tutorial.md | Tutorial | 六维训练流程 Y.1–Y.7+综合演练+完成判定 |
-| appx-y+ | appx-y-training-howto.md | How-to | 训练操作卡+模板字段+量化判据+验收表+训练运营 |
 | appx-z | appx-z-well-architected-framework.md | Reference | 六厂商 WA 框架对照+评审动作库+公开案例 |
 | appx-aa | appx-aa-tam-reporting-standard.md | Reference | 报告体系标准（双轨四级报告 + AI 时代呈现） |
 | appx-ab | appx-ab-subtam-domain-collaboration.md | Reference | 子 TAM 五域分工与协作最佳实践 |
@@ -126,15 +112,15 @@
 
 ## 类型统计
 
-统计口径：**每个文件只计一次**，按首行 `<!-- Diátaxis: ... -->` 标注归类；标注含”+”的计入”混合类型”行，不再重复计入单一类型行。合计 <!-- META:diataxis_typed -->81<!-- /META:diataxis_typed --> = 正文 <!-- META:chapter_count -->38<!-- /META:chapter_count --> 个文件（ch01–ch38 连续编号）＋附录 <!-- META:appendix -->43 个，主件 29（A–W、Y、Z、AA–AD）、落地件 14（B+、I+–O+、R+–V+、Y+）<!-- /META:appendix -->。数字由 `scripts/gen_metadata.py` 从磁盘重算，勿手改。
+统计口径：**每个文件只计一次**，按首行 `<!-- Diátaxis: ... -->` 标注归类；标注含”+”的计入”混合类型”行，不再重复计入单一类型行。合计 <!-- META:diataxis_typed -->67<!-- /META:diataxis_typed --> = 正文 <!-- META:chapter_count -->38<!-- /META:chapter_count --> 个文件（ch01–ch38 连续编号）＋附录 <!-- META:appendix -->29 个（A–W、Y、Z、AA–AD）<!-- /META:appendix -->。数字由 `scripts/gen_metadata.py` 从磁盘重算，勿手改。
 
 | 类型 | 章节数 | 占比 | 章节清单 |
 |------|--------|------|----------|
-| Explanation | <!-- META:type_explanation -->15<!-- /META:type_explanation --> | <!-- META:type_explanation_pct -->19%<!-- /META:type_explanation_pct --> | ch01、ch03、ch04、ch05、ch07、ch09、ch11、ch13、ch15、ch22、ch26、ch30、ch31、ch33、ch37 |
-| How-to | <!-- META:type_howto -->36<!-- /META:type_howto --> | <!-- META:type_howto_pct -->44%<!-- /META:type_howto_pct --> | ch06、ch08、ch10、ch12、ch14、ch16、ch17、ch18、ch19、ch20、ch21、ch23、ch24、ch25、ch27、ch28、ch32、ch35、ch38、appx-b+、appx-e、appx-i+–o+、appx-r+–u+、appx-v+、appx-y+、appx-ac、appx-ad |
-| Reference | <!-- META:type_reference -->28<!-- /META:type_reference --> | <!-- META:type_reference_pct -->35%<!-- /META:type_reference_pct --> | ch02、ch34、ch36、appx-a、appx-b、appx-c、appx-d、appx-f、appx-g、appx-h、appx-i–appx-o、appx-p、appx-q、appx-r–appx-v、appx-w、appx-z、appx-aa、appx-ab |
-| Tutorial | <!-- META:type_tutorial -->2<!-- /META:type_tutorial --> | <!-- META:type_tutorial_pct -->2%<!-- /META:type_tutorial_pct --> | ch29、appx-y |
-| **合计** | **<!-- META:diataxis_typed -->81<!-- /META:diataxis_typed -->** | **100%** | 正文 <!-- META:chapter_count -->38<!-- /META:chapter_count --> ＋ 附录 <!-- META:appendix_count -->43<!-- /META:appendix_count --> |
+| Explanation | <!-- META:type_explanation -->15<!-- /META:type_explanation --> | <!-- META:type_explanation_pct -->22%<!-- /META:type_explanation_pct --> | ch01、ch03、ch04、ch05、ch07、ch09、ch11、ch13、ch15、ch22、ch26、ch30、ch31、ch33、ch37 |
+| How-to | <!-- META:type_howto -->22<!-- /META:type_howto --> | <!-- META:type_howto_pct -->33%<!-- /META:type_howto_pct --> | ch06、ch08、ch10、ch12、ch14、ch16、ch17、ch18、ch19、ch20、ch21、ch23、ch24、ch25、ch27、ch28、ch32、ch35、ch38、appx-e、appx-ac、appx-ad |
+| Reference | <!-- META:type_reference -->28<!-- /META:type_reference --> | <!-- META:type_reference_pct -->42%<!-- /META:type_reference_pct --> | ch02、ch34、ch36、appx-a、appx-b、appx-c、appx-d、appx-f、appx-g、appx-h、appx-i–appx-o、appx-p、appx-q、appx-r–appx-v、appx-w、appx-z、appx-aa、appx-ab |
+| Tutorial | <!-- META:type_tutorial -->2<!-- /META:type_tutorial --> | <!-- META:type_tutorial_pct -->3%<!-- /META:type_tutorial_pct --> | ch29、appx-y |
+| **合计** | **<!-- META:diataxis_typed -->67<!-- /META:diataxis_typed -->** | **100%** | 正文 <!-- META:chapter_count -->38<!-- /META:chapter_count --> ＋ 附录 <!-- META:appendix_count -->29<!-- /META:appendix_count --> |
 
 ## 待拆分清单（混合类型 → 单类型）
 
