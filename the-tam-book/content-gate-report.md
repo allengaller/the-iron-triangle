@@ -17,12 +17,12 @@
 | manuscript/appx-aa-tam-reporting-standard.md | Reference | 8547 | 骨架 缺：交叉引用（至少 2 个文件链接） | 补体裁必需的结构件，或改标注为正确体裁 |
 | manuscript/appx-ab-subtam-domain-collaboration.md | Reference | 7135 | 骨架 缺：交叉引用（至少 2 个文件链接）<br>具象密度 2.02 < 2.5 | 补体裁必需的结构件，或改标注为正确体裁；补带来源的真实数字与时限；确实无量化对象则注明原因 |
 | manuscript/appx-ac-sre-cre-engineering-depth.md | How-to | 2281 | 具象密度 1.39 < 3.0 | 补带来源的真实数字与时限；确实无量化对象则注明原因 |
-| manuscript/appx-ad-career-lifecycle-guide.md | How-to | 4208 | 失效边界词 2 < 3 | 补失效条件：什么情况下这条主张不成立 |
-| manuscript/appx-b-tam-process-system.md | Reference | 5582 | 清单化率 0.765 > 0.65 | 把清单条目展开成论证段 |
+| manuscript/appx-ad-career-lifecycle-guide.md | How-to | 4244 | 失效边界词 2 < 3 | 补失效条件：什么情况下这条主张不成立 |
+| manuscript/appx-b-tam-process-system.md | Reference | 5736 | 清单化率 0.765 > 0.65 | 把清单条目展开成论证段 |
 | manuscript/appx-c-methodology-mapping.md | Reference | 1764 | 具象密度 2.48 < 2.5<br>表格密度 38.41 > 30 | 补带来源的真实数字与时限；确实无量化对象则注明原因；表格过多，改为正文论证，只留真正需要对照的表 |
 | manuscript/appx-d-further-reading.md | Reference | 1361 | 表格密度 36.72 > 30 | 表格过多，改为正文论证，只留真正需要对照的表 |
 | manuscript/appx-e-contribution-guide.md | How-to | 2210 | 具象密度 0.0 < 3.0 | 补带来源的真实数字与时限；确实无量化对象则注明原因 |
-| manuscript/appx-g-tam-work-evaluation-standard.md | Reference | 4295 | 骨架 缺：交叉引用（至少 2 个文件链接） | 补体裁必需的结构件，或改标注为正确体裁 |
+| manuscript/appx-g-tam-work-evaluation-standard.md | Reference | 4331 | 骨架 缺：交叉引用（至少 2 个文件链接） | 补体裁必需的结构件，或改标注为正确体裁 |
 | manuscript/appx-h-tool-platform-acceptance-standard.md | Reference | 2546 | 骨架 缺：交叉引用（至少 2 个文件链接） | 补体裁必需的结构件，或改标注为正确体裁 |
 | manuscript/appx-l-project-onboarding-standard.md | Reference | 3949 | n-gram 重复 0.127 > 0.12 | 同构段改写：合并重复句式，换论证角度 |
 | manuscript/appx-r-problem-retrospective-standard.md | Reference | 4928 | 骨架 缺：交叉引用（至少 2 个文件链接）<br>清单化率 0.689 > 0.65 | 补体裁必需的结构件，或改标注为正确体裁；把清单条目展开成论证段 |
@@ -40,7 +40,7 @@
 | manuscript/ch09-relationship-management.md | Explanation | 5551 | 论证密度 0.278 < 0.28<br>具象密度 0.0 < 1.0 | 补机制解释：每节至少回答一次“为什么会这样”；补带来源的真实数字与时限；确实无量化对象则注明原因 |
 | manuscript/ch10-relationship-management-practical.md | How-to | 4168 | 具象密度 2.74 < 3.0 | 补带来源的真实数字与时限；确实无量化对象则注明原因 |
 | manuscript/ch11-service-governance.md | Explanation | 5296 | 段落均长 42.4 < 45<br>具象密度 0.2 < 1.0 | 把碎片句并为完整论证段，或反过来拆分超长段；补带来源的真实数字与时限；确实无量化对象则注明原因 |
-| manuscript/ch12-service-governance-practical.md | How-to | 3744 | 具象密度 1.39 < 3.0 | 补带来源的真实数字与时限；确实无量化对象则注明原因 |
+| manuscript/ch12-service-governance-practical.md | How-to | 3868 | 具象密度 1.34 < 3.0 | 补带来源的真实数字与时限；确实无量化对象则注明原因 |
 | manuscript/ch14-risk-compliance-practical.md | How-to | 5050 | 具象密度 0.41 < 3.0 | 补带来源的真实数字与时限；确实无量化对象则注明原因 |
 | manuscript/ch15-project-change.md | Explanation | 4032 | 回顾占比 0.071 > 0.07 | 压缩要点回顾 |
 | manuscript/ch16-project-change-practical.md | How-to | 5542 | 具象密度 0.19 < 3.0 | 补带来源的真实数字与时限；确实无量化对象则注明原因 |
