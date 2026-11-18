@@ -1,13 +1,13 @@
 ---
 name: allen-writes
-description: Unified writing skill for the-tam-book repository. Enforces Diátaxis document typing, agent-facing doc optimization, substantive development, pyramid expression, style rules, de-slopping, and multi-stage quality assurance. Use when writing or editing chapters, appendices, checklists, templates, or AGENTS.md for the TAM Book project. Triggered by mentions of Diátaxis, writing style, AI slop, thin or overly concise content, terminology consistency, or when the user asks to write, draft, revise, or audit technical content in the-tam-book repository.
+description: Unified writing skill for the-iron-triangle repository. Enforces Diátaxis document typing, agent-facing doc optimization, substantive development, pyramid expression, style rules, de-slopping, and multi-stage quality assurance. Use when writing or editing chapters, appendices, checklists, templates, or AGENTS.md for the TAM Book project. Triggered by mentions of Diátaxis, writing style, AI slop, thin or overly concise content, terminology consistency, or when the user asks to write, draft, revise, or audit technical content in the-iron-triangle repository.
 ---
 
 # allen-writes
 
 ## When to Activate
 
-Activate when the user is working with content in `the-tam-book` repository and any of these apply:
+Activate when the user is working with content in `the-iron-triangle` repository and any of these apply:
 
 - Writing, drafting, or editing a chapter or appendix
 - Requesting structural or stylistic improvement of existing text

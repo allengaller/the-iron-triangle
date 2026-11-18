@@ -1,4 +1,6 @@
-# the-tam-book
+# the-iron-triangle｜铁角指北
+
+> 仓库原名 `the-tam-book`，2026-11-18 更名为 `the-iron-triangle`（铁角指北）——AI 时代铁三角（TAM／SA／BTE）三书开源仓库；GitHub 自动重定向旧地址，内层书目录名保持不变。
 
 **The TAM Book of AI Era｜AI 时代的 TAM 白皮书**
 

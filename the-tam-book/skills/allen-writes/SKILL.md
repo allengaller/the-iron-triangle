@@ -5,10 +5,10 @@
 ```json
 {
   "name": "allen-writes",
-  "description": "The TAM Book unified writing skill. Activate when the user needs to write, revise, or audit technical content for the-tam-book repository. Covers Diátaxis typing, agent-facing doc optimization, depth and pyramid expression, style enforcement, de-slopping, and multi-stage quality assurance.",
+  "description": "The TAM Book unified writing skill. Activate when the user needs to write, revise, or audit technical content for the-iron-triangle repository. Covers Diátaxis typing, agent-facing doc optimization, depth and pyramid expression, style enforcement, de-slopping, and multi-stage quality assurance.",
   "version": "1.1.0",
   "author": "Allen Galler",
-  "project": "the-tam-book"
+  "project": "the-iron-triangle"
 }
 ```
 
@@ -16,7 +16,7 @@
 
 Trigger this skill when any of the following conditions are met:
 
-- User asks to write, draft, or edit a chapter/appendix for the-tam-book
+- User asks to write, draft, or edit a chapter/appendix for the-iron-triangle
 - User pastes raw text and asks for structural or stylistic improvement
 - User requests Diátaxis alignment for a document
 - User asks to remove "AI flavor" or "AI slop" from a draft
