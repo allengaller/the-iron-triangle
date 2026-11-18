@@ -52,11 +52,11 @@
 - **第 12 章　服务治理实战 [How-to]**
   定服务计划、管 SLA/OLA/XLA、治变更、建资产台账、跑例会、度量服务质量。已完成：`manuscript/ch12-service-governance-practical.md`。
 - **第 13 章　风险与合规 [Explanation]**
-  风险与合规能力的定义、形成机制、分级标尺（L1–L5）与常见误区；与技术纵深、项目变革两维的接缝。待完成：`manuscript/ch13-risk-compliance.md`。
+  风险与合规能力的定义、形成机制、分级标尺（L1–L5）与常见误区；与技术纵深、项目变革两维的接缝。已完成：`manuscript/ch13-risk-compliance.md`。
 - **第 14 章　风险与合规实战 [How-to]**
   风险登记册、主动式风险扫描、审计与监管配合、数据安全边界。已完成：`manuscript/ch14-risk-compliance-practical.md`。
 - **第 15 章　项目与变革管理 [Explanation]**
-  项目与变革能力的定义、形成机制、分级标尺（L1–L5）与常见误区；闸门治理与技术仲裁的"为什么"。待完成：`manuscript/ch15-project-change.md`。
+  项目与变革能力的定义、形成机制、分级标尺（L1–L5）与常见误区；闸门治理与技术仲裁的"为什么"。已完成：`manuscript/ch15-project-change.md`。
 - **第 16 章　项目与变革管理实战 [How-to]**
   大型项目节奏感：里程碑、上线闸门（Go/No-Go）、跨厂商集成的技术仲裁、客户侧变革推动。已完成：`manuscript/ch16-project-change-practical.md`。
 
