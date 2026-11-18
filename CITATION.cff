@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "引用单本书时用 references 中对应的条目，并带版本号与年份。"
+title: "The Iron Triangle｜铁角指北：AI 时代的技术铁三角三书"
+abstract: "企业级项目的方法书三卷：BTE 设计承诺、SA 证明承诺、TAM 兑现承诺。三书共用一条承诺链与一套事实源。"
+type: book
+authors:
+  - family-names: Galler
+    given-names: Allen
+date-released: "2026-11-18"
+license: CC-BY-NC-SA-4.0
+repository-code: "https://github.com/allengaller/the-iron-triangle"
+url: "https://github.com/allengaller/the-iron-triangle"
+keywords:
+  - BTE
+  - SA
+  - TAM
+  - pre-sales
+  - technical account management
+  - solution architecture
+  - enterprise sales
+references:
+  - type: book
+    title: "The BTE Book of AI Era｜AI 时代的技术销售方法书"
+    authors:
+      - family-names: Galler
+        given-names: Allen
+    version: "1.0.1"
+    date-released: "2026-11-03"
+    repository-code: "https://github.com/allengaller/the-iron-triangle"
+    license: CC-BY-NC-SA-4.0
+  - type: book
+    title: "The SA Book of AI Era｜AI 时代的售前架构师白皮书"
+    authors:
+      - family-names: Galler
+        given-names: Allen
+    version: "0.1"
+    date-released: "2026-11-18"
+    repository-code: "https://github.com/allengaller/the-iron-triangle"
+    license: CC-BY-NC-SA-4.0
+  - type: book
+    title: "The TAM Book of AI Era｜AI 时代的 TAM 白皮书"
+    authors:
+      - family-names: Galler
+        given-names: Allen
+    version: "0.3"
+    date-released: "2026-11-17"
+    repository-code: "https://github.com/allengaller/the-iron-triangle"
+    license: CC-BY-NC-SA-4.0

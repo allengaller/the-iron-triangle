@@ -1,14 +1,33 @@
-# The TAM Book of AI Era｜AI 时代的 TAM 白皮书
+# the-iron-triangle｜铁角指北
 
 Copyright (c) 2026 Allen Galler and contributors
 
-本作品（正文、附录、模板及配套文档，位于 `the-tam-book/` 与仓库根部的 README、gtm/）采用
-**知识共享 署名-非商业性使用-相同方式共享 4.0 国际许可协议**（CC BY-NC-SA 4.0）许可。
+本仓库同时承载两类作品，分属两套许可：**书稿内容**用 CC BY-NC-SA 4.0，
+**工具代码**用 MIT。范围见下表，两套许可全文见下文。
 
-This work is licensed under the Creative Commons
-Attribution-NonCommercial-ShareAlike 4.0 International License.
+## 范围
 
-## 摘要（Deed Summary）
+| 路径 | 内容 | 许可 |
+| --- | --- | --- |
+| `books/**` | 三书正文、附录、模板、前置页、书末页 | CC BY-NC-SA 4.0 |
+| `shared/00-*.md`、`shared/README.md` | 书稿公用篇 | CC BY-NC-SA 4.0 |
+| `shared/governance/`、`shared/review/`、`shared/figures/`、`shared/gtm/` | 治理文档、评审归档、配图、落地页 | CC BY-NC-SA 4.0 |
+| `README.md`、`AGENTS.md`、`.qoder/`、`LICENSE` | 仓库级文档与技能 | CC BY-NC-SA 4.0 |
+| `shared/tooling/**` | 门禁、审计、元数据、构建与检查脚本 | MIT |
+| `shared/standards/`、`shared/well-architected/` | 第三方标准、法规与厂商文档的引用存档（只读副本） | 原权利人，不随本仓库许可转移 |
+| `shared/dist/` | 构建产物，不入库 | 跟随其源内容的许可 |
+
+为什么代码用 MIT 而不用 CC：CC 协议不为软件设计，缺少专利与担保条款，
+且「相同方式共享」会传染到使用者的构建流水线。工具代码的价值在可复用，
+MIT 是让它能被直接复用的最低成本选择。
+
+## 一、书稿内容：CC BY-NC-SA 4.0
+
+本作品（正文、附录、模板、配图及配套文档，即上表标注为 CC BY-NC-SA 4.0 的部分）
+采用 **知识共享 署名-非商业性使用-相同方式共享 4.0 国际许可协议**
+（Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License）许可。
+
+### 摘要（Deed Summary）
 
 你可以自由地：
 
@@ -24,9 +43,53 @@ Attribution-NonCommercial-ShareAlike 4.0 International License.
 完整许可条款：https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
 协议摘要：https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-## 说明
+## 二、工具代码：MIT
 
-- 提交贡献即视为同意按本许可发布（勘误、案例、模板均适用，见 `the-tam-book/manuscript/appx-e-contribution-guide.md`）；
-- 案例类贡献默认匿名化署名以保护来源；
-- 书中引用的第三方标准、法规与厂商文档版权归原权利人所有，不随本许可转移；
-- 商业合作与授权例外，请通过仓库 Issue 联系维护者。
+适用上表标注为 MIT 的部分，即 `shared/tooling/` 下的全部脚本与静态资源。
+
+```
+MIT License
+
+Copyright (c) 2026 Allen Galler and contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## 三、贡献
+
+提交贡献即视为同意按对应部分的许可发布：书稿贡献按 CC BY-NC-SA 4.0，
+工具代码贡献按 MIT。贡献流程只在两处定义，其余书引用，不各写一份：
+
+- TAM：[`books/the-tam-book/appx-e-contribution-guide.md`](books/the-tam-book/appx-e-contribution-guide.md)
+- BTE：[`books/the-bte-book/appx-e-contribution-guide.md`](books/the-bte-book/appx-e-contribution-guide.md)
+- SA：不设独立附录，贡献流程与脱敏口径引 TAM 附录 E（「一处定义，三书引用」）；
+  勘误与案例仍按 SA 书内章节的节号提交。
+
+案例类贡献默认以机构代号匿名化署名，以保护来源。
+
+## 四、第三方材料
+
+书中引用的标准、法规与厂商文档版权归原权利人所有，不随本许可转移。
+`shared/standards/` 与 `shared/well-architected/` 是引用与检索存档，不是本仓库的原创内容，
+其使用条件以原发布方的许可为准。
+
+## 五、商业授权
+
+商业授权、翻译出版、企业内部批量分发，通过仓库 Issue 联系维护者。
+各书附录 E 的贡献指南只覆盖非商业贡献，不构成商业授权。

@@ -1,0 +1,50 @@
+name: Quality Gate
+
+# 六条命令 + 全仓链接校验。设计原则与 AGENTS 第五节一致：
+# block 拦合并，warn 只进台账。台账作为 artifact 保留，不进提交。
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出
+        uses: actions/checkout@v4
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 体裁与结构破损（block 拦发布）
+        run: python3 shared/tooling/content_gate.py --book all --strict
+
+      - name: 元数据漂移（手写数字过期即失败）
+        run: python3 shared/tooling/gen_metadata.py --check
+
+      - name: 交叉引用与节号
+        run: |
+          python3 shared/tooling/xref_check.py
+          python3 shared/tooling/xref_check2.py
+
+      - name: 全仓断链
+        run: python3 shared/tooling/link_check.py
+
+      - name: 内容台账（warn 只记录，不阻断）
+        if: always()
+        run: |
+          python3 shared/tooling/content_gate.py --book all --report
+          python3 shared/tooling/claim_audit.py --book all --report
+          python3 shared/tooling/similarity_audit.py --book all --report
+
+      - name: 上传台账
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gate-reports
+          path: shared/review/the-*-book/*.md
+          if-no-files-found: ignore

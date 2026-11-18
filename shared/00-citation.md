@@ -6,9 +6,9 @@
 
 > Allen Galler.《The TAM Book of AI Era｜AI 时代的 TAM 白皮书》. v0.3, 2026.
 
-> Allen Galler.《The SA Book of AI Era｜AI 时代的售前架构师白皮书》. 2026.
+> Allen Galler.《The SA Book of AI Era｜AI 时代的售前架构师白皮书》. v0.1, 2026.
 
-> Allen Galler.《The BTE Book of AI Era》. v1.0, 2026.
+> Allen Galler.《The BTE Book of AI Era》. v1.0.1, 2026.
 
 ## 引用条文
 
@@ -26,6 +26,8 @@ TAM 的 P 前缀编号有四义：流程 P1–P12、故障级 P1–P4、评估�
 
 - `v0.x`：内容仍在修订，条文可能变动。引用时带版本号与日期。
 - `v1.0` 起：作者认为内容已稳定，可以正式引用。
+
+版本号记录发布批次，完成状态记录内容完成度，两者是两个维度。三书当前状态以 [完成状态口径](00-reading-status.md) 为准：版本号不高于状态，例如 BTE v1.0.1 已发布，但状态仍是初稿。
 
 版本记录见各书 `CHANGELOG.md`。
 
