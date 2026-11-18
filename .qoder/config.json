@@ -1,0 +1,17 @@
+{
+  "skills": [
+    {
+      "name": "allen-writes",
+      "description": "Unified writing skill for the-iron-triangle repository (TAM / SA / BTE). Enforces Diátaxis typing, style rules, de-slopping, and quality assurance.",
+      "entry": ".qoder/skills/allen-writes/SKILL.md",
+      "triggers": [
+        "write chapter",
+        "edit appendix",
+        "Diátaxis",
+        "AI slop",
+        "terminology consistency",
+        "review AGENTS.md"
+      ]
+    }
+  ]
+}

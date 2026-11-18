@@ -1,4 +1,14 @@
+# 隐藏目录与产物约定：
+#   .qoder/                    写作技能与配置（仓库级，入库）
+#   .tmp/                      本地草稿区（出库），按月份归档到 archive-YYYY-MM/
+#   shared/dist/               三书构建产物（出库）：the-tam-book/site、the-bte-book 三件套
+#   shared/tooling/cover.png   BTE 封面（由 make_cover.py 生成，出库）
+
 .tmp/
+shared/dist/
+shared/tooling/cover.png
+
+# Python 与系统噪音
 **/__pycache__/
 *.pyc
 .DS_Store

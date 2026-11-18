@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The TAM Book of AI Era｜AI 时代的 TAM 白皮书</title>
+<meta name="description" content="AI 时代技术客户经理（TAM）的开源方法书。以岗位最佳实践为根本，以 AI 时代为主线。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f6f1e7;
+  --paper-deep: #efe8d9;
+  --ink: #1d1b16;
+  --ink-soft: #4c463b;
+  --muted: #7d7463;
+  --vermillion: #b5372a;
+  --vermillion-deep: #8e2a20;
+  --rule: #d9cfbb;
+  --rule-strong: #b9ad94;
+  --serif: "Noto Serif SC", "Songti SC", serif;
+  --sans: "Noto Sans SC", "PingFang SC", sans-serif;
+  --latin: "Cormorant Garamond", var(--serif);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.9;
+  letter-spacing: .02em;
+  overflow-x: hidden;
+}
+/* 纸纹 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: .5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+
+/* ---------- 顶部刊头 ---------- */
+.masthead {
+  border-bottom: 3px double var(--rule-strong);
+  padding: 22px 0 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.masthead .brand {
+  font-family: var(--latin);
+  font-size: 15px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--vermillion);
+  font-weight: 600;
+}
+.masthead .issue {
+  font-size: 12px;
+  letter-spacing: .18em;
+  color: var(--muted);
+}
+.masthead .issue b { color: var(--ink-soft); font-weight: 500; }
+
+/* ---------- 主视觉 ---------- */
+.hero { position: relative; padding: 90px 0 70px; }
+.hero-grid { display: grid; grid-template-columns: 1fr 92px; gap: 40px; align-items: start; }
+.hero .kicker {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: .42em;
+  color: var(--vermillion);
+  border: 1px solid var(--vermillion);
+  padding: 6px 14px 5px;
+  margin-bottom: 34px;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: clamp(44px, 7vw, 86px);
+  line-height: 1.12;
+  letter-spacing: .01em;
+}
+.hero h1 .en {
+  display: block;
+  font-family: var(--latin);
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(20px, 2.6vw, 32px);
+  letter-spacing: .06em;
+  color: var(--vermillion);
+  margin-bottom: 14px;
+}
+.hero .lede {
+  margin-top: 34px;
+  max-width: 620px;
+  font-size: 18px;
+  color: var(--ink-soft);
+  font-weight: 300;
+}
+.hero .lede b { font-weight: 500; color: var(--ink); }
+.hero .alias {
+  margin-top: 22px;
+  font-size: 13px;
+  letter-spacing: .14em;
+  color: var(--muted);
+}
+.hero .alias b { color: var(--vermillion); font-weight: 500; letter-spacing: .22em; margin-right: 14px; }
+.hero .alias span { white-space: nowrap; }
+.hero .cta-row { margin-top: 44px; display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 14px;
+  letter-spacing: .18em;
+  text-decoration: none;
+  transition: all .25s ease;
+}
+.btn-solid { background: var(--ink); color: var(--paper); border: 1px solid var(--ink); }
+.btn-solid:hover { background: var(--vermillion); border-color: var(--vermillion); }
+.btn-ghost { color: var(--ink); border: 1px solid var(--rule-strong); }
+.btn-ghost:hover { border-color: var(--vermillion); color: var(--vermillion); }
+
+/* 竖排书名条 */
+.vertical-strip {
+  writing-mode: vertical-rl;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 21px;
+  letter-spacing: .52em;
+  color: var(--ink);
+  border-left: 1px solid var(--rule-strong);
+  padding-left: 22px;
+  height: 420px;
+  position: relative;
+}
+.vertical-strip::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  bottom: 0;
+  width: 7px;
+  height: 7px;
+  background: var(--vermillion);
+}
+
+/* 印章 */
+.seal {
+  position: absolute;
+  right: 130px;
+  top: 108px;
+  width: 118px;
+  height: 118px;
+  border: 2.5px solid var(--vermillion);
+  outline: 1px solid var(--vermillion);
+  outline-offset: 5px;
+  color: var(--vermillion);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-7deg);
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 1.5;
+  letter-spacing: .12em;
+  text-align: center;
+  opacity: .92;
+}
+.seal::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid var(--vermillion);
+  opacity: .55;
+}
+
+/* ---------- 数据带 ---------- */
+.figures {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.figures .fig {
+  padding: 30px 10px 26px;
+  text-align: center;
+  border-left: 1px solid var(--rule);
+  transition: background .3s;
+}
+.figures .fig:first-child { border-left: none; }
+.figures .fig:hover { background: var(--paper-deep); }
+.figures .num {
+  font-family: var(--latin);
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--vermillion);
+}
+.figures .lbl { margin-top: 10px; font-size: 12px; letter-spacing: .22em; color: var(--muted); }
+
+/* ---------- 章节骨架 ---------- */
+section { padding: 96px 0 20px; }
+.sec-head { display: flex; align-items: baseline; gap: 26px; border-bottom: 1px solid var(--rule-strong); padding-bottom: 18px; margin-bottom: 48px; }
+.sec-head .no {
+  font-family: var(--latin);
+  font-size: 58px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--vermillion);
+  line-height: .9;
+}
+.sec-head h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(26px, 3.4vw, 38px);
+  letter-spacing: .04em;
+}
+.sec-head .en { margin-left: auto; font-family: var(--latin); font-style: italic; color: var(--muted); font-size: 15px; letter-spacing: .12em; }
+
+/* 三个不是 */
+.nots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.not-card {
+  border-top: 2px solid var(--ink);
+  padding: 26px 6px 0;
+  position: relative;
+}
+.not-card .neg {
+  font-family: var(--latin);
+  font-style: italic;
+  color: var(--vermillion);
+  font-size: 15px;
+  letter-spacing: .28em;
+}
+.not-card h3 { font-family: var(--serif); font-size: 23px; font-weight: 600; margin: 12px 0 14px; }
+.not-card p { font-size: 14.5px; color: var(--ink-soft); font-weight: 300; }
+.not-card::before {
+  content: "✕";
+  position: absolute;
+  top: -15px;
+  right: 2px;
+  font-family: var(--latin);
+  font-size: 22px;
+  color: var(--vermillion);
+  background: var(--paper);
+  padding: 0 6px;
+}
+
+/* 读者 */
+.readers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.reader { background: var(--paper); padding: 34px 32px; transition: background .3s; }
+.reader:hover { background: var(--paper-deep); }
+.reader .tag { font-family: var(--latin); font-style: italic; color: var(--vermillion); letter-spacing: .2em; font-size: 13px; }
+.reader h3 { font-family: var(--serif); font-size: 21px; font-weight: 600; margin: 10px 0 12px; }
+.reader p { font-size: 14.5px; color: var(--ink-soft); font-weight: 300; }
+.reader p b { font-weight: 500; color: var(--ink); }
+
+/* 结构表 */
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+thead th {
+  text-align: left;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .3em;
+  color: var(--vermillion);
+  border-bottom: 2px solid var(--ink);
+  padding: 0 14px 12px;
+}
+tbody td { padding: 16px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; font-weight: 300; color: var(--ink-soft); }
+tbody tr { transition: background .25s; }
+tbody tr:hover { background: var(--paper-deep); }
+tbody td:first-child { font-family: var(--serif); font-weight: 600; color: var(--ink); white-space: nowrap; }
+tbody td.ch { font-family: var(--latin); font-style: italic; color: var(--vermillion); white-space: nowrap; letter-spacing: .04em; }
+.table-note { margin-top: 18px; font-size: 13px; color: var(--muted); }
+
+/* 方法与标准 */
+.stances { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 48px; }
+.stance { display: flex; gap: 22px; align-items: baseline; border-bottom: 1px solid var(--rule); padding-bottom: 22px; }
+.stance .idx {
+  font-family: var(--latin);
+  font-style: italic;
+  font-size: 30px;
+  color: var(--vermillion);
+  line-height: 1;
+  min-width: 52px;
+}
+.stance h3 { font-family: var(--serif); font-size: 19px; font-weight: 600; margin-bottom: 8px; }
+.stance p { font-size: 14px; color: var(--ink-soft); font-weight: 300; }
+.stance p code {
+  font-family: var(--latin);
+  font-size: 14px;
+  background: var(--paper-deep);
+  padding: 1px 7px;
+  letter-spacing: .04em;
+}
+
+/* 时效声明 */
+.notice {
+  border: 1px solid var(--vermillion);
+  padding: 40px 44px;
+  position: relative;
+  background: linear-gradient(0deg, rgba(181,55,42,.035), rgba(181,55,42,.035));
+}
+.notice::before {
+  content: "声明";
+  position: absolute;
+  top: -12px;
+  left: 32px;
+  background: var(--paper);
+  color: var(--vermillion);
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: .5em;
+  padding: 0 10px;
+}
+.notice .gate {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.notice .dates { display: flex; gap: 34px; flex-wrap: wrap; margin: 18px 0 6px; }
+.notice .date-chip { border: 1px solid var(--rule-strong); padding: 8px 16px; font-size: 13px; }
+.notice .date-chip b { font-family: var(--latin); font-size: 15px; color: var(--vermillion); letter-spacing: .06em; margin-left: 8px; }
+.notice p { font-size: 14.5px; color: var(--ink-soft); font-weight: 300; }
+
+/* 共建 */
+.join { display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: start; }
+.join .contribs { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.contrib { background: var(--paper); padding: 22px 26px; display: flex; gap: 18px; align-items: baseline; transition: background .3s; }
+.contrib:hover { background: var(--paper-deep); }
+.contrib .cn { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--vermillion); min-width: 64px; }
+.contrib p { font-size: 13.5px; color: var(--ink-soft); font-weight: 300; }
+.join .barside { border-left: 2px solid var(--ink); padding-left: 30px; }
+.join .barside h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; margin-bottom: 14px; }
+.join .barside li { list-style: none; padding: 9px 0; border-bottom: 1px dashed var(--rule); font-size: 14px; color: var(--ink-soft); font-weight: 300; }
+.join .barside li::before { content: "—"; color: var(--vermillion); margin-right: 12px; }
+
+/* 页脚 */
+footer {
+  margin-top: 110px;
+  border-top: 3px double var(--rule-strong);
+  padding: 42px 0 56px;
+}
+.foot-grid { display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; flex-wrap: wrap; }
+footer .mark { font-family: var(--serif); font-weight: 900; font-size: 26px; letter-spacing: .06em; }
+footer .mark small { display: block; font-family: var(--latin); font-style: italic; font-weight: 400; font-size: 13px; letter-spacing: .24em; color: var(--vermillion); margin-top: 8px; }
+footer .meta { font-size: 12.5px; color: var(--muted); line-height: 2.2; text-align: right; }
+footer .meta a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--rule-strong); }
+footer .meta a:hover { color: var(--vermillion); border-color: var(--vermillion); }
+
+/* 动效 */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* 响应式 */
+@media (max-width: 900px) {
+  .wrap { padding: 0 22px; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .vertical-strip { display: none; }
+  .seal { right: 12px; top: 76px; width: 92px; height: 92px; font-size: 17px; }
+  .figures { grid-template-columns: repeat(3, 1fr); }
+  .figures .fig:nth-child(4) { border-left: none; }
+  .figures .fig:nth-child(n+4) { border-top: 1px solid var(--rule); }
+  .nots, .readers, .stances, .join { grid-template-columns: 1fr; }
+  .join .barside { border-left: none; border-top: 2px solid var(--ink); padding: 26px 0 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="brand">The TAM Book of AI Era</div>
+    <div class="issue"><b>开源技术图书</b> · 岗位方法白皮书 · 稿件持续修订</div>
+  </header>
+
+  <!-- 主视觉 -->
+  <div class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="kicker reveal">白 皮 书</span>
+        <h1 class="reveal">
+          <span class="en">The TAM Book of AI Era</span>
+          AI 时代的<br>TAM 白皮书
+        </h1>
+        <p class="lede reveal">技术客户经理（Technical Account Manager，TAM）的岗位方法书。<b>以最佳实践为根本，以 AI 时代为主线。</b>目标只有一个：让读者在企业级、金融级大项目里，把这套实践真正落地。</p>
+        <p class="alias reveal"><b>适用岗位</b><span>TAM（技术客户经理）</span>／<span>CRE（客户可靠性工程师）</span>／<span>技术客户成功</span>／<span>驻场架构师</span></p>
+        <div class="cta-row reveal">
+          <a class="btn btn-solid" href="../../books/the-tam-book/00-reading-guide.md">开始阅读 · 导读</a>
+          <a class="btn btn-ghost" href="../../books/the-tam-book/00-outline.md">浏览全书目录</a>
+          <a class="btn btn-ghost" href="../../books/the-tam-book/appx-e-contribution-guide.md">参与共建</a>
+        </div>
+      </div>
+      <div class="vertical-strip reveal">岗位方法 · 金融级实战 · AI 时代</div>
+    </div>
+    <div class="seal reveal">开源<br>白皮书</div>
+  </div>
+
+  <!-- 数据带 -->
+  <div class="figures reveal">
+    <div class="fig"><div class="num">28</div><div class="lbl">正 文 章</div></div>
+    <div class="fig"><div class="num">8</div><div class="lbl">配 套 章</div></div>
+    <div class="fig"><div class="num">30</div><div class="lbl">附 录 件</div></div>
+    <div class="fig"><div class="num">22</div><div class="lbl">模 板</div></div>
+    <div class="fig"><div class="num">66</div><div class="lbl">分 型 文 件</div></div>
+    <div class="fig"><div class="num">5741</div><div class="lbl">WA 归 档</div></div>
+  </div>
+
+  <!-- 01 定位 -->
+  <section>
+    <div class="sec-head reveal">
+      <div class="no">01</div>
+      <h2>定位：三个不是</h2>
+      <div class="en">What This Book Is Not</div>
+    </div>
+    <div class="nots">
+      <div class="not-card reveal">
+        <div class="neg">NOT A MANUAL</div>
+        <h3>不是厂商产品手册</h3>
+        <p>方法论厂商中立。打法可以在任何一朵云、任何一个产品栈上复用。所有建议都经过岗位化改写。</p>
+      </div>
+      <div class="not-card reveal">
+        <div class="neg">NOT A REPRINT</div>
+        <h3>不是框架复读机</h3>
+        <p>骨架来自实战，不来自 ITIL 目录。与既有框架的关系是映射而非转述——对照表见附录 C。</p>
+      </div>
+      <div class="not-card reveal">
+        <div class="neg">NOT SUCCESS MYTHS</div>
+        <h3>不是职场成功学</h3>
+        <p>每一条建议都落成清单、模板或可观察行为。落不成的，不写进书。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 读者 -->
+  <section>
+    <div class="sec-head reveal">
+      <div class="no">02</div>
+      <h2>写给谁</h2>
+      <div class="en">Readers</div>
+    </div>
+    <div class="readers">
+      <div class="reader reveal">
+        <div class="tag">In Service</div>
+        <h3>在职 TAM</h3>
+        <p>先用<b>第 26、27 章</b>的度量与成熟度模型定位短板。再按维度回到内涵篇逐章补齐。自检清单就是日常工具。</p>
+      </div>
+      <div class="reader reveal">
+        <div class="tag">In Transition</div>
+        <h3>想转型的工程师</h3>
+        <p>开发、运维、支持出身。按<b>第 1–4 章 → 第 5–16 章 → 第 37 章</b>读。差距通常在关系经营与业务洞察。</p>
+      </div>
+      <div class="reader reveal">
+        <div class="tag">In Management</div>
+        <h3>服务交付管理者</h3>
+        <p>定位篇 → 外延篇 → 度量成长篇 → 附录体系。<b>评估、认证、流程规范</b>可直接取用建团队、定考核。</p>
+      </div>
+      <div class="reader reveal">
+        <div class="tag">In Ecosystem</div>
+        <h3>伙伴与生态协作方</h3>
+        <p>第 20 章讲生态识局与协同打法。附录 V 收录<b>铁三角协同</b>的接口、分工与冲突纪律。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 结构 -->
+  <section>
+    <div class="sec-head reveal">
+      <div class="no">03</div>
+      <h2>全书结构</h2>
+      <div class="en">Architecture</div>
+    </div>
+    <table class="reveal">
+      <thead>
+        <tr><th>部 分</th><th>内 容</th><th>章 节</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>一 · 定位篇</td><td>TAM 是谁：起源、边界、价值命题、AI 时代再定义</td><td class="ch">Ch. 1–4</td></tr>
+        <tr><td>二 · 内涵篇</td><td>六维能力模型：技术纵深、业务洞察、关系经营、服务治理、风险合规、项目变革</td><td class="ch">Ch. 5–10 ＋ 5+–8+</td></tr>
+        <tr><td>三 · 外延篇</td><td>工作全景与生态协同：生命周期、升级危机、内部接口、伙伴生态、商业化</td><td class="ch">Ch. 11–15</td></tr>
+        <tr><td>四 · 金融级实战篇</td><td>行业特殊性、可用性护航、重大保障、事件管理、案例解剖</td><td class="ch">Ch. 16–20</td></tr>
+        <tr><td>五 · AI 变革篇</td><td>护航 AI 负载、用 AI 武装自己、服务模式跃迁、AI 风险治理、不可替代性</td><td class="ch">Ch. 21–25 ＋ 22+/24+</td></tr>
+        <tr><td>六 · 度量与成长篇</td><td>度量体系、成熟度模型、职业发展与团队建设</td><td class="ch">Ch. 26–28 ＋ 26+/28+</td></tr>
+        <tr><td>七 · 开源工具箱</td><td>可复制模板与清单库，与正文锚点一一对应</td><td class="ch">Templates 01–23</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note reveal">附录 42 件（主件 28 ＋ 落地件 14）：术语表、流程与规范、方法论映射（含 Well-Architected）、延伸阅读、贡献指南、云厂商通告、评估与验收标准、值班培训演练、项目与产品导入、服务质量、复盘、加班调休、变更、工单、铁三角协同、训练教程、报告标准、子 TAM 协同、SRE/CRE 工程纵深等，各标准另配落地执行件（I+–V+）。</p>
+  </section>
+
+  <!-- 04 方法 -->
+  <section>
+    <div class="sec-head reveal">
+      <div class="no">04</div>
+      <h2>方法与标准</h2>
+      <div class="en">Method &amp; Discipline</div>
+    </div>
+    <div class="stances">
+      <div class="stance reveal">
+        <div class="idx">i.</div>
+        <div>
+          <h3>唯一事实源体系</h3>
+          <p>目录、术语表、指标口径、流程编号 <code>P1–P12</code> 各有唯一事实源。别处只引用，不重定义。全书口径因此可审计。</p>
+        </div>
+      </div>
+      <div class="stance reveal">
+        <div class="idx">ii.</div>
+        <div>
+          <h3>Diátaxis 分型维护</h3>
+          <p><!-- META:diataxis_dot -->Explanation 15 · How-to 22 · Reference 28 · Tutorial 2 · 混合 0<!-- /META:diataxis_dot -->。讲原理、给步骤、供查询、带练习，各归各位。</p>
+        </div>
+      </div>
+      <div class="stance reveal">
+        <div class="idx">iii.</div>
+        <div>
+          <h3>金融级贯穿</h3>
+          <p>重保五阶段、监管配合口径、审计留痕纪律贯穿全书。所有时限锚点可直接抄进服务计划。</p>
+        </div>
+      </div>
+      <div class="stance reveal">
+        <div class="idx">iv.</div>
+        <div>
+          <h3>外部标尺库</h3>
+          <p>六厂商 Well-Architected 公开文档归档 <!-- META:wa_pages -->5,741<!-- /META:wa_pages --> 份。标准与法规全文库 <!-- META:standards_root_count -->51<!-- /META:standards_root_count --> 份（双库已合并，2026-11-17）。评审问题有出处。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 声明 -->
+  <section>
+    <div class="sec-head reveal">
+      <div class="no">05</div>
+      <h2>时效性与发布闸门</h2>
+      <div class="en">Freshness &amp; Release Gate</div>
+    </div>
+    <div class="notice reveal">
+      <div class="gate">时效性内容一律标注数据时点。发布前必须刷新。</div>
+      <div class="dates">
+        <div class="date-chip">第 31 章 监管节<b>2026-11-01</b></div>
+        <div class="date-chip">附录 F 云厂商通告<b>2026-11-02</b></div>
+        <div class="date-chip">附录 D / W 文献与标准<b>2026-10-25</b></div>
+      </div>
+      <p>监管条文、云厂商通告等时效性内容均带来源与时点声明。每次正式发布前须刷新数据时点。未刷新须注明“数据时点未刷新，以官方最新发布为准”。全书案例一律虚构化脱敏，不使用真实客户名与人名。</p>
+    </div>
+  </section>
+
+  <!-- 06 共建 -->
+  <section>
+    <div class="sec-head reveal">
+      <div class="no">06</div>
+      <h2>参与共建</h2>
+      <div class="en">Contribute</div>
+    </div>
+    <div class="join">
+      <div class="contribs reveal">
+        <div class="contrib"><div class="cn">勘 误</div><p>四要素齐全：位置、原文、建议改法、依据。时效性内容附来源与时点。</p></div>
+        <div class="contrib"><div class="cn">案 例</div><p>五段结构：背景、冲突、动作、结果、复盘。脱敏是硬门槛，不是建议。</p></div>
+        <div class="contrib"><div class="cn">模 板</div><p>四件事提案：使用场景、配套锚点、编号避让、体例。无锚点不收。</p></div>
+      </div>
+      <div class="barside reveal">
+        <h3>统一流程与门槛</h3>
+        <ul>
+          <li>先 Issue 后 PR，口径先对齐再动笔</li>
+          <li>脱敏不彻底，一票否决</li>
+          <li>无出处与时点的时效数据，不收</li>
+          <li>绕过唯一事实源的就地修正，不收</li>
+          <li>退回不等于拒绝，补齐可重提</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="mark">
+      TAM Book of AI Era
+      <small>Open Source · Whitepaper · In Revision</small>
+    </div>
+    <div class="meta">
+      仓库根部 README 与 LICENSE 为准 · 数据时点见各附录声明<br>
+      <a href="../../books/the-tam-book/appx-e-contribution-guide.md">贡献指南</a> ·
+      <a href="../../books/the-tam-book/00-outline.md">全书目录</a> ·
+      <a href="../../books/the-tam-book/DIATAXIS-MAP.md">类型总览</a> ·
+      <a href="../README.md">README</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e, i) {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (i * 90) + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
