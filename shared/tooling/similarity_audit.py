@@ -26,13 +26,39 @@ from __future__ import annotations
 import argparse
 import itertools
 import re
+import subprocess
 import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]           # 仓库根（脚本在 shared/tooling/）
-ROOT = REPO / "books" / "the-tam-book"               # 书稿目录（书根只剩 md）
+ROOT = REPO / "books" / "the-tam-book"               # 默认书稿目录，--book 可切
 REPORT = REPO / "shared" / "review" / "the-tam-book" / "similarity-audit.md"
 MS = ROOT                                            # 书稿已扁平到书根，模板用 tpl- 前缀区分
+
+# 同构审计三书通用。跨书同构目前只比单书内部：跨书对比需先解决命名与体裁对齐。
+BOOKS = {"tam": "the-tam-book", "sa": "the-sa-book", "bte": "the-bte-book"}
+
+
+def select_book(name: str) -> None:
+    global ROOT, MS, REPORT
+    ROOT = REPO / "books" / BOOKS[name]
+    MS = ROOT
+    REPORT = REPO / "shared" / "review" / BOOKS[name] / "similarity-audit.md"
+
+
+def run_all(args) -> int:
+    """--book all：逐书起子进程，各写一份台账。"""
+    rc = 0
+    for name in BOOKS:
+        cmd = [sys.executable, str(Path(__file__)), "--book", name]
+        if args.report:
+            cmd.append("--report")
+        if args.min:
+            cmd += ["--min", str(args.min)]
+        if args.only:
+            cmd += ["--only", args.only]
+        rc = max(rc, subprocess.call(cmd))
+    return rc
 CJK = re.compile(r"[\u4e00-\u9fff]")
 
 SHINGLE = 12          # 片段长度，与 BTE 书重叠审计口径一致
@@ -94,7 +120,13 @@ def main() -> int:
     ap.add_argument("--min", type=float, default=0.0, help="只显示文本重合不低于该值的文件对")
     ap.add_argument("--report", action="store_true", help="写入 Markdown 报告")
     ap.add_argument("--only", metavar="PREFIX", help="只比较文件名以该前缀开头的文件")
+    ap.add_argument("--book", default="tam", choices=[*BOOKS, "all"],
+                    help="被审计的书：tam（默认）/ sa / bte / all")
     args = ap.parse_args()
+
+    if args.book == "all":
+        return run_all(args)
+    select_book(args.book)
 
     files = sorted(p for p in MS.glob("*.md")
                    if not p.name.startswith(("00-outline", "DIATAXIS", "tpl-", "README", "CHANGELOG")))
@@ -121,7 +153,7 @@ def main() -> int:
         return len(CJK.findall(docs[name][0]))
 
     if args.report:
-        lines = ["# 跨文件同构审计", "",
+        lines = [f"# 跨文件同构审计（{REPORT.parent.name}）", "",
                  "> `python3 shared/tooling/similarity_audit.py --report`（可复跑，勿手改）",
                  "> 口径见 `QUALITY-GATE.md`。", "",
                  f"样本 {len(docs)} 个文件｜比较 {len(docs) * (len(docs) - 1) // 2} 对"
@@ -168,6 +200,7 @@ def main() -> int:
                   "- 不判断质量：两份同构文件可能都很好，也可能都很差，需人工看。",
                   "- 不同体裁不该同构。若两个不同 Diátaxis 类型的文件骨架相同，优先怀疑标注有误。", ""]
         out = REPORT
+        out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text("\n".join(lines) + "\n", encoding="utf-8")
         print(f"报告已写入 {out.relative_to(REPO)}（同构簇 {len(clusters)} 个 / 文本重合超线 {len(hot)} 对）")
         return 0

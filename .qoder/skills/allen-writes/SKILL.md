@@ -84,6 +84,11 @@ Based on the declared type, scaffold the document:
 - English sentences > 20 words: break them
 - Short sentences reduce reading load; they do not justify thin content or insufficient length.
 
+### Enumeration Punctuation
+- An enumeration introduced by a count ("五项"、"六步"、"四条红线") must list that many items before its full stop. Never insert a 。 mid-list: 「五项：A、B、C。D、E。」 is a defect, not a stylistic choice — the reader stops at the 。 and loses the remaining items.
+- The test is arithmetic, not punctuation counting: declared count vs actual items between the colon and the first full stop. Short of the declared count means the list was truncated.
+- This is a `content_gate.py` block item (`broken_enums`). If it fires, fix the text; do not adjust the rule.
+
 ### Depth, Progression, and Pyramid Expression
 - **Lead with the point**: State the section's conclusion in its first paragraph. Follow with grouped supporting points, then evidence, examples, and boundaries.
 - **Build a pyramid**: Place one governing idea above two to four supporting points. Keep points at the same level comparable and distinct. Order them by time, structure, or importance.

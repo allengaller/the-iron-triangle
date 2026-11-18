@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """全书交叉引用体检：校验五类引用的目标是否存在。"""
-import os, re, glob
+import os, re, glob, sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # 仓库根
 ROOT = os.path.join(REPO, "books", "the-tam-book")                                  # 书稿目录
@@ -98,3 +98,6 @@ print(f"扫描文件 {len(files)} 个；章 {len(ch_files)}、附录 {len(appx_l
 print(f"发现问题 {len(issues)} 条\n")
 for src, ln, kind, ref, msg in issues:
     print(f"{src}:{ln} [{kind}] {ref} — {msg}")
+
+# 2026-11-18：此前无退出码，问题存在也返回 0，CI 无法靠它拦发布。
+sys.exit(1 if issues else 0)

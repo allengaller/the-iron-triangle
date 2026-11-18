@@ -20,13 +20,42 @@ import argparse
 import json
 import re
 import statistics
+import subprocess
 import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]           # 仓库根（脚本在 shared/tooling/）
-ROOT = REPO / "books" / "the-tam-book"               # 书稿目录（书根只剩 md）
+ROOT = REPO / "books" / "the-tam-book"               # 默认书稿目录，--book 可切
 REPORT = REPO / "shared" / "review" / "the-tam-book" / "content-gate-report.md"
 MS = ROOT                                            # 书稿已扁平到书根，模板用 tpl- 前缀区分
+
+# 三书共用一套门禁。阈值仍按 TAM 分布校准：SA/BTE 先出 warn 台账，不阻断发布。
+BOOKS = {"tam": "the-tam-book", "sa": "the-sa-book", "bte": "the-bte-book"}
+
+
+def select_book(name: str) -> None:
+    """切换被检查的书。书根路径与台账路径同时跟着变。"""
+    global ROOT, MS, REPORT
+    ROOT = REPO / "books" / BOOKS[name]
+    MS = ROOT
+    REPORT = REPO / "shared" / "review" / BOOKS[name] / "content-gate-report.md"
+
+
+def run_all(args) -> int:
+    """--book all：逐书起子进程，避免全局状态串味，也为每本书各写一份台账。"""
+    rc = 0
+    for name in BOOKS:
+        cmd = [sys.executable, str(Path(__file__)), "--book", name]
+        for flag in ("--strict", "--report", "--calibrate"):
+            if getattr(args, flag.lstrip("-")):
+                cmd.append(flag)
+        if args.only:
+            cmd += ["--only", args.only]
+        if args.json:
+            p = Path(args.json)
+            cmd += ["--json", str(p.with_name(f"{p.stem}-{name}{p.suffix}"))]
+        rc = max(rc, subprocess.call(cmd))
+    return rc
 
 CJK = re.compile(r"[\u4e00-\u9fff]")
 
@@ -79,7 +108,10 @@ SCAFFOLD = {
     ],
     "Reference": [],  # 特殊规则：至少一张表（block）+ 两个文件链接（warn）
     "Tutorial": [
-        ("分步操作", "keyword", r"步骤|操作|第[一二三四五六七八九十]步", "block"),
+        # 除“步骤/操作”外，认阿拉伯数字步号（第 0 步）与编号小节（## 1. 建工作区）。
+        # 不认会把真教程判成缺步骤：SA ch22 与 BTE ch23 都用数字步号，
+        # 首版因只匹配中文数字而误报 block。
+        ("分步操作", "keyword", r"步骤|操作|第\s*[一二三四五六七八九十\d]+\s*步|^\d{1,2}\.\s", "block"),
         ("成果验证", "keyword", r"验证|验收|检查|确认", "block"),
     ],
 }
@@ -135,6 +167,19 @@ COMMON = {
 GENRE_CONFLICT = {
     "Explanation": (0.60, 0.10),   # (list_ratio 上限, argument_density 下限)
 }
+
+# 枚举腰斩：数量词 + 冒号引导的并列项，实列数量少于声明数量即被句号切断。
+# 与长句、被动那些形式检查分开：它测的不是写法，是排版损伤的可读性。
+#
+# 判据用「声明数 vs 实列数」，不用「顿号个数」：后者会把「它有三个内核：
+# A、B、C。实操在 7+」这类枚举已完整、句号合法的写法误判；前者只抓
+# 「说了五项、只列三项就收句」的真缺陷，且能覆盖「3+2」型腰斩。
+CN_DIGITS = {"一": 1, "二": 2, "两": 2, "三": 3, "四": 4,
+             "五": 5, "六": 6, "七": 7, "八": 8, "九": 9}
+ENUM_LEAD = re.compile(
+    r"([一二三四五六七八九十两]+)(?:项|件|条|个|步|类|层|部分|动作|标志|要素|阶段|维度|原则|要点)"
+    r"[^。\n]{0,8}[:：]")
+ENUM_BREAK = re.compile(r"。[^。、\n]{1,8}、")
 
 # 回顾注水线：要点回顾占全文比重超过该值，说明正文没说完、靠复述凑篇幅。
 RECAP_BLOCK = 0.15
@@ -259,7 +304,7 @@ def check_scaffold(dtype: str, blocks, text: str = "") -> list[tuple[str, str]]:
     missing = []
     for name, kind, spec, level in rules:
         if kind == "keyword":
-            if not re.search(spec, joined, re.I):
+            if not re.search(spec, joined, re.I | re.M):
                 missing.append((level, name))
         elif kind == "checkbox":
             n = len(re.findall(r"^\s*[-*+]\s*\[[ xX]\]", text, re.M))
@@ -318,6 +363,7 @@ def metrics_of(path: Path) -> dict:
         "exempt_ngram": path.relative_to(ROOT).as_posix() in EXEMPT_NGRAM,
         "has_h1": sum(1 for l in text.splitlines() if l.startswith("# ")) == 1,
         "table_malformed": malformed_tables(text),
+        "broken_enum": broken_enums(text),
     }
 
 
@@ -366,6 +412,55 @@ def draft_badge_issues(files: list[Path]) -> list[dict]:
     return out
 
 
+def cn_int(s: str) -> int:
+    """中文数字转整数，只覆盖本书会出现的 1–99。无法解析返回 0。"""
+    if not s:
+        return 0
+    if "十" in s:
+        tens, _, ones = s.partition("十")
+        return CN_DIGITS.get(tens, 1) * 10 + CN_DIGITS.get(ones, 0)
+    return CN_DIGITS.get(s, 0)
+
+
+def broken_enums(text: str) -> int:
+    """枚举被句号腰斩的行数。
+
+    判据：冒号到首个句号之间的顿号数 +1 若少于数量词声明的项数，说明枚举
+    还没列完就收了句号，且句号后 1–8 字内又出现顿号（剩余项被推到下一句）。
+    典型样本：「完成标志有五项：A、B、C。D、E。」——中间的句号应为顿号。
+
+    为什么不用「顿号个数」做判据：实测 19 处粗筛命中里，2 处是「枚举已完整、
+    句号合法结束」（SA ch07「三个内核」、BTE ch28「六步操作」）；改用声明数
+    与实列数比对后误报归零，并补上了顿号计数法漏掉的「3+2」型腰斩。
+    """
+    hits = 0
+    for line in text.splitlines():
+        if line.startswith("|") or line.lstrip().startswith("```"):
+            continue
+        m = ENUM_LEAD.search(line)
+        if not m:
+            continue
+        declared = cn_int(m.group(1))
+        if declared < 2:
+            continue
+        seg = line[m.end():]
+        p = seg.find("。")
+        if p < 0:
+            continue
+        if seg[:p].count("、") + 1 >= declared:
+            continue
+        # 实列不足两项说明冒号引出的是单个断言而非枚举，如「五个杠杆共用一个
+        # 前提：数据源结构化。」——句号合法，不是腰斩。
+        if seg[:p].count("、") < 1:
+            continue
+        if not ENUM_BREAK.match(seg[p:]):
+            continue
+        if re.match(r"(本章|本节|本书|下一|这一|上述|以上|下面)", seg[p + 1:p + 9]):
+            continue
+        hits += 1
+    return hits
+
+
 def malformed_tables(text: str) -> int:
     """表格管道列数不一致的行数。"""
     bad, block, in_fence = 0, [], False
@@ -397,6 +492,8 @@ def judge(m: dict) -> list[tuple[str, str, str]]:
         out.append(("block", "H1", "不唯一"))
     if m["table_malformed"]:
         out.append(("block", "表格", f"{m['table_malformed']} 行管道列数不一致"))
+    if m["broken_enum"]:
+        out.append(("block", "枚举断句", f"{m['broken_enum']} 行并列项被句号腰斩"))
 
     # 骨架缺失：逐项按声明好的级别入册。缺结构件属结构破损（block），
     # 缺理想节属厚度不足（warn）。
@@ -443,7 +540,13 @@ def main() -> int:
     ap.add_argument("--json", metavar="PATH", help="写出 JSON 结果")
     ap.add_argument("--strict", action="store_true", help="存在 block 项时退出码 1")
     ap.add_argument("--only", metavar="PREFIX", help="只检查文件名前缀匹配的文件")
+    ap.add_argument("--book", default="tam", choices=[*BOOKS, "all"],
+                    help="被检查的书：tam（默认）/ sa / bte / all")
     args = ap.parse_args()
+
+    if args.book == "all":
+        return run_all(args)
+    select_book(args.book)
 
     files = sorted(p for p in MS.glob("*.md")
                    if not p.name.startswith(("00-outline", "DIATAXIS", "tpl-", "README", "CHANGELOG")))
@@ -498,8 +601,8 @@ def main() -> int:
         Path(args.json).write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     if args.report:
-        lines = ["# 内容质量门禁报告", "",
-                 "> 生成方式：`python3 shared/tooling/content_gate.py --report`（可复跑，勿手改）",
+        lines = [f"# 内容质量门禁报告（{REPORT.parent.name}）", "",
+                 f"> 生成方式：`python3 shared/tooling/content_gate.py --report --book {args.book}`（可复跑，勿手改）",
                  "> 口径与盲区见 `QUALITY-GATE.md`；本节报告只举证，不代替人工通读。", "",
                  f"样本 {len(rows)} 个文件｜block {len(blocked)}｜warn {len(warned)}｜通过 {len(clean)}", "",
                  "## 一、block：体裁矛盾与结构破损（当期必修）", ""]
@@ -534,6 +637,7 @@ def main() -> int:
                   *[f"| {LABELS.get(k, k)} | {v} | {d} |" for k, (v, d) in COMMON.items()], ""]
 
         out = REPORT
+        out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text("\n".join(lines) + "\n", encoding="utf-8")
         print(f"报告已写入 {out.relative_to(REPO)}（block {len(blocked)} / warn {len(warned)} / 通过 {len(clean)}）")
     else:

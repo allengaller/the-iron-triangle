@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """节号级交叉引用校验：附录 X.Y 引用、章内 X.Y 节引用。"""
-import os, re, glob
+import os, re, glob, sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # 仓库根
 ROOT = os.path.join(REPO, "books", "the-tam-book")                                  # 书稿目录
@@ -82,3 +82,6 @@ for base, ln, ref, msg in issues:
         continue
     seen.add(key)
     print(f"{base}:{ln} {ref} — {msg}")
+
+# 2026-11-18：此前无退出码，问题存在也返回 0，CI 无法靠它拦发布。
+sys.exit(1 if issues else 0)

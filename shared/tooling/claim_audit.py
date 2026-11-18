@@ -47,12 +47,38 @@ from __future__ import annotations
 
 import argparse
 import re
+import subprocess
+import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]           # 仓库根（脚本在 shared/tooling/）
-ROOT = REPO / "books" / "the-tam-book"               # 书稿目录（书根只剩 md）
+ROOT = REPO / "books" / "the-tam-book"               # 默认书稿目录，--book 可切
 REPORT = REPO / "shared" / "review" / "the-tam-book" / "claim-audit-report.md"
 MS = ROOT                                            # 书稿已扁平到书根，模板用 tpl- 前缀区分
+
+# 口径三书通用。SA/BTE 先出台账，不阻断：它们的数字密度本就低，缺的是内容而不是标注。
+BOOKS = {"tam": "the-tam-book", "sa": "the-sa-book", "bte": "the-bte-book"}
+
+
+def select_book(name: str) -> None:
+    global ROOT, MS, REPORT
+    ROOT = REPO / "books" / BOOKS[name]
+    MS = ROOT
+    REPORT = REPO / "shared" / "review" / BOOKS[name] / "claim-audit-report.md"
+
+
+def run_all(args) -> int:
+    """--book all：逐书起子进程，各写一份台账。"""
+    rc = 0
+    for name in BOOKS:
+        cmd = [sys.executable, str(Path(__file__)), "--book", name]
+        for flag in ("--report", "--list"):
+            if getattr(args, flag.lstrip("-")):
+                cmd.append(flag)
+        if args.only:
+            cmd += ["--only", args.only]
+        rc = max(rc, subprocess.call(cmd))
+    return rc
 
 # 四类出处标签 + 本书内部引用 + 两种合法形态：算术可复算、案例虚构声明。
 TAG = re.compile(
@@ -181,7 +207,13 @@ def main() -> int:
     ap.add_argument("--only", metavar="PREFIX", help="只查文件名前缀")
     ap.add_argument("--list", action="store_true", help="逐条列出")
     ap.add_argument("--report", action="store_true", help="写 Markdown 报告")
+    ap.add_argument("--book", default="tam", choices=[*BOOKS, "all"],
+                    help="被审计的书：tam（默认）/ sa / bte / all")
     args = ap.parse_args()
+
+    if args.book == "all":
+        return run_all(args)
+    select_book(args.book)
 
     files = sorted(p for p in MS.glob("*.md")
                    if not p.name.startswith(("tpl-", "README", "CHANGELOG")))
@@ -197,8 +229,8 @@ def main() -> int:
         by_file: dict[str, list[dict]] = {}
         for h in all_hits:
             by_file.setdefault(h["file"], []).append(h)
-        lines = ["# 数值断言出处审计", "",
-                 "> 生成方式：`python3 shared/tooling/claim_audit.py --report`（可复跑，勿手改）",
+        lines = [f"# 数值断言出处审计（{REPORT.parent.name}）", "",
+                 f"> 生成方式：`python3 shared/tooling/claim_audit.py --report --book {args.book}`（可复跑，勿手改）",
                  "> 口径见本脚本头部注释与 `QUALITY-GATE.md` 第十节。", "",
                  f"样本 {len(files)} 个文件｜高风险数值断言 {sum(h['n'] for h in all_hits)} 条｜"
                  f"无口径块 {len(all_hits)} 个｜涉及 {len(by_file)} 个文件", "",

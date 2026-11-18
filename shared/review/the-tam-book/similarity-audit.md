@@ -1,4 +1,4 @@
-# 跨文件同构审计
+# 跨文件同构审计（the-tam-book）
 
 > `python3 shared/tooling/similarity_audit.py --report`（可复跑，勿手改）
 > 口径见 `QUALITY-GATE.md`。

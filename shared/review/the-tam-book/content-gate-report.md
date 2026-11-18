@@ -1,6 +1,6 @@
-# 内容质量门禁报告
+# 内容质量门禁报告（the-tam-book）
 
-> 生成方式：`python3 shared/tooling/content_gate.py --report`（可复跑，勿手改）
+> 生成方式：`python3 shared/tooling/content_gate.py --report --book tam`（可复跑，勿手改）
 > 口径与盲区见 `QUALITY-GATE.md`；本节报告只举证，不代替人工通读。
 
 样本 71 个文件｜block 0｜warn 39｜通过 32
@@ -49,7 +49,7 @@
 | ch28-ai-for-tam.md | How-to | 3553 | 具象密度 0.59 < 3.0 | 补带来源的真实数字与时限；确实无量化对象则注明原因 |
 | ch29-tam-copilot-tutorial.md | Tutorial | 4871 | 具象密度 1.85 < 3.0<br>n-gram 重复 0.139 > 0.12 | 补带来源的真实数字与时限；确实无量化对象则注明原因；同构段改写：合并重复句式，换论证角度 |
 | ch30-service-model-evolution.md | Explanation | 4630 | 论证密度 0.237 < 0.28<br>段落均长 43.8 < 45 | 补机制解释：每节至少回答一次“为什么会这样”；把碎片句并为完整论证段，或反过来拆分超长段 |
-| ch32-ai-risk-governance-howto.md | How-to | 3827 | 清单化率 0.897 > 0.8<br>具象密度 0.28 < 3.0 | 把清单条目展开成论证段；补带来源的真实数字与时限；确实无量化对象则注明原因 |
+| ch32-ai-risk-governance-howto.md | How-to | 3823 | 清单化率 0.897 > 0.8<br>具象密度 0.28 < 3.0 | 把清单条目展开成论证段；补带来源的真实数字与时限；确实无量化对象则注明原因 |
 | ch37-career-team-building.md | Explanation | 3493 | 清单化率 0.45 > 0.35 | 把清单条目展开成论证段 |
 | ch38-career-team-building-howto.md | How-to | 2132 | 段落均长 23.2 < 28 | 把碎片句并为完整论证段，或反过来拆分超长段 |
 

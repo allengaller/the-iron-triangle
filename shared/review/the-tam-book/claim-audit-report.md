@@ -1,6 +1,6 @@
-# 数值断言出处审计
+# 数值断言出处审计（the-tam-book）
 
-> 生成方式：`python3 shared/tooling/claim_audit.py --report`（可复跑，勿手改）
+> 生成方式：`python3 shared/tooling/claim_audit.py --report --book tam`（可复跑，勿手改）
 > 口径见本脚本头部注释与 `QUALITY-GATE.md` 第十节。
 
 样本 71 个文件｜高风险数值断言 0 条｜无口径块 0 个｜涉及 0 个文件
