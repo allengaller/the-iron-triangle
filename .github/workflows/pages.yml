@@ -1,0 +1,53 @@
+name: reading-site
+
+# 三书阅读站：每次改动书稿或构建脚本就重建并发布到 GitHub Pages。
+# 产物不入库（shared/dist/ 已出库），站点永远由当次 commit 现场构建，
+# 因此“线上内容”与“仓库内容”不会出现两份不同步的副本。
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "books/**"
+      - "shared/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 安装 pandoc
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq pandoc
+
+      - name: 构建三书站点（含站内断链自检）
+        run: python3 shared/tooling/build_web.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: shared/dist/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

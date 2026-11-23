@@ -9,7 +9,7 @@
     python3 shared/tooling/link_check.py   # 退出码 0 = 无断链
 
 已知非断链（脚本已列入 SKIP_FILES，不报）：
-- shared/tooling/{cover,template}.html：构建模板，链接在 shared/dist/.../site/ 下才成立；
+- shared/tooling/{collection,book-cover,template}.html：构建模板，链接在 shared/dist/.../site/ 下才成立；
   template.html 的 {{ROOT}} 等为运行时占位符。
 - books/*/CHANGELOG.md 与 shared/governance/HANDOFF.md：历史记录，路径按当时结构书写，不作活引用校验。
 - shared/review/repo/bte-book-feasibility-2026-11-02.md：带日期的可研快照，其中章节编号已被后续重排，按归档规则不回改。
@@ -25,6 +25,8 @@ SKIP_DIRS = {".git", "dist", ".impeccable", ".tmp", "__pycache__", "well-archite
 SKIP_FILES = {
     # 构建模板：其中的相对链接以 shared/dist/site/ 为基准，源码位置必断
     "shared/tooling/cover.html",
+    "shared/tooling/collection.html",
+    "shared/tooling/book-cover.html",
     "shared/tooling/template.html",
     # 历史记录：路径按当时结构书写
     "books/the-tam-book/CHANGELOG.md",

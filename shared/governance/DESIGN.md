@@ -92,7 +92,9 @@ components:
 
 # Design System: The TAM Book of AI Era — 在线阅读器
 
-> **适用范围**：三书阅读站共用本设计契约，样式实现为 `shared/tooling/reader.css`。当前落地为 TAM 书站点；SA／BTE 站点建设时直接复用本契约与 token，不另立一套。
+> **适用范围**：三书阅读站共用本设计契约，样式实现为 `shared/tooling/reader.css`。自 2026-11-23 起落地为一个丛站：首页是丛书总览，`/{tam,sa,bte}/` 各是一本书，三书同一套 token 与组件，不另立一套。
+>
+> **丛书层新增**：书封面与书内页共用 `template.html`；首页与书封面模板分别是 `collection.html`、`book-cover.html`。三书切换、丛书总览入口、深浅主题按钮都在顶栏右侧；丛书页与书内页共享同一套字号、主题与搜索状态（`localStorage` 键 `it-fs`、`it-theme`）。
 
 ## Overview
 

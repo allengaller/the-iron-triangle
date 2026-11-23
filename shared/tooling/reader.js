@@ -1,40 +1,55 @@
-/* The TAM Book 阅读器交互 */
+/* 铁角指北 · 三书阅读器交互：字号、主题、目录、进度、章内导航、跨书搜索 */
 (function () {
   "use strict";
   var ROOT = window.__ROOT__ || "";
   var $ = function (s) { return document.querySelector(s); };
+  var on = function (el, ev, fn) { if (el) el.addEventListener(ev, fn); };
+  var BOOKS = { tam: "TAM", sa: "SA", bte: "BTE" };
+
+  /* ---------- 深 / 浅主题 ---------- */
+  var root = document.documentElement;
+  function applyTheme(t) {
+    if (t === "dark") root.setAttribute("data-theme", "dark");
+    else root.removeAttribute("data-theme");
+    try { localStorage.setItem("it-theme", t); } catch (e) {}
+  }
+  on($("#btn-theme"), "click", function () {
+    applyTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  });
 
   /* ---------- 字号 ---------- */
   var STEPS = ["16px", "17px", "18.5px", "20px"];
   function curStep() {
-    var v = getComputedStyle(document.documentElement).getPropertyValue("--fs").trim();
+    var v = getComputedStyle(root).getPropertyValue("--fs").trim();
     var i = STEPS.indexOf(v);
     return i < 0 ? 1 : i;
   }
   function setFs(i) {
     i = Math.max(0, Math.min(STEPS.length - 1, i));
-    document.documentElement.style.setProperty("--fs", STEPS[i]);
-    try { localStorage.setItem("tam-fs", STEPS[i]); } catch (e) {}
+    root.style.setProperty("--fs", STEPS[i]);
+    try { localStorage.setItem("it-fs", STEPS[i]); } catch (e) {}
   }
-  $("#btn-fs-up").addEventListener("click", function () { setFs(curStep() + 1); });
-  $("#btn-fs-down").addEventListener("click", function () { setFs(curStep() - 1); });
+  on($("#btn-fs-up"), "click", function () { setFs(curStep() + 1); });
+  on($("#btn-fs-down"), "click", function () { setFs(curStep() - 1); });
 
   /* ---------- 侧栏（移动端） ---------- */
   var sidebar = $("#sidebar"), backdrop = $("#backdrop");
   function toggleToc(force) {
+    if (!sidebar) return;
     var open = force !== undefined ? force : !sidebar.classList.contains("open");
     sidebar.classList.toggle("open", open);
-    backdrop.classList.toggle("open", open);
+    if (backdrop) backdrop.classList.toggle("open", open);
   }
-  $("#btn-toc").addEventListener("click", function () { toggleToc(); });
-  backdrop.addEventListener("click", function () { toggleToc(false); });
-  sidebar.addEventListener("click", function (e) {
+  on($("#btn-toc"), "click", function () { toggleToc(); });
+  on(backdrop, "click", function () { toggleToc(false); });
+  on(sidebar, "click", function (e) {
     if (e.target.closest("a") && innerWidth <= 1080) toggleToc(false);
   });
 
   /* ---------- 滚动进度 ---------- */
   var bar = $("#progress"), ticking = false;
   function updateProgress() {
+    if (!bar) return;
     var h = document.documentElement.scrollHeight - innerHeight;
     bar.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + "%";
     ticking = false;
@@ -46,12 +61,14 @@
 
   /* ---------- 侧栏当前项高亮 ---------- */
   var file = document.body.dataset.file;
-  var active = sidebar.querySelector('a[data-file="' + CSS.escape(file) + '"]');
-  if (active) {
-    active.classList.add("active");
-    var r = active.getBoundingClientRect(), s = sidebar.getBoundingClientRect();
-    if (r.top < s.top + 80 || r.bottom > s.bottom) {
-      sidebar.scrollTop += r.top - s.top - s.height / 2.4;
+  if (sidebar && file) {
+    var active = sidebar.querySelector('a[data-file="' + CSS.escape(file) + '"]');
+    if (active) {
+      active.classList.add("active");
+      var r = active.getBoundingClientRect(), s = sidebar.getBoundingClientRect();
+      if (r.top < s.top + 80 || r.bottom > s.bottom) {
+        sidebar.scrollTop += r.top - s.top - s.height / 2.4;
+      }
     }
   }
 
@@ -84,7 +101,7 @@
     spy();
   }
 
-  /* ---------- 全书搜索 ---------- */
+  /* ---------- 三书搜索 ---------- */
   var overlay = $("#search-overlay"), big = $("#search-big"),
       results = $("#search-results"), count = $("#search-count");
   var INDEX = null, loading = null, sel = 0, hits = [];
@@ -110,20 +127,21 @@
     if (!q) { results.innerHTML = ""; count.textContent = ""; hits = []; return; }
     loadIndex().then(function (idx) {
       hits = [];
-      for (var i = 0; i < idx.length && hits.length < 60; i++) {
+      for (var i = 0; i < idx.length && hits.length < 80; i++) {
         var e = idx[i], t = e.t.toLowerCase(), x = e.x.toLowerCase();
         var ti = t.indexOf(q), xi = x.indexOf(q);
-        if (ti >= 0 || xi >= 0) hits.push({ e: e, w: (ti >= 0 ? 2 : 0) + (xi >= 0 ? 1 : 0), xi: xi });
+        if (ti >= 0 || xi >= 0) hits.push({ e: e, w: (ti >= 0 ? 2 : 0) + (xi >= 0 ? 1 : 0) });
       }
       hits.sort(function (a, b) { return b.w - a.w; });
-      hits = hits.slice(0, 30);
+      hits = hits.slice(0, 40);
       sel = 0;
       if (!hits.length) { results.innerHTML = '<div id="search-empty">没有找到「' + esc(q) + '」</div>'; count.textContent = ""; return; }
       var html = "", lastFile = "";
       hits.forEach(function (h, i) {
         var e = h.e;
         if (e.f !== lastFile) {
-          html += '<div class="part-head" style="padding-top:8px">' + esc(e.t) + '</div>';
+          var label = (BOOKS[e.b] ? BOOKS[e.b] + " · " : "") + e.t;
+          html += '<div class="part-head" style="padding-top:8px">' + esc(label) + '</div>';
           lastFile = e.f;
         }
         html += '<a class="sr-item' + (i === 0 ? " sel" : "") + '" data-i="' + i + '" href="' + ROOT + safePath(e.f) + (safeId(e.i) ? "#" + safeId(e.i) : "") + '">' +
@@ -135,12 +153,13 @@
     });
   }
   function openSearch() {
+    if (!overlay) return;
     overlay.classList.add("open");
     big.value = ""; results.innerHTML = ""; count.textContent = ""; hits = [];
     setTimeout(function () { big.focus(); }, 30);
     loadIndex();
   }
-  function closeSearch() { overlay.classList.remove("open"); }
+  function closeSearch() { if (overlay) overlay.classList.remove("open"); }
   function moveSel(d) {
     if (!hits.length) return;
     sel = Math.max(0, Math.min(hits.length - 1, sel + d));
@@ -149,15 +168,16 @@
     if (items[sel]) items[sel].scrollIntoView({ block: "nearest" });
   }
 
-  $("#btn-search").addEventListener("click", openSearch);
-  $("#search-input").addEventListener("focus", openSearch);
-  big.addEventListener("input", function () { search(big.value); });
-  overlay.addEventListener("click", function (e) { if (e.target === overlay) closeSearch(); });
-  results.addEventListener("click", function (e) { if (e.target.closest(".sr-item")) closeSearch(); });
+  on($("#btn-search"), "click", openSearch);
+  on($("#search-input"), "focus", openSearch);
+  on(big, "input", function () { search(big.value); });
+  on(overlay, "click", function (e) { if (e.target === overlay) closeSearch(); });
+  on(results, "click", function (e) { if (e.target.closest(".sr-item")) closeSearch(); });
 
   /* ---------- 键盘 ---------- */
   addEventListener("keydown", function (e) {
-    var inInput = /INPUT|TEXTAREA/.test(document.activeElement.tagName);
+    var tag = document.activeElement && document.activeElement.tagName;
+    var inInput = /INPUT|TEXTAREA/.test(tag || "");
     if (e.key === "Escape") { closeSearch(); toggleToc(false); return; }
     if (inInput) {
       if (e.key === "ArrowDown") { e.preventDefault(); moveSel(1); }

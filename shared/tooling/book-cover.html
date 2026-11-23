@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-book="{{BOOK_EN}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{BOOK_EN}}｜{{BOOK_ZH}}</title>
+<meta name="description" content="{{BOOK_ZH}}在线阅读：{{BOOK_ROLE}}一角，{{BOOK_SCOPE}}。">
+<script>
+(function () {
+  try {
+    var f = localStorage.getItem('it-fs');
+    if (f) document.documentElement.style.setProperty('--fs', f);
+    var t = localStorage.getItem('it-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+})();
+</script>
+<link rel="stylesheet" href="../assets/reader.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230f62fe'/%3E%3Cpath d='M8 9h16v3.4h-6.3V25h-3.4V12.4H8z' fill='%23fff'/%3E%3C/svg%3E">
+</head>
+<body class="cover-page">
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-crumb">
+        <a href="../index.html">铁角指北 · 三书</a><span class="sep">/</span>
+        <span>{{BOOK_SEAL}} · {{BOOK_ROLE}}</span>
+      </div>
+      <h1>
+        {{BOOK_ZH}}
+        <span class="en">{{BOOK_EN}}</span>
+      </h1>
+      <div class="colophon">
+        <span>开源技术图书</span>
+        <span>{{BOOK_STATUS}}</span>
+        <span>CC BY-NC-SA 4.0</span>
+      </div>
+    </div>
+    <p class="sub">{{BOOK_SCOPE}}。铁三角的{{BOOK_ROLE}}一角：每条建议都落成清单、模板或可观察行为。</p>
+    <div class="rule"></div>
+    <div class="facts">
+      {{FACTS}}
+    </div>
+    <div class="cta">
+      {{CTA}}
+    </div>
+    <div class="cover-switch">
+      <div class="switch-head">同丛书其他两本</div>
+      {{SWITCH}}
+    </div>
+    <div class="foot">
+      键盘 <kbd>/</kbd> 搜索三书 · <kbd>←</kbd><kbd>→</kbd> 翻页 · 顶栏可调字号与深浅主题
+    </div>
+  </div>
+</div>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/reader.js"></script>
+</body>
+</html>

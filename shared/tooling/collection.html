@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-book="collection">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>铁角指北 the-iron-triangle｜AI 时代铁三角三书</title>
+<meta name="description" content="AI 时代企业级项目的三个角色：BTE 设计承诺，SA 证明承诺，TAM 兑现承诺。三本开源方法书在线阅读。">
+<script>
+(function () {
+  try {
+    var f = localStorage.getItem('it-fs');
+    if (f) document.documentElement.style.setProperty('--fs', f);
+    var t = localStorage.getItem('it-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+})();
+</script>
+<link rel="stylesheet" href="assets/reader.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230f62fe'/%3E%3Cpath d='M8 9h16v3.4h-6.3V25h-3.4V12.4H8z' fill='%23fff'/%3E%3C/svg%3E">
+</head>
+<body class="collection-page">
+<header class="coll-top">
+  <a class="brand" href="index.html">
+    <span class="seal">铁</span>
+    <b>the-iron-triangle</b><small>铁角指北 · 三书</small>
+  </a>
+  <div class="coll-tools">
+    <button class="tbtn" id="btn-search" aria-label="搜索三书">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <span class="hide-s">搜索</span><kbd>/</kbd>
+    </button>
+    <button class="tbtn" id="btn-theme" aria-label="切换深浅主题" title="切换深浅主题">
+      <svg class="ic-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      <svg class="ic-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="coll-main">
+  <div class="coll-hero">
+    <div class="coll-kicker">开源技术图书 · 三书一体</div>
+    <h1>一条承诺链，<br>三个角色，三本书</h1>
+    <p class="coll-lede">
+      AI 时代的企业级项目里，签单成败由三个角色共同决定：<b>技术销售设计承诺</b>，<b>售前架构师证明承诺</b>，<b>技术客户经理兑现承诺</b>。
+      本丛书用三本书各写一角，合起来是一条完整的链——BTE 承诺了 SA 证明不了的方案，签单即埋雷；SA 证明了 TAM 兑现不了的架构，交付即翻车。
+    </p>
+    <div class="coll-meta">
+      <span><b>3</b> 本书</span>
+      <span><b>{{TOTAL_PAGES}}</b> 个页面</span>
+      <span><b>{{TOTAL_WORDS}}</b> 万字</span>
+      <span><b>0</b> 处站内断链</span>
+    </div>
+  </div>
+
+  <div class="coll-chain" aria-hidden="true">
+    <span>设计承诺 →</span><span>证明承诺 →</span><span>兑现承诺</span>
+  </div>
+
+  <div class="coll-cards">
+    {{CARDS}}
+  </div>
+
+  <section class="coll-note">
+    <h2>怎么读这套丛书</h2>
+    <table>
+      <thead><tr><th>你的位置</th><th>从哪本读起</th><th>为什么</th></tr></thead>
+      <tbody>
+        <tr><td>管商机、谈合同</td><td>BTE</td><td>先判断值不值得投，再决定承诺什么</td></tr>
+        <tr><td>画方案、打投标</td><td>SA</td><td>把承诺翻译成做得出来、验得了的方案</td></tr>
+        <tr><td>交付、续约、扩容</td><td>TAM</td><td>把签下的承诺变成可度量的服务</td></tr>
+        <tr><td>第一次接触</td><td>任一本的前言与导读</td><td>三书共用一套事实源，接缝处互相引用</td></tr>
+      </tbody>
+    </table>
+    <p class="coll-fine">
+      三书共享版权、承诺链、声明与脱敏、引用格式与状态口径五篇公用卷，接缝只在定义方写一次。
+      书目状态以 <a href="ext/00-reading-status.html">完成状态口径</a> 为准，每本书封面与页脚标注当前级别。
+    </p>
+  </section>
+</main>
+
+<footer class="coll-foot">
+  <span>the-iron-triangle｜铁角指北 · 内容 CC BY-NC-SA 4.0 · 工具代码 MIT</span>
+  <span><a href="ext/README.html">仓库说明</a> · <a href="ext/CONTRIBUTING.html">贡献指南</a> · <a href="ext/00-citation.html">引用格式</a></span>
+</footer>
+
+<div id="search-overlay">
+  <div id="search-panel">
+    <input id="search-big" type="search" placeholder="搜索三书章节、条目与正文…" autocomplete="off" aria-label="搜索三书">
+    <div id="search-results"></div>
+    <div id="search-hint"><span><kbd>↑</kbd><kbd>↓</kbd> 选择 · <kbd>Enter</kbd> 打开 · <kbd>Esc</kbd> 关闭</span><span id="search-count"></span></div>
+  </div>
+</div>
+
+<script>window.__ROOT__ = "";</script>
+<script src="assets/reader.js"></script>
+</body>
+</html>
