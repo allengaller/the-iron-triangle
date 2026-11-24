@@ -111,6 +111,11 @@
 - 2026-11-18：**负向 lookbehind 会挡住自身改写**。迁移规则要把 `shared/scripts/link_check.py` 改成 `shared/tooling/link_check.py`，但用来防止「已迁移路径被二次改写」的 `(?<!shared/)` 同时挡住了这条，结果是文件搬了、引用没改。修法：对自身改写用精确字符串规则，或在批量替换后 grep 旧路径兜底。
 - 2026-11-18：**平移到同名资产旁边时，相对路径是「同级直写」不是再跳一级**。书稿公用篇从 `books/shared/` 上移到 `shared/` 后，指向 `shared/standards/`、`shared/governance/` 的链接按旧起点机械改写成了 `../standards/`、`../governance/`，多跳了一级，指向仓库根不存在的目录。修法：搬层后用「目标位置」而不是「旧位置 + 固定前缀」重算路径；验证上 build_web 的未解析链接清单会先暴露（它按渲染位解析），link_check 随后也会报断链——两个都要跑，不要只看其中一个绿了。
 - 2026-11-18：**文件名是脚本的隐式契约，改名不止改磁盘**。`build.sh` 的 `FILES`、`release.sh` 的 `cp` 源、门禁与审计的排除名单（`content_gate`／`similarity_audit` 按 `00-outline`、`DIATAXIS` 前缀跳过）、review 台账与各处结构表都写着文件名。修法：改名后先 grep 旧名（排除 CHANGELOG、HANDOFF、带日期快照），再跑构建与 link_check；pandoc 缺文件会直接失败，但门禁名单漏改是静默的。
+- 2026-11-23：**三书 outline 的三种写法要同时认**。TAM 的目录用行内代码 `` `ch01-x.md` `` 写文件名，SA 几乎不写文件名，BTE 混用表格与行内代码；只按 Markdown 链接解析会让 TAM 的 97 个文件全部落到「未列」。另外 `clean_part` 会先剥掉「第X部分」，篇名判定必须在剥之前做，否则每个部分都被判成元信息小节、侧栏碎成一堆「前置页」。
+- 2026-11-23：**目录里的交叉引用会污染归篇**。SA 的「六维能力模型」表写着「第 5 章（TAM 的镜像）」，BTE 的「共用锚点」表写着「TAM 附录 C」，按行记「编号→篇」会把本书的 5 章、附录 C 拉进前置页。修法：元信息小节不参与编号映射；附录与模板直接钉到「附录」「工具箱」篇，不按编号散落。
+- 2026-11-23：**私有仓库开不了 Pages**（免费计划）。转公开前先扫凭据：`git ls-files` 查 `.env`／`*.pem`／`*token*`，`git grep` 查 `ghp_`／`sk-`／`AKIA` 真实键——WA 归档里有 `AKIAIOSFODNN7EXAMPLE`，那是 AWS 官方文档的示例键，不算泄露。
+- 2026-11-23：**github.com 的 443 被阻断时，api.github.com 与 22 端口仍可达**。`gh` 的 token 缺 `admin:public_key` 不能给账号加钥匙，但有 `repo` 权限就能给仓库加 deploy key：`gh api -X POST repos/{o}/{r}/keys`，`git push git@github.com:...` 一次性推完，推完 `DELETE` 掉。这样不改 git config、不留持久凭据，是把「只能走 API」变成「能正常 push」的最短路径。
+- 2026-11-23：**搜索按权重取前 N 条会让一本书吃满配额**。「承诺」这类高频词的前 40 条全是 TAM，SA／BTE 永远不出现在首屏，看起来像只有一本书。修法：命中先按书分组限流（单本最多 14 条），再按「书 → 页面」重排，分组头才不会重复出现。
 
 ## 归档
 

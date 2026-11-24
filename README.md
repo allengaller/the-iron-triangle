@@ -4,6 +4,8 @@
 
 AI 时代企业级项目里，签单成败由三个角色共同决定。三本书各写一角，合起来是一条承诺链：**BTE 设计承诺，SA 证明承诺，TAM 兑现承诺。**
 
+**在线阅读**：<https://allengaller.github.io/the-iron-triangle/>。丛站首页是三书总览，进书后有该书自己的目录、搜索、字号、深浅主题与阅读进度，三书可随时互切。构建与重发布见 [`shared/tooling/README.md`](shared/tooling/README.md) 的「三书阅读站构建与发布」。
+
 | 角色 | 管什么 | 书 | 状态（2026-11-18） |
 | --- | --- | --- | --- |
 | **BTE** 技术销售 | 商机判断、决策链、价值证明、商业结构、谈判签约 | [The BTE Book](books/the-bte-book/README.md) | **初稿**（构建完成，决策门待试读） |

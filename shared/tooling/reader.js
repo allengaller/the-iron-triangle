@@ -127,13 +127,26 @@
     if (!q) { results.innerHTML = ""; count.textContent = ""; hits = []; return; }
     loadIndex().then(function (idx) {
       hits = [];
-      for (var i = 0; i < idx.length && hits.length < 80; i++) {
+      for (var i = 0; i < idx.length && hits.length < 300; i++) {
         var e = idx[i], t = e.t.toLowerCase(), x = e.x.toLowerCase();
         var ti = t.indexOf(q), xi = x.indexOf(q);
         if (ti >= 0 || xi >= 0) hits.push({ e: e, w: (ti >= 0 ? 2 : 0) + (xi >= 0 ? 1 : 0) });
       }
       hits.sort(function (a, b) { return b.w - a.w; });
-      hits = hits.slice(0, 40);
+      // 三书同名：单本最多占 14 条，余下名额按权重回填。
+      // 不这么分，「承诺」这类高频词会被 TAM 一口吃满，SA/BTE 永远不出现在首屏。
+      var per = {}, kept = [], rest = [];
+      hits.forEach(function (h) {
+        var b = h.e.b || "";
+        per[b] = (per[b] || 0) + 1;
+        (per[b] <= 14 ? kept : rest).push(h);
+      });
+      hits = kept.concat(rest).slice(0, 40);
+      // 按「书 → 页面」重排，同一页的命中挨在一起，分组头不会重复出现
+      hits.sort(function (a, b) {
+        var ka = (a.e.b || "") + "|" + a.e.f, kb = (b.e.b || "") + "|" + b.e.f;
+        return ka < kb ? -1 : ka > kb ? 1 : 0;
+      });
       sel = 0;
       if (!hits.length) { results.innerHTML = '<div id="search-empty">没有找到「' + esc(q) + '」</div>'; count.textContent = ""; return; }
       var html = "", lastFile = "";

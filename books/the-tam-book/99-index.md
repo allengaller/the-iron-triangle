@@ -2,7 +2,7 @@
 
 > 本索引按**编号**检索。按**主题**检索用导读的场景表。按**类型**检索用[DIATAXIS-MAP](DIATAXIS-MAP.md)。按**流程编号**检索用[附录 B](appx-b-tam-process-system.md)。
 >
-> 三张表由 `shared/tooling/gen_metadata.py --index` 从磁盘生成。新增或改名文件后重跑，不要手改本文件。校验命令见 [AGENTS.md](../../AGENTS.md) 内容门禁一节。
+> 三节索引由 `shared/tooling/gen_metadata.py --index` 从磁盘生成。新增或改名文件后重跑，不要手改本文件。校验命令见 [AGENTS.md](../../AGENTS.md) 内容门禁一节。
 
 ---
 
@@ -55,39 +55,132 @@
 
 ## 二、模板索引
 
-`tpl-*.md` 共 23 份可复制件，按编号排列。每条给用途首句，完整字段见模板文件本身。
+`tpl-*.md` 共 23 份可复制件，按分类分组，组内按编号排列。每条给用途首句，完整字段见模板文件本身。分组口径与[目录](00-outline.md)第七部分一致。
+
+### 组 1　客户与项目全周期
+
+> 这些模板的使用对象都是「一个客户」或「一个项目」，覆盖从接入到续约的完整周期。
+
+| 编号 | 名称 | 用途 | 文件 |
+| --- | --- | --- | --- |
+| 02 | Onboarding 90 天清单 | 新客户/新项目导入期（前 90 天）的逐项动作清单，与《附录 L　TAM 项目导入标准（拟定稿）》配套使用 | [`tpl-02-onboarding-90d-checklist.md`](tpl-02-onboarding-90d-checklist.md) |
+| 04 | 上线闸门（Go/No-Go）清单 | 重大项目上线、切换、重大版本发布前的 Go/No-Go 评审，与第 16 章（项目与变革管理）、附录 M（PL5 上… | [`tpl-04-go-nogo-gate-checklist.md`](tpl-04-go-nogo-gate-checklist.md) |
+| 08 | QBR/EBR 模板 | 季度业务回顾（QBR）与高管业务回顾（EBR）的会前准备、议程执行与会后闭环模板，配套第 21 章 21.4 节（设… | [`tpl-08-qbr-ebr-template.md`](tpl-08-qbr-ebr-template.md) |
+| 10 | 客户健康度评分卡 | 单个客户健康度的月度自评与定档工具，是第 17 章生命周期运营与第 21 章续约预测的输入 | [`tpl-10-customer-health-scorecard.md`](tpl-10-customer-health-scorecard.md) |
+| 11 | 关键人地图画布 | 单一客户组织内关键人网络的盘点与维护工具（第 10 章 10.1 节配套） | [`tpl-11-key-person-map-canvas.md`](tpl-11-key-person-map-canvas.md) |
+| 19 | 承诺清单与移交三件套（铁三角协同台账） | TAM-BTE-SA 铁三角从商机期到运营期的承诺与移交管理工具，与《附录 V　TAM-BTE-SA 铁三角协同最佳… | [`tpl-19-commitment-handover-kit.md`](tpl-19-commitment-handover-kit.md) |
+
+### 组 2　日常服务运行与治理
+
+> 这些模板服务于稳态运营期的例行动作，计划、评审、风险、变更与质量都在这一层闭环。
 
 | 编号 | 名称 | 用途 | 文件 |
 | --- | --- | --- | --- |
 | 01 | 服务计划（Service Plan） | 单一客户年度服务工作的总纲（流程 P1），回答五个问题：今年为客户做什么、做到什么程度、谁来做、什么时候做、怎么算做… | [`tpl-01-service-plan.md`](tpl-01-service-plan.md) |
-| 02 | Onboarding 90 天清单 | 新客户/新项目导入期（前 90 天）的逐项动作清单，与《附录 L　TAM 项目导入标准（拟定稿）》配套使用 | [`tpl-02-onboarding-90d-checklist.md`](tpl-02-onboarding-90d-checklist.md) |
 | 03 | 架构评审 Checklist（含 AI 工作负载专项） | 客户系统架构的定期评审、上线前评审与健康检查，与第 5 章（技术纵深）配套 | [`tpl-03-architecture-review-checklist.md`](tpl-03-architecture-review-checklist.md) |
-| 04 | 上线闸门（Go/No-Go）清单 | 重大项目上线、切换、重大版本发布前的 Go/No-Go 评审，与第 16 章（项目与变革管理）、附录 M（PL5 上… | [`tpl-04-go-nogo-gate-checklist.md`](tpl-04-go-nogo-gate-checklist.md) |
+| 09 | 风险登记册（Risk Register） | 单一客户风险的唯一事实源——登记、分级、跟踪、会签与关闭的全生命周期台账，与第 14 章（风险与合规）配套使用 | [`tpl-09-risk-register.md`](tpl-09-risk-register.md) |
+| 15 | TAM 服务质量记分卡（公共云 / 专有云双版本） | TAM 服务质量的月度监测与季度评审打分工具，与《附录 P　TAM 服务质量标准（公共云版）》《附录 Q　TAM 服… | [`tpl-15-tam-service-quality-scorecard.md`](tpl-15-tam-service-quality-scorecard.md) |
+| 18 | 变更申请与实施记录单（变更台账） | 线上变更的申请、审批、实施、验证、关闭五件留痕工具，与《附录 T　TAM 线上变更标准（拟定稿）》配套使用 | [`tpl-18-change-request-record.md`](tpl-18-change-request-record.md) |
+
+### 组 3　应急与复盘
+
+> 这些模板只在两类时刻使用——不可逆损失发生前的重保与事件窗口，以及事后必须闭环的 RCA 与复盘。
+
+| 编号 | 名称 | 用途 | 文件 |
+| --- | --- | --- | --- |
 | 05 | 重保 Checklist 与值守手册 | 按重保级别 L1–L4 裁剪——**体检和预案两个环节不可裁剪，只能简化** | [`tpl-05-major-assurance-checklist.md`](tpl-05-major-assurance-checklist.md) |
 | 06 | 重大事件沟通脚本与升级矩阵 | 重大事件（含故障、安全事件、重保偏差）期间的升级路由与客户沟通工具，与第 18 章（升级与危机管理）、附录 K（故障… | [`tpl-06-major-incident-communication-matrix.md`](tpl-06-major-incident-communication-matrix.md) |
 | 07 | RCA 模板（金融级） | 故障类事件根因分析（Root Cause Analysis）的成文工具，金融级口径 | [`tpl-07-rca-template.md`](tpl-07-rca-template.md) |
-| 08 | QBR/EBR 模板 | 季度业务回顾（QBR）与高管业务回顾（EBR）的会前准备、议程执行与会后闭环模板，配套第 21 章 21.4 节（设… | [`tpl-08-qbr-ebr-template.md`](tpl-08-qbr-ebr-template.md) |
-| 09 | 风险登记册（Risk Register） | 单一客户风险的唯一事实源——登记、分级、跟踪、会签与关闭的全生命周期台账，与第 14 章（风险与合规）配套使用 | [`tpl-09-risk-register.md`](tpl-09-risk-register.md) |
-| 10 | 客户健康度评分卡 | 单个客户健康度的月度自评与定档工具，是第 17 章生命周期运营与第 21 章续约预测的输入 | [`tpl-10-customer-health-scorecard.md`](tpl-10-customer-health-scorecard.md) |
-| 11 | 关键人地图画布 | 单一客户组织内关键人网络的盘点与维护工具（第 10 章 10.1 节配套） | [`tpl-11-key-person-map-canvas.md`](tpl-11-key-person-map-canvas.md) |
+| 16 | TAM 问题复盘报告与改进项台账 | 问题复盘的成文、会签与闭环跟踪工具，与《附录 R　TAM 问题复盘标准（拟定稿）》配套使用 | [`tpl-16-problem-retrospective-template.md`](tpl-16-problem-retrospective-template.md) |
+
+### 组 4　能力、认证与评估
+
+> 这些模板的使用对象是个人，回答三个问题：能力够不够、如何被证明、如何晋级。
+
+| 编号 | 名称 | 用途 | 文件 |
+| --- | --- | --- | --- |
 | 12 | TAM 个人能力自检表 | 每季度自评一次，作为附录 G 认证申请的前置材料 | [`tpl-12-tam-self-assessment.md`](tpl-12-tam-self-assessment.md) |
 | 13 | TAM 工作评估计分卡 | TAM 年度/半年度评估的打分与定级工具，与《附录 G　TAM 工作评估标准（拟定稿）》配套使用 | [`tpl-13-tam-evaluation-scorecard.md`](tpl-13-tam-evaluation-scorecard.md) |
 | 14 | TAM 驻场晋升申请与证据核验表 | 驻场序列晋升评审的申请、证据核验与表决记录工具，与《附录 O　TAM 驻场能力晋升标准（拟定稿）》配套使用 | [`tpl-14-onsite-promotion-review-checklist.md`](tpl-14-onsite-promotion-review-checklist.md) |
-| 15 | TAM 服务质量记分卡（公共云 / 专有云双版本） | TAM 服务质量的月度监测与季度评审打分工具，与《附录 P　TAM 服务质量标准（公共云版）》《附录 Q　TAM 服… | [`tpl-15-tam-service-quality-scorecard.md`](tpl-15-tam-service-quality-scorecard.md) |
-| 16 | TAM 问题复盘报告与改进项台账 | 问题复盘的成文、会签与闭环跟踪工具，与《附录 R　TAM 问题复盘标准（拟定稿）》配套使用 | [`tpl-16-problem-retrospective-template.md`](tpl-16-problem-retrospective-template.md) |
+
+### 组 5　团队协作与职业成长
+
+> 这些模板的使用对象是团队与个人的长期发展，覆盖分工、报告、劳动台账与职业体检。
+
+| 编号 | 名称 | 用途 | 文件 |
+| --- | --- | --- | --- |
 | 17 | TAM 加班认定与调休台账 | TAM 加班的申请、认定、补录与调休兑现的台账工具，与《附录 S　TAM 加班与调休管理标准（拟定稿）》配套使用 | [`tpl-17-overtime-compoff-ledger.md`](tpl-17-overtime-compoff-ledger.md) |
-| 18 | 变更申请与实施记录单（变更台账） | 线上变更的申请、审批、实施、验证、关闭五件留痕工具，与《附录 T　TAM 线上变更标准（拟定稿）》配套使用 | [`tpl-18-change-request-record.md`](tpl-18-change-request-record.md) |
-| 19 | 承诺清单与移交三件套（铁三角协同台账） | TAM-BTE-SA 铁三角从商机期到运营期的承诺与移交管理工具，与《附录 V　TAM-BTE-SA 铁三角协同最佳… | [`tpl-19-commitment-handover-kit.md`](tpl-19-commitment-handover-kit.md) |
 | 20 | 主 TAM 报告四件套（日／周／季／年） | 主 TAM 的例行报告填写件，含日报（RP1）、周报（RP2）、季报（RP3）、年报（RP4）四份 | [`tpl-20-lead-tam-reporting-set.md`](tpl-20-lead-tam-reporting-set.md) |
 | 21 | TAM 团队成员报告四件套（日／周／季／年） | TAM 团队成员的例行报告填写件，含日报（RP5）、周报（RP6）、季报（RP7）、年报（RP8）四份 | [`tpl-21-team-member-reporting-set.md`](tpl-21-team-member-reporting-set.md) |
 | 22 | 子 TAM 域分工与共管面矩阵 | 标杆项目里主 TAM 带 3 名以上子 TAM 时，把"谁管哪个域、谁面哪个面、出事找谁"一次写清 | [`tpl-22-subtam-domain-collaboration-matrix.md`](tpl-22-subtam-domain-collaboration-matrix.md) |
 | 23 | 个人年度职业体检表 | 每年固定月做一次，半小时完成 | [`tpl-23-career-annual-checkup.md`](tpl-23-career-annual-checkup.md) |
 
+> 组 6「参考、工具与方法」为附录专用，无模板；见附录索引对应分组。
+
 ---
 
 ## 三、附录索引
 
-29 个附录，按字母排列，条文与执行动作用同一节号。
+29 个附录，按分类分组，组内按字母排列。条文与执行动作用同一节号。分组口径与[目录](00-outline.md)附录部分一致。
+
+### 组 1　客户与项目全周期
+
+> 这些附录服务的是「一个客户」或「一个项目」的完整周期，从导入、交付到协同经营。
+
+| 字母 | 标题 | 类型 | 文件 |
+| --- | --- | --- | --- |
+| L | TAM 项目导入标准（拟定稿） | Reference | [`appx-l-project-onboarding-standard.md`](appx-l-project-onboarding-standard.md) |
+| M | TAM 产品导入标准（拟定稿） | Reference | [`appx-m-product-introduction-standard.md`](appx-m-product-introduction-standard.md) |
+| V | TAM-BTE-SA 铁三角协同最佳实践 | Reference | [`appx-v-tam-bte-sa-triangle.md`](appx-v-tam-bte-sa-triangle.md) |
+
+### 组 2　日常服务运行与治理
+
+> 这些附录定义稳态运营期的运行规则与质量标准，值班、服务、变更、工单与可靠性工程在同一层闭环。
+
+| 字母 | 标题 | 类型 | 文件 |
+| --- | --- | --- | --- |
+| I | TAM 值班标准（拟定稿） | Reference | [`appx-i-on-duty-standard.md`](appx-i-on-duty-standard.md) |
+| P | TAM 服务质量标准（公共云版）（拟定稿） | Reference | [`appx-p-tam-service-quality-standard-public-cloud.md`](appx-p-tam-service-quality-standard-public-cloud.md) |
+| Q | TAM 服务质量标准（专有云版）（拟定稿） | Reference | [`appx-q-tam-service-quality-standard-dedicated-cloud.md`](appx-q-tam-service-quality-standard-dedicated-cloud.md) |
+| T | TAM 线上变更标准（拟定稿） | Reference | [`appx-t-online-change-standard.md`](appx-t-online-change-standard.md) |
+| U | TAM 工单管理标准（拟定稿） | Reference | [`appx-u-ticket-management-standard.md`](appx-u-ticket-management-standard.md) |
+| AC | SRE/CRE 工程纵深 | How-to | [`appx-ac-sre-cre-engineering-depth.md`](appx-ac-sre-cre-engineering-depth.md) |
+
+### 组 3　应急与复盘
+
+> 这些附录只覆盖两类时刻——不可逆损失发生前的事件与重保，以及事后必须闭环的复盘。
+
+| 字母 | 标题 | 类型 | 文件 |
+| --- | --- | --- | --- |
+| K | TAM 故障应急与演练标准（拟定稿） | Reference | [`appx-k-incident-emergency-drill-standard.md`](appx-k-incident-emergency-drill-standard.md) |
+| R | TAM 问题复盘标准（拟定稿） | Reference | [`appx-r-problem-retrospective-standard.md`](appx-r-problem-retrospective-standard.md) |
+
+### 组 4　能力、认证与评估
+
+> 这些附录的使用对象是个人能力与驻场序列，覆盖培训、认证、评估与晋升的完整证据链。
+
+| 字母 | 标题 | 类型 | 文件 |
+| --- | --- | --- | --- |
+| G | TAM 工作评估标准（拟定稿） | Reference | [`appx-g-tam-work-evaluation-standard.md`](appx-g-tam-work-evaluation-standard.md) |
+| J | TAM 赋能与实操培训标准（拟定稿） | Reference | [`appx-j-enablement-training-standard.md`](appx-j-enablement-training-standard.md) |
+| N | TAM 驻场能力认证标准（拟定稿） | Reference | [`appx-n-tam-onsite-certification.md`](appx-n-tam-onsite-certification.md) |
+| O | TAM 驻场能力晋升标准（拟定稿） | Reference | [`appx-o-tam-onsite-promotion-standard.md`](appx-o-tam-onsite-promotion-standard.md) |
+| Y | 六维能力训练教程 | Tutorial | [`appx-y-training-tutorial.md`](appx-y-training-tutorial.md) |
+
+### 组 5　团队协作与职业成长
+
+> 这些附录的使用对象是团队与个人的长期发展，覆盖分工、报告、劳动台账与职业全周期。
+
+| 字母 | 标题 | 类型 | 文件 |
+| --- | --- | --- | --- |
+| S | TAM 加班与调休管理标准（拟定稿） | Reference | [`appx-s-overtime-compoff-standard.md`](appx-s-overtime-compoff-standard.md) |
+| AA | TAM 报告体系标准（拟定稿） | Reference | [`appx-aa-tam-reporting-standard.md`](appx-aa-tam-reporting-standard.md) |
+| AB | TAM 团队分域分工与协作最佳实践（拟定稿） | Reference | [`appx-ab-subtam-domain-collaboration.md`](appx-ab-subtam-domain-collaboration.md) |
+| AD | TAM 职场全生命周期生存与发展指南 | How-to | [`appx-ad-career-lifecycle-guide.md`](appx-ad-career-lifecycle-guide.md) |
+
+### 组 6　参考、工具与方法
+
+> 这些附录不直接产出客户交付物，而是全书的事实源、外部标准、工具验收与延伸阅读；改动它们等于改动多章的引用基线。
 
 | 字母 | 标题 | 类型 | 文件 |
 | --- | --- | --- | --- |
@@ -97,29 +190,9 @@
 | D | 延伸阅读与参考资料 | Reference | [`appx-d-further-reading.md`](appx-d-further-reading.md) |
 | E | 开源贡献指南 | How-to | [`appx-e-contribution-guide.md`](appx-e-contribution-guide.md) |
 | F | 2026 年主要云厂商通告汇编 | Reference | [`appx-f-cloud-vendor-notices-2026.md`](appx-f-cloud-vendor-notices-2026.md) |
-| G | TAM 工作评估标准（拟定稿） | Reference | [`appx-g-tam-work-evaluation-standard.md`](appx-g-tam-work-evaluation-standard.md) |
 | H | TAM 工具与平台验收标准（拟定稿） | Reference | [`appx-h-tool-platform-acceptance-standard.md`](appx-h-tool-platform-acceptance-standard.md) |
-| I | TAM 值班标准（拟定稿） | Reference | [`appx-i-on-duty-standard.md`](appx-i-on-duty-standard.md) |
-| J | TAM 赋能与实操培训标准（拟定稿） | Reference | [`appx-j-enablement-training-standard.md`](appx-j-enablement-training-standard.md) |
-| K | TAM 故障应急与演练标准（拟定稿） | Reference | [`appx-k-incident-emergency-drill-standard.md`](appx-k-incident-emergency-drill-standard.md) |
-| L | TAM 项目导入标准（拟定稿） | Reference | [`appx-l-project-onboarding-standard.md`](appx-l-project-onboarding-standard.md) |
-| M | TAM 产品导入标准（拟定稿） | Reference | [`appx-m-product-introduction-standard.md`](appx-m-product-introduction-standard.md) |
-| N | TAM 驻场能力认证标准（拟定稿） | Reference | [`appx-n-tam-onsite-certification.md`](appx-n-tam-onsite-certification.md) |
-| O | TAM 驻场能力晋升标准（拟定稿） | Reference | [`appx-o-tam-onsite-promotion-standard.md`](appx-o-tam-onsite-promotion-standard.md) |
-| P | TAM 服务质量标准（公共云版）（拟定稿） | Reference | [`appx-p-tam-service-quality-standard-public-cloud.md`](appx-p-tam-service-quality-standard-public-cloud.md) |
-| Q | TAM 服务质量标准（专有云版）（拟定稿） | Reference | [`appx-q-tam-service-quality-standard-dedicated-cloud.md`](appx-q-tam-service-quality-standard-dedicated-cloud.md) |
-| R | TAM 问题复盘标准（拟定稿） | Reference | [`appx-r-problem-retrospective-standard.md`](appx-r-problem-retrospective-standard.md) |
-| S | TAM 加班与调休管理标准（拟定稿） | Reference | [`appx-s-overtime-compoff-standard.md`](appx-s-overtime-compoff-standard.md) |
-| T | TAM 线上变更标准（拟定稿） | Reference | [`appx-t-online-change-standard.md`](appx-t-online-change-standard.md) |
-| U | TAM 工单管理标准（拟定稿） | Reference | [`appx-u-ticket-management-standard.md`](appx-u-ticket-management-standard.md) |
-| V | TAM-BTE-SA 铁三角协同最佳实践 | Reference | [`appx-v-tam-bte-sa-triangle.md`](appx-v-tam-bte-sa-triangle.md) |
 | W | 中国金融行业运维相关标准与监管要求汇编 | Reference | [`appx-w-financial-ops-standards.md`](appx-w-financial-ops-standards.md) |
-| Y | 六维能力训练教程 | Tutorial | [`appx-y-training-tutorial.md`](appx-y-training-tutorial.md) |
 | Z | Well-Architected 架构框架全量汇编 | Reference | [`appx-z-well-architected-framework.md`](appx-z-well-architected-framework.md) |
-| AA | TAM 报告体系标准（拟定稿） | Reference | [`appx-aa-tam-reporting-standard.md`](appx-aa-tam-reporting-standard.md) |
-| AB | TAM 团队分域分工与协作最佳实践（拟定稿） | Reference | [`appx-ab-subtam-domain-collaboration.md`](appx-ab-subtam-domain-collaboration.md) |
-| AC | SRE/CRE 工程纵深 | How-to | [`appx-ac-sre-cre-engineering-depth.md`](appx-ac-sre-cre-engineering-depth.md) |
-| AD | TAM 职场全生命周期生存与发展指南 | How-to | [`appx-ad-career-lifecycle-guide.md`](appx-ad-career-lifecycle-guide.md) |
 
 ---
 

@@ -27,6 +27,7 @@ DIATAXIS-MAP。文件一增删，四处各漂各的。读者第一眼看到的�
 - 附录：文件名以 `appx-` 开头者为附录（2026-11-17 起落地件已并入主件，无独立落地件）。
 - 标准库：`shared/standards/` 为唯一主库（2026-11-17 双库合并、2026-11-18 入公用层）。
 - 前置页：文件名以 `00-` 或 `99-` 开头者，不计入章节与分型统计。
+- 分类：`00-outline.md` 的「#### 组 N」是唯一事实源；`--index` 按它生成分组索引，`--check` 校验索引是否同步。
 """
 
 from __future__ import annotations
@@ -219,6 +220,76 @@ CHAPTER_H1 = re.compile(r"^#\s*第\s*(\d+)\s*章[\s　]*(.+?)\s*$")
 APPX_H1 = re.compile(r"^#\s*附录\s*([A-Z]+)\+?[\s　]*(.+?)\s*$")
 TPL_H1 = re.compile(r"^#\s*模板\s*(\d+)[\s　]*(.+?)\s*$")
 
+# 分类的唯一事实源是 00-outline.md 的「#### 组 N　名称」小节。
+GROUP_HEAD = re.compile(r"^####\s*组\s*(\d+)[\s　]+(.+?)\s*$", re.M)
+GROUP_POS = re.compile(r"^>\s*分类依据：(.+?)\s*$", re.M)
+MD_LINK = re.compile(r"\[[^\]]*\]\(([^)]+\.md)\)")
+
+
+def parse_groups(part: str, prefix: str) -> list[dict]:
+    """解析目录里的分组小节：组号、组名、分类依据、成员文件。"""
+    heads = list(GROUP_HEAD.finditer(part))
+    groups: list[dict] = []
+    for i, m in enumerate(heads):
+        end = heads[i + 1].start() if i + 1 < len(heads) else len(part)
+        body = part[m.end():end]
+        pos = GROUP_POS.search(body)
+        files = [u for u in MD_LINK.findall(body)
+                 if u.startswith(prefix) and u.endswith(".md")]
+        groups.append({
+            "num": int(m.group(1)),
+            "name": m.group(2).strip(),
+            "position": pos.group(1).strip() if pos else "",
+            "files": files,
+        })
+    return groups
+
+
+def load_taxonomy() -> tuple[list[dict], list[dict]]:
+    """模板看第七部分，附录看「## 附录」之后；两处必须同名同序。"""
+    text = (ROOT / "00-outline.md").read_text(encoding="utf-8")
+    if "## 第七部分" not in text or "## 附录" not in text:
+        raise SystemExit("00-outline.md 缺少「## 第七部分」或「## 附录」标题")
+    after = text.split("## 第七部分", 1)[1]
+    tpl_part, appx_part = after.split("## 附录", 1)
+    return parse_groups(tpl_part, "tpl-"), parse_groups(appx_part, "appx-")
+
+
+def validate_taxonomy(tpl_groups: list[dict], appx_groups: list[dict]) -> list[str]:
+    """分类必须覆盖全部文件、每件只出现一次，且组名与顺序在模板/附录两处一致。"""
+    problems: list[str] = []
+    if not 4 <= len(appx_groups) <= 7:
+        problems.append(f"附录分组数为 {len(appx_groups)}，应在 4–7 之间")
+    if not tpl_groups:
+        problems.append("第七部分没有解析到任何分组")
+    if len(tpl_groups) > len(appx_groups):
+        problems.append("模板分组数多于附录分组数")
+    for i, (tg, ag) in enumerate(zip(tpl_groups, appx_groups)):
+        if tg["num"] != i + 1 or ag["num"] != i + 1:
+            problems.append(f"第 {i + 1} 组编号不连续：模板 {tg['num']}、附录 {ag['num']}")
+        if tg["name"] != ag["name"]:
+            problems.append(f"第 {i + 1} 组名称不一致：模板「{tg['name']}」、附录「{ag['name']}」")
+    for label, groups, pattern in (
+            ("模板", tpl_groups, "tpl-*.md"), ("附录", appx_groups, "appx-*.md")):
+        seen: set[str] = set()
+        for g in groups:
+            if not g["files"]:
+                problems.append(f"{label}组 {g['num']}「{g['name']}」没有成员")
+            if not g["position"]:
+                problems.append(f"{label}组 {g['num']}「{g['name']}」缺少「> 分类依据：」行")
+            for fname in g["files"]:
+                if fname in seen:
+                    problems.append(f"{label}文件重复归类：{fname}")
+                seen.add(fname)
+        actual = {p.name for p in MS.glob(pattern)}
+        missing = sorted(actual - seen)
+        unknown = sorted(seen - actual)
+        if missing:
+            problems.append(f"{label}未归类：{'、'.join(missing)}")
+        if unknown:
+            problems.append(f"{label}分组引用了不存在的文件：{'、'.join(unknown)}")
+    return problems
+
 
 def first_sentence(text: str, limit: int = 58) -> str:
     """取用途首句。跳过“对应…”行，剥掉“用途/用法：”前缀。"""
@@ -239,8 +310,8 @@ def first_sentence(text: str, limit: int = 58) -> str:
     return cut
 
 
-def build_index(f: dict) -> str:
-    chapters, appendices = [], []
+def build_index(f: dict, tpl_groups: list[dict], appx_groups: list[dict]) -> str:
+    chapters, appx_entries = [], {}
     for p in sorted(MS.glob("*.md")):
         if not BOOK_MD.match(p.name):
             continue
@@ -254,13 +325,11 @@ def build_index(f: dict) -> str:
         if mc:
             chapters.append((int(mc.group(1)), mc.group(2), dtype, p.name, first))
         elif ma:
-            letter = ma.group(1)
             # 部分附录 H1 带“：说明”后缀，索引只留主标题。
             title = re.split(r"[：:]", ma.group(2), maxsplit=1)[0].strip()
-            appendices.append((LETTER_ORDER.get(letter, 9999), title, dtype, p.name))
+            appx_entries[p.name] = (title, dtype)
 
     chapters.sort(key=lambda x: x[0])
-    appendices.sort(key=lambda x: x[0])
 
     out = [
         "# 索引",
@@ -268,7 +337,7 @@ def build_index(f: dict) -> str:
         "> 本索引按**编号**检索。按**主题**检索用导读的场景表。按**类型**检索用"
         "[DIATAXIS-MAP](DIATAXIS-MAP.md)。按**流程编号**检索用[附录 B](appx-b-tam-process-system.md)。",
         ">",
-        "> 三张表由 `shared/tooling/gen_metadata.py --index` 从磁盘生成。新增或改名文件后重跑，"
+        "> 三节索引由 `shared/tooling/gen_metadata.py --index` 从磁盘生成。新增或改名文件后重跑，"
         "不要手改本文件。校验命令见 [AGENTS.md](../../AGENTS.md) 内容门禁一节。",
         "",
         "---",
@@ -284,43 +353,59 @@ def build_index(f: dict) -> str:
     for num, title, dtype, fname, _ in chapters:
         out.append(f"| {num} | {title} | {dtype} | [`{fname}`]({fname}) |")
 
-    out += [
-        "",
-        "---",
-        "",
-        "## 二、模板索引",
-        "",
-        f"`tpl-*.md` 共 {f['templates']} 份可复制件，按编号排列。每条给用途首句，"
-        "完整字段见模板文件本身。",
-        "",
-        "| 编号 | 名称 | 用途 | 文件 |",
-        "| --- | --- | --- | --- |",
-    ]
+    tpl_entries: dict[str, tuple[str, str, str]] = {}
     for p in sorted(TEMPLATES.glob("tpl-*.md")):
         text = p.read_text(encoding="utf-8")
         h1 = next((l for l in text.splitlines() if l.startswith("# ")), "")
         mt = TPL_H1.match(h1)
         num = mt.group(1) if mt else p.stem.split("-")[1]
         name = mt.group(2) if mt else p.stem
-        out.append(f"| {num} | {name} | {first_sentence(text)} | "
-                   f"[`{p.name}`]({p.name}) |")
+        tpl_entries[p.name] = (num, name, first_sentence(text))
 
     out += [
         "",
         "---",
         "",
-        "## 三、附录索引",
+        "## 二、模板索引",
         "",
-        f"{f['files_appendix']} 个附录，按字母排列，条文与执行动作用同一节号。",
+        f"`tpl-*.md` 共 {f['templates']} 份可复制件，按分类分组，组内按编号排列。"
+        "每条给用途首句，完整字段见模板文件本身。分组口径与[目录](00-outline.md)第七部分一致。",
         "",
-        "| 字母 | 标题 | 类型 | 文件 |",
-        "| --- | --- | --- | --- |",
     ]
-    for _, title, dtype, fname in appendices:
-        out.append(f"| {parse_badge(fname)} | {title} | {dtype} | [`{fname}`]({fname}) |")
+    for g in tpl_groups:
+        out += [f"### 组 {g['num']}　{g['name']}", "", f"> {g['position']}", ""]
+        if not g["files"]:
+            out += ["本组无模板。", ""]
+            continue
+        out += ["| 编号 | 名称 | 用途 | 文件 |", "| --- | --- | --- | --- |"]
+        for fname in sorted(g["files"],
+                            key=lambda n: int(re.search(r"tpl-(\d+)", n).group(1))):
+            num, name, use = tpl_entries[fname]
+            out.append(f"| {num} | {name} | {use} | [`{fname}`]({fname}) |")
+        out.append("")
+    for g in appx_groups[len(tpl_groups):]:
+        out += [f"> 组 {g['num']}「{g['name']}」为附录专用，无模板；见附录索引对应分组。", ""]
 
     out += [
+        "---",
         "",
+        "## 三、附录索引",
+        "",
+        f"{f['files_appendix']} 个附录，按分类分组，组内按字母排列。条文与执行动作用同一节号。"
+        "分组口径与[目录](00-outline.md)附录部分一致。",
+        "",
+    ]
+    for g in appx_groups:
+        out += [f"### 组 {g['num']}　{g['name']}", "", f"> {g['position']}", ""]
+        out += ["| 字母 | 标题 | 类型 | 文件 |", "| --- | --- | --- | --- |"]
+        for fname in sorted(g["files"],
+                            key=lambda n: LETTER_ORDER.get(parse_badge(n), 9999)):
+            badge = parse_badge(fname)
+            title, dtype = appx_entries[fname]
+            out.append(f"| {badge} | {title} | {dtype} | [`{fname}`]({fname}) |")
+        out.append("")
+
+    out += [
         "---",
         "",
         "## 四、四个事实源",
@@ -349,10 +434,16 @@ def main() -> int:
     args = ap.parse_args()
 
     f = scan()
+    tpl_groups, appx_groups = load_taxonomy()
+    problems = validate_taxonomy(tpl_groups, appx_groups)
+    if problems:
+        for p in problems:
+            print(f"分类问题：{p}")
+        return 1
 
     if args.index:
         target = MS / "99-index.md"
-        target.write_text(build_index(f), encoding="utf-8")
+        target.write_text(build_index(f, tpl_groups, appx_groups), encoding="utf-8")
         print(f"已重建 {target.relative_to(ROOT)}")
         return 0
 
@@ -388,6 +479,12 @@ def main() -> int:
 
     if args.check and drifted:
         return 1
+    if args.check:
+        expected = build_index(f, tpl_groups, appx_groups)
+        actual = (MS / "99-index.md").read_text(encoding="utf-8")
+        if actual != expected:
+            print("99-index.md 与目录分组不一致；运行 --index 重建")
+            return 1
     return 0
 
 

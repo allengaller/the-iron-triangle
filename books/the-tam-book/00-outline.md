@@ -124,60 +124,148 @@
 
 ## 第七部分　开源工具箱（模板与清单库）
 
-> 所有模板以可复制的 Markdown/Excel 形式收录于书根 `tpl-*.md`，随书共建。
+> 所有模板以可复制的 Markdown/Excel 形式收录于书根 `tpl-*.md`，随书共建。分类只增加导航层：编号、文件名与全书的引用关系保持不变；每件模板只归一个主分类，跨组需求在条目内以「另见」标注，不重复计数。
 
-1. 服务计划（Service Plan）模板。已完成：`tpl-01-service-plan.md`（配套第 11 章、附录 B 流程 P1；附录 I/Q/T/M/L 的入计划条款均有承载节）。
-2. Onboarding 90 天清单。已完成：`tpl-02-onboarding-90d-checklist.md`（配套附录 L/M）。
-3. 架构评审 Checklist（含 AI 工作负载专项）。已完成：`tpl-03-architecture-review-checklist.md`（配套第 5 章、附录 G/L/M）。
-4. 上线闸门（Go/No-Go）清单。已完成：`tpl-04-go-nogo-gate-checklist.md`（配套第 16 章、附录 K/M）。
-5. 重保 Checklist 与值守手册。已完成：`tpl-05-major-assurance-checklist.md`（配套第 24 章、附录 B 流程 P5）。
-6. 重大事件沟通脚本与升级矩阵。已完成：`tpl-06-major-incident-communication-matrix.md`（配套第 18 章、附录 K）。
-7. RCA 模板（金融级）。已完成：`tpl-07-rca-template.md`（配套附录 K/R、第 25 章；初步 48h / 正式 5 个工作日，防线四问必答，改进项汇模板 16/09）。
-8. QBR/EBR 模板。已完成：`tpl-08-qbr-ebr-template.md`（配套第 21 章、附录 B 流程 P8）。
-9. 风险登记册模板。已完成：`tpl-09-risk-register.md`（配套第 14 章；3×3 分级、月度过册、三扫描线汇入、关闭验证与附录 R 联动）。
-10. 客户健康度评分卡。已完成：`tpl-10-customer-health-scorecard.md`（配套第 34 章 34.3，与模板 15 组成起跑两件套）。
-11. 关键人地图画布。已完成：`tpl-11-key-person-map-canvas.md`（配套第 10 章 10.1 节，模板 10 健康分 R1 取数来源；三链六要素、三层覆盖核查、防线专项、两周变动日志）。
-12. TAM 个人能力自检表。已完成：`tpl-12-tam-self-assessment.md`（配套附录 G、第二部分各章自检清单）。
-13. TAM 工作评估计分卡。已完成：`tpl-13-tam-evaluation-scorecard.md`（配套附录 G）。
-14. TAM 驻场晋升申请与证据核验表。已完成：`tpl-14-onsite-promotion-review-checklist.md`（配套附录 O）。
-15. TAM 服务质量记分卡（公共云 / 专有云双版本）。已完成：`tpl-15-tam-service-quality-scorecard.md`（配套附录 P/Q）。
-16. 问题复盘报告与改进项台账。已完成：`tpl-16-problem-retrospective-template.md`（配套附录 R）。
-17. TAM 加班认定与调休台账。已完成：`tpl-17-overtime-compoff-ledger.md`（配套附录 S）。
-18. 变更申请与实施记录单（变更台账）。已完成：`tpl-18-change-request-record.md`（配套附录 T）。
-19. 承诺清单与移交三件套（铁三角协同台账）。已完成：`tpl-19-commitment-handover-kit.md`（配套附录 V）。
-20. 主 TAM 报告四件套（日/周/季/年）。已完成：`tpl-20-lead-tam-reporting-set.md`（配套附录 AA 的 RP1–RP4；第 28/34/37 章）。
-21. 团队成员报告四件套（日/周/季/年）。已完成：`tpl-21-team-member-reporting-set.md`（配套附录 AA 的 RP5–RP8；附录 G/O、模板 12）。
-22. 子 TAM 域分工与共管面矩阵。已完成：`tpl-22-subtam-domain-collaboration-matrix.md`（配套附录 AB 的五域、十面共管面、四字段工单与交接包）。
-23. 个人年度职业体检表。已完成：`tpl-23-career-annual-checkup.md`（配套附录 AD：CL 阶段判定、四账户盘点、五红灯自查与处置计划；与模板 12 互补——能力 vs 职业资本）。
+### 7.1 分类总览
+
+模板按「什么时候用、拿它做什么」分五组。前三组沿客户工作的时间轴展开：接入与交付、稳态运营、应急与复盘；后两组面向人与团队。参考类资料均为附录，见附录分类第六组。
+
+| 组 | 一句话定位 | 对应流程 | 件数 | 成员 |
+| --- | --- | --- | --- | --- |
+| 组 1　客户与项目全周期 | 使用对象是单一客户或单一项目，沿接入、交付、经营、续约推进。 | P2、P4、P8、P10 | 6 | 模板 02、04、08、10、11、19 |
+| 组 2　日常服务运行与治理 | 使用场景是稳态运营期的例行动作：计划、评审、变更、风险与质量。 | P1、P3、P9、P12 | 5 | 模板 01、03、09、15、18 |
+| 组 3　应急与复盘 | 使用场景是不可逆损失窗口与事后闭环：重保、事件、RCA 与复盘。 | P5、P6、P7 | 4 | 模板 05、06、07、16 |
+| 组 4　能力、认证与评估 | 使用对象是人，回答能力够不够、如何证明、如何晋级。 | — | 3 | 模板 12、13、14 |
+| 组 5　团队协作与职业成长 | 使用对象是团队与个人发展，回答怎么分工、怎么报告、怎么长期发展。 | — | 5 | 模板 17、20、21、22、23 |
+
+合计 23 件。流程 P11（需求与产品反馈回路）没有专用模板，流程条文见[附录 B](appx-b-tam-process-system.md)；模板 04 同时被流程 P12 复用，跨组关系在条目内以「另见」标注。组 6「参考、工具与方法」为附录专用，无模板。
+
+### 7.2 分组明细
+
+#### 组 1　客户与项目全周期
+
+> 分类依据：这些模板的使用对象都是「一个客户」或「一个项目」，覆盖从接入到续约的完整周期。
+
+- **模板 02　Onboarding 90 天清单**。已完成：[`tpl-02-onboarding-90d-checklist.md`](tpl-02-onboarding-90d-checklist.md)（配套附录 L/M）。
+- **模板 04　上线闸门（Go/No-Go）清单**。已完成：[`tpl-04-go-nogo-gate-checklist.md`](tpl-04-go-nogo-gate-checklist.md)（配套第 16 章、附录 K/M）。另见模板 18、附录 T（变更治理）。
+- **模板 08　QBR/EBR 模板**。已完成：[`tpl-08-qbr-ebr-template.md`](tpl-08-qbr-ebr-template.md)（配套第 21 章、附录 B 流程 P8）。
+- **模板 10　客户健康度评分卡**。已完成：[`tpl-10-customer-health-scorecard.md`](tpl-10-customer-health-scorecard.md)（配套第 34 章 34.3，与模板 15 组成起跑两件套）。
+- **模板 11　关键人地图画布**。已完成：[`tpl-11-key-person-map-canvas.md`](tpl-11-key-person-map-canvas.md)（配套第 10 章 10.1 节，模板 10 健康分 R1 取数来源；三链六要素、三层覆盖核查、防线专项、两周变动日志）。
+- **模板 19　承诺清单与移交三件套（铁三角协同台账）**。已完成：[`tpl-19-commitment-handover-kit.md`](tpl-19-commitment-handover-kit.md)（配套附录 V）。
+
+#### 组 2　日常服务运行与治理
+
+> 分类依据：这些模板服务于稳态运营期的例行动作，计划、评审、风险、变更与质量都在这一层闭环。
+
+- **模板 01　服务计划（Service Plan）**。已完成：[`tpl-01-service-plan.md`](tpl-01-service-plan.md)（配套第 11 章、附录 B 流程 P1；附录 I/Q/T/M/L 的入计划条款均有承载节）。
+- **模板 03　架构评审 Checklist（含 AI 工作负载专项）**。已完成：[`tpl-03-architecture-review-checklist.md`](tpl-03-architecture-review-checklist.md)（配套第 5 章、附录 G/L/M）。另见模板 04（上线闸门）。
+- **模板 09　风险登记册（Risk Register）**。已完成：[`tpl-09-risk-register.md`](tpl-09-risk-register.md)（配套第 14 章；3×3 分级、月度过册、三扫描线汇入、关闭验证与附录 R 联动）。
+- **模板 15　TAM 服务质量记分卡（公共云 / 专有云双版本）**。已完成：[`tpl-15-tam-service-quality-scorecard.md`](tpl-15-tam-service-quality-scorecard.md)（配套附录 P/Q）。
+- **模板 18　变更申请与实施记录单（变更台账）**。已完成：[`tpl-18-change-request-record.md`](tpl-18-change-request-record.md)（配套附录 T）。另见模板 04（上线闸门）、流程 P12。
+
+#### 组 3　应急与复盘
+
+> 分类依据：这些模板只在两类时刻使用——不可逆损失发生前的重保与事件窗口，以及事后必须闭环的 RCA 与复盘。
+
+- **模板 05　重保 Checklist 与值守手册**。已完成：[`tpl-05-major-assurance-checklist.md`](tpl-05-major-assurance-checklist.md)（配套第 24 章、附录 B 流程 P5）。
+- **模板 06　重大事件沟通脚本与升级矩阵**。已完成：[`tpl-06-major-incident-communication-matrix.md`](tpl-06-major-incident-communication-matrix.md)（配套第 18 章、附录 K）。
+- **模板 07　RCA 模板（金融级）**。已完成：[`tpl-07-rca-template.md`](tpl-07-rca-template.md)（配套附录 K/R、第 25 章；初步 48h / 正式 5 个工作日，防线四问必答，改进项汇模板 16/09）。另见模板 16（问题复盘）。
+- **模板 16　TAM 问题复盘报告与改进项台账**。已完成：[`tpl-16-problem-retrospective-template.md`](tpl-16-problem-retrospective-template.md)（配套附录 R）。另见模板 07（RCA）。
+
+#### 组 4　能力、认证与评估
+
+> 分类依据：这些模板的使用对象是个人，回答三个问题：能力够不够、如何被证明、如何晋级。
+
+- **模板 12　TAM 个人能力自检表**。已完成：[`tpl-12-tam-self-assessment.md`](tpl-12-tam-self-assessment.md)（配套附录 G、第二部分各章自检清单）。
+- **模板 13　TAM 工作评估计分卡**。已完成：[`tpl-13-tam-evaluation-scorecard.md`](tpl-13-tam-evaluation-scorecard.md)（配套附录 G）。
+- **模板 14　TAM 驻场晋升申请与证据核验表**。已完成：[`tpl-14-onsite-promotion-review-checklist.md`](tpl-14-onsite-promotion-review-checklist.md)（配套附录 O）。
+
+#### 组 5　团队协作与职业成长
+
+> 分类依据：这些模板的使用对象是团队与个人的长期发展，覆盖分工、报告、劳动台账与职业体检。
+
+- **模板 17　TAM 加班认定与调休台账**。已完成：[`tpl-17-overtime-compoff-ledger.md`](tpl-17-overtime-compoff-ledger.md)（配套附录 S）。
+- **模板 20　主 TAM 报告四件套（日／周／季／年）**。已完成：[`tpl-20-lead-tam-reporting-set.md`](tpl-20-lead-tam-reporting-set.md)（配套附录 AA 的 RP1–RP4；第 28/34/37 章）。
+- **模板 21　TAM 团队成员报告四件套（日／周／季／年）**。已完成：[`tpl-21-team-member-reporting-set.md`](tpl-21-team-member-reporting-set.md)（配套附录 AA 的 RP5–RP8；附录 G/O、模板 12）。
+- **模板 22　子 TAM 域分工与共管面矩阵**。已完成：[`tpl-22-subtam-domain-collaboration-matrix.md`](tpl-22-subtam-domain-collaboration-matrix.md)（配套附录 AB 的五域、十面共管面、四字段工单与交接包）。
+- **模板 23　个人年度职业体检表**。已完成：[`tpl-23-career-annual-checkup.md`](tpl-23-career-annual-checkup.md)（配套附录 AD：CL 阶段判定、四账户盘点、五红灯自查与处置计划；与模板 12 互补——能力 vs 职业资本）。
+
+> 参考类资料（术语、流程地图、方法论映射、外部标准与工具验收）均为附录，按附录分类第六组查阅。
 
 ## 附录
 
-- **附录 A**　术语表（中英对照）：全书术语唯一事实源，分八组（岗位组织/服务流程/等级度量/生命周期商业化/风险合规金融级/人员组织/AI 时代/编号前缀速查），A.8 消解 P 前缀四义。已完成：`appx-a-glossary.md`（v0.1，随书滚动补充；2026-10-25 经并发覆盖后以此版为准，详见 HANDOFF 撞车记录）。
-- **附录 B**　TAM 体系流程与规范：十二项核心流程速查（P1–P12）与九项运营规范汇编（含驻场组内自检任务标准）、流程成熟度分级。样章已完成：`appx-b-tam-process-system.md`（Reference：流程地图与规范条文）。
-- **附录 C**　方法论与标准映射：ITIL 4 / IT4IT / SRE / FinOps / 等保 2.0 / Well-Architected 六种方法论与本书章节的对应（WA 映射见 C.6，六厂商全量对照见附录 Z）。已完成：`appx-c-methodology-mapping.md`（迁移索引工具，非标准拟定稿；SRE 映射前须过第 2 章岗位边界）。
-- **附录 D**　延伸阅读与参考资料：真实可获取文献按五组对应章节 + 内部资料索引 + 维护规则（监管类年度复核）。已完成：`appx-d-further-reading.md`。
-- **附录 E**　开源贡献指南：如何提交勘误、案例与模板。已完成：`appx-e-contribution-guide.md`（三类贡献流程、维护纪律唯一事实源对照表、拒绝清单）。
-- **附录 F**　2026 年主要云厂商通告汇编：退市/下线/生命周期通告速查（AWS/Azure/Google Cloud/阿里云/腾讯云/华为云），数据时点 2026-10-23。样章已完成：`appx-f-cloud-vendor-notices-2026.md`。
-- **附录 G**　TAM 工作评估标准（拟定稿）：三层指标（L1 能力/L2 过程/L3 结果）、S–D 五级、四条否决红线。已完成：`appx-g-tam-work-evaluation-standard.md`。
-- **附录 H**　TAM 工具与平台验收标准（拟定稿）：六类平台【必须】/【建议】验收项、三阶段验收流程、否决条款。已完成：`appx-h-tool-platform-acceptance-standard.md`。
-- **附录 I**　TAM 值班标准（拟定稿）：三档值班模式（M1/M2/M3）、排班与疲劳管理、P1–P4 响应与升级时限、行为红线与度量。已完成：`appx-i-on-duty-standard.md`。
-- **附录 J**　TAM 赋能与实操培训标准（拟定稿）：T1/T2/T3 三级培训体系、实操占比 ≥ 50%、三段式认证、认证与客户分配挂钩。已完成：`appx-j-enablement-training-standard.md`。
-- **附录 K**　TAM 故障应急与演练标准（拟定稿）：P1 黄金 30 分钟动作序列、作战室接口、三级演练与合格判定、事后闭环与红线。已完成：`appx-k-incident-emergency-drill-standard.md`。
-- **附录 L**　TAM 项目导入标准（拟定稿）：导入四阶段闸门（S1–S4）、各阶段交付物、七项量化验收锚点、二手项目与金融级专项要求。已完成：`appx-l-project-onboarding-standard.md`。
-- **附录 M**　TAM 产品导入标准（拟定稿）：产品能力导入五阶段（PL1–PL5）与技术转移（分层转移、认证为准、独立运营准入验收、AI 产品专项）。已完成：`appx-m-product-introduction-standard.md`。
-- **附录 N**　TAM 驻场能力认证标准：C1–C3 三级认证（维度权重、五种考核方式、合格线与一票否决项、认证与年审流程）。样章已完成：`appx-n-tam-onsite-certification.md`。
-- **附录 O**　TAM 驻场能力晋升标准（拟定稿）：C3 后专家/现场管理双通道、四块晋升证据（经验/能力/客户/组织贡献）、评审流程与 6 个月观察期、破格与降级机制。已完成：`appx-o-tam-onsite-promotion-standard.md`。
-- **附录 P**　TAM 服务质量标准·公共云版（拟定稿）：五维度质量框架（响应与事件/主动服务/变更与通告/服务节奏/结果与感知）、SLA 监测与 Credit 协助、厂商通告触达义务、四条质量红线。已完成：`appx-p-tam-service-quality-standard-public-cloud.md`。
-- **附录 Q**　TAM 服务质量标准·专有云版（拟定稿）：六维度质量框架（含平台运行质量、合规与审计支持两个专有云特有维度）、责任共担边界、版本合规率与冻结窗口纪律、驻场衔接。已完成：`appx-q-tam-service-quality-standard-dedicated-cloud.md`。
-- **附录 R**　TAM 问题复盘标准（拟定稿）：三级复盘与六条强制触发、四阶段流程（RT1–RT4）、技术/管理/客情三类复盘要点、闭环度量与红线。已完成：`appx-r-problem-retrospective-standard.md`。
-- **附录 S**　TAM 加班与调休管理标准（拟定稿）：OT1/OT2/OT3 三分类认定、审批与 36 小时管控上限、调休分级折算与刚性兑现、疲劳红线与度量。已完成：`appx-s-overtime-compoff-standard.md`。
-- **附录 T**　TAM 线上变更标准（拟定稿）：CH1–CH4 变更分级与五条通用原则，分公共云版（通告触达、影响分析、确认/延期、值守回访）与专有云版（三板斧评审、分级签批、双人复核、窗口与冻结纪律、监管留痕）两个执行版本。已完成：`appx-t-online-change-standard.md`。
-- **附录 U**　TAM 工单管理标准（拟定稿）：四分类 TK-F/Q/R/C 与 P1–P4 分级复用、时限与静默规则、记录七要素、关闭与重开规则、≥10% 抽检四维评分、四条红线。已完成：`appx-u-ticket-management-standard.md`。
-- **附录 V**　TAM-BTE-SA 铁三角协同最佳实践：三角角色分工与全周期 RACI、四个接缝打法（承诺管理 / 方案评审可运营性一票 / 移交三件套 + 伴随期 / 信号回流三类分道）、例行协同机制、共背+分背联合度量、四条红线、AI 时代的三角变化。已完成：`appx-v-tam-bte-sa-triangle.md`。
-- **附录 W**　中国金融行业运维相关标准与监管要求汇编：法律与行政法规、GB/GB/T 国标（等保 2.0、运维服务、数据中心、容灾）、JR/T 金融行业标准（JR/T 0265、JR/T 0361-2026 智能运维等）、三监管条线规章（银监发〔2009〕19 号/银监办发〔2010〕114 号/证监会信息技术管理办法等）四层汇编；含"国七条"辨伪（查无此文件，最接近者为 GB/T 20988 灾难恢复七级）。数据时点 2026-10-25，年度复核。已完成：`appx-w-financial-ops-standards.md`。
-- **附录 Y**　六维能力训练教程：技术纵深、业务洞察、关系经营、服务治理、风险与合规、项目与变革六维逐维训练，Y.1–Y.7 训练流程（目标、前置、走法、预期结果、常见错误），末节为六维联合评审综合演练与完成判定。已完成：`appx-y-training-tutorial.md`（Tutorial）。
-- **附录 Z**　Well-Architected 架构框架全量汇编：AWS／Azure／Google Cloud／阿里云／腾讯云／华为云六家的支柱与设计原则逐条对照（含能力域对齐矩阵）、Lens／Perspective／Workload 全量索引、8 域 40 问评审动作库、10 个公开案例与参考架构；记录 Google 官网"六支柱／五支柱"口径不一、AWS Lens 30 份、阿里云 AI Lens 等时点事实。附与第 5 章、模板 03、附录 C/W 的分工与维护规则。数据时点 2026-10-25，季度复核。已完成：`appx-z-well-architected-framework.md`；官方原文归档于 `shared/well-architected/`（六厂商 5741 份，含 AWS 30 份 Lens 全量，见 Z.9.2）。
-- **附录 AA**　TAM 报告体系标准（拟定稿）：主 TAM 与团队成员的双轨四级报告（RP1–RP4 / RP5–RP8）、八个决策槽与必填结构、双轨衔接的反二传手三规则、四判据与五种病、AI 时代的方法与呈现（一数三面、异常优先、请求区块、活页 diff、结构化抬头）、30/60/90 落地路径与四条红线。已完成：`appx-aa-tam-reporting-standard.md`（配套模板 20/21；字母取双字母 AA，X/Y/Z 均已占用）。
-- **附录 AB**　标杆项目 TAM 团队分域分工与协作最佳实践（拟定稿）：机房／IaaS／PaaS／SaaS／AI-Infra 五域责任地图、十个共管面与面主机制、三档编制与“1 + N”值班、四字段域间工单、跨域变更三问、故障三权分立（事实／判断／流程）、域手册五件套、五个协作指标与四条红线。已完成：`appx-ab-subtam-domain-collaboration.md`（配套模板 22；字母取双字母 AB，与“A/B 测试”不是同一记号）。
-- **附录 AC**　SRE/CRE 工程纵深（How-to）：错误预算政策（SLI/SLO、烧率告警、耗尽冻结）、On-Call 体系（主备双岗、认证上岗、书面交接）、Toil 治理（五特征、台账、削减路径）、不透题演练与流程级复盘；SLO 与 SLA 别混、金融级增量（监管窗口策略、预算非免责牌）。已完成：`appx-ac-sre-cre-engineering-depth.md`（口径同源第 34 章与附录 C.3/I/K/R/S；适用岗位别名映射见导读）。
-- **附录 AD**　TAM 职场全生命周期生存与发展指南：CL1–CL6 六阶段打法（入行/生存/成长/瓶颈/跃迁/长青，按证据判定不按年龄）、职业资本四账户年度体检、四大生存主题（向上管理/办公室政治工程化解法/倦怠与健康管理/裁员与跳槽纪律）、五条职业红线。已完成：`appx-ad-career-lifecycle-guide.md`（How-to；与第 33/36/37 章分工：讲个人全周期的生存动作与发展动作；BTE/SA 角色同样适用，见 AD.0）。
+> 29 个附录按「解决什么问题、什么时候用」分六组。前五组与模板分组同名同序：客户与项目、日常运行、应急复盘、能力认证、团队成长；第六组收全书的事实源、外部标准与工具方法。每篇附录只归一个主分类，跨组需求在条目内以「另见」标注，不重复计数。
+
+### 分类总览
+
+| 组 | 一句话定位 | 件数 | 成员 |
+| --- | --- | --- | --- |
+| 组 1　客户与项目全周期 | 使用对象是单一客户或单一项目，沿接入、交付、经营、续约推进。 | 3 | 附录 L、M、V |
+| 组 2　日常服务运行与治理 | 使用场景是稳态运营期的例行动作：计划、评审、变更、风险与质量。 | 6 | 附录 I、P、Q、T、U、AC |
+| 组 3　应急与复盘 | 使用场景是不可逆损失窗口与事后闭环：重保、事件、RCA 与复盘。 | 2 | 附录 K、R |
+| 组 4　能力、认证与评估 | 使用对象是人，回答能力够不够、如何证明、如何晋级。 | 5 | 附录 G、J、N、O、Y |
+| 组 5　团队协作与职业成长 | 使用对象是团队与个人发展，回答怎么分工、怎么报告、怎么长期发展。 | 4 | 附录 S、AA、AB、AD |
+| 组 6　参考、工具与方法 | 不直接产出客户交付物，提供术语、流程地图、外部标准、工具验收与延伸阅读。 | 9 | 附录 A、B、C、D、E、F、H、W、Z |
+
+合计 29 篇。
+
+### 分组明细
+
+#### 组 1　客户与项目全周期
+
+> 分类依据：这些附录服务的是「一个客户」或「一个项目」的完整周期，从导入、交付到协同经营。
+
+- **附录 L**　TAM 项目导入标准（拟定稿）：导入四阶段闸门（S1–S4）、各阶段交付物、七项量化验收锚点、二手项目与金融级专项要求。已完成：[`appx-l-project-onboarding-standard.md`](appx-l-project-onboarding-standard.md)。另见模板 02。
+- **附录 M**　TAM 产品导入标准（拟定稿）：产品能力导入五阶段（PL1–PL5）与技术转移（分层转移、认证为准、独立运营准入验收、AI 产品专项）。已完成：[`appx-m-product-introduction-standard.md`](appx-m-product-introduction-standard.md)。另见模板 02。
+- **附录 V**　TAM-BTE-SA 铁三角协同最佳实践：三角角色分工与全周期 RACI、四个接缝打法（承诺管理 / 方案评审可运营性一票 / 移交三件套 + 伴随期 / 信号回流三类分道）、例行协同机制、共背+分背联合度量、四条红线、AI 时代的三角变化。已完成：[`appx-v-tam-bte-sa-triangle.md`](appx-v-tam-bte-sa-triangle.md)。另见模板 19。
+
+#### 组 2　日常服务运行与治理
+
+> 分类依据：这些附录定义稳态运营期的运行规则与质量标准，值班、服务、变更、工单与可靠性工程在同一层闭环。
+
+- **附录 I**　TAM 值班标准（拟定稿）：三档值班模式（M1/M2/M3）、排班与疲劳管理、P1–P4 响应与升级时限、行为红线与度量。已完成：[`appx-i-on-duty-standard.md`](appx-i-on-duty-standard.md)。
+- **附录 P**　TAM 服务质量标准·公共云版（拟定稿）：五维度质量框架（响应与事件/主动服务/变更与通告/服务节奏/结果与感知）、SLA 监测与 Credit 协助、厂商通告触达义务、四条质量红线。已完成：[`appx-p-tam-service-quality-standard-public-cloud.md`](appx-p-tam-service-quality-standard-public-cloud.md)。另见模板 15。
+- **附录 Q**　TAM 服务质量标准·专有云版（拟定稿）：六维度质量框架（含平台运行质量、合规与审计支持两个专有云特有维度）、责任共担边界、版本合规率与冻结窗口纪律、驻场衔接。已完成：[`appx-q-tam-service-quality-standard-dedicated-cloud.md`](appx-q-tam-service-quality-standard-dedicated-cloud.md)。另见模板 15。
+- **附录 T**　TAM 线上变更标准（拟定稿）：CH1–CH4 变更分级与五条通用原则，分公共云版（通告触达、影响分析、确认/延期、值守回访）与专有云版（三板斧评审、分级签批、双人复核、窗口与冻结纪律、监管留痕）两个执行版本。已完成：[`appx-t-online-change-standard.md`](appx-t-online-change-standard.md)。另见模板 18。
+- **附录 U**　TAM 工单管理标准（拟定稿）：四分类 TK-F/Q/R/C 与 P1–P4 分级复用、时限与静默规则、记录七要素、关闭与重开规则、≥10% 抽检四维评分、四条红线。已完成：[`appx-u-ticket-management-standard.md`](appx-u-ticket-management-standard.md)。
+- **附录 AC**　SRE/CRE 工程纵深（How-to）：错误预算政策（SLI/SLO、烧率告警、耗尽冻结）、On-Call 体系（主备双岗、认证上岗、书面交接）、Toil 治理（五特征、台账、削减路径）、不透题演练与流程级复盘；SLO 与 SLA 别混、金融级增量（监管窗口策略、预算非免责牌）。已完成：[`appx-ac-sre-cre-engineering-depth.md`](appx-ac-sre-cre-engineering-depth.md)（口径同源第 34 章与附录 C.3/I/K/R/S；适用岗位别名映射见导读）。
+
+#### 组 3　应急与复盘
+
+> 分类依据：这些附录只覆盖两类时刻——不可逆损失发生前的事件与重保，以及事后必须闭环的复盘。
+
+- **附录 K**　TAM 故障应急与演练标准（拟定稿）：P1 黄金 30 分钟动作序列、作战室接口、三级演练与合格判定、事后闭环与红线。已完成：[`appx-k-incident-emergency-drill-standard.md`](appx-k-incident-emergency-drill-standard.md)。另见模板 05、06。
+- **附录 R**　TAM 问题复盘标准（拟定稿）：三级复盘与六条强制触发、四阶段流程（RT1–RT4）、技术/管理/客情三类复盘要点、闭环度量与红线。已完成：[`appx-r-problem-retrospective-standard.md`](appx-r-problem-retrospective-standard.md)。另见模板 16。
+
+#### 组 4　能力、认证与评估
+
+> 分类依据：这些附录的使用对象是个人能力与驻场序列，覆盖培训、认证、评估与晋升的完整证据链。
+
+- **附录 G**　TAM 工作评估标准（拟定稿）：三层指标（L1 能力/L2 过程/L3 结果）、S–D 五级、四条否决红线。已完成：[`appx-g-tam-work-evaluation-standard.md`](appx-g-tam-work-evaluation-standard.md)。另见模板 13。
+- **附录 J**　TAM 赋能与实操培训标准（拟定稿）：T1/T2/T3 三级培训体系、实操占比 ≥ 50%、三段式认证、认证与客户分配挂钩。已完成：[`appx-j-enablement-training-standard.md`](appx-j-enablement-training-standard.md)。另见模板 12、附录 Y。
+- **附录 N**　TAM 驻场能力认证标准：C1–C3 三级认证（维度权重、五种考核方式、合格线与一票否决项、认证与年审流程）。样章已完成：[`appx-n-tam-onsite-certification.md`](appx-n-tam-onsite-certification.md)。另见模板 12。
+- **附录 O**　TAM 驻场能力晋升标准（拟定稿）：C3 后专家/现场管理双通道、四块晋升证据（经验/能力/客户/组织贡献）、评审流程与 6 个月观察期、破格与降级机制。已完成：[`appx-o-tam-onsite-promotion-standard.md`](appx-o-tam-onsite-promotion-standard.md)。另见模板 14。
+- **附录 Y**　六维能力训练教程：技术纵深、业务洞察、关系经营、服务治理、风险与合规、项目与变革六维逐维训练，Y.1–Y.7 训练流程（目标、前置、走法、预期结果、常见错误），末节为六维联合评审综合演练与完成判定。已完成：[`appx-y-training-tutorial.md`](appx-y-training-tutorial.md)（Tutorial）。另见模板 12。
+
+#### 组 5　团队协作与职业成长
+
+> 分类依据：这些附录的使用对象是团队与个人的长期发展，覆盖分工、报告、劳动台账与职业全周期。
+
+- **附录 S**　TAM 加班与调休管理标准（拟定稿）：OT1/OT2/OT3 三分类认定、审批与 36 小时管控上限、调休分级折算与刚性兑现、疲劳红线与度量。已完成：[`appx-s-overtime-compoff-standard.md`](appx-s-overtime-compoff-standard.md)。另见模板 17。
+- **附录 AA**　TAM 报告体系标准（拟定稿）：主 TAM 与团队成员的双轨四级报告（RP1–RP4 / RP5–RP8）、八个决策槽与必填结构、双轨衔接的反二传手三规则、四判据与五种病、AI 时代的方法与呈现（一数三面、异常优先、请求区块、活页 diff、结构化抬头）、30/60/90 落地路径与四条红线。已完成：[`appx-aa-tam-reporting-standard.md`](appx-aa-tam-reporting-standard.md)（配套模板 20/21；字母取双字母 AA，X/Y/Z 均已占用）。
+- **附录 AB**　标杆项目 TAM 团队分域分工与协作最佳实践（拟定稿）：机房／IaaS／PaaS／SaaS／AI-Infra 五域责任地图、十个共管面与面主机制、三档编制与“1 + N”值班、四字段域间工单、跨域变更三问、故障三权分立（事实／判断／流程）、域手册五件套、五个协作指标与四条红线。已完成：[`appx-ab-subtam-domain-collaboration.md`](appx-ab-subtam-domain-collaboration.md)（配套模板 22；字母取双字母 AB，与“A/B 测试”不是同一记号）。
+- **附录 AD**　TAM 职场全生命周期生存与发展指南：CL1–CL6 六阶段打法（入行/生存/成长/瓶颈/跃迁/长青，按证据判定不按年龄）、职业资本四账户年度体检、四大生存主题（向上管理/办公室政治工程化解法/倦怠与健康管理/裁员与跳槽纪律）、五条职业红线。已完成：[`appx-ad-career-lifecycle-guide.md`](appx-ad-career-lifecycle-guide.md)（How-to；与第 33/36/37 章分工：讲个人全周期的生存动作与发展动作；BTE/SA 角色同样适用，见 AD.0）。另见模板 23。
+
+#### 组 6　参考、工具与方法
+
+> 分类依据：这些附录不直接产出客户交付物，而是全书的事实源、外部标准、工具验收与延伸阅读；改动它们等于改动多章的引用基线。
+
+- **附录 A**　术语表（中英对照）：全书术语唯一事实源，分八组（岗位组织/服务流程/等级度量/生命周期商业化/风险合规金融级/人员组织/AI 时代/编号前缀速查），A.8 消解 P 前缀四义。已完成：[`appx-a-glossary.md`](appx-a-glossary.md)（v0.1，随书滚动补充；2026-10-25 经并发覆盖后以此版为准，详见 HANDOFF 撞车记录）。
+- **附录 B**　TAM 体系流程与规范：十二项核心流程速查（P1–P12）与九项运营规范汇编（含驻场组内自检任务标准）、流程成熟度分级。样章已完成：[`appx-b-tam-process-system.md`](appx-b-tam-process-system.md)（Reference：流程地图与规范条文）。
+- **附录 C**　方法论与标准映射：ITIL 4 / IT4IT / SRE / FinOps / 等保 2.0 / Well-Architected 六种方法论与本书章节的对应（WA 映射见 C.6，六厂商全量对照见附录 Z）。已完成：[`appx-c-methodology-mapping.md`](appx-c-methodology-mapping.md)（迁移索引工具，非标准拟定稿；SRE 映射前须过第 2 章岗位边界）。
+- **附录 D**　延伸阅读与参考资料：真实可获取文献按五组对应章节 + 内部资料索引 + 维护规则（监管类年度复核）。已完成：[`appx-d-further-reading.md`](appx-d-further-reading.md)。
+- **附录 E**　开源贡献指南：如何提交勘误、案例与模板。已完成：[`appx-e-contribution-guide.md`](appx-e-contribution-guide.md)（三类贡献流程、维护纪律唯一事实源对照表、拒绝清单）。
+- **附录 F**　2026 年主要云厂商通告汇编：退市/下线/生命周期通告速查（AWS/Azure/Google Cloud/阿里云/腾讯云/华为云），数据时点 2026-10-23。样章已完成：[`appx-f-cloud-vendor-notices-2026.md`](appx-f-cloud-vendor-notices-2026.md)。
+- **附录 H**　TAM 工具与平台验收标准（拟定稿）：六类平台【必须】/【建议】验收项、三阶段验收流程、否决条款。已完成：[`appx-h-tool-platform-acceptance-standard.md`](appx-h-tool-platform-acceptance-standard.md)。
+- **附录 W**　中国金融行业运维相关标准与监管要求汇编：法律与行政法规、GB/GB/T 国标（等保 2.0、运维服务、数据中心、容灾）、JR/T 金融行业标准（JR/T 0265、JR/T 0361-2026 智能运维等）、三监管条线规章（银监发〔2009〕19 号/银监办发〔2010〕114 号/证监会信息技术管理办法等）四层汇编；含"国七条"辨伪（查无此文件，最接近者为 GB/T 20988 灾难恢复七级）。数据时点 2026-10-25，年度复核。已完成：[`appx-w-financial-ops-standards.md`](appx-w-financial-ops-standards.md)。
+- **附录 Z**　Well-Architected 架构框架全量汇编：AWS／Azure／Google Cloud／阿里云／腾讯云／华为云六家的支柱与设计原则逐条对照（含能力域对齐矩阵）、Lens／Perspective／Workload 全量索引、8 域 40 问评审动作库、10 个公开案例与参考架构；记录 Google 官网"六支柱／五支柱"口径不一、AWS Lens 30 份、阿里云 AI Lens 等时点事实。附与第 5 章、模板 03、附录 C/W 的分工与维护规则。数据时点 2026-10-25，季度复核。已完成：[`appx-z-well-architected-framework.md`](appx-z-well-architected-framework.md)；官方原文归档于 `shared/well-architected/`（六厂商 5741 份，含 AWS 30 份 Lens 全量，见 Z.9.2）。
